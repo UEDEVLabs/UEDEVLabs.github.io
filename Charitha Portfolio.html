@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Charitha Madusanka — Senior Game Developer</title>
+<meta name="description" content="Charitha Madusanka — Senior Game Developer. Gameplay systems, AI, VR/AR and engine tooling in Unreal Engine & Unity. 22 launched projects, 4 Steam titles, 150+ marketplace assets." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="stylesheet" href="assets/transition.css" />
+<script>try{if(sessionStorage.getItem('xition_nav'))document.documentElement.classList.add('xnav');}catch(e){}</script>
+</head>
+<body>
+<!-- page transition overlay -->
+<div class="xition" id="xition" aria-hidden="true">
+  <div class="xition__core">
+    <svg class="xition__hex" viewBox="0 0 100 100"><polygon points="50,4 91,27 91,73 50,96 9,73 9,27"></polygon></svg>
+    <svg class="xition__hex b" viewBox="0 0 100 100"><polygon points="50,4 91,27 91,73 50,96 9,73 9,27"></polygon></svg>
+    <span class="xition__pct">UE</span>
+  </div>
+  <div class="xition__bar"><i></i></div>
+  <div class="xition__txt" id="xitionTxt">Loading<b>_</b></div>
+</div>
+<div id="progress"></div>
+<div class="grain"></div>
+
+<!-- back to company landing -->
+<a class="backbtn" href="UEDEV%20Marketplace.html" aria-label="Back to UEDEV Store"><span class="backbtn__ico">◄</span> UEDEV Store</a>
+
+<!-- BOOT / LOADING -->
+<div class="boot" id="boot">
+  <div class="boot__logo">CHARITHA<b>.</b>DEV</div>
+  <div class="boot__bar"><div class="boot__fill" id="bootFill"></div></div>
+  <div class="boot__txt" id="bootTxt">Initializing engine<b>_</b></div>
+  <button class="boot__skip" id="bootSkip">Skip ▸</button>
+</div>
+
+<!-- custom cursor + achievement toast -->
+<div class="cursor"><i></i></div>
+<div class="cursor-dot"></div>
+<div class="toast" id="toast">
+  <div class="toast__ico">★</div>
+  <div><div class="toast__k">Achievement Unlocked</div><div class="toast__t" id="toastT">Konami Master</div></div>
+</div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a href="#top" class="logo">CHARITHA<b>.</b>DEV</a>
+    <nav class="nav__links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#reel">Showreel</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#playground">Play</a>
+      <a href="#experience">Experience</a>
+      <a href="UEDEV%20Marketplace.html">Store ↗</a>
+    </nav>
+    <a href="#contact" class="nav__cta">Hire Me</a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero__bg"></div>
+  <div class="embers"></div>
+  <div class="hero__main">
+    <span class="eyebrow">Senior Game Developer · Unreal · Unity</span>
+    <h1>Charitha<span class="stroke">Madusanka</span></h1>
+    <p class="hero__sub">I turn design concepts into playable, shippable games — gameplay systems, AI, VR/AR and engine tooling across <b style="color:var(--ink)">22 launched projects</b> and 4 Steam titles.</p>
+    <div class="hero__row">
+      <button class="btn btn--primary" data-vid="bYVvkrzBnR4">▶ Watch Showreel</button>
+      <a href="#work" class="btn btn--ghost">View Projects</a>
+    </div>
+  </div>
+  <div class="scrollcue">Scroll<i></i></div>
+  <div class="hero__stats">
+    <div class="hstat"><b data-count="22">0</b><span>Projects Launched</span></div>
+    <div class="hstat"><b data-count="4">0</b><span>Steam Games</span></div>
+    <div class="hstat"><b data-count="10">0</b><span>VR Projects</span></div>
+    <div class="hstat"><b data-count="6">0</b><span>AR Projects</span></div>
+    <div class="hstat"><b data-count="150" data-suffix="+">0</b><span>Marketplace Assets</span></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee__t">
+    <span>Unreal Engine 5</span><span>Unity</span><span>C++</span><span>Game AI</span><span>Niagara VFX</span><span>Virtual Reality</span><span>Augmented Reality</span><span>Gameplay Systems</span><span>Blueprints</span><span>ECS / DOTS</span>
+    <span>Unreal Engine 5</span><span>Unity</span><span>C++</span><span>Game AI</span><span>Niagara VFX</span><span>Virtual Reality</span><span>Augmented Reality</span><span>Gameplay Systems</span><span>Blueprints</span><span>ECS / DOTS</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="about__grid">
+      <div class="portrait reveal">
+        <div class="portrait__frame"></div>
+        <image-slot id="portrait" shape="rect" placeholder="Drop your photo here" src="https://smartcharith.github.io/assets/img/portfolio-2.jpg"></image-slot>
+        <div class="portrait__tag">Game Dev Enthusiast</div>
+      </div>
+      <div>
+        <div class="sec-head reveal">
+          <span class="sec-kicker"><span class="no">01</span> About Me</span>
+          <h2 class="sec-title">Building worlds, <em>one system</em> at a time</h2>
+        </div>
+        <p class="reveal" data-d="1">I'm <b>Charitha Madusanka</b>, a Senior Game Developer with an <b>MSc in Computer Games (Distinction)</b> from the University of Essex. For over six years I've shipped commercial games, VR/AR experiences and engine tools — currently as Senior Gameplay Engineer at <b>Ripstone Games</b> on an unannounced PlayStation title.</p>
+        <p class="reveal" data-d="2">My focus is the craft behind play: combat and AI, physics-driven mechanics, crowd and pathfinding systems, runtime ECS and Niagara VFX. I also publish high-quality content to the Unreal marketplace — <b>11 products, 150+ assets</b> used by developers worldwide.</p>
+        <div class="engines">
+          <div class="engine reveal" data-d="1">
+            <div class="engine__top"><img src="https://smartcharith.github.io/assets/img/UnrealLogo.png" alt="Unreal Engine" /><h3>Unreal Engine</h3></div>
+            <ul>
+              <li>4 commercially published games</li>
+              <li>4+ virtual reality applications</li>
+              <li>2+ augmented reality applications</li>
+              <li>Marketplace asset publishing</li>
+            </ul>
+          </div>
+          <div class="engine reveal" data-d="2">
+            <div class="engine__top"><img src="https://smartcharith.github.io/assets/img/UnityLogo.png" alt="Unity Engine" /><h3>Unity Engine</h3></div>
+            <ul>
+              <li>2 commercially published games</li>
+              <li>5+ virtual reality applications</li>
+              <li>4+ augmented reality applications</li>
+              <li>Interactive media & simulators</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about__cta reveal" data-d="2">
+          <a class="btn btn--primary" href="https://drive.google.com/file/d/1DY-A916ZtGkvCpUVTBej0ajIMbD1ZKTd/view?usp=sharing" target="_blank" rel="noopener">⤓ Download Resume</a>
+          <a class="btn btn--ghost" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec skills" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><span class="no">02</span> Skills & Tools</span>
+      <h2 class="sec-title">Expertise in <em>making games</em></h2>
+    </div>
+    <div class="skills__grid">
+      <div class="bars reveal">
+        <div class="bar"><div class="bar__top"><h4>Game Development — Unreal Engine</h4><span>95%</span></div><div class="bar__track"><div class="bar__fill" data-val="95"></div></div></div>
+        <div class="bar"><div class="bar__top"><h4>Game Development — Unity</h4><span>88%</span></div><div class="bar__track"><div class="bar__fill" data-val="88"></div></div></div>
+        <div class="bar"><div class="bar__top"><h4>Gameplay AI & Pathfinding</h4><span>90%</span></div><div class="bar__track"><div class="bar__fill" data-val="90"></div></div></div>
+        <div class="bar"><div class="bar__top"><h4>Virtual Reality (Unreal / Unity)</h4><span>85%</span></div><div class="bar__track"><div class="bar__fill" data-val="85"></div></div></div>
+        <div class="bar"><div class="bar__top"><h4>Augmented Reality (Unity)</h4><span>80%</span></div><div class="bar__track"><div class="bar__fill" data-val="80"></div></div></div>
+        <div class="bar"><div class="bar__top"><h4>Niagara VFX & Tech Art</h4><span>82%</span></div><div class="bar__track"><div class="bar__fill" data-val="82"></div></div></div>
+      </div>
+      <div class="skill-aside reveal" data-d="1">
+        <h3>The toolbox I build with</h3>
+        <p>From low-level C++ gameplay code to designer-friendly Blueprints, ECS architectures and VFX — I work end-to-end across the stack.</p>
+        <div class="chips" style="margin-top:24px">
+          <span class="chip">C++</span><span class="chip">C#</span><span class="chip">Blueprints</span><span class="chip">Unreal Engine 5</span><span class="chip">Unity</span><span class="chip">Game AI</span><span class="chip">Behaviour Trees</span><span class="chip">Pathfinding</span><span class="chip">ECS / DOTS</span><span class="chip">Niagara</span><span class="chip">Physics</span><span class="chip">Multiplayer</span><span class="chip">VR</span><span class="chip">AR</span><span class="chip">Shaders</span><span class="chip">Git / Perforce</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="sec projects" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><span class="no">03</span> Selected Work</span>
+      <h2 class="sec-title">Recent <em>projects</em></h2>
+      <p class="sec-intro">Shipped titles and experiences across Unreal and Unity — PC games, VR experiences and marketplace work.</p>
+    </div>
+    <div class="filters reveal">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="unreal">Unreal Engine</button>
+      <button class="filter" data-filter="unity">Unity Engine</button>
+      <button class="filter" data-filter="vr">VR / AR</button>
+    </div>
+    <div class="grid">
+      <article class="card feature reveal" data-cat="unreal" data-vid="bYVvkrzBnR4">
+        <div class="card__img" style="background-image:url('https://smartcharith.github.io/assets/img/portfolio-1.jpg')"></div>
+        <div class="card__shade"></div>
+        <span class="card__badge">Unreal Engine · Steam</span>
+        <div class="card__play">▶</div>
+        <div class="card__body">
+          <span class="card__cat">Action RPG · PC</span>
+          <h3 class="card__title">Monsters Domain</h3>
+          <p class="card__desc">An evil first-person Action RPG built with a 3-person indie team. I led gameplay AI & combat over 1.5 years in Unreal Engine.</p>
+          <div class="card__links">
+            <a class="card__link" href="https://store.steampowered.com/app/1442450/Monsters_Domain/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Steam ↗</a>
+            <span class="card__link">Watch Trailer ▶</span>
+          </div>
+        </div>
+      </article>
+      <article class="card half reveal" data-d="1" data-cat="unreal" data-vid="Z-vDCKLA34I">
+        <div class="card__img" style="background-image:url('https://smartcharith.github.io/assets/img/portfolio-2.jpg')"></div>
+        <div class="card__shade"></div>
+        <span class="card__badge">Unreal · Steam</span>
+        <div class="card__play">▶</div>
+        <div class="card__body">
+          <span class="card__cat">Third-Person Shooter</span>
+          <h3 class="card__title">NERO</h3>
+          <p class="card__desc">Single-player action TPS developed over 2 years in Unreal Engine.</p>
+          <div class="card__links"><a class="card__link" href="https://store.steampowered.com/app/1448610/NERO/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Steam ↗</a></div>
+        </div>
+      </article>
+      <article class="card third reveal" data-cat="unreal unity" data-vid="z1a-ZjW3Etw">
+        <div class="card__img" style="background-image:url('https://smartcharith.github.io/assets/img/portfolio-8.jpg')"></div>
+        <div class="card__shade"></div>
+        <span class="card__badge">Unreal Engine</span>
+        <div class="card__play">▶</div>
+        <div class="card__body">
+          <span class="card__cat">Historical Epic · PC</span>
+          <h3 class="card__title">Kanchayudha</h3>
+          <p class="card__desc">One of Sri Lanka's biggest games — 1.6M reach, 25K downloads. Built with the Arimac team.</p>
+        </div>
+      </article>
+      <article class="card third reveal" data-cat="unity vr" data-vid="-hOqCkStPGo">
+        <div class="card__img" style="background-image:url('https://smartcharith.github.io/assets/img/portfolio-4.jpg')"></div>
+        <div class="card__shade"></div>
+        <span class="card__badge">Unity · VR</span>
+        <div class="card__play">▶</div>
+        <div class="card__body">
+          <span class="card__cat">Virtual Reality</span>
+          <h3 class="card__title">Sigiriya VR</h3>
+          <p class="card__desc">A VR tour of Sri Lanka's ancient kingdom for HTC Vive.</p>
+        </div>
+      </article>
+      <article class="card third reveal" data-cat="unity" data-vid="uiu3snOggB0">
+        <div class="card__img" style="background-image:url('https://smartcharith.github.io/assets/img/portfolio-6.jpg')"></div>
+        <div class="card__shade"></div>
+        <span class="card__badge">Unity</span>
+        <div class="card__play">▶</div>
+        <div class="card__body">
+          <span class="card__cat">Third-Person Action</span>
+          <h3 class="card__title">Mithuraa</h3>
+          <p class="card__desc">Single-player indie action game built in Unity.</p>
+        </div>
+      </article>
+      <article class="card third reveal" data-cat="unity" data-vid="1jHcXHgsP3E">
+        <div class="card__img" style="background-image:url('https://smartcharith.github.io/assets/img/portfolio-7.jpg')"></div>
+        <div class="card__shade"></div>
+        <span class="card__badge">Unity · Backend</span>
+        <div class="card__play">▶</div>
+        <div class="card__body">
+          <span class="card__cat">Simulation</span>
+          <h3 class="card__title">Horse Betting System</h3>
+          <p class="card__desc">Realistic virtual horse racing with dynamic environments & runtime winner selection via API integration.</p>
+        </div>
+      </article>
+      <article class="card third reveal" data-cat="unreal vr">
+        <div class="card__img" style="background-image:url('https://smartcharith.github.io/assets/img/portfolio-5.jpg')"></div>
+        <div class="card__shade"></div>
+        <span class="card__badge">Unreal · AI</span>
+        <div class="card__body">
+          <span class="card__cat">Racing · AI Agents</span>
+          <h3 class="card__title">Race Against the Machine</h3>
+          <p class="card__desc">Drive a McLaren against a machine-learning-trained AI car agent.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWREEL -->
+<section class="sec reel" id="reel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><span class="no">04</span> Showreel</span>
+      <h2 class="sec-title">See it <em>in motion</em></h2>
+      <p class="sec-intro">Gameplay captures from shipped and personal projects.</p>
+    </div>
+    <div class="reel__feature reveal" data-vid="bYVvkrzBnR4">
+      <img src="https://img.youtube.com/vi/bYVvkrzBnR4/maxresdefault.jpg" alt="Monsters Domain showreel" onerror="this.src='https://img.youtube.com/vi/bYVvkrzBnR4/hqdefault.jpg'" />
+      <div class="reel__play"><div class="ring">▶</div><div class="lbl">Featured — Monsters Domain</div></div>
+    </div>
+    <div class="reel__grid">
+      <div class="reel__item reveal" data-vid="Z-vDCKLA34I"><img src="https://img.youtube.com/vi/Z-vDCKLA34I/hqdefault.jpg" alt="NERO" /><div class="play"></div><div class="reel__cap">NERO — Gameplay PC</div></div>
+      <div class="reel__item reveal" data-d="1" data-vid="nKfcwFj2tK0"><img src="https://img.youtube.com/vi/nKfcwFj2tK0/hqdefault.jpg" alt="Chess Infinity" /><div class="play"></div><div class="reel__cap">Chess Infinity</div></div>
+      <div class="reel__item reveal" data-d="2" data-vid="yEanzpY3Slc"><img src="https://img.youtube.com/vi/yEanzpY3Slc/hqdefault.jpg" alt="Rich Dad Simulator" /><div class="play"></div><div class="reel__cap">Rich Dad Simulator</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVLOG / SYSTEMS -->
+<section class="sec devlog" id="devlog">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><span class="no">05</span> Devlog · Systems</span>
+      <h2 class="sec-title">Under the <em>hood</em></h2>
+      <p class="sec-intro">Deep-dives into the gameplay systems, AI and tech I build — the engineering behind the games.</p>
+    </div>
+    <div class="dev__grid">
+      <article class="devcard reveal" data-vid="z1a-ZjW3Etw">
+        <div class="devcard__thumb"><img src="https://img.youtube.com/vi/z1a-ZjW3Etw/hqdefault.jpg" alt="" /><div class="pl"></div></div>
+        <div class="devcard__b"><span class="devcard__tag">AI · Pathfinding</span><h3>Voxel 3D Pathfinding System</h3><p>Full 3D navigation through voxelized space for flying & climbing agents.</p></div>
+      </article>
+      <article class="devcard reveal" data-d="1" data-vid="RkpiIwBtE4A">
+        <div class="devcard__thumb"><img src="https://img.youtube.com/vi/RkpiIwBtE4A/hqdefault.jpg" alt="" /><div class="pl"></div></div>
+        <div class="devcard__b"><span class="devcard__tag">AI · Crowds</span><h3>Detour Crowd Avoidance</h3><p>Scalable crowd movement with smooth local avoidance between agents.</p></div>
+      </article>
+      <article class="devcard reveal" data-d="2" data-vid="c4pD_cYxhvo">
+        <div class="devcard__thumb"><img src="https://img.youtube.com/vi/c4pD_cYxhvo/hqdefault.jpg" alt="" /><div class="pl"></div></div>
+        <div class="devcard__b"><span class="devcard__tag">Architecture</span><h3>Runtime ECS Development</h3><p>Data-oriented entity-component-system for high-performance gameplay.</p></div>
+      </article>
+      <article class="devcard reveal" data-vid="xp5Ev5yHFhE">
+        <div class="devcard__thumb"><img src="https://img.youtube.com/vi/xp5Ev5yHFhE/hqdefault.jpg" alt="" /><div class="pl"></div></div>
+        <div class="devcard__b"><span class="devcard__tag">VFX · Tech Art</span><h3>Advanced Niagara VFX</h3><p>Marketplace-grade particle systems & effects authored in Niagara.</p></div>
+      </article>
+      <article class="devcard reveal" data-d="1" data-vid="ehwBYIg2T50">
+        <div class="devcard__thumb"><img src="https://img.youtube.com/vi/ehwBYIg2T50/hqdefault.jpg" alt="" /><div class="pl"></div></div>
+        <div class="devcard__b"><span class="devcard__tag">Combat</span><h3>Monsters Domain Combat Dev</h3><p>Building the melee combat & enemy AI behaviours for the RPG.</p></div>
+      </article>
+      <article class="devcard reveal" data-d="2" data-vid="Gtkfwu6v88Q">
+        <div class="devcard__thumb"><img src="https://img.youtube.com/vi/Gtkfwu6v88Q/hqdefault.jpg" alt="" /><div class="pl"></div></div>
+        <div class="devcard__b"><span class="devcard__tag">Gameplay</span><h3>Sci-Fi Blade Game Dev</h3><p>Prototyping a stylised sci-fi melee combat experience.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYGROUND / INTERACTIVE INTERLUDE -->
+<section class="play-band" id="playground">
+  <div class="play-band__in">
+    <a class="play-thumb reveal" href="lab/Rubiks%20Cube%20Solver.html" data-lab aria-label="Launch the Rubik's Cube Solver">
+      <img src="assets/cube-thumb.png" alt="Rubik's Cube Solver" />
+      <span class="play-thumb__badge">▶ Live · Three.js</span>
+      <span class="play-thumb__launch">Launch ↗</span>
+    </a>
+    <div class="play-copy">
+      <span class="sec-kicker reveal"><span class="no">⬢</span> Playground · Built with Three.js + React</span>
+      <h2 class="reveal" data-d="1">Play my <em>Rubik's Cube</em> Solver</h2>
+      <p class="reveal" data-d="2">A fully interactive 3D Rubik's cube — drag to rotate, scan a real cube with your camera, then follow a guided <b>7-phase solve</b> with live algorithm playback. A little side project that shows how I turn systems into playable, teachable tools.</p>
+      <div class="play-dots reveal" data-d="2">
+        <span style="background:#ffd500"></span><span style="background:#009b48"></span><span style="background:#b71234"></span><span style="background:#ff5800"></span><span style="background:#0046ad"></span><span style="background:#f4f4f4"></span>
+      </div>
+      <div class="play-feats reveal" data-d="3">
+        <span>3D engine</span><span>Camera scan</span><span>Kociemba solver</span><span>Guided tutorial</span>
+      </div>
+      <div class="hero__row reveal" data-d="3" style="margin-top:30px">
+        <a class="btn btn--primary" href="lab/Rubiks%20Cube%20Solver.html" data-lab>▶ Launch Cube Solver</a>
+        <a class="btn btn--ghost" href="#contact">Want one like this?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETPLACE -->
+<section class="sec market" id="market">
+  <div class="wrap">
+    <div class="market__in">
+      <div>
+        <div class="sec-head reveal" style="margin-bottom:26px">
+          <span class="sec-kicker"><span class="no">06</span> Fab / Unreal Marketplace</span>
+          <h2>Production-ready <em>assets</em> for developers</h2>
+        </div>
+        <p class="reveal" data-d="1">I publish high-quality, documented content to the Unreal Engine marketplace — VFX, systems and tools used in commercial and educational projects. Every pack ships with clear documentation and support.</p>
+        <div class="market__stats reveal" data-d="2">
+          <div><b>11</b><span>Products</span></div>
+          <div><b>150+</b><span>Assets</span></div>
+          <div><b>4.8★</b><span>Avg. Rating</span></div>
+        </div>
+        <div class="market__chips reveal" data-d="2" style="margin-bottom:30px">
+          <span class="chip">Niagara VFX</span><span class="chip">AI Systems</span><span class="chip">Tools</span><span class="chip">Documented</span>
+        </div>
+        <div class="hero__row reveal" data-d="3" style="margin-top:0">
+          <a class="btn btn--primary" href="UEDEV%20Marketplace.html">Visit UEDEV Store →</a>
+          <a class="btn btn--ghost" href="#contact">Request Docs / Support</a>
+        </div>
+      </div>
+      <div class="market__art reveal" data-d="1">
+        <img src="https://smartcharith.github.io/assets/img/portfolio-3.jpg" alt="Marketplace assets" />
+        <div class="ov"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec experience" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><span class="no">07</span> Experience</span>
+      <h2 class="sec-title">Where I've <em>shipped</em></h2>
+    </div>
+    <div class="timeline">
+      <div class="tl reveal">
+        <div class="tl__year">2023 — Now<small>Current</small></div>
+        <div>
+          <div class="tl__role">Senior Gameplay Engineer</div>
+          <div class="tl__co"><img src="https://smartcharith.github.io/assets/img/client-3.png" alt="Ripstone" />Ripstone Games</div>
+          <p class="tl__desc">Working on an unannounced PlayStation-exclusive multiplayer game — core gameplay features, player interaction systems and in-game mechanics.</p>
+          <div class="tl__meta"><span>PS5 · Xbox · PC · Switch</span><span>Unreal Engine 5</span><span>Multiplayer</span></div>
+        </div>
+      </div>
+      <div class="tl reveal">
+        <div class="tl__year">2021 — 2023<small>2 yrs</small></div>
+        <div>
+          <div class="tl__role">Senior Gameplay Engineer</div>
+          <div class="tl__co"><img src="https://smartcharith.github.io/assets/img/client-1.png" alt="G-Devs" />G-Devs</div>
+          <p class="tl__desc">Head Gameplay AI Developer on "Monsters Domain" and Lead Gameplay Developer on "Rich Dad Simulator" (PC).</p>
+          <div class="tl__meta"><span>PC</span><span>Unreal Engine 4 → 5</span><span>Gameplay AI</span></div>
+        </div>
+      </div>
+      <div class="tl reveal">
+        <div class="tl__year">2018 — 2022<small>4 yrs</small></div>
+        <div>
+          <div class="tl__role">Software Research Engineer</div>
+          <div class="tl__co"><img src="https://smartcharith.github.io/assets/img/client-2.png" alt="Arimac" />Arimac Lanka</div>
+          <p class="tl__desc">Built interactive media — PC games, virtual reality and augmented reality applications.</p>
+          <div class="tl__meta"><span>PC · VR · AR</span><span>Unity & Unreal</span></div>
+        </div>
+      </div>
+      <div class="tl reveal">
+        <div class="tl__year">2021 — Now<small>Current</small></div>
+        <div>
+          <div class="tl__role">Publisher</div>
+          <div class="tl__co">Unreal Marketplace</div>
+          <p class="tl__desc">Publishing high-quality content for Unreal developers — 11 products containing more than 150 assets.</p>
+          <div class="tl__meta"><span>VFX · Tools</span><span>150+ Assets</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="sec-title reveal" style="font-size:clamp(28px,4vw,44px);margin-top:90px">Education</h2>
+    <div class="edu__grid">
+      <div class="edu reveal">
+        <img src="https://smartcharith.github.io/assets/img/EssexLogo.png" alt="Essex" />
+        <div>
+          <h3>MSc in Computer Games</h3>
+          <div class="uni">University of Essex, UK · 2022–2023</div>
+          <p><b style="color:var(--accent)">Awarded with Distinction.</b> Specialised in Game Design, Game AI, Physics-based Games, Virtual Reality & Augmented Reality.</p>
+        </div>
+      </div>
+      <div class="edu reveal" data-d="1">
+        <img src="https://smartcharith.github.io/assets/img/UOKLogo.png" alt="Kelaniya" />
+        <div>
+          <h3>BSc (Hons) Software Engineering</h3>
+          <div class="uni">University of Kelaniya, Sri Lanka · 2016–2020</div>
+          <p>Second Class Upper Division (GPA 3.61 / 4.00). Specialised in Game Development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="contact__glow"></div>
+  <div class="wrap">
+    <div class="contact__in">
+      <div class="reveal">
+        <span class="sec-kicker"><span class="no">08</span> Contact</span>
+        <h2>Let's build<br/>something <em>playable</em></h2>
+        <p class="contact__lead">Available for freelance, contract and studio roles — gameplay, AI, VR/AR and marketplace work. Drop a line and let's talk.</p>
+        <div class="contact__list">
+          <a class="cline" href="mailto:charith945@gmail.com"><span class="k">Email</span><span class="v">charith945@gmail.com</span></a>
+          <a class="cline" href="UEDEV%20Marketplace.html"><span class="k">Store</span><span class="v">UEDEV Marketplace →</span></a>
+          <a class="cline" href="https://drive.google.com/file/d/1DY-A916ZtGkvCpUVTBej0ajIMbD1ZKTd/view?usp=sharing" target="_blank" rel="noopener"><span class="k">Resume</span><span class="v">Download CV ↗</span></a>
+        </div>
+        <div class="socials">
+          <a class="social" href="https://www.facebook.com/EpicCharith" target="_blank" rel="noopener">FB</a>
+          <a class="social" href="https://www.youtube.com/channel/UC850cfMEKjFeeKA9ZJDufEw" target="_blank" rel="noopener">YT</a>
+          <a class="social" href="https://www.youtube.com/channel/UClWulu2n2isZC1JCjfWFTjA" target="_blank" rel="noopener">YT²</a>
+        </div>
+      </div>
+      <form class="form reveal" data-d="1" id="contactForm" novalidate>
+        <div class="field"><label>Name</label><input type="text" name="name" required placeholder="Your name" /><span class="msg">Please enter your name</span></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@studio.com" /><span class="msg">Please enter a valid email</span></div>
+        <div class="field"><label>Project</label><input type="text" name="subject" placeholder="What do you need built?" /></div>
+        <div class="field"><label>Message</label><textarea name="message" rows="4" required placeholder="Tell me about it..."></textarea><span class="msg">Please add a message</span></div>
+        <button type="submit" class="btn btn--primary" style="justify-content:center">Send Message →</button>
+        <div class="form__ok">✓ Thanks — I'll get back to you shortly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer__in">
+    <a href="#top" class="logo">CHARITHA<b>.</b>DEV</a>
+    <small>© 2026 Charitha Madusanka · Senior Game Developer</small>
+    <button class="totop">Back to top ↑</button>
+  </div>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="modal" role="dialog" aria-modal="true">
+  <div class="modal__box">
+    <div class="modal__close">Close ✕</div>
+    <div class="modal__frame"></div>
+  </div>
+</div>
+
+<div id="tweak-root"></div>
+
+<!-- LAB / PROJECT PLAYER (inline, keeps preview auth) -->
+<div class="lab-modal" id="labModal" role="dialog" aria-modal="true">
+  <div class="lab-modal__bar">
+    <span class="lab-modal__title"><b>⬢</b> Rubik's Cube Solver</span>
+    <div class="lab-modal__actions">
+      <a class="lab-modal__open" href="lab/Rubiks%20Cube%20Solver.html">Open full page ↗</a>
+      <button class="lab-modal__close" id="labClose">Close ✕</button>
+    </div>
+  </div>
+  <div class="lab-modal__frame" id="labFrame"></div>
+</div>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/transition.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/fx.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="assets/tweaks.jsx"></script>
+</body>
+</html>

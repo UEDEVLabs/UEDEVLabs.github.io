@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UEDEV — High-performance Unreal Engine Plugins, Systems & VFX</title>
+<meta name="description" content="UEDEV — high-performance C++ plugins, gameplay systems and advanced Niagara VFX for Unreal Engine. Built for shipping games. 20+ documented products on Fab." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/company.css" />
+<link rel="stylesheet" href="assets/transition.css" />
+<script>try{if(sessionStorage.getItem('xition_nav'))document.documentElement.classList.add('xnav');}catch(e){}</script>
+</head>
+<body>
+<!-- page transition overlay -->
+<div class="xition" id="xition" aria-hidden="true">
+  <div class="xition__core">
+    <svg class="xition__hex" viewBox="0 0 100 100"><polygon points="50,4 91,27 91,73 50,96 9,73 9,27"></polygon></svg>
+    <svg class="xition__hex b" viewBox="0 0 100 100"><polygon points="50,4 91,27 91,73 50,96 9,73 9,27"></polygon></svg>
+    <span class="xition__pct">UE</span>
+  </div>
+  <div class="xition__bar"><i></i></div>
+  <div class="xition__txt" id="xitionTxt">Loading<b>_</b></div>
+</div>
+<div id="progress"></div>
+<div class="aurora"></div>
+<div class="grid-overlay"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a href="#top" class="brand"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+    <nav class="nav__links">
+      <a href="#featured">Best Sellers</a>
+      <a href="#catalog">Library</a>
+      <a href="#why">Why UEDEV</a>
+      <a href="#docs">Docs &amp; Support</a>
+      <a href="#developer">Developer</a>
+    </nav>
+    <a href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener" class="nav__cta">Browse on Fab ↗</a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas id="fx"></canvas>
+  <div class="hero__veil"></div>
+  <div class="hero__in">
+    <span class="pill"><span class="dot"></span> Unreal Engine · C++ Plugins · Systems · VFX</span>
+    <h1>Built for<br/><span class="grad" id="rotw">performance.</span></h1>
+    <p class="hero__sub">UEDEV builds high-performance C++ plugins, gameplay systems and advanced Niagara VFX for Unreal Engine — engineered in real, shipping games and optimized for UE4 &amp; UE5.</p>
+    <div class="hero__row">
+      <a class="btn btn--primary" href="#catalog">Explore the Library</a>
+      <a class="btn btn--ghost" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">View Store on Fab ↗</a>
+    </div>
+    <div class="hero__stats">
+      <div class="hstat"><b data-count="20" data-suffix="+">0</b><span>Products</span></div>
+      <div class="hstat"><b data-count="150" data-suffix="+">0</b><span>Assets</span></div>
+      <div class="hstat"><b data-count="43">0</b><span>Reviews</span></div>
+      <div class="hstat"><b>4.5★</b><span>Avg Rating</span></div>
+    </div>
+  </div>
+  <div class="scrolldown"><i></i></div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip__t">
+    <span>C++ Plugins</span><span>Gameplay Systems</span><span>Game AI</span><span>Pathfinding</span><span>ECS</span><span>Niagara VFX</span><span>Performance</span><span>Explosions</span><span>Energy Beams</span><span>UE4 &amp; UE5</span>
+    <span>C++ Plugins</span><span>Gameplay Systems</span><span>Game AI</span><span>Pathfinding</span><span>ECS</span><span>Niagara VFX</span><span>Performance</span><span>Explosions</span><span>Energy Beams</span><span>UE4 &amp; UE5</span>
+  </div>
+</div>
+
+<!-- FEATURED -->
+<section class="sec" id="featured-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal">Best Sellers</span>
+      <h2 class="sec-title reveal" data-d="1">Top-rated <em>packs</em></h2>
+      <p class="sec-intro reveal" data-d="2">The tools Unreal developers reach for most — battle-tested in shipping games, five-star rated, and ready to drop into your project.</p>
+    </div>
+    <div class="feat-grid" id="featured"></div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="sec" id="catalog">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal">The Full Library</span>
+      <h2 class="sec-title reveal" data-d="1">Every <em>asset pack</em></h2>
+      <p class="sec-intro reveal" data-d="2">20 products · 150+ assets — from C++ plugins to advanced Niagara VFX. Filter by category and open any pack on Fab.</p>
+    </div>
+    <div class="filters reveal" data-d="2">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="Combat">Combat VFX</button>
+      <button class="filter" data-filter="Weapons">Weapons</button>
+      <button class="filter" data-filter="Environment">Environmental</button>
+      <button class="filter" data-filter="Character">Character</button>
+      <button class="filter" data-filter="Packs">Bundles</button>
+      <button class="filter" data-filter="Plugins">Plugins</button>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+    <div class="grid-more">
+      <a class="btn btn--ghost" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">See everything on Fab ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="kicker reveal">Why UEDEV</span>
+      <h2 class="sec-title reveal" data-d="1">Built by a <em>game developer</em>, for game developers</h2>
+    </div>
+    <div class="vp-grid">
+      <div class="vp reveal"><div class="vp__ico">⚡</div><h3>Performance-first</h3><p>Written in C++ and profiled for real-time. Systems and effects engineered to hold frame-rate in shipping builds — not just tech demos.</p></div>
+      <div class="vp reveal" data-d="1"><div class="vp__ico">🧩</div><h3>Plugins &amp; systems</h3><p>Modular C++ plugins and gameplay systems — pathfinding, ECS, runtime tools — that drop cleanly into any Unreal project.</p></div>
+      <div class="vp reveal" data-d="2"><div class="vp__ico">✦</div><h3>Advanced VFX</h3><p>Production-grade Niagara — explosions, beams, shields and environmental FX — optimized to run fast on real hardware.</p></div>
+      <div class="vp reveal"><div class="vp__ico">📄</div><h3>Documented</h3><p>Clear written docs and video walkthroughs ship with every product, so you always know how each parameter behaves.</p></div>
+      <div class="vp reveal" data-d="1"><div class="vp__ico">🎮</div><h3>UE4 &amp; UE5 ready</h3><p>Maintained across engine versions and upgraded as Unreal evolves — buy once, keep using it.</p></div>
+      <div class="vp reveal" data-d="2"><div class="vp__ico">💬</div><h3>Real support</h3><p>Answered by the developer who wrote the code — not a ticket queue. Help when you actually need it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCS & SUPPORT -->
+<section class="sec docs" id="docs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal">Documentation &amp; Support</span>
+      <h2 class="sec-title reveal" data-d="1">Everything you need to <em>integrate</em></h2>
+      <p class="sec-intro reveal" data-d="2">Guides, video tutorials and direct support to get any pack running in your project fast.</p>
+    </div>
+    <div class="doc-grid">
+      <a class="doc reveal" href="https://www.youtube.com/@experimentdev3935" target="_blank" rel="noopener">
+        <div class="doc__ico">▶</div>
+        <div><h3>Video Tutorials</h3><p>Step-by-step setup and showcase videos for the VFX packs on the UEDEV YouTube channel.</p><span class="doc__link">Watch on YouTube ↗</span></div>
+      </a>
+      <a class="doc reveal" data-d="1" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">
+        <div class="doc__ico">📘</div>
+        <div><h3>Product Documentation</h3><p>Each listing ships with written docs covering install, parameters and example usage. Find them on every product page.</p><span class="doc__link">Open product docs ↗</span></div>
+      </a>
+      <a class="doc reveal" href="#developer">
+        <div class="doc__ico">🚀</div>
+        <div><h3>Quick Start</h3><p>New to Niagara? Drop the system into your level, assign a spawn point, and tune the exposed parameters — that's it.</p><span class="doc__link">How it works →</span></div>
+      </a>
+      <a class="doc reveal" data-d="1" href="Charitha%20Portfolio.html#contact">
+        <div class="doc__ico">💬</div>
+        <div><h3>Get Support</h3><p>Hit a snag or need a custom effect? Reach out directly and get help from the developer behind the packs.</p><span class="doc__link">Contact support →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPER BRIDGE -->
+<section class="sec dev" id="developer">
+  <div class="wrap">
+    <div class="dev__card reveal">
+      <div class="dev__glow"></div>
+      <div class="dev__inner">
+        <div>
+          <span class="kicker">The Developer</span>
+          <h2>Need something <em>custom built?</em></h2>
+          <div class="dev__face">
+            <image-slot id="uedev-face" shape="circle" src="https://cdn1.epicgames.com/fab/seller/o-9f8urqc2ufdfkftuxkaxvn5pa8vq9t/profile/375ceb80.png" placeholder="Photo"></image-slot>
+            <div><b>Charitha Madusanka</b><span>Senior Game Developer · Unreal &amp; Unity</span></div>
+          </div>
+          <p>UEDEV is the Unreal engineering label of Charitha Madusanka — a senior gameplay engineer shipping commercial games, VR/AR, high-performance C++ plugins and engine tools. For studio work, contract jobs, or a bespoke plugin or system, head to the full developer portfolio.</p>
+          <div class="hero__row" style="justify-content:flex-start;margin-top:4px">
+            <a class="btn btn--primary" href="Charitha%20Portfolio.html">View Developer Portfolio →</a>
+            <a class="btn btn--ghost" href="Charitha%20Portfolio.html#contact">Contact / Hire</a>
+          </div>
+        </div>
+        <ul class="dev__list">
+          <li><span class="n">01</span><span><b>22 projects launched</b> across Unreal &amp; Unity — 4 Steam titles, 10 VR and 6 AR builds.</span></li>
+          <li><span class="n">02</span><span><b>MSc in Computer Games</b> (Distinction, University of Essex) — Game AI, physics &amp; VFX.</span></li>
+          <li><span class="n">03</span><span><b>Senior Gameplay Engineer</b> — currently at Ripstone Games on an unannounced PlayStation title.</span></li>
+          <li><span class="n">04</span><span><b>Marketplace publisher since 2021</b> — the systems behind these packs come from real shipped games.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FOOTER -->
+<section class="cta wrap" id="cta">
+  <h2 class="reveal">Power up your game with<br/><span class="grad">UEDEV systems.</span></h2>
+  <p class="reveal" data-d="1">High-performance plugins, gameplay systems and advanced VFX, ready to drop into Unreal Engine today.</p>
+  <div class="hero__row reveal" data-d="2">
+    <a class="btn btn--primary" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Browse the Store on Fab ↗</a>
+    <a class="btn btn--ghost" href="Charitha%20Portfolio.html">Meet the Developer →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <div class="footer__col" style="max-width:280px">
+        <a href="#top" class="brand" style="margin-bottom:14px"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+        <p style="color:var(--faint);font-size:14px;line-height:1.6;margin:0">High-performance plugins, gameplay systems &amp; advanced VFX for Unreal Engine. Built and supported by a working game developer.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Store</h4>
+        <a href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Browse on Fab</a>
+        <a href="#featured">Best Sellers</a>
+        <a href="#catalog">Full Library</a>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <a href="https://www.youtube.com/@experimentdev3935" target="_blank" rel="noopener">Video Tutorials</a>
+        <a href="#docs">Documentation</a>
+        <a href="Charitha%20Portfolio.html#contact">Contact</a>
+      </div>
+      <div class="footer__col">
+        <h4>Developer</h4>
+        <a href="Charitha%20Portfolio.html">Portfolio</a>
+        <a href="Charitha%20Portfolio.html#work">Projects</a>
+        <a href="Charitha%20Portfolio.html#playground">Playground</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 UEDEV · Charitha Madusanka</span>
+      <span class="mono">Unreal Engine · Niagara · UE4 &amp; UE5</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/transition.js"></script>
+<script src="assets/company.js"></script>
+</body>
+</html>
