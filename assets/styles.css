@@ -58,7 +58,7 @@ h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;
   background:radial-gradient(120% 90% at 72% -10%,#2a1206 0%,#0c0a08 52%,#060504 100%)}
-.hero__bg{position:absolute;inset:0;background:url('https://smartcharith.github.io/assets/img/portfolio-1.jpg') center 28%/cover no-repeat;
+.hero__bg{position:absolute;inset:0;background:url('assets/img/portfolio-1.jpg') center 28%/cover no-repeat;
   opacity:.30;filter:grayscale(.25) contrast(1.05);
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 48%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 48%,#000 100%)}
 .hero__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,4,.25),rgba(6,5,4,.96))}

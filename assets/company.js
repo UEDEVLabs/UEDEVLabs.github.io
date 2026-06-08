@@ -55,7 +55,7 @@
   function ratingHtml(p){ return p.r ? '<span class="rating">'+stars(p.r)+p.r+' <span style="color:var(--faint)">('+p.rv+')</span></span>' : '<span class="rating" style="color:var(--faint)">New</span>'; }
   function mediaHtml(p,cls){
     return '<div class="'+cls+'" style="background:'+CATGRAD[p.c]+'">'+
-      '<img src="'+img(p)+'" alt="" onerror="this.style.display=\'none\'" />';
+      '<img src="'+img(p)+'" alt="'+p.n+' — '+p.c+' for Unreal Engine" onerror="this.style.display=\'none\'" />';
   }
 
   /* ---- render featured (top 3) ---- */
