@@ -24,7 +24,7 @@
   document.addEventListener('click',function(e){
     if(navigating) return;
     const a=e.target.closest('a[href]'); if(!a) return;
-    if(a.target==='_blank'||a.hasAttribute('data-nox')) return;
+    if(a.target==='_blank'||a.hasAttribute('data-nox')||a.hasAttribute('data-lab')) return;
     const href=a.getAttribute('href')||'';
     if(!href||href.charAt(0)==='#'||/^(https?:|mailto:|tel:)/i.test(href)) return;
     if(!/\.html(\?|#|$)/i.test(href)) return;

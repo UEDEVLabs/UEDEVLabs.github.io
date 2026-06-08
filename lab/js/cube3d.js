@@ -494,13 +494,17 @@
     }
     const ro = new ResizeObserver(resize);
     ro.observe(container);
+    // Also refit on window resize / orientation change (covers layout changes
+    // that don't always trip the container observer, e.g. mobile tutorial sheet).
+    window.addEventListener('resize', resize);
+    window.addEventListener('orientationchange', resize);
 
     paint();
 
     const handlers = { onStickerClick: null };
 
     return {
-      setState, getState, animateMove, setHighlight, setMoveArrow,
+      setState, getState, animateMove, setHighlight, setMoveArrow, resize,
       set onStickerClick(fn) { handlers.onStickerClick = fn; },
       get isAnimating() { return animating; },
       resetView() { yaw = -Math.PI * 0.18; pitch = Math.PI * 0.15; radius = 8.8; updateCamera(); },
@@ -508,6 +512,8 @@
         clearMoveArrow();
         cancelAnimationFrame(raf);
         ro.disconnect();
+        window.removeEventListener('resize', resize);
+        window.removeEventListener('orientationchange', resize);
         renderer.dispose();
         if (renderer.domElement.parentNode) {
           renderer.domElement.parentNode.removeChild(renderer.domElement);

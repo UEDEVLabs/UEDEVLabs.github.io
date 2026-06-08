@@ -107,6 +107,29 @@ function App() {
   const [timerStart, setTimerStart] = useState(null);
   const [timerNow, setTimerNow] = useState(null);
 
+  // ----- Back to portfolio ---------------------------------------------------
+  function goBack() {
+    try {
+      if (window.self !== window.top) {
+        // Embedded in the portfolio's inline player — ask it to close.
+        window.parent.postMessage({ type: 'lab-back' }, '*');
+        return;
+      }
+    } catch (e) { /* cross-origin: fall through to navigation */ }
+    window.location.href = '../portfolio.html';
+  }
+
+  // Toggle a body class while the tutorial is open so mobile CSS can turn it
+  // into a bottom sheet (keeping the 3D cube visible above it). The layout
+  // change resizes the cube stage, so nudge the 3D renderer to refit.
+  useEffect(() => {
+    document.body.classList.toggle('tut-mobile', learnOpen);
+    const refit = () => cube3dRef.current && cube3dRef.current.resize();
+    const t1 = setTimeout(refit, 60);
+    const t2 = setTimeout(refit, 320);
+    return () => { clearTimeout(t1); clearTimeout(t2); document.body.classList.remove('tut-mobile'); };
+  }, [learnOpen]);
+
   // ----- Mount 3D ------------------------------------------------------------
   useEffect(() => {
     if (!stageRef.current) return;
@@ -399,6 +422,9 @@ function App() {
       {/* HEADER */}
       <header className="topbar">
         <div className="brand">
+          <button className="btn ghost back-btn" onClick={goBack} title="Back to portfolio">
+            <span className="kbd">←</span><span className="btn-text">Back</span>
+          </button>
           <div className="brand-mark"></div>
           <div className="brand-text">
             <div className="brand-name">Cube<span className="brand-suffix">Solver</span></div>

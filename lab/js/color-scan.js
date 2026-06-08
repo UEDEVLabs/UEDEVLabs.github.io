@@ -93,6 +93,21 @@
     return dL * dL + da * da + db * db;
   }
 
+  // ---- HSV (for hue/saturation based classification) ----------------------
+  function rgbToHsv(c) {
+    const r = c.r / 255, g = c.g / 255, b = c.b / 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+    let h = 0;
+    if (d > 1e-6) {
+      if (mx === r) h = 60 * (((g - b) / d) % 6);
+      else if (mx === g) h = 60 * ((b - r) / d + 2);
+      else h = 60 * ((r - g) / d + 4);
+      if (h < 0) h += 360;
+    }
+    return { h, s: mx <= 0 ? 0 : d / mx, v: mx };
+  }
+  function hueDiff(a, b) { const d = Math.abs(a - b) % 360; return d > 180 ? 360 - d : d; }
+
   // ---- Classification -----------------------------------------------------
 
   // facesByLabel: { U:[9 rgb], R:[9], F:[9], D:[9], L:[9], B:[9] }
@@ -108,27 +123,60 @@
   function classifyState(facesByLabel) {
     const FACE_ORDER = ['U', 'R', 'F', 'D', 'L', 'B'];
 
-    const anchors = {};
-    for (const f of FACE_ORDER) anchors[f] = rgbToLab(facesByLabel[f][4]);
+    // Center stickers are ground-truth anchors for each face's color.
+    const cLab = {}, cHsv = {};
+    for (const f of FACE_ORDER) {
+      cLab[f] = rgbToLab(facesByLabel[f][4]);
+      cHsv[f] = rgbToHsv(facesByLabel[f][4]);
+    }
+
+    // The white face is the center with the LOWEST saturation. White vs a
+    // colored sticker is decided by saturation (robust to brightness), and
+    // colored stickers are separated by HUE (robust to lighting) — this fixes
+    // the two classic camera confusions: white↔yellow and red↔orange, which a
+    // raw RGB/Lab nearest-center match gets wrong when each face is shot under
+    // slightly different light.
+    let whiteFace = FACE_ORDER[0];
+    for (const f of FACE_ORDER) if (cHsv[f].s < cHsv[whiteFace].s) whiteFace = f;
+    const chromatic = FACE_ORDER.filter((f) => f !== whiteFace);
+    let minChroma = Infinity;
+    for (const f of chromatic) minChroma = Math.min(minChroma, cHsv[f].s);
+    const satThresh = Math.max(0.16, Math.min(0.45, (cHsv[whiteFace].s + minChroma) / 2));
+    const vThresh = Math.max(0.18, cHsv[whiteFace].v * 0.5);
+
+    function categorize(hsv, lab) {
+      // Desaturated & bright → white.
+      if (hsv.s < satThresh && hsv.v > vThresh) return whiteFace;
+      // Otherwise nearest chromatic face by hue, with a Lab tie-break for
+      // hues that sit between two anchors.
+      let best = chromatic[0], bd = Infinity, bestLab = Infinity;
+      for (const f of chromatic) {
+        const hd = hueDiff(hsv.h, cHsv[f].h);
+        const ld = labDist(lab, cLab[f]);
+        // Combine hue (dominant) with a small Lab term for robustness.
+        const score = hd * hd + ld * 0.02;
+        if (score < bd || (Math.abs(score - bd) < 1 && ld < bestLab)) {
+          bd = score; best = f; bestLab = ld;
+        }
+      }
+      return best;
+    }
 
     const stickers = []; // {face, idx, pos, dists:{f:d}, assigned, isCenter}
     for (const f of FACE_ORDER) {
       for (let i = 0; i < 9; i++) {
         const isCenter = (i === 4);
-        const lab = rgbToLab(facesByLabel[f][i]);
+        const rgb = facesByLabel[f][i];
+        const lab = rgbToLab(rgb);
+        const hsv = rgbToHsv(rgb);
         const dists = {};
-        let best = null, bestD = Infinity;
-        for (const af of FACE_ORDER) {
-          const d = labDist(lab, anchors[af]);
-          dists[af] = d;
-          if (d < bestD) { bestD = d; best = af; }
-        }
+        for (const af of FACE_ORDER) dists[af] = labDist(lab, cLab[af]);
         stickers.push({
           face: f,
           idx: i,
           pos: FACE_ORDER.indexOf(f) * 9 + i,
           dists,
-          assigned: isCenter ? f : best,
+          assigned: isCenter ? f : categorize(hsv, lab),
           isCenter,
         });
       }

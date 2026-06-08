@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Cube Solver — Rubik's Cube Visualiser</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1031,6 +1031,57 @@
   .scan-toast .link {
     background: none; border: 0; color: var(--ink-3);
     text-decoration: underline; font: inherit; cursor: pointer; padding: 0;
+  }
+
+  /* ================= MOBILE FIXES ================= */
+  /* Back-to-portfolio button in the topbar */
+  .back-btn { margin-right: 2px; flex-shrink: 0; }
+  .back-btn .kbd { font-size: 17px; }
+
+  @media (max-width: 720px) {
+    /* Back button stays icon-only like the other header actions */
+    .topbar .back-btn { padding: 0; width: 40px; height: 40px; justify-content: center; }
+    .topbar .back-btn .btn-text { display: none; }
+
+    /* SOLVE: full-width, tall, always tappable & clear of the home indicator */
+    .bottombar { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
+    .paint-actions { gap: 9px; row-gap: 10px; }
+    .paint-actions .method-toggle { order: 1; }
+    .paint-actions .validity { order: 2; text-align: right; flex: 1 1 auto; }
+    .paint-actions .btn.big {
+      order: 3; width: 100%; justify-content: center;
+      min-height: 52px; font-size: 16px; border-radius: 12px;
+    }
+    .play-controls { padding-bottom: env(safe-area-inset-bottom); }
+
+    /* TUTORIAL: bottom sheet so the 3D cube stays visible above it */
+    body.tut-mobile .layout { grid-template-rows: auto 40vh 1fr; }
+    body.tut-mobile .bottombar { display: none; }
+    body.tut-mobile .top-left { display: none; }   /* free the cube area */
+    .tut-overlay {
+      background: transparent;
+      backdrop-filter: none; -webkit-backdrop-filter: none;
+      align-items: flex-end; justify-content: stretch;
+      pointer-events: none;
+    }
+    .tut-sheet {
+      width: 100%; max-width: 100%;
+      height: 52vh; max-height: 52vh;
+      border-left: 0; border-top: 1px solid var(--line);
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -22px 60px rgba(0,0,0,0.65);
+      padding: 14px 16px calc(16px + env(safe-area-inset-bottom));
+      pointer-events: auto;
+      animation: tutSlideUp .28s cubic-bezier(.22,.61,.36,1);
+    }
+    .tut-sheet::before {
+      content: ''; display: block;
+      width: 40px; height: 4px; border-radius: 2px;
+      background: var(--line-2); margin: 0 auto 10px;
+      flex: 0 0 auto;
+    }
+    /* Scan footer Apply button clear of the home indicator */
+    .scan-foot { padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
   }
 </style>
 </head>

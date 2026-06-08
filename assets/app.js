@@ -162,6 +162,8 @@
   }));
   labClose && labClose.addEventListener('click',closeLab);
   addEventListener('keydown',e=>{ if(e.key==='Escape') closeLab(); });
+  // Cube solver (in the iframe) asks to go back to the portfolio.
+  addEventListener('message',e=>{ if(e.data && e.data.type==='lab-back') closeLab(); });
 
   /* ---- to top ---- */
   $$('.totop').forEach(b=>b.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'})));
