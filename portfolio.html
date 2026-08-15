@@ -118,41 +118,63 @@
   <div class="nav__in">
     <a href="#top" class="logo">CHARITHA<b>.</b>DEV</a>
     <nav class="nav__links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
       <a href="#work">Work</a>
-      <a href="#reel">Showreel</a>
+      <a href="#about">Studio</a>
       <a href="#devlog">Devlog</a>
       <a href="#playground">Play</a>
-      <a href="#experience">Experience</a>
-      <a href="index.html">Store ↗</a>
+      <a href="index.html">Store</a>
     </nav>
-    <a href="#contact" class="nav__cta">Hire Me</a>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav__actions">
+      <a href="#contact" class="nav__cta">Get in touch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
+<!-- FULLSCREEN MENU -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="menu__head">
+    <span class="logo">CHARITHA<b>.</b>DEV</span>
+    <button class="menu__x" id="menuX" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+  </div>
+  <div class="menu__body">
+    <a href="#work">Work</a>
+    <a href="#about">Studio</a>
+    <a href="#skills">Skills</a>
+    <a href="#devlog">Devlog</a>
+    <a href="#playground">Play</a>
+    <a href="#experience">Experience</a>
+    <a href="index.html">Store</a>
+    <div class="menu__foot"><a href="#contact">Get in touch <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a></div>
+  </div>
+</div>
+
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero__bg"></div>
+  <div class="hero__bg" id="heroBg"></div>
+  <video class="hero__vid" id="heroVid" data-src="" muted loop playsinline preload="none" aria-hidden="true"></video>
+  <div class="hero__scrim"></div>
   <div class="embers"></div>
-  <div class="hero__main">
-    <span class="eyebrow">Senior Game Developer · Unreal · Unity</span>
-    <h1 aria-label="Charitha Madusanka">Charitha<span class="stroke">Madusanka</span></h1>
-    <p class="hero__sub">I turn design concepts into playable, shippable games — gameplay systems, AI, VR/AR and engine tooling across <b style="color:var(--ink)">22 launched projects</b> and 4 Steam titles.</p>
-    <div class="hero__row">
+  <div class="heroV">
+    <span class="eyebrow fu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 6 4.5 4L12 3l5.5 7L22 6l-2 12H4L2 6Z"></path></svg> Charitha Madusanka · Senior Game Developer</span>
+    <h1 aria-label="Charitha Madusanka — Senior Game Developer"><span class="l1">Code.</span><span class="stroke l3">Build.</span><span class="l2">Ship.</span></h1>
+    <p class="heroV__sub fu fu-2">Gameplay systems, game AI and 3D navigation in Unreal &amp; Unity — <b>22 launched projects</b>, 4 Steam titles, and tools other developers build on.</p>
+    <div class="heroV__cta fu fu-3">
       <button class="btn btn--primary" data-vid="bYVvkrzBnR4">▶ Watch Showreel</button>
       <a href="#work" class="btn btn--ghost">View Projects</a>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"></path></svg>
+        <div>MSc Distinction<br/>University of Essex</div>
+      </div>
+    </div>
+    <div class="hstats fu fu-4">
+      <div><b data-count="22">0</b><span>Projects Launched</span></div>
+      <div><b data-count="4">0</b><span>Steam Games</span></div>
+      <div><b data-count="16">0</b><span>VR / AR Builds</span></div>
+      <div><b data-count="150" data-suffix="+">0</b><span>Marketplace Assets</span></div>
     </div>
   </div>
-  <div class="scrollcue">Scroll<i></i></div>
-  <div class="hero__stats">
-    <div class="hstat"><b data-count="22">0</b><span>Projects Launched</span></div>
-    <div class="hstat"><b data-count="4">0</b><span>Steam Games</span></div>
-    <div class="hstat"><b data-count="10">0</b><span>VR Projects</span></div>
-    <div class="hstat"><b data-count="6">0</b><span>AR Projects</span></div>
-    <div class="hstat"><b data-count="150" data-suffix="+">0</b><span>Marketplace Assets</span></div>
-  </div>
+</section>
 </section>
 
 <!-- MARQUEE -->
@@ -537,13 +559,20 @@
           <a class="social" href="https://www.youtube.com/channel/UClWulu2n2isZC1JCjfWFTjA" target="_blank" rel="noopener">YT²</a>
         </div>
       </div>
-      <form class="form reveal" data-d="1" id="contactForm" novalidate>
+      <!-- To receive real email, put your form key in data-endpoint below.
+           Accepts EITHER a Web3Forms access key (get one free at web3forms.com —
+           just enter your email, no signup) OR a full form URL from Formspree /
+           Getform / Basin, e.g. https://formspree.io/f/xxxxxxxx
+           Leave it empty and the form stays in demo mode (validates only). -->
+      <form class="form reveal" data-d="1" id="contactForm" data-endpoint="dd0d930b-7dd0-406b-a1c8-cd93b36ca40f" novalidate>
         <div class="field"><label>Name</label><input type="text" name="name" required placeholder="Your name" /><span class="msg">Please enter your name</span></div>
         <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@studio.com" /><span class="msg">Please enter a valid email</span></div>
         <div class="field"><label>Project</label><input type="text" name="subject" placeholder="What do you need built?" /></div>
         <div class="field"><label>Message</label><textarea name="message" rows="4" required placeholder="Tell me about it..."></textarea><span class="msg">Please add a message</span></div>
-        <button type="submit" class="btn btn--primary" style="justify-content:center">Send Message →</button>
+        <input type="text" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit" class="btn btn--primary" id="contactSend" style="justify-content:center">Send Message →</button>
         <div class="form__ok">✓ Thanks — I'll get back to you shortly.</div>
+        <div class="form__err" id="contactErr"></div>
       </form>
     </div>
   </div>

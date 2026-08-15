@@ -91,12 +91,56 @@
     bars.forEach(el=>{ if(!el.dataset.fired){ el.dataset.fired='1'; el.style.width=el.dataset.val+'%'; } });
   }, 2600);
 
-  /* ---- mobile menu ---- */
-  const burger=$('.burger');
-  if(burger){
-    burger.addEventListener('click',()=>nav.classList.toggle('open'));
-    $$('.nav__links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  /* ---- fullscreen menu ---- */
+  const burger=$('#burger'), menu=$('#menu'), menuX=$('#menuX');
+  function setMenu(open){
+    if(!menu) return;
+    menu.classList.toggle('open',open);
+    document.body.classList.toggle('noscroll',open);
+    if(burger) burger.setAttribute('aria-expanded',open?'true':'false');
   }
+  burger && burger.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+  menuX && menuX.addEventListener('click',()=>setMenu(false));
+  $$('.menu__body a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  addEventListener('keydown',e=>{ if(e.key==='Escape') setMenu(false); });
+
+  /* ---- hero background film ----
+     Default: a cinematic crossfade of local game stills (no third-party
+     embeds, so it can never be blocked). To use a real showreel instead,
+     drop the file in assets/ and set data-src="assets/showreel.mp4" on
+     #heroVid in portfolio.html — a local file always wins. */
+  (function heroFilm(){
+    const v=$('#heroVid'), bg=$('#heroBg');
+    const src=v?(v.dataset.src||'').trim():'';
+    const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if(src&&!reduced){
+      v.addEventListener('loadeddata',()=>{ v.classList.add('on'); const p=v.play(); if(p&&p.catch) p.catch(()=>{}); },{once:true});
+      v.addEventListener('error',()=>{ v.remove(); },{once:true});
+      v.src=src; v.load();
+      return;
+    }
+    v&&v.remove();
+    if(!bg||reduced) return;
+    const shots=['portfolio-1.jpg','portfolio-8.jpg','portfolio-2.jpg','portfolio-5.jpg','portfolio-4.jpg','portfolio-6.jpg'];
+    bg.classList.add('slides');
+    const layers=shots.map((s,i)=>{
+      const d=document.createElement('div');
+      d.className='hero__slide';
+      d.style.backgroundImage="url('assets/img/"+s+"')";
+      if(i===0) d.classList.add('on');
+      bg.appendChild(d);
+      return d;
+    });
+    let i=0;
+    setInterval(()=>{
+      layers[i].classList.remove('on');
+      i=(i+1)%layers.length;
+      layers[i].classList.add('on');
+    },5200);
+  })();
+
+  /* hero intro animations run once the boot overlay lifts; hard safety net */
+  setTimeout(()=>document.body.classList.add('ready'),3000);
 
   /* ---- project filter ---- */
   const filters=$$('.filter'), cards=$$('.card[data-cat]');
@@ -122,11 +166,21 @@
   modal.addEventListener('click',e=>{ if(e.target===modal) closeVid(); });
   addEventListener('keydown',e=>{ if(e.key==='Escape') closeVid(); });
 
-  /* ---- contact form ---- */
+  /* ---- contact form ----
+     Sends for real when the form's data-endpoint is filled in. Accepts either a
+     Web3Forms access key (free, no signup: web3forms.com) or a full form URL
+     from Formspree / Getform / Basin. Empty = demo mode, validates only. */
   const form=$('#contactForm');
   if(form){
-    form.addEventListener('submit',e=>{
-      e.preventDefault();
+    const okBox=$('.form__ok',form), errBox=$('#contactErr'), sendBtn=$('#contactSend');
+    const sendLabel=sendBtn?sendBtn.textContent:'';
+    function flash(el,msg){
+      if(!el) return;
+      if(msg) el.textContent=msg;
+      el.classList.add('show');
+      clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('show'),6000);
+    }
+    function validate(){
       let ok=true;
       $$('.field',form).forEach(fl=>{
         const inp=$('input,textarea',fl); if(!inp||!inp.hasAttribute('required')) return;
@@ -134,7 +188,48 @@
         if(inp.type==='email' && inp.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(inp.value)) bad=true;
         fl.classList.toggle('err',bad); if(bad) ok=false;
       });
-      if(ok){ form.reset(); $('.form__ok').classList.add('show'); setTimeout(()=>$('.form__ok').classList.remove('show'),5000); }
+      return ok;
+    }
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      errBox&&errBox.classList.remove('show');
+      if(!validate()) return;
+      if(form.botcheck && form.botcheck.value) return; // honeypot: silently drop bots
+
+      const cfg=(form.dataset.endpoint||'').trim();
+      const data={
+        name:form.name.value.trim(),
+        email:form.email.value.trim(),
+        subject:form.subject.value.trim()||'New enquiry from your portfolio',
+        message:form.message.value.trim(),
+        from_name:'Portfolio contact form'
+      };
+
+      // no endpoint configured yet -> keep the old demo behaviour
+      if(!cfg){ form.reset(); flash(okBox); return; }
+
+      const isUrl=/^https?:\/\//i.test(cfg);
+      const url=isUrl?cfg:'https://api.web3forms.com/submit';
+      if(!isUrl) data.access_key=cfg;
+
+      sendBtn&&(sendBtn.disabled=true,sendBtn.textContent='Sending…');
+      try{
+        const res=await fetch(url,{
+          method:'POST',
+          headers:{'Content-Type':'application/json',Accept:'application/json'},
+          body:JSON.stringify(data)
+        });
+        let body={}; try{ body=await res.json(); }catch(err){}
+        if(res.ok && body.success!==false && !body.error){
+          form.reset(); flash(okBox);
+        }else{
+          flash(errBox, (body && (body.message||body.error)) || 'Could not send right now — please email charith945@gmail.com.');
+        }
+      }catch(err){
+        flash(errBox,'Network error — please email charith945@gmail.com.');
+      }finally{
+        sendBtn&&(sendBtn.disabled=false,sendBtn.textContent=sendLabel);
+      }
     });
     $$('.field input,.field textarea',form).forEach(i=>i.addEventListener('input',()=>i.closest('.field').classList.remove('err')));
   }

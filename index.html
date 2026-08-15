@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Primary Meta -->
-<title>UEDEV — High-Performance Unreal Engine Plugins, Systems & VFX</title>
-<meta name="description" content="UEDEV builds high-performance C++ plugins, gameplay systems and advanced Niagara VFX for Unreal Engine. Production-ready, documented, optimized for UE4 & UE5 — 20+ products on Fab by game developer Charitha Madusanka." />
-<meta name="keywords" content="Unreal Engine plugins, Niagara VFX, C++ game plugins, UE5 VFX, gameplay systems, Unreal marketplace, Fab marketplace, game development assets, UEDEV, Charitha Madusanka" />
+<title>UEDEV — LCM Nav3D: Volumetric 3D Navigation & Unreal Engine Plugins</title>
+<meta name="description" content="UEDEV builds LCM Nav3D — true volumetric 3D navigation for Unreal Engine 5.8: sparse voxel octree pathfinding, GPU solves, 10,000+ Mass agents, server-authoritative multiplayer replication, Behaviour Tree, StateTree and Mass Entity support on PC, PS5 and Xbox — plus high-performance C++ plugins and Niagara VFX on Fab." />
+<meta name="keywords" content="LCM Nav3D, 3D navigation Unreal Engine, volumetric pathfinding, sparse voxel octree, SVO navigation, flying AI Unreal, GPU pathfinding, multiplayer navigation replication, Mass Entity crowds, StateTree, Behaviour Tree, 3D EQS, PS5, Xbox, Unreal Engine plugins, Niagara VFX, C++ game plugins, UEDEV, Charitha Madusanka" />
 <meta name="author" content="Charitha Madusanka" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<meta name="theme-color" content="#05060b" />
+<meta name="theme-color" content="#050705" />
 <link rel="canonical" href="https://uedevlabs.github.io/" />
 
 <!-- Favicons -->
@@ -20,18 +20,18 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UEDEV" />
-<meta property="og:title" content="UEDEV — High-Performance Unreal Engine Plugins, Systems & VFX" />
-<meta property="og:description" content="High-performance C++ plugins, gameplay systems and advanced Niagara VFX for Unreal Engine. 20+ documented products, built for shipping games." />
+<meta property="og:title" content="UEDEV — LCM Nav3D: Volumetric 3D Navigation for Unreal Engine" />
+<meta property="og:description" content="True volumetric 3D navigation for UE 5.8 — sparse voxel octree pathfinding, GPU solves, 10,000+ Mass agents, tactical 3D EQS and 6-DOF flight locomotion." />
 <meta property="og:url" content="https://uedevlabs.github.io/" />
 <meta property="og:image" content="https://uedevlabs.github.io/assets/og-company.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="UEDEV — Built for performance. Unreal Engine plugins, systems and VFX." />
+<meta property="og:image:alt" content="UEDEV — LCM Nav3D, volumetric 3D navigation for Unreal Engine." />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="UEDEV — High-Performance Unreal Engine Plugins, Systems & VFX" />
-<meta name="twitter:description" content="High-performance C++ plugins, gameplay systems and advanced Niagara VFX for Unreal Engine. 20+ products on Fab." />
+<meta name="twitter:title" content="UEDEV — LCM Nav3D: Volumetric 3D Navigation for Unreal Engine" />
+<meta name="twitter:description" content="Sparse voxel octree pathfinding, GPU solves, 10,000+ Mass agents and 6-DOF flight locomotion for Unreal Engine 5.8." />
 <meta name="twitter:image" content="https://uedevlabs.github.io/assets/og-company.png" />
 
 <!-- Structured Data -->
@@ -63,6 +63,34 @@
       "inLanguage": "en"
     },
     {
+      "@type": "SoftwareApplication",
+      "@id": "https://uedevlabs.github.io/#lcmnav3d",
+      "name": "LCM Nav3D",
+      "alternateName": "LCM Nav3D — True Volumetric 3D Navigation for Unreal Engine",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Windows, PlayStation 5, Xbox Series X|S",
+      "softwareVersion": "2.05",
+      "url": "https://uedevlabs.github.io/#nav3d",
+      "image": "https://uedevlabs.github.io/assets/nav3d/banner.png",
+      "description": "True volumetric 3D navigation for Unreal Engine 5.8. Sparse voxel octree pathfinding with A*, Theta* and Lazy Theta* solvers, CPU/GPU auto dispatch, infinite chunked worlds, 10,000+ agent Mass Entity crowds, tactical 3D EQS, dynamic obstacles and 6-DOF flight and swim locomotion.",
+      "featureList": [
+        "Sparse Voxel Octree volumetric navigation",
+        "A*, Theta* and Lazy Theta* pathfinding solvers",
+        "CPU and GPU pathfinding with automatic dispatch",
+        "Finite and infinite chunked worlds",
+        "10,000+ agent Mass Entity crowds",
+        "Tactical EQS generators and tests in true 3D",
+        "Server-authoritative multiplayer replication",
+        "Behaviour Tree, StateTree and Mass Entity support",
+        "Dynamic obstacle restamping",
+        "Behaviour Tree and StateTree tasks",
+        "6-DOF flight and swim locomotion",
+        "Hybrid Recast and SVO navigation"
+      ],
+      "author": { "@id": "https://uedevlabs.github.io/portfolio.html#person" },
+      "publisher": { "@id": "https://uedevlabs.github.io/#organization" }
+    },
+    {
       "@type": "Store",
       "name": "UEDEV on Fab",
       "url": "https://www.fab.com/sellers/UEDEV",
@@ -78,6 +106,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/company.css" />
 <link rel="stylesheet" href="assets/transition.css" />
+<link rel="stylesheet" href="assets/upgrade.css" />
 <script>try{if(sessionStorage.getItem('xition_nav'))document.documentElement.classList.add('xnav');}catch(e){}</script>
 </head>
 <body>
@@ -100,10 +129,11 @@
   <div class="nav__in">
     <a href="#top" class="brand"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
     <nav class="nav__links">
-      <a href="#featured">Best Sellers</a>
-      <a href="#catalog">Library</a>
-      <a href="#why">Why UEDEV</a>
-      <a href="#docs">Docs &amp; Support</a>
+      <a href="#nav3d">LCM Nav3D</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#bestsellers">Best Sellers</a>
+      <a href="#vfx">VFX</a>
+      <a href="#docs">Docs</a>
       <a href="#developer">Developer</a>
     </nav>
     <a href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener" class="nav__cta">Browse on Fab ↗</a>
@@ -113,43 +143,262 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <canvas id="fx"></canvas>
+  <canvas id="navfx" aria-hidden="true"></canvas>
   <div class="hero__veil"></div>
-  <div class="hero__in">
-    <span class="pill"><span class="dot"></span> Unreal Engine · C++ Plugins · Systems · VFX</span>
-    <h1>Built for<br/><span class="grad" id="rotw">performance.</span></h1>
-    <p class="hero__sub">UEDEV builds high-performance C++ plugins, gameplay systems and advanced Niagara VFX for Unreal Engine — engineered in real, shipping games and optimized for UE4 &amp; UE5.</p>
-    <div class="hero__row">
-      <a class="btn btn--primary" href="#catalog">Explore the Library</a>
-      <a class="btn btn--ghost" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">View Store on Fab ↗</a>
+  <div class="heroX">
+    <div class="heroX__mid">
+      <a class="announce" href="#nav3d"><span class="tag">v2.05</span> <b>LCM Nav3D</b> <span class="desc">— true volumetric 3D navigation for UE 5.8</span> <span aria-hidden="true">→</span></a>
+      <div class="heroX__head"><h1 class="mega mega--fit">uedev</h1></div>
+      <p class="heroX__sub">Built for <em id="rotw">performance.</em></p>
     </div>
-    <div class="hero__stats">
+    <div class="heroX__bar">
+      <p>high-performance c++ plugins, gameplay systems &amp; volumetric 3d navigation for unreal engine</p>
+      <a class="btn btn--glow" data-magnet href="#nav3d">Explore LCM Nav3D</a>
+    </div>
+  </div>
+</section>
+
+<!-- LCM NAV3D -->
+<section class="sec n3d" id="nav3d">
+  <div class="wrap">
+    <div class="n3d__head">
+      <img class="n3d__logo reveal" src="assets/nav3d/logo.png" alt="LCM Nav3D logo" />
+      <div>
+        <span class="kicker reveal">Flagship plugin · v2.05 · Unreal Engine 5.8</span>
+        <h2 class="mega mega--sec reveal" data-d="1">LCM <em>Nav3D</em></h2>
+        <p class="n3d__tag reveal" data-d="2">True volumetric 3D navigation for Unreal Engine</p>
+        <div class="n3d__badges reveal" data-d="2">
+          <span>Sparse Voxel Octree</span><span>GPU pathfinding</span><span>10,000+ agents</span><span>Multiplayer replication</span><span>Blueprint &amp; C++</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="sec-intro reveal" data-d="2" data-chars style="max-width:760px;margin-top:26px">Unreal's Recast navmesh answers one question: where can I stand? It flattens your level into walkable polygons — exactly right for a soldier, completely wrong for a dragon. LCM Nav3D answers a different question: where is there empty air? It carves the whole playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky costs almost nothing and detail appears only where geometry actually is.</p>
+
+    <figure class="n3d__reel reveal" data-d="2">
+      <video id="nav3dReel" src="assets/nav3d/intro.mp4" poster="assets/nav3d/banner.png" muted loop playsinline preload="metadata"></video>
+      <figcaption><span>LCM Nav3D — <b>volumetric navigation in motion</b></span><button class="n3d__sound" id="nav3dSound" type="button">🔇 Unmute</button></figcaption>
+    </figure>
+
+    <dl class="specs reveal" data-d="2">
+      <div><dt>Pathfinding</dt><dd>A* · Theta* · <em>Lazy Theta*</em></dd></div>
+      <div><dt>Compute</dt><dd>CPU / GPU <em>Auto</em></dd></div>
+      <div><dt>World mode</dt><dd>Finite or <em>Infinite</em> chunks</dd></div>
+      <div><dt>Reflected API</dt><dd><em>517</em> symbols · 100% documented</dd></div>
+    </dl>
+
+    <div class="n3d__grid">
+      <div>
+        <ol class="n3d__list">
+          <li class="reveal"><span class="n">01</span><span><b>Sparse Voxel Octree</b><span>The level's empty air is subdivided only where geometry exists — one node covers open sky, so cost tracks clutter, not level size. Drop a single <code>LcmNavigationManagerSVO</code> per level and it owns the octree, the pathfinder and every query.</span></span></li>
+          <li class="reveal" data-d="1"><span class="n">02</span><span><b>Three solvers, three smoothing modes</b><span>A* for raw throughput, Theta* for true any-angle routes, Lazy Theta* for near-Theta* quality at near-A* cost. Then Raw, Linear Shortcut or Curved Spline smoothing — validated against geometry, so a smoothed path never cuts a wall.</span></span></li>
+          <li class="reveal" data-d="2"><span class="n">03</span><span><b>Macro / micro routing &amp; infinite worlds</b><span>Long routes solve coarsely across chunks, then finely within them. Finite worlds build once at BeginPlay; infinite worlds stream chunks around agents and throw them away behind.</span></span></li>
+          <li class="reveal" data-d="3"><span class="n">04</span><span><b>10,000+ agents through Mass ECS</b><span>Two crowd modes: per-agent GPU pathfinding via the Nav3D Agent trait, or one shared CPU flow field sampled O(1) by an entire swarm. Three auto-registered processors run request → solve → steer; you never call the solver.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">05</span><span><b>Tactical EQS in true 3D</b><span>Generators and tests that score real volume — volumetric line-of-sight, cover, threat exposure, height advantage and true path distance — so a sniper perch is chosen in 3D, not on a floor plane.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">06</span><span><b>6-DOF flight &amp; swim locomotion</b><span>Navigation gives guidance; <code>LcmFlightMovementComponent</code> turns it into a body. Multirotor, Bird, Fish and Generic 6-DOF archetypes with thrust, lift, drag, buoyancy and attitude PID — plus an animation-drive struct for blendspaces.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">07</span><span><b>Server-authoritative multiplayer replication</b><span>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>; moving obstacles replay their nav footprint to every peer over a multicast. A headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths, and CPU compute stays bit-deterministic for replays and lockstep.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">08</span><span><b>Built for real projects</b><span>Dynamic obstacle restamping, AI Perception threat tracking, hybrid Recast + SVO levels, nav links, area modifiers and a live Gameplay Debugger.</span></span></li>
+        </ol>
+        <div class="hero__row" style="justify-content:flex-start;margin-top:32px">
+          <a class="btn btn--glow" data-magnet href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Get LCM Nav3D on Fab</a>
+          <a class="btn btn--ghost" href="portfolio.html#contact">Talk to the developer</a>
+        </div>
+      </div>
+      <div class="n3d__panel reveal" data-d="1">
+        <div class="n3d__slot"><img src="assets/nav3d/splash.png" alt="LCM Nav3D for Unreal Engine" style="width:100%;display:block" /></div>
+        <div class="n3d__meta"><span>Engine support</span><b>UE 5.8</b></div>
+        <div class="n3d__spec">
+          <div><b>100 cm</b><span>Default min voxel</span></div>
+          <div><b>200 m</b><span>Default world cube</span></div>
+          <div><b>118 pp</b><span>User manual</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk__head reveal">
+      <h3>Works with every Unreal AI system</h3>
+      <p>Whichever way your team authors behaviour, LCM Nav3D plugs into it — the same navigation data, three authoring surfaces.</p>
+    </div>
+    <div class="ai3d">
+      <div class="ai3d__c reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="5" rx="1.4"></rect><rect x="2" y="16" width="6" height="5" rx="1.4"></rect><rect x="16" y="16" width="6" height="5" rx="1.4"></rect><path d="M12 7v4M5 16v-2.5h14V16"></path></svg>
+        <h4>Behaviour Tree</h4>
+        <p>Drop-in tasks, decorators and services — <code>FlyTo</code>, line-of-sight and chunk-loaded checks — alongside seven documented stock-node patterns showing where an LCM node earns its place.</p>
+      </div>
+      <div class="ai3d__c reveal" data-d="1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="9" height="6" rx="1.6"></rect><rect x="13" y="15" width="9" height="6" rx="1.6"></rect><path d="M6.5 9v6a3 3 0 0 0 3 3H13"></path><path d="M15 6h4.5a2.5 2.5 0 0 1 0 5H17"></path></svg>
+        <h4>StateTree</h4>
+        <p>The same flight behaviour authored as StateTree tasks, so state-driven agents get identical routing without a Behaviour Tree in the stack.</p>
+      </div>
+      <div class="ai3d__c reveal" data-d="2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="2.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="2.5" y="16.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="16.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="16.5" width="5" height="5" rx="1"></rect></svg>
+        <h4>Mass Entity</h4>
+        <p>Two ECS traits — per-agent GPU pathfinding or a shared flow field — with three auto-registered processors driving request, solve and steering for 10,000+ entities.</p>
+      </div>
+      <div class="ai3d__more reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+        <span>More pre-built nodes and authoring shortcuts are on the way — shipped as free updates.</span>
+      </div>
+    </div>
+
+    <div class="blk__head reveal">
+      <h3>Platform support</h3>
+      <p>Shipping-ready on PC and current-gen consoles, with the C++ core built to the same standard on every target.</p>
+    </div>
+    <div class="plat reveal">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3.5" width="20" height="13" rx="1.8"></rect><path d="M8 20.5h8M12 16.5v4"></path></svg>
+        <div><b>Windows PC</b><span>Supported</span></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 7h9a4.5 4.5 0 0 1 4.4 3.6l1 5A2.6 2.6 0 0 1 19.4 19c-1 0-1.6-.5-2.2-1.2L15.6 16H8.4l-1.6 1.8C6.2 18.5 5.6 19 4.6 19a2.6 2.6 0 0 1-2.5-3.4l1-5A4.5 4.5 0 0 1 7.5 7Z"></path><path d="M6.4 11.6v2.2M5.3 12.7h2.2M16.2 12h.01M18.4 13.6h.01"></path></svg>
+        <div><b>PlayStation 5</b><span>Supported</span></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 7h9a4.5 4.5 0 0 1 4.4 3.6l1 5A2.6 2.6 0 0 1 19.4 19c-1 0-1.6-.5-2.2-1.2L15.6 16H8.4l-1.6 1.8C6.2 18.5 5.6 19 4.6 19a2.6 2.6 0 0 1-2.5-3.4l1-5A4.5 4.5 0 0 1 7.5 7Z"></path><path d="M6.4 11.6v2.2M5.3 12.7h2.2M15.6 11.4l2.6 2.6M18.2 11.4l-2.6 2.6"></path></svg>
+        <div><b>Xbox Series X|S</b><span>Supported</span></div>
+      </div>
+      <div class="soon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="1.4"></rect><path d="M7 3H4.6A1.6 1.6 0 0 0 3 4.6v14.8A1.6 1.6 0 0 0 4.6 21H7M17 3h2.4A1.6 1.6 0 0 1 21 4.6v14.8A1.6 1.6 0 0 1 19.4 21H17"></path><path d="M5 8h.01M19 15h.01"></path></svg>
+        <div><b>Nintendo Switch</b><span>Coming soon</span></div>
+      </div>
+    </div>
+
+    <div class="blk__head reveal" style="margin-bottom:0"></div>
+    <div class="road reveal">
+      <div class="road__top">
+        <span class="road__pill">Next · v3.0</span>
+        <h3>In development</h3>
+        <em>Free update for existing licences</em>
+      </div>
+      <div class="road__grid">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 1 8-8"></path><path d="m12 12 4.5-3.5"></path><path d="M12 20h8"></path></svg>
+          <div><b>Deeper performance work</b><p>Further profiling passes across voxelization, solve and steering to widen the frame budget headroom at crowd scale.</p></div>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"></circle><circle cx="5" cy="18.5" r="2.4"></circle><circle cx="19" cy="18.5" r="2.4"></circle><path d="M12 7.4v3.2M10.4 12.6 6.6 16.6M13.6 12.6l3.8 4M7.4 18.5h9.2"></path></svg>
+          <div><b>Replication improvements</b><p>A wider server-authoritative surface and lower-bandwidth path and obstacle sync for larger multiplayer sessions.</p></div>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2.5 9 4.6-9 4.6-9-4.6 9-4.6Z"></path><path d="m3 12.2 9 4.6 9-4.6"></path><path d="m3 17 9 4.5 9-4.5"></path></svg>
+          <div><b>Mixed pre-baked + realtime infinite worlds</b><p>Bake the authored parts of an open world ahead of time and stream the rest live, in one navigation graph.</p></div>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M12 8v8M8 12h8"></path></svg>
+          <div><b>More pre-built AI nodes</b><p>Additional Behaviour Tree, StateTree and Mass authoring nodes so common jobs need less wiring.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="docs3d reveal">
+      <div class="docs3d__top">
+        <div>
+          <h3>Documented like a product, not a plugin dump</h3>
+          <p>A 118-page manual across 17 chapters — every reflected symbol carries a tooltip, and every setting is listed with its verified default and limits.</p>
+        </div>
+        <a class="ghostbtn" href="portfolio.html#contact">Request the docs</a>
+      </div>
+      <div class="docs3d__grid">
+        <a href="portfolio.html#contact"><span class="num">01–05</span><b>Getting started</b><span>Installation, core concepts, your first flying agent, StateTree, dynamic obstacles.</span></a>
+        <a href="portfolio.html#contact"><span class="num">06–12</span><b>Going further</b><span>Mass crowds, tactical EQS, AI perception, hybrid Recast, nav links, debugger, BT patterns.</span></a>
+        <a href="portfolio.html#contact"><span class="num">13–17</span><b>Reference</b><span>Settings, troubleshooting, flight locomotion, Mass traits, and the full 517-symbol API.</span></a>
+      </div>
+    </div>
+    <div class="hero__stats reveal">
       <div class="hstat"><b data-count="20" data-suffix="+">0</b><span>Products</span></div>
       <div class="hstat"><b data-count="150" data-suffix="+">0</b><span>Assets</span></div>
       <div class="hstat"><b data-count="43">0</b><span>Reviews</span></div>
       <div class="hstat"><b>4.5★</b><span>Avg Rating</span></div>
     </div>
   </div>
-  <div class="scrolldown"><i></i></div>
 </section>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip__t">
-    <span>C++ Plugins</span><span>Gameplay Systems</span><span>Game AI</span><span>Pathfinding</span><span>ECS</span><span>Niagara VFX</span><span>Performance</span><span>Explosions</span><span>Energy Beams</span><span>UE4 &amp; UE5</span>
-    <span>C++ Plugins</span><span>Gameplay Systems</span><span>Game AI</span><span>Pathfinding</span><span>ECS</span><span>Niagara VFX</span><span>Performance</span><span>Explosions</span><span>Energy Beams</span><span>UE4 &amp; UE5</span>
+<!-- CAPABILITIES -->
+<section class="caps" id="capabilities">
+  <div class="wrap">
+    <h2 class="capsTitle reveal">Capabilities</h2>
+    <p class="capsLead reveal" data-d="1">What UEDEV builds for Unreal teams — from navigation and AI down through the effects layer.</p>
+    <div class="caps__list">
+      <div class="cap reveal"><div class="cap__n">01</div><div><h3 class="cap__t">Volumetric 3D Navigation</h3><p class="cap__d">LCM Nav3D — sparse voxel octree pathfinding with GPU solves, Mass crowds and true-3D tactical queries for flying and swimming agents.</p></div></div>
+      <div class="cap reveal" data-d="1"><div class="cap__n">02</div><div><h3 class="cap__t">Game AI</h3><p class="cap__d">Behaviour trees, detour steering and decision systems that stay smooth as agent counts climb.</p></div></div>
+      <div class="cap reveal" data-d="2"><div class="cap__n">03</div><div><h3 class="cap__t">Gameplay Systems</h3><p class="cap__d">Combat, physics and runtime ECS architectures written in C++ for shipping-grade performance.</p></div></div>
+      <div class="cap reveal" data-d="3"><div class="cap__n">04</div><div><h3 class="cap__t">Real-time VFX</h3><p class="cap__d">Production-grade Niagara effects — explosions, beams, shields and environments — profiled to hold frame budget.</p></div></div>
+      <div class="cap reveal" data-d="4"><div class="cap__n">05</div><div><h3 class="cap__t">Engine Tooling</h3><p class="cap__d">Editor plugins and pipeline tools that take the repetitive work out of your team's day.</p></div></div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- FEATURED -->
-<section class="sec" id="featured-sec">
+<!-- BEST SELLERS — sticky stack -->
+<section class="stack" id="bestsellers">
   <div class="wrap">
     <div class="sec-head">
-      <span class="kicker reveal">Best Sellers</span>
-      <h2 class="sec-title reveal" data-d="1">Top-rated <em>packs</em></h2>
-      <p class="sec-intro reveal" data-d="2">The tools Unreal developers reach for most — battle-tested in shipping games, five-star rated, and ready to drop into your project.</p>
+      <span class="kicker reveal">Best sellers</span>
+      <h2 class="mega mega--sec reveal" data-d="1">Top <em>rated</em></h2>
     </div>
-    <div class="feat-grid" id="featured"></div>
+    <div class="stack__item">
+      <article class="stackcard">
+        <div class="stackcard__top">
+          <div class="stackcard__n">01</div>
+          <div class="stackcard__id"><div class="stackcard__cat">Weapons · Niagara</div><h3 class="stackcard__name">Niagara Energy Beam Pack V2</h3></div>
+          <a class="ghostbtn" href="https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296" target="_blank" rel="noopener">View on Fab</a>
+        </div>
+        <div class="stackcard__media">
+          <img src="https://media.fab.com/image_previews/gallery_images/a63dd0e4-7db8-44eb-9ddb-55e4914ff39d/46de4277-a8f1-4ebf-95ad-b79ca6364644.jpg" alt="Niagara Energy Beam Pack V2 — Unreal Engine weapon VFX by UEDEV" />
+          <div class="stackcard__price">$15.99 <em>★ 5.0 (6)</em></div>
+        </div>
+      </article>
+    </div>
+    <div class="stack__item">
+      <article class="stackcard">
+        <div class="stackcard__top">
+          <div class="stackcard__n">02</div>
+          <div class="stackcard__id"><div class="stackcard__cat">Combat · Niagara</div><h3 class="stackcard__name">Ultimate Explosion VFX</h3></div>
+          <a class="ghostbtn" href="https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770" target="_blank" rel="noopener">View on Fab</a>
+        </div>
+        <div class="stackcard__media">
+          <img src="https://media.fab.com/image_previews/gallery_images/065fb827-0f4e-49ae-8a48-71f80ca6c629/94284eb4-d059-4db3-a3e2-e0ef0734be17.jpg" alt="Ultimate Explosion VFX — Unreal Engine combat effects by UEDEV" />
+          <div class="stackcard__price">$14.99 <em>★ 5.0 (4)</em></div>
+        </div>
+      </article>
+    </div>
+    <div class="stack__item">
+      <article class="stackcard">
+        <div class="stackcard__top">
+          <div class="stackcard__n">03</div>
+          <div class="stackcard__id"><div class="stackcard__cat">Combat · Screen FX</div><h3 class="stackcard__name">Ultimate Scan &amp; Screen Effects</h3></div>
+          <a class="ghostbtn" href="https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5" target="_blank" rel="noopener">View on Fab</a>
+        </div>
+        <div class="stackcard__media">
+          <img src="https://media.fab.com/image_previews/gallery_images/dc1a29a9-58bd-44e2-a42f-b368b8d6cad9/877787de-287a-4b54-a0de-02e9f1720c99.jpg" alt="Ultimate Scan and Screen Effects — Unreal Engine VFX by UEDEV" />
+          <div class="stackcard__price">$12.99 <em>★ 4.8 (4)</em></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VFX SHOWCASE -->
+<section class="vfxband" id="vfx">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal">The VFX library</span>
+      <h2 class="mega mega--sec reveal" data-d="1">Real-time <em>VFX</em></h2>
+      <p class="sec-intro reveal" data-d="2">Production-grade Niagara built the same way as the plugins — profiled, documented and shipped in real games. Explosions, energy beams, muzzle flashes, shields, portals and full environmental systems.</p>
+      <div class="vfxband__meta reveal" data-d="2">
+        <div><b>20</b><span>Products</span></div>
+        <div><b>150+</b><span>Effects</span></div>
+        <div><b>43</b><span>Reviews</span></div>
+        <div><b>4.5★</b><span>Average rating</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="mrq" id="mrq" aria-label="Asset previews">
+    <div class="mrq__row" id="mrqA"></div>
+    <div class="mrq__row" id="mrqB"></div>
+  </div>
+  <div class="vfxband__foot">
+    <a class="btn btn--glow" data-magnet href="#catalog">Browse the full library</a>
   </div>
 </section>
 
@@ -177,23 +426,7 @@
   </div>
 </section>
 
-<!-- WHY -->
-<section class="sec" id="why">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="kicker reveal">Why UEDEV</span>
-      <h2 class="sec-title reveal" data-d="1">Built by a <em>game developer</em>, for game developers</h2>
-    </div>
-    <div class="vp-grid">
-      <div class="vp reveal"><div class="vp__ico">⚡</div><h3>Performance-first</h3><p>Written in C++ and profiled for real-time. Systems and effects engineered to hold frame-rate in shipping builds — not just tech demos.</p></div>
-      <div class="vp reveal" data-d="1"><div class="vp__ico">🧩</div><h3>Plugins &amp; systems</h3><p>Modular C++ plugins and gameplay systems — pathfinding, ECS, runtime tools — that drop cleanly into any Unreal project.</p></div>
-      <div class="vp reveal" data-d="2"><div class="vp__ico">✦</div><h3>Advanced VFX</h3><p>Production-grade Niagara — explosions, beams, shields and environmental FX — optimized to run fast on real hardware.</p></div>
-      <div class="vp reveal"><div class="vp__ico">📄</div><h3>Documented</h3><p>Clear written docs and video walkthroughs ship with every product, so you always know how each parameter behaves.</p></div>
-      <div class="vp reveal" data-d="1"><div class="vp__ico">🎮</div><h3>UE4 &amp; UE5 ready</h3><p>Maintained across engine versions and upgraded as Unreal evolves — buy once, keep using it.</p></div>
-      <div class="vp reveal" data-d="2"><div class="vp__ico">💬</div><h3>Real support</h3><p>Answered by the developer who wrote the code — not a ticket queue. Help when you actually need it.</p></div>
-    </div>
-  </div>
-</section>
+
 
 <!-- DOCS & SUPPORT -->
 <section class="sec docs" id="docs">
@@ -300,5 +533,7 @@
 <script src="assets/image-slot.js"></script>
 <script src="assets/transition.js"></script>
 <script src="assets/company.js"></script>
+<script src="assets/navmesh.js"></script>
+<script src="assets/upgrade.js"></script>
 </body>
 </html>

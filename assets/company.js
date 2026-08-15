@@ -42,12 +42,12 @@
     {n:'AnyDetourComponent Plugin',c:'Plugins',p:'4.99',r:null,rv:0,u:'ba4574f2-4549-41a5-99ff-79cb28a8d1cb',i:['792b3e6f-ca0b-4b01-ad13-d614e512fafb','36433c29-8184-423e-9d94-ba957fcc2038']}
   ];
   const CATGRAD={
-    Combat:'linear-gradient(135deg,#ff6a3d,#ff3d8b)',
-    Weapons:'linear-gradient(135deg,#22e3ff,#9a6bff)',
-    Environment:'linear-gradient(135deg,#19d36b,#22e3ff)',
-    Character:'linear-gradient(135deg,#9a6bff,#ff3d8b)',
-    Packs:'linear-gradient(135deg,#ffcf4d,#ff6a3d)',
-    Plugins:'linear-gradient(135deg,#6478ff,#22e3ff)'
+    Combat:'linear-gradient(135deg,#7fe05a,#c8ff5e)',
+    Weapons:'linear-gradient(135deg,#2fe06a,#10c9b0)',
+    Environment:'linear-gradient(135deg,#2fe06a,#2fe06a)',
+    Character:'linear-gradient(135deg,#10c9b0,#c8ff5e)',
+    Packs:'linear-gradient(135deg,#d6f77a,#7fe05a)',
+    Plugins:'linear-gradient(135deg,#10c9b0,#2fe06a)'
   };
   const img=(p)=>MB+p.i[0]+'/'+p.i[1]+'.jpg';
   const url=(p)=>LB+p.u;
@@ -140,8 +140,8 @@
     const cv=$('#fx'); if(!cv) return;
     const ctx=cv.getContext('2d');
     let W=0,H=0,dpr=Math.min(devicePixelRatio||1,2),parts=[],t=0,raf;
-    const PAL=['rgba(34,227,255,','rgba(154,107,255,','rgba(255,61,139,'];
-    const BG='#05060b';
+    const PAL=['rgba(47,224,106,','rgba(16,201,176,','rgba(200,255,94,'];
+    const BG='#050705';
     function field(x,y){
       return (Math.sin(x*0.0021+t)+Math.cos(y*0.0026-t*0.8)+Math.sin((x+y)*0.0015+t*0.55))*Math.PI;
     }
@@ -159,7 +159,7 @@
     function step(){
       t+=0.0016;
       ctx.globalCompositeOperation='source-over';
-      ctx.fillStyle='rgba(5,6,11,0.075)'; ctx.fillRect(0,0,W,H); // trails
+      ctx.fillStyle='rgba(5,7,5,0.075)'; ctx.fillRect(0,0,W,H); // trails
       ctx.globalCompositeOperation='lighter'; ctx.lineWidth=1.15;
       for(const p of parts){
         const a=field(p.x,p.y);
