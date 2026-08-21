@@ -6,8 +6,8 @@
 
 <!-- Primary Meta -->
 <title>UEDEV — LCM Nav3D: Volumetric 3D Navigation & Unreal Engine Plugins</title>
-<meta name="description" content="UEDEV builds LCM Nav3D — true volumetric 3D navigation for Unreal Engine 5.8: sparse voxel octree pathfinding, GPU solves, 10,000+ Mass agents, server-authoritative multiplayer replication, Behaviour Tree, StateTree and Mass Entity support on PC, PS5 and Xbox — plus high-performance C++ plugins and Niagara VFX on Fab." />
-<meta name="keywords" content="LCM Nav3D, 3D navigation Unreal Engine, volumetric pathfinding, sparse voxel octree, SVO navigation, flying AI Unreal, GPU pathfinding, multiplayer navigation replication, Mass Entity crowds, StateTree, Behaviour Tree, 3D EQS, PS5, Xbox, Unreal Engine plugins, Niagara VFX, C++ game plugins, UEDEV, Charitha Madusanka" />
+<meta name="description" content="UEDEV builds LCM Nav3D — true volumetric 3D navigation for Unreal Engine 5.8: sparse voxel octree pathfinding, GPU voxelization, 10,000+ Mass agents, server-authoritative multiplayer replication, Behaviour Tree, StateTree and Mass Entity support on PC, PS5 and Xbox — plus high-performance C++ plugins and Niagara VFX on Fab." />
+<meta name="keywords" content="LCM Nav3D, 3D navigation Unreal Engine, volumetric pathfinding, sparse voxel octree, SVO navigation, flying AI Unreal, GPU voxelization, multiplayer navigation replication, Mass Entity crowds, StateTree, Behaviour Tree, 3D EQS, PS5, Xbox, Unreal Engine plugins, Niagara VFX, C++ game plugins, UEDEV, Charitha Madusanka" />
 <meta name="author" content="Charitha Madusanka" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="theme-color" content="#050705" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UEDEV" />
 <meta property="og:title" content="UEDEV — LCM Nav3D: Volumetric 3D Navigation for Unreal Engine" />
-<meta property="og:description" content="True volumetric 3D navigation for UE 5.8 — sparse voxel octree pathfinding, GPU solves, 10,000+ Mass agents, tactical 3D EQS and 6-DOF flight locomotion." />
+<meta property="og:description" content="True volumetric 3D navigation for UE 5.8 — sparse voxel octree pathfinding, GPU voxelization, 10,000+ Mass agents, tactical 3D EQS and 6-DOF flight locomotion." />
 <meta property="og:url" content="https://uedevlabs.github.io/" />
 <meta property="og:image" content="https://uedevlabs.github.io/assets/og-company.png" />
 <meta property="og:image:width" content="1200" />
@@ -31,7 +31,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="UEDEV — LCM Nav3D: Volumetric 3D Navigation for Unreal Engine" />
-<meta name="twitter:description" content="Sparse voxel octree pathfinding, GPU solves, 10,000+ Mass agents and 6-DOF flight locomotion for Unreal Engine 5.8." />
+<meta name="twitter:description" content="Sparse voxel octree pathfinding, GPU voxelization, 10,000+ Mass agents and 6-DOF flight locomotion for Unreal Engine 5.8." />
 <meta name="twitter:image" content="https://uedevlabs.github.io/assets/og-company.png" />
 
 <!-- Structured Data -->
@@ -72,11 +72,11 @@
       "softwareVersion": "2.05",
       "url": "https://uedevlabs.github.io/#nav3d",
       "image": "https://uedevlabs.github.io/assets/nav3d/banner.png",
-      "description": "True volumetric 3D navigation for Unreal Engine 5.8. Sparse voxel octree pathfinding with A*, Theta* and Lazy Theta* solvers, CPU/GPU auto dispatch, infinite chunked worlds, 10,000+ agent Mass Entity crowds, tactical 3D EQS, dynamic obstacles and 6-DOF flight and swim locomotion.",
+      "description": "True volumetric 3D navigation for Unreal Engine 5.8. Sparse voxel octree pathfinding with A*, Theta* and Lazy Theta* solvers, GPU-accelerated voxelization, infinite chunked worlds, 10,000+ agent Mass Entity crowds, tactical 3D EQS, dynamic obstacles and 6-DOF flight and swim locomotion.",
       "featureList": [
         "Sparse Voxel Octree volumetric navigation",
         "A*, Theta* and Lazy Theta* pathfinding solvers",
-        "CPU and GPU pathfinding with automatic dispatch",
+        "GPU voxelization with automatic CPU fallback",
         "Finite and infinite chunked worlds",
         "10,000+ agent Mass Entity crowds",
         "Tactical EQS generators and tests in true 3D",
@@ -168,7 +168,7 @@
         <h2 class="mega mega--sec reveal" data-d="1">LCM <em>Nav3D</em></h2>
         <p class="n3d__tag reveal" data-d="2">True volumetric 3D navigation for Unreal Engine</p>
         <div class="n3d__badges reveal" data-d="2">
-          <span>Sparse Voxel Octree</span><span>GPU pathfinding</span><span>10,000+ agents</span><span>Multiplayer replication</span><span>Blueprint &amp; C++</span>
+          <span>Sparse Voxel Octree</span><span>GPU voxelization</span><span>10,000+ agents</span><span>Multiplayer replication</span><span>Blueprint &amp; C++</span>
         </div>
       </div>
     </div>
@@ -182,7 +182,7 @@
 
     <dl class="specs reveal" data-d="2">
       <div><dt>Pathfinding</dt><dd>A* · Theta* · <em>Lazy Theta*</em></dd></div>
-      <div><dt>Compute</dt><dd>CPU / GPU <em>Auto</em></dd></div>
+      <div><dt>Compute</dt><dd>CPU · GPU solver <em>coming soon</em></dd></div>
       <div><dt>World mode</dt><dd>Finite or <em>Infinite</em> chunks</dd></div>
       <div><dt>Reflected API</dt><dd><em>517</em> symbols · 100% documented</dd></div>
     </dl>
@@ -193,7 +193,7 @@
           <li class="reveal"><span class="n">01</span><span><b>Sparse Voxel Octree</b><span>The level's empty air is subdivided only where geometry exists — one node covers open sky, so cost tracks clutter, not level size. Drop a single <code>LcmNavigationManagerSVO</code> per level and it owns the octree, the pathfinder and every query.</span></span></li>
           <li class="reveal" data-d="1"><span class="n">02</span><span><b>Three solvers, three smoothing modes</b><span>A* for raw throughput, Theta* for true any-angle routes, Lazy Theta* for near-Theta* quality at near-A* cost. Then Raw, Linear Shortcut or Curved Spline smoothing — validated against geometry, so a smoothed path never cuts a wall.</span></span></li>
           <li class="reveal" data-d="2"><span class="n">03</span><span><b>Macro / micro routing &amp; infinite worlds</b><span>Long routes solve coarsely across chunks, then finely within them. Finite worlds build once at BeginPlay; infinite worlds stream chunks around agents and throw them away behind.</span></span></li>
-          <li class="reveal" data-d="3"><span class="n">04</span><span><b>10,000+ agents through Mass ECS</b><span>Two crowd modes: per-agent GPU pathfinding via the Nav3D Agent trait, or one shared CPU flow field sampled O(1) by an entire swarm. Three auto-registered processors run request → solve → steer; you never call the solver.</span></span></li>
+          <li class="reveal" data-d="3"><span class="n">04</span><span><b>10,000+ agents through Mass ECS</b><span>Two crowd modes: per-agent asynchronous pathfinding via the Nav3D Agent trait, or one shared CPU flow field sampled O(1) by an entire swarm. Three auto-registered processors run request → solve → steer; you never call the solver. A per-agent GPU solver is in experimental validation — coming as a free update.</span></span></li>
           <li class="reveal" data-d="4"><span class="n">05</span><span><b>Tactical EQS in true 3D</b><span>Generators and tests that score real volume — volumetric line-of-sight, cover, threat exposure, height advantage and true path distance — so a sniper perch is chosen in 3D, not on a floor plane.</span></span></li>
           <li class="reveal" data-d="4"><span class="n">06</span><span><b>6-DOF flight &amp; swim locomotion</b><span>Navigation gives guidance; <code>LcmFlightMovementComponent</code> turns it into a body. Multirotor, Bird, Fish and Generic 6-DOF archetypes with thrust, lift, drag, buoyancy and attitude PID — plus an animation-drive struct for blendspaces.</span></span></li>
           <li class="reveal" data-d="4"><span class="n">07</span><span><b>Server-authoritative multiplayer replication</b><span>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>; moving obstacles replay their nav footprint to every peer over a multicast. A headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths, and CPU compute stays bit-deterministic for replays and lockstep.</span></span></li>
@@ -233,7 +233,7 @@
       <div class="ai3d__c reveal" data-d="2">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="2.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="2.5" y="16.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="16.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="16.5" width="5" height="5" rx="1"></rect></svg>
         <h4>Mass Entity</h4>
-        <p>Two ECS traits — per-agent GPU pathfinding or a shared flow field — with three auto-registered processors driving request, solve and steering for 10,000+ entities.</p>
+        <p>Two ECS traits — per-agent pathfinding or a shared flow field — with three auto-registered processors driving request, solve and steering for 10,000+ entities.</p>
       </div>
       <div class="ai3d__more reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
@@ -274,7 +274,7 @@
       <div class="road__grid">
         <div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 1 8-8"></path><path d="m12 12 4.5-3.5"></path><path d="M12 20h8"></path></svg>
-          <div><b>Deeper performance work</b><p>Further profiling passes across voxelization, solve and steering to widen the frame budget headroom at crowd scale.</p></div>
+          <div><b>GPU path solving <span style="color:var(--faint);font-weight:400">· experimental</span></b><p>A per-agent GPU path solver and GPU flow field — currently in experimental validation through our research programme — plus further profiling to widen frame-budget headroom at crowd scale.</p></div>
         </div>
         <div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"></circle><circle cx="5" cy="18.5" r="2.4"></circle><circle cx="19" cy="18.5" r="2.4"></circle><path d="M12 7.4v3.2M10.4 12.6 6.6 16.6M13.6 12.6l3.8 4M7.4 18.5h9.2"></path></svg>
@@ -320,7 +320,7 @@
     <h2 class="capsTitle reveal">Capabilities</h2>
     <p class="capsLead reveal" data-d="1">What UEDEV builds for Unreal teams — from navigation and AI down through the effects layer.</p>
     <div class="caps__list">
-      <div class="cap reveal"><div class="cap__n">01</div><div><h3 class="cap__t">Volumetric 3D Navigation</h3><p class="cap__d">LCM Nav3D — sparse voxel octree pathfinding with GPU solves, Mass crowds and true-3D tactical queries for flying and swimming agents.</p></div></div>
+      <div class="cap reveal"><div class="cap__n">01</div><div><h3 class="cap__t">Volumetric 3D Navigation</h3><p class="cap__d">LCM Nav3D — sparse voxel octree pathfinding with GPU voxelization, Mass crowds and true-3D tactical queries for flying and swimming agents.</p></div></div>
       <div class="cap reveal" data-d="1"><div class="cap__n">02</div><div><h3 class="cap__t">Game AI</h3><p class="cap__d">Behaviour trees, detour steering and decision systems that stay smooth as agent counts climb.</p></div></div>
       <div class="cap reveal" data-d="2"><div class="cap__n">03</div><div><h3 class="cap__t">Gameplay Systems</h3><p class="cap__d">Combat, physics and runtime ECS architectures written in C++ for shipping-grade performance.</p></div></div>
       <div class="cap reveal" data-d="3"><div class="cap__n">04</div><div><h3 class="cap__t">Real-time VFX</h3><p class="cap__d">Production-grade Niagara effects — explosions, beams, shields and environments — profiled to hold frame budget.</p></div></div>
