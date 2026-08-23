@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Primary Meta -->
+<title>3D Pathfinding for Unreal Engine 5 — LCM Nav3D Plugin</title>
+<meta name="description" content="True 3D pathfinding for Unreal Engine 5: a sparse voxel octree navmesh for flying AI, drones and underwater agents. Behaviour Tree, StateTree, Mass, MP." />
+<meta name="author" content="Charitha Madusanka" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="theme-color" content="#050705" />
+<link rel="canonical" href="https://uedevlabs.github.io/unreal-engine-3d-pathfinding/" />
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../assets/og-company.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="UEDEV" />
+<meta property="og:title" content="3D Pathfinding for Unreal Engine 5 — LCM Nav3D Plugin" />
+<meta property="og:description" content="True volumetric 3D pathfinding for UE5: sparse voxel octree navigation for flying AI, drones and underwater agents, with 10,000+ Mass agents and multiplayer replication." />
+<meta property="og:url" content="https://uedevlabs.github.io/unreal-engine-3d-pathfinding/" />
+<meta property="og:image" content="https://uedevlabs.github.io/assets/nav3d/banner.png" />
+<meta property="og:image:alt" content="LCM Nav3D — 3D pathfinding for Unreal Engine 5." />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="3D Pathfinding for Unreal Engine 5 — LCM Nav3D Plugin" />
+<meta name="twitter:description" content="Sparse voxel octree pathfinding for flying AI, drones and underwater agents in Unreal Engine 5." />
+<meta name="twitter:image" content="https://uedevlabs.github.io/assets/nav3d/banner.png" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "UEDEV", "item": "https://uedevlabs.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "3D Pathfinding for Unreal Engine 5", "item": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/" }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/#software",
+      "name": "LCM Nav3D",
+      "alternateName": "LCM Nav3D — 3D Pathfinding and Volumetric Navigation for Unreal Engine 5",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "Unreal Engine plugin",
+      "operatingSystem": "Windows, PlayStation 5, Xbox Series X|S",
+      "softwareVersion": "2.05",
+      "softwareRequirements": "Unreal Engine 5.8",
+      "url": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/",
+      "downloadUrl": "https://www.fab.com/sellers/UEDEV",
+      "image": "https://uedevlabs.github.io/assets/nav3d/banner.png",
+      "description": "True 3D pathfinding for Unreal Engine 5. A sparse voxel octree navigation volume with A*, Theta* and Lazy Theta* solvers for flying AI, drones, spaceships and underwater agents, plus 10,000+ agent Mass Entity crowds, tactical 3D EQS, dynamic obstacles, 6-DOF flight locomotion and server-authoritative multiplayer replication.",
+      "featureList": [
+        "Sparse Voxel Octree volumetric navigation for full 3D pathfinding",
+        "A*, Theta* and Lazy Theta* pathfinding solvers",
+        "Raw, Linear Shortcut and Curved Spline path smoothing",
+        "GPU voxelization with automatic CPU fallback",
+        "Finite and infinite chunked worlds with macro/micro routing",
+        "10,000+ agent Mass Entity crowds",
+        "Tactical EQS generators and tests in true 3D",
+        "Server-authoritative multiplayer replication",
+        "Behaviour Tree, StateTree and Mass Entity support",
+        "Dynamic obstacle restamping",
+        "6-DOF flight and swim locomotion",
+        "Hybrid Recast and SVO navigation"
+      ],
+      "author": { "@type": "Person", "name": "Charitha Madusanka", "url": "https://uedevlabs.github.io/portfolio.html" },
+      "publisher": { "@type": "Organization", "name": "UEDEV", "url": "https://uedevlabs.github.io/" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "LCM Nav3D — True Volumetric 3D Navigation for Unreal Engine 5",
+      "description": "Showcase trailer for LCM Nav3D, a 3D pathfinding and volumetric navigation plugin for Unreal Engine 5: sparse voxel octree navigation, flying AI, Mass Entity crowds and tactical 3D EQS.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/7_F3AvgQIQU/maxresdefault.jpg",
+      "uploadDate": "2026-06-08",
+      "contentUrl": "https://www.youtube.com/watch?v=7_F3AvgQIQU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/7_F3AvgQIQU",
+      "publisher": { "@type": "Organization", "name": "UEDEV", "url": "https://uedevlabs.github.io/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Unreal Engine 5 support 3D pathfinding out of the box?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Unreal Engine 5 ships with Recast, which builds a navmesh of walkable surfaces. It is a 2.5D representation designed for characters that stand on the ground, so a flying, swimming or space-borne agent has nothing to path along. LCM Nav3D adds a true volumetric navigation representation that treats open air and water as navigable space, giving Unreal Engine 5 real 3D pathfinding." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a Recast navmesh and volumetric 3D navigation?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Recast navmesh describes surfaces you can stand on: it flattens a level into walkable polygons. Volumetric navigation describes the empty space you can move through. LCM Nav3D carves the playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky is stored cheaply as a few large nodes while detail appears only where geometry actually is." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I make flying AI in Unreal Engine 5?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Add an LcmNavigationManagerSVO actor to the level so it can build the navigation octree, give the AI pawn an LcmFlightMovementComponent for 6-DOF flight, then drive it from a Behaviour Tree FlyTo task, a StateTree task or a Mass Entity trait. The plugin handles the pathfinding request, the solve and the steering; you author the behaviour." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does LCM Nav3D work with Behaviour Trees, StateTree and Mass Entity?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — all three. It ships drop-in Behaviour Tree tasks, decorators and services such as FlyTo and line-of-sight checks, the same flight behaviour authored as StateTree tasks, and two Mass Entity traits with three auto-registered processors for large crowds. All three surfaces read the same navigation data." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many AI agents can LCM Nav3D handle?",
+          "acceptedAnswer": { "@type": "Answer", "text": "10,000 or more through Mass Entity. There are two crowd modes: per-agent asynchronous pathfinding via the Nav3D Agent trait, or a single shared CPU flow field that an entire swarm samples in constant time. A per-agent GPU solver is in experimental validation and ships as a free update." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does 3D pathfinding work in multiplayer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Replication is server-authoritative: clients request a route, the server solves it and delivers it back through Client_DeliverPath, and moving obstacles replay their navigation footprint to every peer over a multicast. CPU compute stays bit-deterministic, which makes replays and lockstep viable, and a headless validation suite exercises the replicated paths." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Unreal Engine versions and platforms are supported?",
+          "acceptedAnswer": { "@type": "Answer", "text": "LCM Nav3D 2.05 targets Unreal Engine 5.8 and is shipping-ready on Windows PC, PlayStation 5 and Xbox Series X|S. Nintendo Switch support is in progress. Check the Fab listing for the current engine compatibility list." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need C++, or does it work with Blueprints?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It works from Blueprints. The plugin is written in C++ for performance but exposes 517 reflected symbols to Blueprint, every one of them documented with a tooltip, so a full flying AI can be built without writing code. The C++ API is available when you want it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it handle moving or dynamic obstacles?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors, and the change is replicated to clients in multiplayer sessions." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free demo of LCM Nav3D?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A free playable demo is available on itch.io, and the full plugin is sold on the Fab marketplace." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/company.css" />
+<link rel="stylesheet" href="../assets/upgrade.css" />
+<style>
+  /* Scoped layer for this article page — deliberately no .reveal, so every word
+     renders without JavaScript for crawlers and for no-JS visitors. */
+  .lp{padding-top:120px}
+  .lp .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+  .crumb{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:22px}
+  .crumb a{color:var(--faint)}.crumb a:hover{color:var(--cyan)}
+  .lp h1{font-size:clamp(34px,5.4vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1.03;margin:0 0 20px}
+  .lp h1 em{font-style:normal;background:linear-gradient(120deg,var(--cyan),var(--violet) 60%,var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lp h2{font-size:clamp(26px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:0 0 16px}
+  .lp h3{font-size:clamp(18px,1.9vw,23px);font-weight:700;letter-spacing:-.01em;margin:28px 0 8px}
+  .lp .lede{font-size:clamp(17px,1.7vw,21px);line-height:1.6;color:var(--muted);max-width:820px;margin:0 0 26px}
+  .lp .lede em{font-style:italic;color:var(--ink);padding-right:.09em}
+  .lp section[id],.lp #faq,#cta{scroll-margin-top:96px}
+  .lp p{line-height:1.72;color:var(--muted);max-width:820px}
+  .lp section{margin:0 0 78px}
+  .lp section > p{margin:0 0 16px}
+  .lp .kicker{display:block;margin-bottom:12px}
+  .lp strong{color:var(--ink);font-weight:600}
+  .lp a.ln{color:var(--cyan);border-bottom:1px solid rgba(47,224,106,.35)}
+  .lp a.ln:hover{border-bottom-color:var(--cyan)}
+  .lp code{font-family:var(--mono);font-size:.9em;color:var(--ink);background:rgba(255,255,255,.06);padding:2px 6px;border-radius:5px}
+  .lp ul.tick{list-style:none;padding:0;margin:0 0 16px;max-width:820px}
+  .lp ul.tick li{position:relative;padding:0 0 0 26px;margin-bottom:11px;line-height:1.65;color:var(--muted)}
+  .lp ul.tick li::before{content:'';position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:2px;background:linear-gradient(135deg,var(--cyan),var(--violet))}
+  .tbl{width:100%;border-collapse:collapse;margin:6px 0 8px;font-size:15px;border-radius:14px;border:1px solid var(--line)}
+  .tbl caption{caption-side:bottom;text-align:left;color:var(--faint);font-size:13px;padding-top:12px}
+  .tbl th,.tbl td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+  .tbl thead th{background:rgba(255,255,255,.045);color:var(--ink);font-weight:700;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase}
+  .tbl tbody th{color:var(--ink);font-weight:600}
+  .tbl td{color:var(--muted)}
+  .tbl tr:last-child th,.tbl tr:last-child td{border-bottom:0}
+  .tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:8px}
+  .ucase{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:8px}
+  .ucase div{border:1px solid var(--line);border-radius:16px;padding:22px;background:rgba(255,255,255,.02)}
+  .ucase b{display:block;color:var(--ink);font-size:16px;margin-bottom:7px}
+  .ucase span{color:var(--muted);font-size:14.5px;line-height:1.6}
+  .steps{list-style:none;counter-reset:s;padding:0;margin:0;max-width:860px}
+  .steps li{counter-increment:s;position:relative;padding:0 0 0 54px;margin-bottom:24px}
+  .steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:-2px;font-family:var(--mono);font-size:15px;font-weight:700;color:var(--cyan)}
+  .steps b{display:block;color:var(--ink);font-size:17px;margin-bottom:5px}
+  .steps span{color:var(--muted);line-height:1.65}
+  .faq details{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:rgba(255,255,255,.02)}
+  .faq summary{cursor:pointer;padding:18px 22px;font-weight:600;color:var(--ink);font-size:16.5px;list-style:none;line-height:1.45}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';float:right;color:var(--cyan);font-weight:400;font-size:22px;line-height:1;margin-left:14px}
+  .faq details[open] summary::after{content:'\2212'}
+  .faq details[open] summary{border-bottom:1px solid var(--line)}
+  .faq details > div{padding:16px 22px 20px}
+  .faq details > div p{margin:0}
+  .lpvid{position:relative;width:100%;max-width:920px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin:0 0 12px}
+  .lpvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .lp .hero__row{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 0}
+  @media(max-width:860px){.lp{padding-top:96px}.lp .wrap{padding:0 24px}}
+  @media(max-width:560px){.lp .wrap{padding:0 16px}}
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<div class="grid-overlay"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a href="../" class="brand"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+    <nav class="nav__links">
+      <a href="../#nav3d">LCM Nav3D</a>
+      <a href="#how">How it works</a>
+      <a href="#use-cases">Use cases</a>
+      <a href="#quick-start">Quick start</a>
+      <a href="#faq">FAQ</a>
+      <a href="../portfolio.html">Developer</a>
+    </nav>
+    <a href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener" class="nav__cta">Get it on Fab ↗</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="lp">
+<article>
+  <div class="wrap">
+
+    <p class="crumb"><a href="../">UEDEV</a> &nbsp;/&nbsp; 3D Pathfinding for Unreal Engine 5</p>
+
+    <header>
+      <span class="kicker">LCM Nav3D · v2.05 · Unreal Engine 5.8</span>
+      <h1>True <em>3D pathfinding</em> for Unreal Engine 5</h1>
+      <p class="lede">Unreal Engine's built-in Recast navmesh can only answer one question: <em>where can I stand?</em> LCM Nav3D answers the one that flying AI actually needs — <em>where is there empty air?</em> It is a volumetric 3D navigation and pathfinding plugin for UE5 that turns the whole playable volume into a Sparse Voxel Octree, so drones, dragons, spaceships, helicopters, birds and underwater agents path through real 3D space instead of along a floor.</p>
+      <div class="hero__row">
+        <a class="btn btn--glow" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Get LCM Nav3D on Fab</a>
+        <a class="btn btn--ghost" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">Try the free demo</a>
+        <a class="btn btn--ghost" href="../portfolio.html#contact">Talk to the developer</a>
+      </div>
+    </header>
+
+    <section id="trailer" style="margin-top:64px">
+      <h2>See 3D pathfinding running in UE5</h2>
+      <p>A showcase of volumetric navigation, flying AI pathfinding, Mass Entity crowds and tactical 3D EQS inside Unreal Engine 5.</p>
+      <div class="lpvid">
+        <iframe src="https://www.youtube-nocookie.com/embed/7_F3AvgQIQU" title="LCM Nav3D — 3D Pathfinding for Unreal Engine 5, showcase trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </section>
+
+    <section id="why">
+      <h2>Why Unreal Engine's navmesh can't do 3D pathfinding</h2>
+      <p>Recast, the navigation system that ships with Unreal Engine 5, voxelizes your level and then extracts the <strong>walkable surfaces</strong> from it — the result is a set of polygons draped over the floor. That is exactly the right representation for a soldier, and completely the wrong one for a dragon. A flying AI has no floor to walk on, so a Recast navmesh gives it nothing to query.</p>
+      <p>The usual workarounds all leak. Raycast-and-steer looks fine in an open field and gets stuck the moment there is a concave building. Hand-placed waypoint graphs are expensive to author and go stale the instant a level artist moves a wall. Stacking navmeshes at several altitudes turns 3D navigation into a set of disconnected 2D floors, and still can't route diagonally through a shaft.</p>
+      <p>Volumetric navigation solves it properly by inverting the question. Instead of storing where geometry <em>is</em>, LCM Nav3D stores where it <em>isn't</em>, in a Sparse Voxel Octree — and pathfinds through that empty volume in full 3D.</p>
+
+      <div class="tblwrap">
+      <table class="tbl">
+        <caption>Recast navmesh vs. LCM Nav3D volumetric navigation in Unreal Engine 5.</caption>
+        <thead><tr><th scope="col">&nbsp;</th><th scope="col">UE5 Recast navmesh</th><th scope="col">LCM Nav3D (SVO)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">What it stores</th><td>Walkable surfaces — polygons on the floor</td><td>Navigable volume — the empty air and water</td></tr>
+          <tr><th scope="row">Dimensionality</th><td>2.5D: a surface with height offsets</td><td>True 3D: any point in the playable volume</td></tr>
+          <tr><th scope="row">Suits</th><td>Humanoids, vehicles, ground crowds</td><td>Flying AI, drones, spaceships, submarines, insects</td></tr>
+          <tr><th scope="row">Vertical movement</th><td>Nav links, jumps, stacked meshes</td><td>Native — up, down and diagonal are the same query</td></tr>
+          <tr><th scope="row">Cost profile</th><td>Scales with floor area</td><td>Scales with clutter, not level size — open sky is a few large nodes</td></tr>
+          <tr><th scope="row">Solvers</th><td>A* over polygons</td><td>A*, Theta* and Lazy Theta* over octree nodes</td></tr>
+          <tr><th scope="row">Crowd scale</th><td>Detour crowd manager</td><td>10,000+ agents via Mass Entity, per-agent or shared flow field</td></tr>
+          <tr><th scope="row">Can they coexist?</th><td colspan="2">Yes — run hybrid levels where ground troops use Recast and air units use the SVO.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="how">
+      <span class="kicker">Under the hood</span>
+      <h2>How volumetric 3D pathfinding works</h2>
+
+      <h3>A Sparse Voxel Octree of the empty space</h3>
+      <p>Drop a single <code>LcmNavigationManagerSVO</code> actor into the level and it owns the octree, the pathfinder and every query. The manager subdivides the playable volume only where geometry actually exists: a wide-open sky becomes a handful of large nodes, while a cluttered hangar interior subdivides down to the minimum voxel size. Cost therefore tracks how busy your level is rather than how big it is. Voxelization runs on the GPU with an automatic CPU fallback, and the defaults — a 100&nbsp;cm minimum voxel inside a 200&nbsp;m world cube — are tuned to be sane on a first build.</p>
+
+      <h3>Three pathfinding solvers, three smoothing modes</h3>
+      <p>Pick the trade-off that fits the agent: <strong>A*</strong> for raw throughput, <strong>Theta*</strong> for true any-angle routes that cut the corners a grid would force you around, and <strong>Lazy Theta*</strong> for near-Theta* path quality at close to A* cost. Then choose smoothing — Raw, Linear Shortcut or Curved Spline — each validated against level geometry, so a smoothed path never slices through a wall.</p>
+
+      <h3>Macro / micro routing and infinite worlds</h3>
+      <p>Long-distance routes solve coarsely across chunks first, then finely within them, which keeps a cross-map flight from paying full-resolution search cost end to end. Finite worlds build their octree once at <code>BeginPlay</code>; infinite worlds stream chunks in around agents and discard them behind, so open-world 3D navigation in UE5 stays inside a fixed memory budget.</p>
+
+      <h3>Dynamic obstacles that restamp</h3>
+      <p>Moving geometry writes its own footprint back into the octree as it travels, so lifts, blast doors, destructible cover and patrolling capital ships all change routing live — and in multiplayer that change is multicast to every peer.</p>
+    </section>
+
+    <section id="use-cases">
+      <span class="kicker">What you can build</span>
+      <h2>Flying AI, drones, submarines and space combat</h2>
+      <p>Anything that moves through a volume rather than across a surface is a candidate for 3D pathfinding in Unreal Engine 5:</p>
+      <div class="ucase">
+        <div><b>Flying AI and dragons</b><span>Aerial predators that dive between towers, circle for an approach and land — with 6-DOF flight locomotion driving the body, not just the route.</span></div>
+        <div><b>Drone and helicopter AI</b><span>Multirotor archetypes with thrust, lift, drag and attitude PID, so a drone banks into its turns instead of sliding along a spline.</span></div>
+        <div><b>Space and dogfight combat</b><span>No up, no floor, no gravity — the octree treats a debris field or asteroid belt as ordinary navigable volume.</span></div>
+        <div><b>Underwater and swim navigation</b><span>Fish archetypes with buoyancy for shoals, submarines and sea creatures routing around reefs and wrecks.</span></div>
+        <div><b>Insect and creature swarms</b><span>10,000+ Mass Entity agents sampling a shared flow field for bats, drone swarms and locusts at frame budget.</span></div>
+        <div><b>Vertical and interior levels</b><span>Shafts, atriums, scaffolding and multi-storey interiors where stacked 2D navmeshes fall apart.</span></div>
+      </div>
+    </section>
+
+    <section id="ai-systems">
+      <h2>Works with every Unreal Engine AI system</h2>
+      <p>Whichever way your team authors behaviour, the same navigation data is available through three surfaces:</p>
+      <ul class="tick">
+        <li><strong>Behaviour Tree</strong> — drop-in tasks, decorators and services including <code>FlyTo</code>, line-of-sight and chunk-loaded checks, with seven documented stock-node patterns showing where an LCM node earns its place over an engine one.</li>
+        <li><strong>StateTree</strong> — the identical flight behaviour authored as StateTree tasks, so state-driven agents get the same routing with no Behaviour Tree in the stack.</li>
+        <li><strong>Mass Entity (ECS)</strong> — two traits, per-agent asynchronous pathfinding or a shared CPU flow field sampled in O(1) by an entire swarm, driven by three auto-registered processors for request, solve and steer. You never call the solver yourself.</li>
+        <li><strong>Tactical 3D EQS</strong> — generators and tests that score real volume: volumetric line-of-sight, cover, threat exposure, height advantage and true path distance, so a sniper perch is chosen in 3D rather than on a floor plane.</li>
+        <li><strong>AI Perception and the Gameplay Debugger</strong> — threat tracking, nav links, area modifiers and a live in-editor debugger for inspecting the octree and solved routes.</li>
+      </ul>
+      <p>Everything is exposed to Blueprint: <strong>517 reflected symbols</strong>, every one carrying a tooltip, so a complete flying AI can be built without opening Visual Studio. The C++ API is there when you want it.</p>
+    </section>
+
+    <section id="multiplayer">
+      <h2>Server-authoritative multiplayer 3D navigation</h2>
+      <p>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles replay their navigation footprint to every peer over a multicast. CPU compute is bit-deterministic, which keeps replays and lockstep viable, and a headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths so regressions surface in CI rather than in a playtest.</p>
+      <p>Shipping-ready on <strong>Windows PC, PlayStation 5 and Xbox Series X|S</strong>, with the C++ core held to the same standard on every target. Nintendo Switch support is in progress.</p>
+    </section>
+
+    <section id="quick-start">
+      <span class="kicker">Getting started</span>
+      <h2>Adding 3D pathfinding to a UE5 project</h2>
+      <ol class="steps">
+        <li><b>Install the plugin</b><span>Add LCM Nav3D from Fab to your Unreal Engine 5.8 project and enable it in the plugin browser. Installation is chapter 1 of the manual.</span></li>
+        <li><b>Place the navigation manager</b><span>Drop one <code>LcmNavigationManagerSVO</code> into the level and set the world bounds and minimum voxel size. It builds the Sparse Voxel Octree and owns every navigation query from then on.</span></li>
+        <li><b>Give the agent a body</b><span>Add <code>LcmFlightMovementComponent</code> to the pawn and pick an archetype — Multirotor, Bird, Fish or Generic 6-DOF — then tune thrust, lift, drag, buoyancy and the attitude PID. An animation-drive struct feeds your blendspaces.</span></li>
+        <li><b>Author the behaviour</b><span>Use the <code>FlyTo</code> Behaviour Tree task, the equivalent StateTree task, or a Mass trait for crowds. Chapter 3 of the manual walks through a first flying agent end to end.</span></li>
+        <li><b>Scale up</b><span>Add dynamic obstacles, tactical 3D EQS queries, hybrid Recast levels for ground units, and switch to infinite chunked worlds when the map outgrows a single volume.</span></li>
+      </ol>
+      <p style="margin-top:24px">Documentation is a <strong>128-page manual across 17 chapters</strong>, not a plugin dump: every setting is listed with its verified default and limits, and every reflected symbol is documented. <a class="ln" href="../#docs">See the documentation overview →</a></p>
+    </section>
+
+    <section id="specs">
+      <h2>Specifications</h2>
+      <div class="tblwrap">
+      <table class="tbl">
+        <tbody>
+          <tr><th scope="row">Plugin</th><td>LCM Nav3D, version 2.05</td></tr>
+          <tr><th scope="row">Engine</th><td>Unreal Engine 5.8</td></tr>
+          <tr><th scope="row">Navigation</th><td>Sparse Voxel Octree volumetric navigation, hybrid with Recast</td></tr>
+          <tr><th scope="row">Pathfinding</th><td>A* · Theta* · Lazy Theta*</td></tr>
+          <tr><th scope="row">Smoothing</th><td>Raw · Linear Shortcut · Curved Spline, geometry-validated</td></tr>
+          <tr><th scope="row">Voxelization</th><td>GPU with automatic CPU fallback</td></tr>
+          <tr><th scope="row">World mode</th><td>Finite, or infinite streaming chunks</td></tr>
+          <tr><th scope="row">Crowds</th><td>10,000+ agents via Mass Entity (per-agent or shared flow field)</td></tr>
+          <tr><th scope="row">Locomotion</th><td>6-DOF flight and swim — Multirotor, Bird, Fish, Generic</td></tr>
+          <tr><th scope="row">Networking</th><td>Server-authoritative replication, bit-deterministic CPU compute</td></tr>
+          <tr><th scope="row">Scripting</th><td>Blueprint and C++ — 517 reflected symbols, 100% documented</td></tr>
+          <tr><th scope="row">Platforms</th><td>Windows PC · PlayStation 5 · Xbox Series X|S (Switch in progress)</td></tr>
+          <tr><th scope="row">Defaults</th><td>100&nbsp;cm minimum voxel · 200&nbsp;m world cube</td></tr>
+          <tr><th scope="row">Where to get it</th><td><a class="ln" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Fab marketplace</a> · <a class="ln" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">free demo on itch.io</a></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <span class="kicker">FAQ</span>
+      <h2>3D pathfinding in Unreal Engine 5 — common questions</h2>
+
+      <details open><summary>Does Unreal Engine 5 support 3D pathfinding out of the box?</summary><div><p>No. UE5 ships with Recast, which builds a navmesh of walkable surfaces — a 2.5D representation designed for characters that stand on the ground. A flying, swimming or space-borne agent has nothing to path along. LCM Nav3D adds a true volumetric representation that treats open air and water as navigable space, giving Unreal Engine 5 real 3D pathfinding.</p></div></details>
+
+      <details><summary>What is the difference between a Recast navmesh and volumetric 3D navigation?</summary><div><p>A Recast navmesh describes surfaces you can stand on; it flattens a level into walkable polygons. Volumetric navigation describes the empty space you can move through. LCM Nav3D carves the playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky is stored cheaply as a few large nodes while detail appears only where geometry actually is.</p></div></details>
+
+      <details><summary>How do I make flying AI in Unreal Engine 5?</summary><div><p>Add an <code>LcmNavigationManagerSVO</code> actor so the level can build its navigation octree, give the AI pawn an <code>LcmFlightMovementComponent</code> for 6-DOF flight, then drive it from a Behaviour Tree <code>FlyTo</code> task, a StateTree task or a Mass Entity trait. The plugin handles the request, the solve and the steering; you author the behaviour.</p></div></details>
+
+      <details><summary>Does LCM Nav3D work with Behaviour Trees, StateTree and Mass Entity?</summary><div><p>Yes — all three, reading the same navigation data. It ships drop-in Behaviour Tree tasks, decorators and services, the same flight behaviour authored as StateTree tasks, and two Mass Entity traits with three auto-registered processors for large crowds.</p></div></details>
+
+      <details><summary>How many AI agents can it handle?</summary><div><p>10,000 or more through Mass Entity. Two crowd modes are available: per-agent asynchronous pathfinding via the Nav3D Agent trait, or a single shared CPU flow field that an entire swarm samples in constant time. A per-agent GPU solver is in experimental validation and ships as a free update.</p></div></details>
+
+      <details><summary>Does 3D pathfinding work in multiplayer?</summary><div><p>Yes, server-authoritatively. Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles multicast their navigation footprint. CPU compute stays bit-deterministic for replays and lockstep, and a headless validation suite exercises the replicated paths.</p></div></details>
+
+      <details><summary>Which Unreal Engine versions and platforms are supported?</summary><div><p>LCM Nav3D 2.05 targets Unreal Engine 5.8 and is shipping-ready on Windows PC, PlayStation 5 and Xbox Series X|S. Nintendo Switch support is in progress. Check the <a class="ln" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Fab listing</a> for the current engine compatibility list.</p></div></details>
+
+      <details><summary>Do I need C++, or does it work with Blueprints?</summary><div><p>It works from Blueprints. The plugin is C++ for performance but exposes 517 reflected symbols to Blueprint, every one documented with a tooltip, so a full flying AI can be built without writing code. The C++ API is available when you want it.</p></div></details>
+
+      <details><summary>Can it handle moving or dynamic obstacles?</summary><div><p>Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors — and the change replicates to clients in multiplayer.</p></div></details>
+
+      <details><summary>Is there a free demo?</summary><div><p>Yes — a free playable demo is on <a class="ln" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">itch.io</a>, and the full plugin is sold on <a class="ln" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Fab</a>.</p></div></details>
+    </section>
+
+  </div>
+</article>
+</main>
+
+<!-- CTA -->
+<section class="cta wrap" id="cta">
+  <h2>Give your AI the <span class="grad">whole sky.</span></h2>
+  <p>LCM Nav3D — true 3D pathfinding and volumetric navigation for Unreal Engine 5, built and supported by a working game developer.</p>
+  <div class="hero__row">
+    <a class="btn btn--primary" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Get LCM Nav3D on Fab ↗</a>
+    <a class="btn btn--ghost" href="../portfolio.html#contact">Contact the developer →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <div class="footer__col" style="max-width:280px">
+        <a href="../" class="brand" style="margin-bottom:14px"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+        <p style="color:var(--faint);font-size:14px;line-height:1.6;margin:0">High-performance plugins, gameplay systems &amp; advanced VFX for Unreal Engine. Built and supported by a working game developer.</p>
+      </div>
+      <div class="footer__col">
+        <h4>LCM Nav3D</h4>
+        <a href="#how">How it works</a>
+        <a href="#use-cases">Use cases</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Store</h4>
+        <a href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Browse on Fab</a>
+        <a href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">Free demo</a>
+        <a href="https://www.youtube.com/@experimentdev3935" target="_blank" rel="noopener">Video tutorials</a>
+      </div>
+      <div class="footer__col">
+        <h4>Developer</h4>
+        <a href="../">UEDEV home</a>
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../portfolio.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2018–2026 UEDEV · Charitha Madusanka</span>
+      <span class="mono">Unreal Engine · 3D Navigation · Niagara</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'), b=nav&&nav.querySelector('.burger');
+  if(b){b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});}
+  addEventListener('scroll',function(){if(nav)nav.classList.toggle('scrolled',scrollY>10);},{passive:true});
+})();
+</script>
+</body>
+</html>

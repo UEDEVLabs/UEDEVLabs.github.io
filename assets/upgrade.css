@@ -30,7 +30,7 @@
 .heroX__sub{font-size:clamp(19px,2.9vw,44px);font-weight:600;letter-spacing:-.02em;color:var(--ink);line-height:1.05}
 .heroX__sub em{font-style:normal;background:linear-gradient(110deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
 .heroX__bar{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;padding-bottom:26px}
-.heroX__bar p{margin:0;max-width:290px;color:#c2cfc6;font-size:clamp(12px,1.35vw,17px);font-weight:300;text-transform:uppercase;letter-spacing:.06em;line-height:1.35}
+.heroX__bar p,.heroX__bar h1{margin:0;max-width:290px;color:#c2cfc6;font-size:clamp(12px,1.35vw,17px);font-weight:300;text-transform:uppercase;letter-spacing:.06em;line-height:1.35}
 .btn--glow{background:linear-gradient(123deg,#0d1a2b 5%,var(--cyan) 34%,var(--violet) 70%,var(--magenta) 100%);color:#041208;font-weight:700;
   box-shadow:0 4px 4px rgba(47,224,106,.22),4px 4px 14px rgba(16,201,176,.55) inset;outline:2px solid rgba(255,255,255,.9);outline-offset:-3px}
 .btn--glow:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(16,201,176,.5)}
@@ -237,7 +237,7 @@ html.no-anim .chars span{opacity:1}
 @media(max-width:600px){
   .heroX{padding:88px 16px 0}
   .heroX__bar{flex-direction:column;align-items:flex-start;gap:18px;padding-bottom:20px}
-  .heroX__bar p{max-width:100%}
+  .heroX__bar p,.heroX__bar h1{max-width:100%}
   .heroX__bar .btn{width:100%;justify-content:center}
   .announce{font-size:10.5px;padding:7px 7px 7px 13px;gap:9px}
   .announce .tag{font-size:9px;padding:4px 9px}

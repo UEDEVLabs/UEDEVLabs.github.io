@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /archive/
+Disallow: /uploads/
 
 Sitemap: https://uedevlabs.github.io/sitemap.xml
