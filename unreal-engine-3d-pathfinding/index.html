@@ -7,7 +7,7 @@
 <!-- Primary Meta -->
 <title>3D Pathfinding for Unreal Engine 5 — LCM 3D Navigation AI</title>
 <meta name="description" content="True 3D pathfinding for Unreal Engine 5 with infinite streaming worlds — not just a bounds volume. Flying AI, 6-DOF flight, Mass crowds, multiplayer." />
-<meta name="author" content="Charitha Madusanka" />
+<meta name="author" content="L. Charitha Madhushanka" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="theme-color" content="#050705" />
 <link rel="canonical" href="https://uedevlabs.github.io/unreal-engine-3d-pathfinding/" />
@@ -67,7 +67,7 @@
       "applicationSubCategory": "Unreal Engine plugin",
       "operatingSystem": "Windows, PlayStation 5, Xbox Series X|S",
       "softwareVersion": "2.05",
-      "softwareRequirements": "Unreal Engine 5.8",
+      "softwareRequirements": "Unreal Engine 5.2 to 5.8",
       "url": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/",
       "downloadUrl": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73",
       "image": "https://uedevlabs.github.io/assets/nav3d/banner.png",
@@ -88,7 +88,7 @@
       ],
       "author": {
         "@type": "Person",
-        "name": "Charitha Madusanka",
+        "name": "L. Charitha Madhushanka",
         "url": "https://uedevlabs.github.io/portfolio.html"
       },
       "publisher": {
@@ -99,9 +99,15 @@
       "sameAs": [
         "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73",
         "https://uedevlabs.itch.io/lcm-3d-navigation",
-        "https://www.youtube.com/watch?v=7_F3AvgQIQU"
+        "https://www.youtube.com/watch?v=7_F3AvgQIQU",
+        "https://lcmnav3d.github.io/"
       ],
-      "installUrl": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73"
+      "installUrl": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73",
+      "softwareHelp": {
+        "@type": "CreativeWork",
+        "url": "https://lcmnav3d.github.io/",
+        "name": "LCM 3D Navigation AI Documentation"
+      }
     },
     {
       "@type": "VideoObject",
@@ -189,7 +195,7 @@
           "name": "Which Unreal Engine versions and platforms are supported?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LCM 3D Navigation AI 2.05 targets Unreal Engine 5.8 and is shipping-ready on Windows PC, PlayStation 5 and Xbox Series X|S. Nintendo Switch support is in progress. Check the Fab listing for the current engine compatibility list."
+            "text": "LCM 3D Navigation AI 2.05 supports Unreal Engine 5.2 through 5.8 and is shipping-ready on Windows PC, PlayStation 5 and Xbox Series X|S. Nintendo Switch support is in progress. Check the Fab listing for the current engine compatibility list."
           }
         },
         {
@@ -313,7 +319,7 @@
     <p class="crumb"><a href="../">UEDEV</a> &nbsp;/&nbsp; 3D Pathfinding for Unreal Engine 5</p>
 
     <header>
-      <span class="kicker">LCM 3D Navigation AI · v2.05 · Unreal Engine 5.8</span>
+      <span class="kicker">LCM 3D Navigation AI · v2.05 · Unreal Engine 5.2–5.8</span>
       <h1>True <em>3D pathfinding</em> for Unreal Engine 5</h1>
       <p class="lede">Unreal Engine's built-in Recast navmesh can only answer one question: <em>where can I stand?</em> This plugin answers the one that flying AI actually needs — <em>where is there empty air?</em> It is a volumetric 3D navigation and pathfinding plugin for UE5 that turns the whole playable volume into a Sparse Voxel Octree, so drones, dragons, spaceships, helicopters, birds and underwater agents path through real 3D space instead of along a floor.</p>
       <div class="hero__row">
@@ -448,13 +454,13 @@
       <span class="kicker">Getting started</span>
       <h2>Adding 3D pathfinding to a UE5 project</h2>
       <ol class="steps">
-        <li><b>Install the plugin</b><span>Add LCM 3D Navigation AI from Fab to your Unreal Engine 5.8 project and enable it in the plugin browser. Installation is chapter 1 of the manual.</span></li>
+        <li><b>Install the plugin</b><span>Add LCM 3D Navigation AI from Fab to your Unreal Engine 5.2–5.8 project and enable it in the plugin browser. Installation is chapter 1 of the manual.</span></li>
         <li><b>Place the navigation manager</b><span>Drop one <code>LcmNavigationManagerSVO</code> into the level and set the world bounds and minimum voxel size. It builds the Sparse Voxel Octree and owns every navigation query from then on.</span></li>
         <li><b>Give the agent a body</b><span>Add <code>LcmFlightMovementComponent</code> to the pawn and pick an archetype — Multirotor, Bird, Fish or Generic 6-DOF — then tune thrust, lift, drag, buoyancy and the attitude PID. An animation-drive struct feeds your blendspaces.</span></li>
         <li><b>Author the behaviour</b><span>Use the <code>FlyTo</code> Behaviour Tree task, the equivalent StateTree task, or a Mass trait for crowds. Chapter 3 of the manual walks through a first flying agent end to end.</span></li>
         <li><b>Scale up</b><span>Add dynamic obstacles, tactical 3D EQS queries, hybrid Recast levels for ground units, and switch to infinite chunked worlds when the map outgrows a single volume.</span></li>
       </ol>
-      <p style="margin-top:24px">Documentation is a <strong>128-page manual across 17 chapters</strong>, not a plugin dump: every setting is listed with its verified default and limits, and every reflected symbol is documented. <a class="ln" href="../#docs">See the documentation overview →</a></p>
+      <p style="margin-top:24px">Documentation is a <strong>128-page manual across 17 chapters</strong>, not a plugin dump: every setting is listed with its verified default and limits, and every reflected symbol is documented. <a class="ln" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Read the full documentation online →</a></p>
     </section>
 
     <section id="specs">
@@ -463,7 +469,7 @@
       <table class="tbl">
         <tbody>
           <tr><th scope="row">Plugin</th><td>LCM 3D Navigation AI, version 2.05 — previously published as <strong>LCM Nav3D</strong>, still the name on the logo mark</td></tr>
-          <tr><th scope="row">Engine</th><td>Unreal Engine 5.8</td></tr>
+          <tr><th scope="row">Engine</th><td>Unreal Engine 5.2 – 5.8</td></tr>
           <tr><th scope="row">Navigation</th><td>Sparse Voxel Octree volumetric navigation, hybrid with Recast</td></tr>
           <tr><th scope="row">Pathfinding</th><td>A* · Theta* · Lazy Theta*</td></tr>
           <tr><th scope="row">Smoothing</th><td>Raw · Linear Shortcut · Curved Spline, geometry-validated</td></tr>
@@ -474,6 +480,7 @@
           <tr><th scope="row">Networking</th><td>Server-authoritative replication, bit-deterministic CPU compute</td></tr>
           <tr><th scope="row">Scripting</th><td>Blueprint and C++ — 517 reflected symbols, 100% documented</td></tr>
           <tr><th scope="row">Platforms</th><td>Windows PC · PlayStation 5 · Xbox Series X|S (Switch in progress)</td></tr>
+          <tr><th scope="row">Documentation</th><td><a class="ln" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">lcmnav3d.github.io</a> — 27 pages, free to read online</td></tr>
           <tr><th scope="row">Defaults</th><td>100&nbsp;cm minimum voxel · 200&nbsp;m world cube</td></tr>
           <tr><th scope="row">Where to get it</th><td><a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab marketplace</a> · <a class="ln" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">free demo on itch.io</a></td></tr>
         </tbody>
@@ -501,7 +508,7 @@
 
       <details><summary>How is this different from the free open-source SVO navigation plugins?</summary><div><p>The solvers are comparable — A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built <em>around</em> the solver: infinite streaming worlds rather than a required bounds volume, a 6-DOF flight and swim locomotion component, dedicated Behaviour Tree and StateTree tasks, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, a 128-page manual, and direct support from the developer. <a class="ln" href="#beyond">See the full comparison →</a></p></div></details>
 
-      <details><summary>Which Unreal Engine versions and platforms are supported?</summary><div><p>LCM 3D Navigation AI 2.05 targets Unreal Engine 5.8 and is shipping-ready on Windows PC, PlayStation 5 and Xbox Series X|S. Nintendo Switch support is in progress. Check the <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab listing</a> for the current engine compatibility list.</p></div></details>
+      <details><summary>Which Unreal Engine versions and platforms are supported?</summary><div><p>LCM 3D Navigation AI 2.05 supports Unreal Engine 5.2 through 5.8 and is shipping-ready on Windows PC, PlayStation 5 and Xbox Series X|S. Nintendo Switch support is in progress. Check the <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab listing</a> for the current engine compatibility list.</p></div></details>
 
       <details><summary>Do I need C++, or does it work with Blueprints?</summary><div><p>It works from Blueprints. The plugin is C++ for performance but exposes 517 reflected symbols to Blueprint, every one documented with a tooltip, so a full flying AI can be built without writing code. The C++ API is available when you want it.</p></div></details>
 
@@ -538,6 +545,7 @@
         <a href="#beyond">Vs. free plugins</a>
         <a href="#use-cases">Use cases</a>
         <a href="#faq">FAQ</a>
+        <a href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Documentation</a>
       </div>
       <div class="footer__col">
         <h4>Store</h4>
@@ -553,7 +561,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2018–2026 UEDEV · Charitha Madusanka</span>
+      <span>© 2018–2026 UEDEV · L. Charitha Madhushanka</span>
       <span class="mono">Unreal Engine · 3D Navigation · Niagara</span>
     </div>
   </div>
