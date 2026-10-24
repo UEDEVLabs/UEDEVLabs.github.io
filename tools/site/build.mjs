@@ -142,10 +142,10 @@ function catalog(a, page, indent) {
     const href = p.page ? fix(p.page) : store.listingBase + p.fab;
     const ext = p.page ? '' : ' target="_blank" rel="noopener"';
     const media = p.still
-      ? picture({ slug: p.still, sizes, alt: `${p.short} — ${label} for Unreal Engine` }, page, '').replace(/\n\s*/g, '')
+      ? picture({ slug: p.still, sizes, alt: `${p.short}, ${label} for Unreal Engine` }, page, '').replace(/\n\s*/g, '')
       // Self-hosted by tools/media/store-images.mjs: Fab's CDN sets third-party cookies.
       : `<picture><source type="image/webp" srcset="${fix(`assets/store/${p.id}.webp`)}">` +
-        `<img src="${fix(`assets/store/${p.id}.jpg`)}" alt="${esc(p.short)} — ${label} for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"></picture>`;
+        `<img src="${fix(`assets/store/${p.id}.jpg`)}" alt="${esc(p.short)}, ${label} for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"></picture>`;
     const rating = p.rating
       ? `<span class="rating"><span class="stars" aria-hidden="true">${stars(p.rating)}</span>${p.rating} <span class="rating__n">(${p.ratings})</span></span>`
       : '<span class="rating rating--new">New</span>';
@@ -207,6 +207,8 @@ for (const file of pages()) {
 
   html = html.replace(/(<([a-z0-9]+)\b[^>]*\sdata-fact="([^"]+)"[^>]*>)([^<]*)(<\/\2>)/g,
     (_, open, _tag, key, _old, close) => open + fact(key) + close);
+  // Star rows follow the rating they show (data-fact-stars="reviews.ratingValue").
+  html = html.replace(/(<span\b[^>]*\sdata-fact-stars="([^"]+)"[^>]*>)[^<]*(<\/span>)/g, (_, open, key, close) => open + stars(fact(key)) + close);
   // Animated counters keep their target in data-count; data-fact-count sets it.
   html = html.replace(/data-fact-count="([^"]+)" data-count="[^"]*"/g, (_, key) => `data-fact-count="${key}" data-count="${fact(key)}"`);
 

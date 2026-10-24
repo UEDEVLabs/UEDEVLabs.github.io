@@ -8,22 +8,7 @@
     <lastmod>2026-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/poster-city-routes-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/octree-routes-city-debug-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/space-dogfight-lasers-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/octree-debug-sea-stack-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/harbour-drone-lands-moving-ship-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/gulls-perch-sea-stack-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/hunter-drone-closeup-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/coral-reef-fish-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/dogfight-pursuit-asteroids-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/sentry-drones-depot-octree-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/warehouse-drone-aisle-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/fish-tank-120cm-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/city-open-world-drone-routes-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/forest-open-world-routes-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/space-fleet-asteroid-field-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/mass-swarm-rising-skyscraper-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/bird-flock-forest-rings-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/hunter-engagement-path-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/harbour-drone-lands-moving-lorry-1280.jpg</image:loc></image:image>
@@ -38,24 +23,10 @@
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/node-land-moving-platform-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/eqs-points-in-volume-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/eqs-reachability-3d-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/gull-sea-cliffs-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/harbour-drone-quay-closeup-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/dogfight-lead-intercept-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/reef-school-mass-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/mass-swarm-over-skyline-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/warehouse-archive-hall-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/store/energy-beam-v2.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/store/explosion.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/store/laser-beam-v3.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/store/scan-screen.jpg</image:loc></image:image>
-    <video:video>
-      <video:thumbnail_loc>https://i.ytimg.com/vi/7_F3AvgQIQU/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>LCM 3D Navigation AI - Infinite 3D Pathfinding &amp; Volumetric Navigation Showcase Trailer-UE5</video:title>
-      <video:description>Showcase trailer for LCM 3D Navigation AI, 3D pathfinding and volumetric navigation for Unreal Engine 5.</video:description>
-      <video:player_loc>https://www.youtube-nocookie.com/embed/7_F3AvgQIQU</video:player_loc>
-      <video:duration>153</video:duration>
-      <video:publication_date>2026-08-16T10:20:11-07:00</video:publication_date>
-    </video:video>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/-02ah0bLMb4/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>NextGen Infinite 3D Pathfinding in Unreal Engine 5 - 10,000 Flying AI Agents Thinks in 3D</video:title>
@@ -79,9 +50,14 @@
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/hunter-drone-closeup-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/coral-reef-fish-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/dogfight-pursuit-asteroids-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/reef-school-mass-1280.jpg</image:loc></image:image>
-    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/space-fleet-asteroid-field-1280.jpg</image:loc></image:image>
+    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/sentry-drones-depot-octree-1280.jpg</image:loc></image:image>
+    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/warehouse-drone-aisle-1280.jpg</image:loc></image:image>
+    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/fish-tank-120cm-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/city-open-world-drone-routes-1280.jpg</image:loc></image:image>
+    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/forest-open-world-routes-1280.jpg</image:loc></image:image>
+    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/space-fleet-asteroid-field-1280.jpg</image:loc></image:image>
+    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/mass-swarm-rising-skyscraper-1280.jpg</image:loc></image:image>
+    <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/reef-school-mass-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/mass-swarm-over-skyline-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/media/stills/harbour-drone-lands-moving-lorry-1280.jpg</image:loc></image:image>
     <image:image><image:loc>https://uedevlabs.github.io/assets/nav3d/logo-208.png</image:loc></image:image>
@@ -232,7 +208,7 @@
   </url>
   <url>
     <loc>https://uedevlabs.github.io/portfolio.html</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://uedevlabs.github.io/assets/img/UnrealLogo.png</image:loc></image:image>
@@ -247,7 +223,7 @@
   </url>
   <url>
     <loc>https://uedevlabs.github.io/lab/Rubiks%20Cube%20Solver.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

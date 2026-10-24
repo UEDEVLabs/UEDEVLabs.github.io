@@ -122,4 +122,26 @@
     dd.addEventListener('focusout', function (e) { if (!dd.contains(e.relatedTarget)) set(false); });
   });
   if (nav) addEventListener('scroll', function () { nav.classList.toggle('scrolled', scrollY > 10); }, { passive: true });
+
+  /* ---- On this page: the bar sits under the top bar, and marks the section being read ---- */
+  var toc = document.querySelector('.xtoc');
+  if (toc && nav) {
+    var setH = function () { doc.style.setProperty('--navh', nav.offsetHeight + 'px'); };
+    setH(); addEventListener('resize', setH, { passive: true });
+    var links = [].slice.call(toc.querySelectorAll('a[href^="#"]'));
+    if ('IntersectionObserver' in window) {
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (a) {
+            var on = a.getAttribute('href') === '#' + e.target.id;
+            a.classList.toggle('is-here', on);
+            if (on) { a.setAttribute('aria-current', 'location'); if (a.scrollIntoView && toc.scrollWidth > toc.clientWidth) toc.querySelector('.xtoc__in').scrollLeft = a.offsetLeft - 80; }
+            else a.removeAttribute('aria-current');
+          });
+        });
+      }, { rootMargin: '-35% 0px -60% 0px' });
+      links.forEach(function (a) { var t = document.getElementById(a.getAttribute('href').slice(1)); if (t) spy.observe(t); });
+    }
+  }
 })();

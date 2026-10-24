@@ -3,6 +3,7 @@
 // Fails on a broken local link or asset, an <img> without alt or size, JSON-LD that does not parse,
 // a duplicate id, an FAQ whose schema and visible questions differ, stale release text, or a
 // product claim the author asked to keep going missing.
+// Also fails on a long dash (—) anywhere in a page's copy or structured data.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -120,6 +121,11 @@ for (const file of pages()) {
   }
 
   for (const re of STALE) if (re.test(visible) || ld.some(([, b]) => re.test(b))) fail(page, `stale text ${re}`);
+  // No long dashes in the copy (the author reads them as machine-written): use a comma, colon or full stop.
+  if (page !== 'Style Directions.html') {
+    const at = (visible + ld.map(([, b]) => b).join('')).search(/—/);
+    if (at >= 0) { const t = visible + ld.map(([, b]) => b).join(''); fail(page, `long dash in the copy: ...${t.slice(Math.max(0, at - 50), at + 30).replace(/\s+/g, ' ')}...`); }
+  }
   if (PAGES_WITH_CLAIMS.includes(page)) {
     for (const c of KEPT_CLAIMS) if (!html.toLowerCase().includes(c.toLowerCase())) fail(page, `kept claim missing: "${c}"`);
   }

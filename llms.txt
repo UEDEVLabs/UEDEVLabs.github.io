@@ -11,10 +11,10 @@ This is the site of UEDEV, the Unreal Engine label of L. Charitha Madhushanka. I
 - Platforms: Windows, macOS, Linux, Android, iOS, PlayStation 5, Xbox Series X|S. Consoles build from source with your own platform SDK. Nintendo Switch support is in progress.
 - Navigation: Sparse voxel octree of navigable volume (empty air and water), not a walkable surface. Solvers: A* (fastest, grid locked); Theta* (any angle); Lazy Theta* (any angle, balanced default). Multi-threaded, deterministic CPU path solving.
 - GPU: GPU-built navigation on by default: voxelization, chunk octrees, their links, finite-world builds and obstacle re-tests run on the GPU (D3D12, D3D11, Vulkan; SM5 and SM6). With Voxelization Method Auto, each machine's GPU proves its voxels before it builds navigation; a GPU that fails voxelizes on the CPU for that session. Per-agent GPU path solver in experimental validation; coming as a free update.
-- AI: 85 nodes — Behavior Tree 21 tasks, 5 decorators, 5 services; StateTree 25 tasks, 8 conditions, 8 evaluators; Mass StateTree 10 tasks, 3 evaluators. EQS: 5 generators, 8 tests, 4 contexts.
+- AI: 85 nodes: Behavior Tree 21 tasks, 5 decorators, 5 services; StateTree 25 tasks, 8 conditions, 8 evaluators; Mass StateTree 10 tasks, 3 evaluators. EQS: 5 generators, 8 tests, 4 contexts.
 - Behaviours: Fly To, Patrol, Orbit Target, Follow Target, Hover, Move To And Face, Take Off, Land (including on moving decks), Perch, Scan Area, Engage Target, Find Cover, Flee, Investigate, Look At, Turn In Place.
 - Crowds: 10,000+ agents through Mass Entity (per-agent paths or a shared flow field); 8 Mass traits.
-- Locomotion: 6-DOF flight and swim — Multirotor Drone, Jet / Fixed-Wing, Bird (flap-glide), Fish (undulatory).
+- Locomotion: 6-DOF flight and swim: Multirotor Drone, Jet / Fixed-Wing, Bird (flap-glide), Fish (undulatory).
 - Smallest voxel: 0.5 cm. Worlds: Finite (built or baked to an asset); Infinite (chunks stream around agents, with pre-baked chunks and a persistent long-range graph).
 - Multiplayer: Server-authoritative replication.
 - Content: 57 free demo levels (17 worlds in Behavior Tree and StateTree editions (34), 15 Mass Entity editions, 8 Feature Examples levels), downloaded from inside the editor; a 165-page manual, 15 tutorials and a 13-page Quick Start.
@@ -23,8 +23,8 @@ This is the site of UEDEV, the Unreal Engine label of L. Charitha Madhushanka. I
 
 ## Product
 
-- [True 3D pathfinding for Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-3d-pathfinding/): True 3D pathfinding for Unreal Engine 5 with infinite streaming worlds — not just a bounds volume. Flying AI, 6-DOF flight, Mass crowds, multiplayer.
-- [LCM 3D Navigation AI True 3D navigation for Unreal Engine 5](https://uedevlabs.github.io/): LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5 — infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab.
+- [How 3D pathfinding works in Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-3d-pathfinding/): True 3D pathfinding for Unreal Engine 5 with infinite streaming worlds, not just a bounds volume. Flying AI, 6-DOF flight, Mass crowds, multiplayer.
+- [LCM 3D Navigation AI True 3D navigation for Unreal Engine 5](https://uedevlabs.github.io/): LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5: infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab.
 
 ## Use cases
 
@@ -41,8 +41,8 @@ This is the site of UEDEV, the Unreal Engine label of L. Charitha Madhushanka. I
 
 ## Developer
 
-- [Code.Build.Ship.](https://uedevlabs.github.io/portfolio.html): L. Charitha Madhushanka — Senior Game Developer and Unreal Engine C++ programmer. Gameplay systems, game AI, VR/AR and engine tooling across 22 shipped projects.
-- [Cube Solver — Rubik's Cube Visualiser](https://uedevlabs.github.io/lab/Rubiks%20Cube%20Solver.html): 
+- [Code.Build.Ship.](https://uedevlabs.github.io/portfolio.html): L. Charitha Madhushanka, Senior Game Developer and Unreal Engine C++ programmer. Gameplay systems, game AI, VR/AR and engine tooling across 22 shipped projects.
+- [Cube Solver: Rubik's Cube Visualiser](https://uedevlabs.github.io/lab/Rubiks%20Cube%20Solver.html): 
 
 ## Elsewhere
 

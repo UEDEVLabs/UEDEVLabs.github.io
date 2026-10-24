@@ -104,7 +104,7 @@ function markdown(html) {
     .replace(/<(script|style|svg|video|picture|button|noscript)\b[\s\S]*?<\/\1>/g, '')
     .replace(/<img\b[^>]*>/g, '')
     .replace(/<figcaption[^>]*>([\s\S]*?)<\/figcaption>/g, (_, t) => `\n_${t.replace(/<[^>]+>/g, '').trim()}_\n`)
-    .replace(/<a class="xyt"[^>]*data-yt="([^"]+)"[^>]*>[\s\S]*?<\/a>/g, (_, id) => `\nVideo: ${VIDEOS.get(id)?.title.replace(/\s+/g, ' ') || ''} — https://www.youtube.com/watch?v=${id}\n`);
+    .replace(/<a class="xyt"[^>]*data-yt="([^"]+)"[^>]*>[\s\S]*?<\/a>/g, (_, id) => `\nVideo: ${VIDEOS.get(id)?.title.replace(/\s+/g, ' ') || ''}: https://www.youtube.com/watch?v=${id}\n`);
   // Tables
   s = s.replace(/<table[\s\S]*?<\/table>/g, (t) => {
     const rows = [...t.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((r) => [...r[1].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/g)].map((c) => c[1].replace(/<[^>]+>/g, '').replace(/\|/g, '/').trim()));
@@ -123,7 +123,7 @@ function markdown(html) {
     .replace(/<code>([\s\S]*?)<\/code>/g, '`$1`')
     .replace(/<a\b[^>]*href="(https?:[^"]+)"[^>]*>([\s\S]*?)<\/a>/g, (_, h, t) => `[${t.replace(/<[^>]+>/g, '').trim()}](${h})`)
     .replace(/<(p|div|section|article|header|ul|ol|dl|figure|blockquote)\b[^>]*>/g, '\n')
-    .replace(/<dt>([\s\S]*?)<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/g, '\n- $2 — $1')
+    .replace(/<dt>([\s\S]*?)<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/g, '\n- $2: $1')
     .replace(/<[^>]+>/g, '');
   return dec(s).split('\n').map((l) => l.replace(/[ \t]+/g, ' ').trim()).join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
@@ -148,10 +148,10 @@ This is the site of UEDEV, the Unreal Engine label of ${f.product.author}. It se
 - Platforms: ${comp.platforms.join(', ')}. ${comp.platformsNote}
 - Navigation: ${f.navigation.representation}. Solvers: ${f.navigation.solvers.join('; ')}. ${f.navigation.solving}.
 - GPU: ${f.navigation.gpu}. ${f.navigation.gpuVoxelizationCheck}. ${f.navigation.gpuPathSolving}.
-- AI: ${a.aiNodesTotal} nodes — Behavior Tree ${a.behaviorTree.tasks} tasks, ${a.behaviorTree.decorators} decorators, ${a.behaviorTree.services} services; StateTree ${a.stateTree.tasks} tasks, ${a.stateTree.conditions} conditions, ${a.stateTree.evaluators} evaluators; Mass StateTree ${a.massStateTree.tasks} tasks, ${a.massStateTree.evaluators} evaluators. EQS: ${a.eqs.generators} generators, ${a.eqs.tests} tests, ${a.eqs.contexts} contexts.
+- AI: ${a.aiNodesTotal} nodes: Behavior Tree ${a.behaviorTree.tasks} tasks, ${a.behaviorTree.decorators} decorators, ${a.behaviorTree.services} services; StateTree ${a.stateTree.tasks} tasks, ${a.stateTree.conditions} conditions, ${a.stateTree.evaluators} evaluators; Mass StateTree ${a.massStateTree.tasks} tasks, ${a.massStateTree.evaluators} evaluators. EQS: ${a.eqs.generators} generators, ${a.eqs.tests} tests, ${a.eqs.contexts} contexts.
 - Behaviours: ${a.behaviours.join(', ')}.
 - Crowds: ${a.crowdScale}; ${a.massTraits} Mass traits.
-- Locomotion: 6-DOF flight and swim — ${a.flightArchetypes.join(', ')}.
+- Locomotion: 6-DOF flight and swim: ${a.flightArchetypes.join(', ')}.
 - Smallest voxel: ${f.navigation.minVoxelCm} cm. Worlds: ${f.navigation.worldModes.join('; ')}.
 - Multiplayer: ${a.multiplayer}.
 - Content: ${c.demoLevels} free demo levels (${c.demoBreakdown}), downloaded from inside the editor; a ${c.manualPages}-page manual, ${c.tutorials} tutorials and a ${c.quickStartPages}-page Quick Start.
@@ -191,7 +191,7 @@ ${list('Developer')}
 
 /* ---------- llms-full.txt ---------- */
 function llmsFull(pages) {
-  return `# UEDEV — full text of uedevlabs.github.io
+  return `# UEDEV: full text of uedevlabs.github.io
 
 Generated from the pages on ${new Date().toISOString().slice(0, 10)}. Each section is one page; its canonical URL comes first.
 
