@@ -547,75 +547,138 @@ URL: https://uedevlabs.github.io/
 Title: LCM 3D Navigation AI — Infinite 3D Pathfinding for UE5
 Description: LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5 — infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab.
 
-LCM 3D Navigation AI — Infinite 3D Pathfinding for UE5
+**v3.6.0** New: agents that see moving obstacles coming
 
--
+# LCM 3D Navigation AI True 3D navigation for Unreal Engine 5
 
-UE
+Drones, birds, fish and starfighters that fly through the whole volume of your level — over, under and between everything — in open worlds without edges. A sparse voxel octree of the empty air, 85 Behaviour Tree, StateTree and Mass nodes, and crowds of 10,000+ agents, from the developer who built it.
 
-Loading**_**
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+How it works
+Watch the trailers
 
-**U**UE**DEV**
+- [★★★★★ **5.0 on Fab** · 3 ratings](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
 
-3D Navigation AI
-3D Pathfinding
-Capabilities
-Best Sellers
-VFX
-Docs
-Developer
+- Unreal Engine 5.2–5.8
 
-[Browse on Fab ↗](https://www.fab.com/sellers/UEDEV)
+- Windows · macOS · Linux · Android · iOS · PS5 · Xbox
 
-v3.6.0 **LCM 3D Navigation AI** — agents that see moving obstacles coming · UE 5.2–5.8 →
+- Complete C++ source
 
-uedev
+- 85 — BT, StateTree & Mass nodes
 
-Built for performance.
+- 17 — True-3D EQS items
 
-# True 3D pathfinding & volumetric navigation for Unreal Engine 5 — plus high-performance C++ plugins
+- 10,000+ — Mass Entity agents
 
-Explore the plugin
+- 0.5cm — Smallest voxel
+
+- 57 — Free demo levels
+
+- 7 — Engine versions
+
+New in 3.6 · October 2026
+
+## Agents that see moving obstacles coming
+
+A free update for every licence. Read the full release notes →
+
+New in 3.6
+
+### Fly To predicts every mover and times its pass
+
+It learns a gate's or a piston's cycle, turns a spinning blade with it, waits for a gap or takes a detour, and dodges what it cannot outrun. The new Obstacle Gauntlet demo throws 42 movers at twelve drones — or a crowd of 200 — down a 370 m hall. Moving obstacle avoidance →
+
+New in 3.6
+
+### GPU voxelization that checks itself
+
+Each machine's GPU proves its voxels before it builds navigation, and the GPU build repairs its own output on D3D12, D3D11 and Vulkan.
+
+Improved in 3.6
+
+### Fish that swim like fish
+
+They hold their depth, swim upright, school side by side and in layers, and beat their tails with their speed.
+
+See it running
+
+## Captured in the engine
+
+Video: LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation Showcase Trailer-UE5 — https://www.youtube.com/watch?v=7_F3AvgQIQU
+
+Video: NextGen Infinite 3D Pathfinding in Unreal Engine 5 - 10,000 Flying AI Agents Thinks in 3D — https://www.youtube.com/watch?v=-02ah0bLMb4
+
+Thousands of flying agents planning in 3D, the live octree and the streamed chunks behind every route.
+
+57 free demo levels
+
+## Seventeen worlds. One navigation system.
+
+Every world in Behaviour Tree and StateTree editions, most in a Mass Entity crowd edition too — a free download from inside the editor. All seventeen worlds →
+
+### Harbour
+
+A courier drone lands on a moving, rolling ship and a moving lorry, flying each approach relative to the deck.
+
+- Land on moving decks
+- Take Off
+
+### Sea Cliffs
+
+6-DOF seagulls that cannot hover glide in to perch on free ledges, ride an updraft and scatter.
+
+- Perch
+- Flee
+
+### Hunter Drone
+
+A gunner drone hunts a runner through the streets and fires only on a clean shot.
+
+- Engage Target
+- BT · ST · Mass
+
+### Coral Reef
+
+An ROV surveys the reef while the school hides in the coral out of its sight.
+
+- Scan Area
+- Schooling
+
+### Space Dogfight
+
+Fighters chase raiders through a streamed asteroid belt, re-planning as the target breaks.
+
+- Fly To chase
+- 6-DOF
+
+What you can build
+
+## Anything that moves through a volume
+
+Flying, swimming and free-floating AI — from one hero drone to a 10,000-agent swarm.
+
+**Flying AI and drones**6-DOF flight, landing on moving decks, perching birds and combat drones.
+
+**Underwater and fish AI**Schooling, the whole water column, and aquariums navigated at 1 cm.
+
+**Space combat and dogfights**No floor, no up: chase, intercept and raider swarms in streamed belts.
+
+**Open-world navigation**No bounds volume: chunks stream around your agents, with no edge.
+
+**Mass Entity crowds**10,000+ agents on paths or a shared flow field, with crowd behaviours.
+
+**Moving obstacles**Fly To predicts gates, pistons and sweepers and times its pass.
 
 Flagship UE5 plugin · v3.6.0 · Unreal Engine 5.2–5.8
 
-## LCM 3D Navigation AI
+## Everything in the box
 
 The 3D pathfinding & volumetric navigation plugin for Unreal Engine 5
 
 ★ 5.0 on FabSparse Voxel OctreeGPU-built navigation85 AI nodes10,000+ agentsMoving-obstacle predictionMultiplayer replicationBlueprint & C++
 
 **LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5** — flying AI pathfinding for drones, dragons, spaceships, helicopters and underwater agents that Recast navmesh simply cannot express. Unreal's Recast navmesh answers one question: where can I stand? It flattens your level into walkable polygons — exactly right for a soldier, completely wrong for a dragon. LCM 3D Navigation AI answers a different one: where is there empty air? It carves the whole playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky costs almost nothing and detail appears only where geometry actually is.
-
-Video: LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation Showcase Trailer-UE5 — https://www.youtube.com/watch?v=7_F3AvgQIQU
-
-_LCM 3D Navigation AI — showcase trailer▶ Technical trailer & more_
-
-**Harbour**Landing on a moving ship
-
--
-
-**Sea Cliffs**6-DOF gulls that perch
-
--
-
-**Coral Reef**A Mass school of fish
-
--
-
-**Space Dogfight**Lead intercept in an asteroid belt
-
-- Flying AI & drones →
-
-- Underwater & fish AI →
-
-- Space combat AI →
-
-- Open-world navigation →
-
-- Mass Entity crowds →
-
-- Moving obstacles →
 
 - A* · Theta* · Lazy Theta* — Pathfinding
 
@@ -700,24 +763,6 @@ Supported on desktop, mobile and current-gen consoles — Windows, macOS, Linux,
 
 **Nintendo Switch**Coming soon
 
-Shipped · v3.3 → v3.6
-
-### What's new
-
-Free updates for existing licences
-
-**3.6 · Agents see moving obstacles coming**
-Fly To predicts every mover and times its pass, and the new Obstacle Gauntlet demo throws 42 of them at twelve drones — or a crowd of 200 — down a 370 m hall.
-
-**3.6 · GPU voxelization that checks itself**
-Every GPU proves its voxels before it builds navigation, the GPU build repairs its own output on D3D12, D3D11 and Vulkan, and fish swim, turn and school like fish.
-
-**3.5 · Agents that land, hunt, hide and investigate**
-Engage, Investigate, Flee, Scan Area, Perch, Land and Take Off — onto a rolling ship's deck if needed — plus six scenario demos and eight Feature Examples levels, free from inside the editor.
-
-**3.3 – 3.4 · The agent task library**
-The full BT, StateTree and Mass task library, centimetre-scale voxels, cost areas with per-agent filters, stock Move To and EQS through the octree, the Fly To Location node and fish schooling.
-
 Next · v4.0
 
 ### In development
@@ -740,196 +785,32 @@ A 165-page manual, 15 step-by-step tutorials and a 13-page Quick Start, free to 
 [06–15**Going further**Mass crowds, tactical EQS, AI perception, hybrid Recast, cost areas and nav links, debugger, small worlds, Fly To Location, stock Move To, behaviour nodes.](https://lcmnav3d.github.io/mass-entity-crowds.html)
 [REF**Reference**Settings, troubleshooting, flight locomotion, Mass traits, BT patterns and the full API reference.](https://lcmnav3d.github.io/api-reference.html)
 
-0Products
+5.0
+★★★★★
+3 ratings on Fab
 
-0Assets
+Best 3D Navigation Plugin on the Marketplace
 
-0Fab ratings
+_VecFourDigital · five-star review on Fab · Read the reviews ↗_
 
-**4.5★**Avg Rating
+More from UEDEV
 
-## Capabilities
+## Niagara VFX from the same developer
 
-What UEDEV builds for Unreal teams — from navigation and AI down through the effects layer.
+Weapon beams, explosions, shields and environmental effects — 19 Niagara VFX packs on Fab, 4.5★ across 47 ratings. See every pack →
 
-01
-
-### Volumetric 3D Navigation
-
-LCM 3D Navigation AI — sparse voxel octree pathfinding with GPU voxelization, Mass crowds and true-3D tactical queries for flying and swimming agents.
-
-02
-
-### Game AI
-
-Behaviour trees, detour steering and decision systems that stay smooth as agent counts climb.
-
-03
-
-### Gameplay Systems
-
-Combat, physics and runtime ECS architectures written in C++ for shipping-grade performance.
-
-04
-
-### Real-time VFX
-
-Production-grade Niagara effects — explosions, beams, shields and environments — profiled to hold frame budget.
-
-05
-
-### Engine Tooling
-
-Editor plugins and pipeline tools that take the repetitive work out of your team's day.
-
-Best sellers
-
-## Top rated
-
-01
-
-Weapons · Niagara
-### Niagara Energy Beam Pack V2
-
-[View on Fab](https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296)
-
-$15.99 ★ 5.0 (6)
-
-02
-
-Combat · Niagara
-### Ultimate Explosion VFX
-
-[View on Fab](https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770)
-
-$14.99 ★ 5.0 (4)
-
-03
-
-Combat · Screen FX
-### Ultimate Scan & Screen Effects
-
-[View on Fab](https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5)
-
-$12.99 ★ 4.8 (4)
-
-The VFX library
-
-## Real-time VFX
-
-Production-grade Niagara built the same way as the plugins — profiled, documented and shipped in real games. Explosions, energy beams, muzzle flashes, shields, portals and full environmental systems.
-
-21Products
-
-**150+**Effects
-
-47Fab ratings
-
-**4.5★**Average rating
-
-Browse the full library
-
-The Full Library
-
-## Every asset pack
-
-21 products · 150+ assets — from C++ plugins to advanced Niagara VFX. Filter by category and open any pack on Fab, or see them all on the Niagara VFX packs page.
-
-Plugins
-Explore the plugin →
-
-### LCM 3D Navigation AI
-
-From $199.99★★★★★5.0 (3)
 [Weapon VFXView on Fab ↗
 ### Niagara Energy Beam Pack V2
 From $15.99★★★★★5.0 (6)](https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296)
 [Combat VFXView on Fab ↗
 ### Ultimate Explosion VFX
 From $14.99★★★★★5.0 (4)](https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770)
-[Combat VFXView on Fab ↗
-### Ultimate Scan & Screen Effects
-From $12.99★★★★★4.8 (4)](https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5)
 [Weapon VFXView on Fab ↗
 ### Niagara Laser Beam Weapon V3
 From $18.99★★★★★5.0 (2)](https://www.fab.com/listings/b776d3d2-5d87-4f8b-8466-d7bbb17ab2a4)
 [Combat VFXView on Fab ↗
-### Ultimate Action Niagara VFX
-From $12.99New](https://www.fab.com/listings/849e3115-2efd-4f23-99ca-29415e319587)
-[Character VFXView on Fab ↗
-### Ultimate Character VFX V2
-From $14.99New](https://www.fab.com/listings/63810c36-b2f9-4401-8554-c0db33e0db18)
-[Character VFXView on Fab ↗
-### Ultimate Character VFX
-From $14.99★★★★☆4.4 (5)](https://www.fab.com/listings/0c1216fb-ddca-4351-9571-a199b158b420)
-[Weapon VFXView on Fab ↗
-### Niagara Weapon Muzzle Flash
-From $9.99New](https://www.fab.com/listings/314ebc33-5fdf-4420-824a-bc6f4f6a0595)
-[Environmental VFXView on Fab ↗
-### Ultimate Niagara Environmental VFX V2
-From $19.99★★★★☆4.0 (3)](https://www.fab.com/listings/6db5d306-e208-41c4-9221-f074cf7b2d3b)
-[Environmental VFXView on Fab ↗
-### Ultimate Niagara Environmental VFX
-From $17.99★★★★☆4.2 (5)](https://www.fab.com/listings/e25c0150-ec47-4e9f-a818-8aa9f501c481)
-[Environmental VFXView on Fab ↗
-### Niagara Tornado VFX
-From $8.99★★★★★5.0 (1)](https://www.fab.com/listings/5df56d5e-cccd-4c1c-b907-0e7007d227f8)
-[Environmental VFXView on Fab ↗
-### Portal Pack
-From $9.99★★★★★4.5 (2)](https://www.fab.com/listings/089ec99b-9fbb-406c-8442-7912a39553fc)
-[Combat VFXView on Fab ↗
-### Advanced Niagara Slash & Trail VFX
-From $9.99★★★★★5.0 (1)](https://www.fab.com/listings/c1bdd925-e4a6-4eae-a6a7-a39abec1ecbb)
-[Combat VFXView on Fab ↗
-### Advanced Niagara Projectiles VFX
-From $9.99★★★☆☆3.0 (1)](https://www.fab.com/listings/6fa94df2-a5df-44a4-89a6-714189c67a38)
-[Combat VFXView on Fab ↗
-### Advanced Shield VFX V2
-From $12.99★★★★☆4.0 (4)](https://www.fab.com/listings/38d01588-777f-4074-b915-4badc5276e76)
-[Combat VFXView on Fab ↗
-### Shield Pack
-From $9.99New](https://www.fab.com/listings/0a07e5c6-1cde-429b-987e-bd79d2d68d76)
-[BundlesView on Fab ↗
-### Essential Niagara VFX Pack
-From $15.99★★★★☆3.8 (5)](https://www.fab.com/listings/843f3b56-092f-444c-a200-599cf0692c9d)
-[BundlesView on Fab ↗
-### Advanced Niagara Essential VFX Vol:01
-From $9.99New](https://www.fab.com/listings/9fed3f1c-27b1-4371-8ca4-77df38f2b978)
-[BundlesView on Fab ↗
-### Niagara Essential VFX Vol:02
-From $9.99★★★★☆4.0 (1)](https://www.fab.com/listings/bef35a22-b411-45d6-aad8-360c6d422d51)
-[PluginsView on Fab ↗
-### AnyDetourComponent Plugin
-From $4.99New](https://www.fab.com/listings/ba4574f2-4549-41a5-99ff-79cb28a8d1cb)
-
-[See everything on Fab ↗](https://www.fab.com/sellers/UEDEV)
-
-Documentation & Support
-
-## Everything you need to integrate
-
-Guides, video tutorials and direct support to get any pack running in your project fast.
-
-[▶
-
-### Video Tutorials
-Step-by-step setup and showcase videos for the VFX packs on the UEDEV YouTube channel.Watch on YouTube ↗](https://www.youtube.com/@experimentdev3935)
-[📘
-
-### Product Documentation
-Each listing ships with written docs covering install, parameters and example usage. Find them on every product page.Open product docs ↗](https://www.fab.com/sellers/UEDEV)
-
-🚀
-
-### Quick Start
-
-New to Niagara? Drop the system into your level, assign a spawn point, and tune the exposed parameters — that's it.How it works →
-
-💬
-
-### Get Support
-
-Hit a snag or need a custom effect? Reach out directly and get help from the developer behind the packs.Contact support →
+### Ultimate Scan & Screen Effects
+From $12.99★★★★★4.8 (4)](https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5)
 
 The Developer
 
@@ -950,37 +831,12 @@ Contact / Hire
 
 - 04**Marketplace publisher since 2021** — the systems behind these packs come from real shipped games.
 
-## Power up your game withUEDEV systems.
+## Give your AI thewhole sky.
 
-High-performance plugins, gameplay systems and advanced VFX, ready to drop into Unreal Engine today.
+LCM 3D Navigation AI — true 3D navigation and pathfinding for Unreal Engine 5, built and supported by a working game developer.
 
-[Browse the Store on Fab ↗](https://www.fab.com/sellers/UEDEV)
-Meet the Developer →
-
-**U**UE**DEV**
-
-High-performance plugins, gameplay systems & advanced VFX for Unreal Engine. Built and supported by a working game developer.
-
-Store
-[Browse on Fab](https://www.fab.com/sellers/UEDEV)
-3D Pathfinding for UE5
-Niagara VFX packs
-Flying & drone AI
-Best Sellers
-Full Library
-
-Support
-[Video Tutorials](https://www.youtube.com/@experimentdev3935)
-[Documentation](https://lcmnav3d.github.io/)
-Contact
-
-Developer
-Portfolio
-Projects
-Playground
-
-© 2018–2026 UEDEV · L. Charitha Madhushanka
-For AI agents: llms.txt · facts.json · sitemap
+[Get it on Fab ↗](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+How it works →
 
 ---
 
@@ -1859,6 +1715,53 @@ True 3D pathfinding and volumetric navigation for Unreal Engine 5: flying, swimm
 Explore the plugin
 [View on Fab ↗](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
 
+Best sellers
+
+## Top rated
+
+01
+
+Weapons · Niagara
+### Niagara Energy Beam Pack V2
+
+[View on Fab](https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296)
+
+$15.99 ★ 5.0 (6)
+
+02
+
+Combat · Niagara
+### Ultimate Explosion VFX
+
+[View on Fab](https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770)
+
+$14.99 ★ 5.0 (4)
+
+03
+
+Combat · Screen FX
+### Ultimate Scan & Screen Effects
+
+[View on Fab](https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5)
+
+$12.99 ★ 4.8 (4)
+
+The VFX library
+
+## Real-time VFX
+
+Production-grade Niagara built the same way as the plugins — profiled, documented and shipped in real games. Explosions, energy beams, muzzle flashes, shields, portals and full environmental systems.
+
+21Products
+
+**150+**Effects
+
+47Fab ratings
+
+**4.5★**Average rating
+
+Browse every pack
+
 Weapon VFX
 
 ## Weapon VFX for Unreal Engine
@@ -1960,6 +1863,67 @@ C++ plugins for Unreal Engine.
 [PluginsView on Fab ↗
 ### AnyDetourComponent Plugin
 From $4.99New](https://www.fab.com/listings/ba4574f2-4549-41a5-99ff-79cb28a8d1cb)
+
+## Capabilities
+
+What UEDEV builds for Unreal teams — from navigation and AI down through the effects layer.
+
+01
+
+### Volumetric 3D Navigation
+
+LCM 3D Navigation AI — sparse voxel octree pathfinding with GPU voxelization, Mass crowds and true-3D tactical queries for flying and swimming agents.
+
+02
+
+### Game AI
+
+Behaviour trees, detour steering and decision systems that stay smooth as agent counts climb.
+
+03
+
+### Gameplay Systems
+
+Combat, physics and runtime ECS architectures written in C++ for shipping-grade performance.
+
+04
+
+### Real-time VFX
+
+Production-grade Niagara effects — explosions, beams, shields and environments — profiled to hold frame budget.
+
+05
+
+### Engine Tooling
+
+Editor plugins and pipeline tools that take the repetitive work out of your team's day.
+
+Documentation & Support
+
+## Everything you need to integrate
+
+Guides, video tutorials and direct support to get any pack running in your project fast.
+
+[▶
+
+### Video Tutorials
+Step-by-step setup and showcase videos for the VFX packs on the UEDEV YouTube channel.Watch on YouTube ↗](https://www.youtube.com/@experimentdev3935)
+[📘
+
+### Product Documentation
+Each listing ships with written docs covering install, parameters and example usage. Find them on every product page.Open product docs ↗](https://www.fab.com/sellers/UEDEV)
+
+🚀
+
+### Quick Start
+
+New to Niagara? Drop the system into your level, assign a spawn point, and tune the exposed parameters — that's it.How it works →
+
+💬
+
+### Get Support
+
+Hit a snag or need a custom effect? Reach out directly and get help from the developer behind the packs.Contact support →
 
 Prices and ratings as listed on Fab on 24 October 2026. Fab shows the current price, any sale and the supported engine versions on each listing.
 

@@ -24,7 +24,7 @@ This is the site of UEDEV, the Unreal Engine label of L. Charitha Madhushanka. I
 ## Product
 
 - [True 3D pathfinding for Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-3d-pathfinding/): True 3D pathfinding for Unreal Engine 5 with infinite streaming worlds — not just a bounds volume. Flying AI, 6-DOF flight, Mass crowds, multiplayer.
-- [True 3D pathfinding & volumetric navigation for Unreal Engine 5 — plus high-performance C++ plugins](https://uedevlabs.github.io/): LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5 — infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab.
+- [LCM 3D Navigation AI True 3D navigation for Unreal Engine 5](https://uedevlabs.github.io/): LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5 — infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab.
 
 ## Use cases
 
