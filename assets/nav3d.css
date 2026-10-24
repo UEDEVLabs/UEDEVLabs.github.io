@@ -378,6 +378,45 @@ html.js .xr.in{opacity:1;transform:none}
 .xw__play[aria-pressed="true"] .i-pause{display:block}
 
 /* ---------- Responsive ---------- */
+/* ---------- A full-width row (the live moving-obstacle demo), text beneath in two columns ---------- */
+.xrow--wide,.xrow--wide:nth-child(even){grid-template-columns:1fr;gap:36px}
+.xrow--wide:nth-child(even) .xrow__media{order:0}
+.xrow--wide .xrow__text{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:0 56px;align-items:start}
+.xgaunt{position:absolute;inset:0;background:#050806}
+.xgaunt canvas{display:block;width:100%;height:100%}
+.xgaunt .xpredict{width:100%;height:100%}
+@media(max-width:960px){.xrow--wide .xrow__text{display:block}}
+@media(max-width:640px){.xrow--wide .xm figcaption{display:none}}
+
+/* ---------- Hero reel: highlight clips in turn, a cinematic cut between them (nav3d.js) ---------- */
+.xreel{position:absolute;inset:0;overflow:hidden}
+.xreel__v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.07);
+  transition:opacity 1.1s var(--ease),transform 1.5s var(--ease);will-change:opacity,transform}
+.xreel__v.is-on{opacity:1;transform:scale(1)}
+.xreel__v.is-on.is-drift{transform:scale(1.045);transition:opacity 1.1s var(--ease),transform 6s linear}
+.xreel::after{content:'';position:absolute;inset:0 -50%;pointer-events:none;opacity:0;mix-blend-mode:screen;
+  background:linear-gradient(100deg,transparent 38%,rgba(139,255,176,.08) 46%,rgba(255,255,255,.17) 50%,rgba(139,255,176,.08) 54%,transparent 62%)}
+.xreel.is-cut::after{animation:xsweep 1.3s var(--ease)}
+@keyframes xsweep{0%{opacity:0;transform:translateX(-40%)}20%{opacity:1}100%{opacity:0;transform:translateX(40%)}}
+.xreel__ui{position:absolute;right:100px;bottom:51px;z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:12px;text-align:right;pointer-events:none}
+.xreel__cap{margin:0;display:flex;flex-direction:column;align-items:flex-end;gap:4px;text-shadow:0 2px 16px rgba(0,0,0,.75)}
+.xreel__cap.in > *{animation:xcap .7s var(--ease) both}
+.xreel__cap.in > :nth-child(2){animation-delay:.07s}
+.xreel__cap.in > :nth-child(3){animation-delay:.14s}
+@keyframes xcap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.xreel__n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--nv)}
+.xreel__cap b{font-size:17px;font-weight:600;letter-spacing:-.01em;color:#fff}
+.xreel__place{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#b6c4ba}
+.xreel__segs{display:flex;gap:6px;pointer-events:auto}
+.xreel__seg{position:relative;width:30px;height:22px;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:center}
+.xreel__seg::before{content:'';position:absolute;left:0;right:0;top:50%;height:3px;margin-top:-1.5px;border-radius:3px;background:rgba(255,255,255,.24);transition:background .2s}
+.xreel__seg i{position:relative;display:block;width:100%;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--nv),var(--nv-2));transform:scaleX(0);transform-origin:left;box-shadow:0 0 10px rgba(47,224,106,.55)}
+.xreel__seg.done i{transform:scaleX(1);opacity:.5;box-shadow:none}
+.xreel__seg:hover::before{background:rgba(255,255,255,.5)}
+.xreel__seg:focus-visible{outline:2px solid var(--nv);outline-offset:2px;border-radius:4px}
+@media(max-width:860px){.xreel__ui{right:72px;bottom:31px}.xreel__cap{display:none}.xreel__segs{gap:5px}.xreel__seg{width:24px}}
+@media(prefers-reduced-motion:reduce){.xreel__v,.xreel__v.is-on,.xreel__v.is-on.is-drift{transform:none;transition:opacity .4s}.xreel::after{display:none}.xreel__cap.in > *{animation:none}}
+
 /* ---------- Rating badge: sits between the lede and the buttons, links to the reviews on Fab ---------- */
 .xrating{display:inline-flex;align-items:center;gap:10px;margin:26px 0 0;padding:8px 14px 8px 12px;border-radius:100px;
   border:1px solid var(--gold-line);background:linear-gradient(135deg,rgba(255,194,26,.12),rgba(255,194,26,.03));

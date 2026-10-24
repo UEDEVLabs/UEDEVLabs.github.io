@@ -52,8 +52,17 @@ h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1}
 .nav__in{max-width:var(--maxw);margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px;letter-spacing:.02em}
 /* UEDEV logo (assets/brand): the mark and the wordmark, from the brand pack */
-.brand__mark{width:34px;height:34px;flex:0 0 auto;display:block;filter:drop-shadow(0 0 10px rgba(38,187,255,.32));transition:filter .3s}
-.brand:hover .brand__mark{filter:drop-shadow(0 0 16px rgba(38,187,255,.6))}
+@property --brand-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.brand__mark{position:relative;width:34px;height:34px;flex:0 0 auto;display:block}
+.brand__mark img{position:relative;z-index:1;display:block;width:100%;height:100%;filter:drop-shadow(0 0 10px rgba(38,187,255,.32));transition:filter .3s}
+.brand:hover .brand__mark img{filter:drop-shadow(0 0 16px rgba(38,187,255,.6))}
+/* the light that orbits the tile, as the old mark's spinning border did */
+.brand__mark i{position:absolute;inset:-3px;border-radius:11px;padding:1.6px;z-index:0;pointer-events:none;
+  background:conic-gradient(from var(--brand-a),transparent 0deg 190deg,rgba(0,112,224,.6) 250deg,#26BBFF 305deg,#7FD8FF 338deg,#fff 352deg,transparent 360deg),linear-gradient(rgba(38,187,255,.16),rgba(38,187,255,.16));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  filter:drop-shadow(0 0 4px rgba(38,187,255,.7));animation:brand-orbit 4.5s linear infinite}
+.brand:hover .brand__mark i{animation-duration:1.8s}
+@keyframes brand-orbit{to{--brand-a:360deg}}
 .brand__word{display:block;width:auto;height:17px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .nav__links{display:flex;gap:28px;align-items:center}
@@ -117,7 +126,7 @@ h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1}
 .reveal[data-d="1"]{transition-delay:.07s}.reveal[data-d="2"]{transition-delay:.14s}
 .reveal[data-d="3"]{transition-delay:.21s}.reveal[data-d="4"]{transition-delay:.28s}
 html.no-anim .reveal{opacity:1!important;transform:none!important;transition:none!important}
-html.no-anim .aurora::before,html.no-anim .aurora::after,html.no-anim .strip__t{animation:none!important}
+html.no-anim .aurora::before,html.no-anim .aurora::after,html.no-anim .strip__t,html.no-anim .brand__mark i{animation:none!important}
 
 /* ---------- FEATURED ---------- */
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -238,5 +247,5 @@ html.no-anim .aurora::before,html.no-anim .aurora::after,html.no-anim .strip__t{
 }
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none}
-  .aurora::before,.aurora::after,.strip__t,.scrolldown i,.pill .dot{animation:none}
+  .aurora::before,.aurora::after,.strip__t,.scrolldown i,.pill .dot,.brand__mark i{animation:none}
 }

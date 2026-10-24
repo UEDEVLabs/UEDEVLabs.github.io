@@ -82,6 +82,7 @@ for (const file of pages()) {
     if (clean.endsWith('/') || (fs.existsSync(target) && fs.statSync(target).isDirectory())) target = path.join(target, 'index.html');
     checkedRefs++;
     if (!fs.existsSync(target)) fail(page, `missing ${ref}`);
+    else if (fs.statSync(target).size === 0) fail(page, `empty file ${ref} (a failed encode?)`);
   }
 
   // Images

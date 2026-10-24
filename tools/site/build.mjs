@@ -118,6 +118,41 @@ function loop(a, page, indent) {
   ].map((l) => indent + l).join('\n');
 }
 
+// A hero reel: the highlight clips play in turn with a cinematic cut between them (nav3d.js runs it
+// and builds its clip buttons). It sits on the first clip's own first frame, the LCP image, and no
+// clip downloads before the page has loaded; each clip is fetched only as its turn comes.
+// <!-- @reel name="home" id="heroReel" -->
+const REELS = {
+  home: [
+    ['loop-drone-swarm-city', 'Mass Entity swarm', 'City towers'],
+    ['loop-harbour-ship-landing', 'Lands on a moving ship', 'Harbour'],
+    ['loop-space-dogfight', 'Space dogfight', 'Asteroid belt'],
+    ['loop-reef-school', 'Fish school in layers', 'Coral reef'],
+    ['loop-hunter-drones', 'Hunter drones', 'Container yard'],
+    ['loop-gulls-perch', 'Birds land on the cliffs', 'Sea cliffs'],
+    ['loop-octree-sea-stack', 'The live navigation octree', 'Debug view'],
+    ['loop-skyscraper-swarm', 'Swarm through a tower', 'Vertical skyscraper'],
+  ],
+};
+
+function reel(a, page, indent) {
+  const list = REELS[a.name];
+  if (!list) throw new Error(`${page}: no reel "${a.name}"`);
+  const fix = relTo(page);
+  const still = picture({ slug: 'poster-' + list[0][0].replace(/^loop-/, ''), sizes: '100vw', loading: 'eager', class: 'xh__still', alt: '' }, page, indent);
+  const clips = list.flatMap(([slug, title, place]) => {
+    const s = loops.get(slug);
+    if (!s) throw new Error(`${page}: no loop "${slug}" in media.json`);
+    return [
+      `  <video class="xreel__v" muted playsinline preload="none" width="${s.width}" height="${s.height}" data-title="${esc(title)}" data-place="${esc(place)}" aria-label="${esc(s.alt)}">`,
+      `    <source src="${fix(s.webm)}" type='video/webm; codecs="av01.0.05M.08"'>`,
+      `    <source src="${fix(s.mp4)}" type="video/mp4">`,
+      `  </video>`,
+    ];
+  });
+  return still + '\n' + [`<div class="xreel" id="${a.id || 'reel'}" data-reel>`, ...clips, '</div>'].map((l) => indent + l).join('\n');
+}
+
 // Store cards, styled by company.css (.card). Attributes: cat="Combat", ids="a,b,c", no-flagship, sizes.
 const CATGRAD = {
   Combat: 'linear-gradient(135deg,#7fe05a,#c8ff5e)', Weapons: 'linear-gradient(135deg,#2fe06a,#10c9b0)',
@@ -176,7 +211,7 @@ function nav(a, page, indent) {
     `        <a href="${fix(href)}"${a.current === href ? ' aria-current="page"' : ''}><b>${label}</b><span>${sub}</span></a>`).join('\n');
   return `<header class="nav" id="nav">
   <div class="nav__in">
-    <a href="${home}" class="brand" aria-label="UEDEV home"><img class="brand__mark" src="${fix('assets/brand/uedev-mark.svg')}" width="34" height="34" alt=""><img class="brand__word" src="${fix('assets/brand/uedev-wordmark.svg')}" width="109" height="17" alt=""></a>
+    <a href="${home}" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><img src="${fix('assets/brand/uedev-mark.svg')}" width="34" height="34" alt=""></span><img class="brand__word" src="${fix('assets/brand/uedev-wordmark.svg')}" width="109" height="17" alt=""></a>
     <nav class="nav__links" id="nav-links" aria-label="Main">
       <a href="${home}"${cur('home')}>3D Navigation AI</a>
       <a href="${fix('unreal-engine-3d-pathfinding/')}"${cur('how')}>How it works</a>
@@ -197,7 +232,7 @@ ${items}
 </header>`.split('\n').map((l) => indent + l).join('\n');
 }
 
-const KINDS = { picture, loop, catalog, nav };
+const KINDS = { picture, loop, catalog, nav, reel };
 let changed = 0;
 for (const file of pages()) {
   const page = path.relative(ROOT, file).split(path.sep).join('/');
@@ -212,13 +247,13 @@ for (const file of pages()) {
   // Animated counters keep their target in data-count; data-fact-count sets it.
   html = html.replace(/data-fact-count="([^"]+)" data-count="[^"]*"/g, (_, key) => `data-fact-count="${key}" data-count="${fact(key)}"`);
 
-  html = html.replace(/([ \t]*)<!-- @(picture|loop|catalog|nav)(?: ([^>]*?))? -->\n(?:[\s\S]*?\n)??[ \t]*<!-- \/@\2 -->/g, (_, indent, kind, a = '') => {
+  html = html.replace(/([ \t]*)<!-- @(picture|loop|catalog|nav|reel)(?: ([^>]*?))? -->\n(?:[\s\S]*?\n)??[ \t]*<!-- \/@\2 -->/g, (_, indent, kind, a = '') => {
     const body = KINDS[kind](attrs(a), page, indent);
     return `${indent}<!-- @${kind}${a ? ' ' + a : ''} -->\n${body}\n${indent}<!-- /@${kind} -->`;
   });
 
-  const open = (html.match(/<!-- @(picture|loop|catalog|nav)[ -]/g) || []).length;
-  const shut = (html.match(/<!-- \/@(picture|loop|catalog|nav) -->/g) || []).length;
+  const open = (html.match(/<!-- @(picture|loop|catalog|nav|reel)[ -]/g) || []).length;
+  const shut = (html.match(/<!-- \/@(picture|loop|catalog|nav|reel) -->/g) || []).length;
   if (open !== shut) throw new Error(`${page}: ${open} markers opened, ${shut} closed`);
 
   html = html.replace(/\n/g, eol);

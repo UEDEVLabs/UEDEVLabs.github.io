@@ -193,10 +193,10 @@
 
 <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="assets/company.css?v=20261024g" />
-<link rel="stylesheet" href="assets/transition.css?v=20261024g" />
-<link rel="stylesheet" href="assets/upgrade.css?v=20261024g" />
-<link rel="stylesheet" href="assets/nav3d.css?v=20261024g" />
+<link rel="stylesheet" href="assets/company.css?v=20261024n" />
+<link rel="stylesheet" href="assets/transition.css?v=20261024n" />
+<link rel="stylesheet" href="assets/upgrade.css?v=20261024n" />
+<link rel="stylesheet" href="assets/nav3d.css?v=20261024n" />
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <script>try{if(sessionStorage.getItem('xition_nav'))document.documentElement.classList.add('xnav');}catch(e){}</script>
 </head>
@@ -218,7 +218,7 @@
 <!-- @nav active="home" -->
 <header class="nav" id="nav">
   <div class="nav__in">
-    <a href="./" class="brand" aria-label="UEDEV home"><img class="brand__mark" src="assets/brand/uedev-mark.svg" width="34" height="34" alt=""><img class="brand__word" src="assets/brand/uedev-wordmark.svg" width="109" height="17" alt=""></a>
+    <a href="./" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><img src="assets/brand/uedev-mark.svg" width="34" height="34" alt=""></span><img class="brand__word" src="assets/brand/uedev-wordmark.svg" width="109" height="17" alt=""></a>
     <nav class="nav__links" id="nav-links" aria-label="Main">
       <a href="./" class="active" aria-current="page">3D Navigation AI</a>
       <a href="unreal-engine-3d-pathfinding/">How it works</a>
@@ -249,17 +249,47 @@
   <!-- HERO -->
   <header class="xh" id="top">
     <div class="xh__media" aria-hidden="true">
-      <!-- @loop slug="loop-drone-swarm-city" class="xh__video" id="heroLoop" hero -->
+      <!-- @reel name="home" id="heroReel" -->
       <picture>
         <source type="image/avif" srcset="assets/media/stills/poster-drone-swarm-city-640.avif 640w, assets/media/stills/poster-drone-swarm-city-1280.avif 1280w, assets/media/stills/poster-drone-swarm-city-1920.avif 1920w" sizes="100vw">
         <source type="image/webp" srcset="assets/media/stills/poster-drone-swarm-city-640.webp 640w, assets/media/stills/poster-drone-swarm-city-1280.webp 1280w, assets/media/stills/poster-drone-swarm-city-1920.webp 1920w" sizes="100vw">
         <img src="assets/media/stills/poster-drone-swarm-city-1280.jpg" alt="" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async" class="xh__still">
       </picture>
-      <video id="heroLoop" class="xh__video" muted loop playsinline preload="none" data-autoplay data-hero width="1280" height="720" aria-label="Looping clip: a drone swarm pours between city towers">
-        <source src="assets/media/loops/loop-drone-swarm-city.webm" type='video/webm; codecs="av01.0.05M.08"'>
-        <source src="assets/media/loops/loop-drone-swarm-city.mp4" type="video/mp4">
-      </video>
-      <!-- /@loop -->
+      <div class="xreel" id="heroReel" data-reel>
+        <video class="xreel__v" muted playsinline preload="none" width="1280" height="720" data-title="Mass Entity swarm" data-place="City towers" aria-label="Looping clip: a drone swarm pours between city towers">
+          <source src="assets/media/loops/loop-drone-swarm-city.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="assets/media/loops/loop-drone-swarm-city.mp4" type="video/mp4">
+        </video>
+        <video class="xreel__v" muted playsinline preload="none" width="1280" height="720" data-title="Lands on a moving ship" data-place="Harbour" aria-label="Looping clip: a drone descends and lands on a moving ship's deck">
+          <source src="assets/media/loops/loop-harbour-ship-landing.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="assets/media/loops/loop-harbour-ship-landing.mp4" type="video/mp4">
+        </video>
+        <video class="xreel__v" muted playsinline preload="none" width="1280" height="720" data-title="Space dogfight" data-place="Asteroid belt" aria-label="Looping clip: starfighters trade laser fire through an asteroid belt">
+          <source src="assets/media/loops/loop-space-dogfight.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="assets/media/loops/loop-space-dogfight.mp4" type="video/mp4">
+        </video>
+        <video class="xreel__v" muted playsinline preload="none" width="1280" height="720" data-title="Fish school in layers" data-place="Coral reef" aria-label="Looping clip: a school of fish streams over the coral reef">
+          <source src="assets/media/loops/loop-reef-school.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="assets/media/loops/loop-reef-school.mp4" type="video/mp4">
+        </video>
+        <video class="xreel__v" muted playsinline preload="none" width="1280" height="720" data-title="Hunter drones" data-place="Container yard" aria-label="Looping clip: hunter drones weave between shipping container stacks">
+          <source src="assets/media/loops/loop-hunter-drones.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="assets/media/loops/loop-hunter-drones.mp4" type="video/mp4">
+        </video>
+        <video class="xreel__v" muted playsinline preload="none" width="1280" height="720" data-title="Birds land on the cliffs" data-place="Sea cliffs" aria-label="Looping clip: gulls sweep in and one lands on a sea stack">
+          <source src="assets/media/loops/loop-gulls-perch.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="assets/media/loops/loop-gulls-perch.mp4" type="video/mp4">
+        </video>
+        <video class="xreel__v" muted playsinline preload="none" width="1280" height="720" data-title="The live navigation octree" data-place="Debug view" aria-label="Looping clip: the live navigation octree around a sea stack">
+          <source src="assets/media/loops/loop-octree-sea-stack.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="assets/media/loops/loop-octree-sea-stack.mp4" type="video/mp4">
+        </video>
+        <video class="xreel__v" muted playsinline preload="none" width="1280" height="720" data-title="Swarm through a tower" data-place="Vertical skyscraper" aria-label="Looping clip: a drone swarm rises through a skyscraper">
+          <source src="assets/media/loops/loop-skyscraper-swarm.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="assets/media/loops/loop-skyscraper-swarm.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- /@reel -->
     </div>
     <div class="xh__scrim"></div>
     <div class="wrap xh__in">
@@ -278,7 +308,7 @@
         <li>Complete C++ source</li>
       </ul>
     </div>
-    <button class="xplay" type="button" data-target="heroLoop" aria-pressed="false" aria-label="Pause background video">
+    <button class="xplay" type="button" data-target="heroReel" aria-pressed="false" aria-label="Pause the highlight reel">
       <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
       <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
     </button>
@@ -923,7 +953,7 @@
           <span class="kicker">The Developer</span>
           <h2>Need something <em>custom built?</em></h2>
           <div class="dev__face">
-            <picture><source type="image/webp" srcset="assets/img/charitha-madhushanka.webp"><img src="assets/img/charitha-madhushanka.jpg" alt="L. Charitha Madhushanka" width="84" height="84" loading="lazy" decoding="async"></picture>
+            <picture><source type="image/webp" srcset="assets/img/charitha-madhushanka.webp"><img src="assets/img/charitha-madhushanka.jpg" alt="UEDEV logo" width="84" height="84" loading="lazy" decoding="async"></picture>
             <div><b>L. Charitha Madhushanka</b><span>Senior Game Developer · Unreal &amp; Unity</span></div>
           </div>
           <p>UEDEV is the Unreal engineering label of L. Charitha Madhushanka, a senior gameplay engineer shipping commercial games, VR/AR, high-performance C++ plugins and engine tools. For studio work, contract jobs, or a bespoke plugin or system, head to the full developer portfolio.</p>
@@ -958,7 +988,7 @@
   <div class="wrap">
     <div class="footer__in">
       <div class="footer__col" style="max-width:280px">
-        <a href="#top" class="brand" style="margin-bottom:14px"><img class="brand__mark" src="assets/brand/uedev-mark.svg" width="34" height="34" alt=""><img class="brand__word" src="assets/brand/uedev-wordmark.svg" width="109" height="17" alt="UEDEV"></a>
+        <a href="#top" class="brand" style="margin-bottom:14px"><span class="brand__mark"><i></i><img src="assets/brand/uedev-mark.svg" width="34" height="34" alt=""></span><img class="brand__word" src="assets/brand/uedev-wordmark.svg" width="109" height="17" alt="UEDEV"></a>
         <p style="color:var(--faint);font-size:14px;line-height:1.6;margin:0">High-performance plugins, gameplay systems &amp; advanced VFX for Unreal Engine. Built and supported by a working game developer.</p>
       </div>
       <div class="footer__col">
@@ -989,10 +1019,10 @@
   </div>
 </footer>
 
-<script src="assets/transition.js?v=20261024g"></script>
-<script src="assets/company.js?v=20261024g"></script>
-<script src="assets/navmesh.js?v=20261024g"></script>
-<script src="assets/upgrade.js?v=20261024g"></script>
-<script src="assets/nav3d.js?v=20261024g" defer></script>
+<script src="assets/transition.js?v=20261024n"></script>
+<script src="assets/company.js?v=20261024n"></script>
+<script src="assets/navmesh.js?v=20261024n"></script>
+<script src="assets/upgrade.js?v=20261024n"></script>
+<script src="assets/nav3d.js?v=20261024n" defer></script>
 </body>
 </html>
