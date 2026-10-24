@@ -40,7 +40,7 @@
     const sec=$('#mrq'); if(!sec) return;
     const r1=$('#mrqA'), r2=$('#mrqB');
     const a=SHOTS.slice(0,10), b=SHOTS.slice(10);
-    const tile=(s)=>'<div class="mrq__tile"><img src="'+shotUrl(s)+'" alt="'+s[1]+' — Unreal Engine asset by UEDEV" width="639" height="349" loading="lazy" decoding="async" /><span>'+s[1]+'</span></div>';
+    const tile=(s)=>'<div class="mrq__tile"><img src="'+shotUrl(s)+'" alt="'+s[1]+', Unreal Engine asset by UEDEV" width="639" height="349" loading="lazy" decoding="async" /><span>'+s[1]+'</span></div>';
     r1.innerHTML=[...a,...a,...a].map(tile).join('');
     r2.innerHTML=[...b,...b,...b].map(tile).join('');
     if(reduce) return;

@@ -1,0 +1,46 @@
+# Keeps the ratings on the site in step with Fab: once a day it reads every listing's rating,
+# and only if a number changed it rebuilds the pages, commits and republishes the site.
+# Run it by hand from the Actions tab (Fab ratings > Run workflow).
+name: Fab ratings
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: fab-ratings
+  cancel-in-progress: false
+
+jobs:
+  ratings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # seo.mjs dates each sitemap entry from its last commit
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Read ratings from Fab
+        run: node tools/site/fab-ratings.mjs
+      - name: Rebuild, commit and republish if a rating changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- facts.json data/products.json; then echo "No rating changed."; exit 0; fi
+          node tools/site/build.mjs
+          node tools/site/seo.mjs
+          node tools/site/verify.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A facts.json data/products.json sitemap.xml llms.txt llms-full.txt '*.html'
+          git commit -m "Fab ratings: update from the live listings"
+          git push
+          # A push made with the workflow token may not start a Pages build by itself.
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null || echo "Pages build request failed; the next push will publish it."

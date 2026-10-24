@@ -19,7 +19,7 @@ const PRODUCT = 'unreal-engine-3d-pathfinding/';
 const FAB = facts.product.fab;
 const DOCS = facts.product.docs;
 const UPDATED = facts.updated;
-const V = '?v=20261024c';
+const V = '?v=20261024e';
 // Best sellers, the VFX marquee, capabilities and support, moved here from the home page.
 const STORE_SECTIONS = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'partials', 'store-sections.html'), 'utf8')
   .replace(/^<!--[\s\S]*?-->\r?\n/, '');
@@ -53,24 +53,24 @@ const USE_CASES = [
   {
     slug: 'unreal-engine-flying-ai',
     nav: 'Flying AI',
-    title: 'Drone & Flying AI for UE5 — LCM 3D Navigation AI',
+    title: 'Drone & Flying AI for UE5 | LCM 3D Navigation AI',
     description: 'Flying AI and drone AI for Unreal Engine 5: true 3D routes, 6-DOF flight, landing on moving decks, perching birds and combat drones that hunt and engage.',
     kicker: 'Use case · Flying AI',
     h1: 'Flying AI and <em>drones</em> for Unreal Engine 5',
-    lede: 'Drones that bank into their turns, land on a rolling ship\'s deck and hunt through city streets — and birds that glide in to perch on a cliff ledge. LCM 3D Navigation AI gives every flying agent a real route through the air, a 6-DOF body that flies it, and a library of ready-made behaviours, from one hero drone to a Mass Entity flock.',
+    lede: 'Drones that bank into their turns, land on a rolling ship\'s deck and hunt through city streets, and birds that glide in to perch on a cliff ledge. LCM 3D Navigation AI gives every flying agent a real route through the air, a 6-DOF body that flies it, and a library of ready-made behaviours, from one hero drone to a Mass Entity flock.',
     hero: { loop: 'loop-harbour-ship-landing', still: 'harbour-drone-lands-moving-ship' },
     glance: [['4', 'Flight archetypes'], ['<span data-fact="ai.aiNodesTotal">85</span>', 'BT, StateTree &amp; Mass nodes'], ['10,000+', 'Mass Entity agents'], ['<span data-fact="compatibility.engineRange">5.2–5.8</span>', 'Unreal Engine']],
     sections: [
       { media: pic('city-open-world-drone-routes'), cap: 'Drones and their planned routes over a streamed city',
         kicker: 'Routes', h2: 'A route through the air, not along a floor',
-        body: `<p>Unreal's Recast navmesh describes where a character can stand. A drone needs to know where there is empty air, so LCM 3D Navigation AI carves the level into a Sparse Voxel Octree of navigable volume and plans through it in full 3D — up, down and diagonally through shafts, under bridges and between towers.</p>
+        body: `<p>Unreal's Recast navmesh describes where a character can stand. A drone needs to know where there is empty air, so LCM 3D Navigation AI carves the level into a Sparse Voxel Octree of navigable volume and plans through it in full 3D: up, down and diagonally through shafts, under bridges and between towers.</p>
 <p>Theta* and Lazy Theta* give any-angle routes that cut the corners a grid would force, and every smoothed path is checked against the level's geometry, so a drone never cuts through a wall to reach its goal.</p>` },
       { media: pic('harbour-drone-quay-closeup'), cap: 'A multirotor drone over the harbour quay',
         kicker: 'Flight', h2: 'A body that flies like the real thing',
         body: `<p>Navigation gives guidance; <code>LcmFlightMovementComponent</code> turns it into flight. Four archetypes each bank, climb, glide and stop differently: <strong>Multirotor drone</strong> (tilt-to-translate), <strong>Jet / Fixed-Wing</strong>, <strong>Bird</strong> (flap-glide) and <strong>Fish</strong>. Thrust, lift, drag and an attitude PID drive the body, with inertia, turn-rate limits and arrival deceleration, and an animation-drive struct feeds your blendspaces.</p>
 <p>Flight follows the level's gravity (World Settings or a Physics Volume), and Max Pitch, Flare Pitch and Leg Friction are set per bird in its Flight Config.</p>` },
       { media: vid('loop-gulls-perch'), cap: 'Gulls sweep in and one settles on the sea stack',
-        kicker: 'Take off, land, perch', h2: 'Landing — even on a moving deck',
+        kicker: 'Take off, land, perch', h2: 'Landing, even on a moving deck',
         body: `<p>The <strong>Land</strong> task finds its own landing point and flies the approach relative to the deck, so a courier drone can put down on a moving, rolling ship or a moving lorry and take off again with the deck's velocity. Drones descend vertically; birds glide in with a braking flare. EQS generators and tests find landing sites for flying agents.</p>
 <p><strong>Perch</strong> lands on tagged ledges and pads, and agents in a crowd share the work: no two take the same perch. Since 3.6 drones no longer bob over a perch or a landing pad, and gliding birds land from where they are.</p>` },
       { media: pic('hunter-drones-container-stacks'), cap: 'Hunter drones weave between container stacks',
@@ -78,7 +78,7 @@ const USE_CASES = [
         body: `<p><strong>Engage Target</strong> finds a firing position, keeps line of sight and fires only on a clean shot. In 3.6 it holds that position until the target leaves it, flies to it in formation and leads a crossing target. <strong>Investigate</strong> searches around a last-known position, hunters remember what they lose sight of, <strong>Flee</strong> breaks line of sight and hides, and <strong>Scan Area</strong> sweeps a volume.</p>
 <p>Sentries can see only through Unreal's AI Perception sight cones, and Engage can take its sightings from AI Perception.</p>` },
       { media: pic('node-fly-to-location', '(min-width:860px) 52vw, 100vw'), cap: 'The Fly To Location node in the Feature Examples hall',
-        kicker: 'Authoring', h2: 'Behaviour Tree, StateTree — or one Blueprint node',
+        kicker: 'Authoring', h2: 'Behaviour Tree, StateTree or one Blueprint node',
         body: `<p>Author the same flight in the system your team already uses: 21 Behaviour Tree tasks, 5 decorators and 5 services; 25 StateTree tasks, 8 conditions and 8 evaluators at full parity; or Mass StateTree for crowds. For the simplest case, the <code>Fly To Location</code> latent node flies any pawn to a point or an actor with no Behaviour Tree, StateTree or AI Controller, and Unreal's own Move To and EQS can plan through the octree too.</p>` },
     ],
     demos: [
@@ -102,17 +102,17 @@ const USE_CASES = [
   {
     slug: 'unreal-engine-underwater-ai',
     nav: 'Underwater',
-    title: 'Fish & Underwater AI for UE5 — LCM 3D Navigation AI',
+    title: 'Fish & Underwater AI for UE5 | LCM 3D Navigation AI',
     description: 'Underwater and fish AI for Unreal Engine 5: schooling, true 3D swim navigation through the whole water column, Mass Entity schools and 1 cm aquariums.',
     kicker: 'Use case · Underwater AI',
     h1: 'Underwater and <em>fish AI</em> for Unreal Engine 5',
-    lede: 'Schools that hold their depth, part round a predator and turn off the glass before they reach it; an ROV that surveys a reef; turtles that settle on the seabed. Swimming agents use the whole water column on true 3D routes — from an open reef to a 120&nbsp;cm aquarium navigated at 1&nbsp;cm.',
+    lede: 'Schools that hold their depth, part round a predator and turn off the glass before they reach it; an ROV that surveys a reef; turtles that settle on the seabed. Swimming agents use the whole water column on true 3D routes, from an open reef to a 120&nbsp;cm aquarium navigated at 1&nbsp;cm.',
     hero: { loop: 'loop-reef-school', still: 'reef-school-mass' },
     glance: [['0.5<small>cm</small>', 'Smallest voxel'], ['1<small>cm</small>', 'Fish Tank demo voxels'], ['10,000+', 'Mass Entity agents'], ['3.6', 'New swim model']],
     sections: [
       { media: pic('coral-reef-fish'), cap: 'Fish over the coral in the Coral Reef demo',
         kicker: 'Volume', h2: 'The whole water column',
-        body: `<p>A navmesh with a depth offset is a floor plan. LCM 3D Navigation AI routes swimming agents through the full volume — over reefs, under structures and through arches — on genuine 3D paths. Fish inside a Water Volume never swim out of it, and since 3.6 water volumes and overlap-only triggers no longer read as solid to the agents' own checks, so fish find cover and turtles find the seabed.</p>` },
+        body: `<p>A navmesh with a depth offset is a floor plan. LCM 3D Navigation AI routes swimming agents through the full volume (over reefs, under structures and through arches) on genuine 3D paths. Fish inside a Water Volume never swim out of it, and since 3.6 water volumes and overlap-only triggers no longer read as solid to the agents' own checks, so fish find cover and turtles find the seabed.</p>` },
       { media: pic('coral-reef-angelfish'), cap: 'Angelfish above the reef',
         kicker: 'New in 3.6', h2: 'Fish that swim like fish',
         body: `<p>Fish keep their depth by pointing the nose instead of sliding up and down, swim upright, school side by side and in layers, and turn away from walls at once. The tail beats with the swimming speed (Tail Beat From Speed in the Flight Config) and a skeletal fish's swim animation plays at the same rate.</p>
@@ -145,11 +145,11 @@ const USE_CASES = [
   {
     slug: 'unreal-engine-space-combat-ai',
     nav: 'Space',
-    title: 'Space Combat & Dogfight AI for UE5 — LCM 3D Navigation AI',
+    title: 'Space Combat & Dogfight AI for UE5 | LCM 3D Navigation AI',
     description: 'Space combat and dogfight AI for Unreal Engine 5: 6-DOF fighters that chase, lead and re-plan through streamed asteroid belts, and Mass Entity raider swarms.',
     kicker: 'Use case · Space combat',
     h1: 'Space combat and <em>dogfight AI</em> for Unreal Engine 5',
-    lede: 'No floor, no up, no walls. Fighters chase a target through a streamed asteroid belt, lead it with fire and re-plan through the octree as it breaks — while a Mass raider swarm closes round whatever it sees.',
+    lede: 'No floor, no up, no walls. Fighters chase a target through a streamed asteroid belt, lead it with fire and re-plan through the octree as it breaks, while a Mass raider swarm closes round whatever it sees.',
     hero: { loop: 'loop-space-dogfight', still: 'space-dogfight-lasers' },
     glance: [['6-DOF', 'Full pitch and roll'], ['18', 'Raiders in the Mass swarm'], ['∞', 'Streamed asteroid belt'], ['<span data-fact="ai.aiNodesTotal">85</span>', 'AI nodes']],
     sections: [
@@ -183,7 +183,7 @@ const USE_CASES = [
   {
     slug: 'unreal-engine-open-world-navigation',
     nav: 'Open worlds',
-    title: 'Open-World 3D Navigation for UE5 — LCM 3D Navigation AI',
+    title: 'Open-World 3D Navigation for UE5 | LCM 3D Navigation AI',
     description: 'Open-world 3D navigation for Unreal Engine 5: chunks stream around your agents with no bounds volume, a long-range graph, pre-baked chunks and GPU builds.',
     kicker: 'Use case · Open worlds',
     h1: 'Open-world 3D navigation for <em>Unreal Engine 5</em>',
@@ -193,7 +193,7 @@ const USE_CASES = [
     sections: [
       { media: pic('octree-routes-city-debug'), cap: 'The streamed octree and routes over the city, chunk by chunk',
         kicker: 'Streaming', h2: 'No bounds volume, no edge',
-        body: `<p>A bounds volume has to contain everywhere an agent may ever fly, and memory scales with that box whether or not anything is happening inside it. In infinite mode, navigation chunks are generated around the agents as they travel and discarded behind them — the same reason you stream level geometry rather than loading a continent.</p>
+        body: `<p>A bounds volume has to contain everywhere an agent may ever fly, and memory scales with that box whether or not anything is happening inside it. In infinite mode, navigation chunks are generated around the agents as they travel and discarded behind them, for the same reason you stream level geometry rather than loading a continent.</p>
 <p>For an arena or a level-sized map, finite mode builds once at <code>BeginPlay</code> or bakes to an asset, with the lowest overhead.</p>` },
       { media: pic('city-open-world-drone-routes'), cap: 'Drones on long routes across the city',
         kicker: 'Long routes', h2: 'Planning beyond what has loaded',
@@ -203,8 +203,8 @@ const USE_CASES = [
         kicker: 'Bake or stream', h2: 'Pre-baked where you want it, streamed everywhere else',
         body: `<p>Bake the authored parts of a world ahead of time and stream the rest: streamed worlds can use pre-baked chunks, and navigation rebuilds automatically when levels stream in. Moving obstacles are cheap in streamed worlds too.</p>` },
       { media: pic('cost-areas-streamed-chunks'), cap: 'Cost areas priced across streamed chunk seams',
-        kicker: 'GPU-built', h2: 'Chunks built on the GPU — and checked',
-        body: `<p>Each streamed chunk's voxels, octree and links are built on the GPU on D3D12, D3D11 and Vulkan. Each machine's GPU proves its voxels before it builds navigation, and the GPU build checks its own output word by word and rebuilds what it cannot repair. Cost areas — storms, no-fly zones, toll gates — are priced across chunk seams.</p>` },
+        kicker: 'GPU-built', h2: 'Chunks built on the GPU, and checked',
+        body: `<p>Each streamed chunk's voxels, octree and links are built on the GPU on D3D12, D3D11 and Vulkan. Each machine's GPU proves its voxels before it builds navigation, and the GPU build checks its own output word by word and rebuilds what it cannot repair. Cost areas (storms, no-fly zones, toll gates) are priced across chunk seams.</p>` },
     ],
     demos: [
       { name: 'City', still: 'city-open-world-drone-routes', text: 'Dense blocks, rooftop gaps and street canyons, streamed around the agents.', chips: ['BT · ST · Mass'] },
@@ -223,11 +223,11 @@ const USE_CASES = [
   {
     slug: 'unreal-engine-mass-entity-crowds',
     nav: 'Crowds',
-    title: 'Mass Entity Flying Crowds for UE5 — LCM 3D Navigation AI',
+    title: 'Mass Entity Flying Crowds for UE5 | LCM 3D Navigation AI',
     description: '3D Mass Entity crowds for Unreal Engine 5: 10,000+ flying and swimming agents on per-agent paths or a shared flow field, with Mass StateTree behaviours.',
     kicker: 'Use case · Mass crowds',
     h1: 'Mass Entity <em>flying crowds</em> for Unreal Engine 5',
-    lede: 'Drone swarms, bird flocks and fish schools in true 3D through Unreal\'s Mass ECS — 10,000+ agents on per-agent paths or one shared flow field, with crowds that perch, scan, engage, investigate and flee.',
+    lede: 'Drone swarms, bird flocks and fish schools in true 3D through Unreal\'s Mass ECS: 10,000+ agents on per-agent paths or one shared flow field, with crowds that perch, scan, engage, investigate and flee.',
     hero: { loop: 'loop-drone-swarm-city', still: 'drone-swarm-city-towers' },
     glance: [['10,000+', 'Mass Entity agents'], ['8', 'Mass traits'], ['13', 'Mass StateTree nodes'], ['O(1)', 'Flow-field sampling']],
     sections: [
@@ -239,10 +239,10 @@ const USE_CASES = [
         body: `<p>Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee. Agents in a crowd share the work: they sweep an area sharing the viewpoints, close round an intruder the moment any of them sees it, and no two take the same perch, cover or vantage point.</p>` },
       { media: pic('reef-school-crowd'), cap: 'A school turning together without overlapping',
         kicker: 'Density', h2: 'Dense crowds that do not overlap',
-        body: `<p>Hold Avoidance Between Scans keeps separation on every frame, and Contact Push pushes apart bodies that overlap — including agents that have arrived — so a crowd no longer piles onto its goal. A crowd agent pushed off the flow field's covered space steers back instead of freezing, and schooling works for Mass crowds as well as pawns.</p>` },
+        body: `<p>Hold Avoidance Between Scans keeps separation on every frame, and Contact Push pushes apart bodies that overlap, including agents that have arrived, so a crowd no longer piles onto its goal. A crowd agent pushed off the flow field's covered space steers back instead of freezing, and schooling works for Mass crowds as well as pawns.</p>` },
       { media: pic('mass-swarm-rising-skyscraper'), cap: 'A swarm climbing through a tower interior',
         kicker: 'Setup', h2: 'One trait, no code',
-        body: `<p>Add a trait to a Mass Entity Config and the crowd navigates in full 3D, with no per-agent controller and no tick function. Eight traits cover movement, guidance, goals, perception, behaviour status and rendering, and an editor validator flags illegal combinations — the one rule is exactly one movement trait per agent. Crowds render through instanced meshes with LOD representation.</p>` },
+        body: `<p>Add a trait to a Mass Entity Config and the crowd navigates in full 3D, with no per-agent controller and no tick function. Eight traits cover movement, guidance, goals, perception, behaviour status and rendering, and an editor validator flags illegal combinations. The one rule: exactly one movement trait per agent. Crowds render through instanced meshes with LOD representation.</p>` },
     ],
     demos: [
       { name: 'Hunter Pack', still: 'hunter-drones-container-stacks', text: 'Five Mass drones hunt as a pack through the container terminal.', chips: ['Mass StateTree', 'Engage'] },
@@ -264,21 +264,21 @@ const USE_CASES = [
   {
     slug: 'unreal-engine-moving-obstacle-avoidance',
     nav: 'Moving obstacles',
-    title: 'Moving Obstacle Avoidance for UE5 AI — LCM 3D Navigation AI',
+    title: 'Moving Obstacle Avoidance for UE5 AI | LCM 3D Navigation AI',
     description: 'Moving obstacle avoidance for Unreal Engine 5 AI: Fly To predicts gates, pistons and sweepers and times its pass, and moving geometry restamps the octree.',
     kicker: 'Use case · New in 3.6',
     h1: 'Moving obstacle avoidance for <em>Unreal Engine 5</em> AI',
-    lede: 'Re-planning around a door after it closes is too late for a drone at speed. Since 3.6, Fly To predicts where every moving obstacle will be and times its pass — and the octree still restamps itself as the world moves, so routes stay true.',
+    lede: 'Re-planning around a door after it closes is too late for a drone at speed. Since 3.6, Fly To predicts where every moving obstacle will be and times its pass, and the octree still restamps itself as the world moves, so routes stay true.',
     hero: { still: 'harbour-drone-lands-moving-lorry' },
     glance: [['42', 'Movers in the Gauntlet'], ['370<small>m</small>', 'Gauntlet hall'], ['200', 'Agent Mass edition'], ['3', 'Prediction settings']],
     sections: [
       { media: PREDICT_SVG, raw: true, cap: 'A drone waits for the gate it predicted, then takes the gap',
         kicker: 'Prediction', h2: 'Predict, don\'t just react',
-        body: `<p>Fly To predicts where every moving obstacle — any actor with an LCM Dynamic Obstacle component — will be, and times its pass. It learns a gate's or a piston's cycle and replays it, turns a spinning blade with it, eases off, waits for a gap or takes a detour, and dodges what it cannot outrun.</p>
+        body: `<p>Fly To predicts where every moving obstacle (any actor with an LCM Dynamic Obstacle component) will be, and times its pass. It learns a gate's or a piston's cycle and replays it, turns a spinning blade with it, eases off, waits for a gap or takes a detour, and dodges what it cannot outrun.</p>
 <p>It is on by default in the Behaviour Tree and StateTree Fly To, controlled by three settings: <strong>Avoid Moving Obstacles</strong>, <strong>Moving Obstacle Look-Ahead</strong> and <strong>Moving Obstacle Margin</strong>.</p>` },
       { media: pic('node-land-moving-platform'), cap: 'Land on a moving platform in the Feature Examples hall',
         kicker: 'Live octree', h2: 'The octree moves with the world',
-        body: `<p>Moving geometry writes its own footprint back into the octree as it travels, so doors, lifts, moving platforms, destructible cover and patrolling ships change routing live — and in multiplayer the change is multicast to every peer. A mover put back to the start of its track is treated as a jump, not a very fast move, so the space it left is freed.</p>
+        body: `<p>Moving geometry writes its own footprint back into the octree as it travels, so doors, lifts, moving platforms, destructible cover and patrolling ships change routing live, and in multiplayer the change is multicast to every peer. A mover put back to the start of its track is treated as a jump, not a very fast move, so the space it left is freed.</p>
 <p>In streamed worlds a moving obstacle's update next to a 168k-triangle room costs about 1&nbsp;ms, down from 20&nbsp;ms.</p>` },
       { media: pic('drone-swarm-close-fly-through'), cap: 'Agents keeping apart in a dense swarm',
         kicker: 'Each other', h2: 'Avoiding each other, too',
@@ -291,7 +291,7 @@ const USE_CASES = [
       { name: 'Hunter Drone', still: 'hunter-engagement-path', text: 'A hunter re-plans round container stacks as its target runs.', chips: ['Engage', 'BT · ST · Mass'] },
     ],
     faq: [
-      ['How do AI agents avoid moving obstacles in Unreal Engine 5?', 'Give the moving actor an LCM Dynamic Obstacle component. Its footprint restamps the navigation octree as it moves, and since 3.6 the Fly To task predicts its motion and times its pass — waiting for a gap, taking a detour or dodging.'],
+      ['How do AI agents avoid moving obstacles in Unreal Engine 5?', 'Give the moving actor an LCM Dynamic Obstacle component. Its footprint restamps the navigation octree as it moves, and since 3.6 the Fly To task predicts its motion and times its pass: waiting for a gap, taking a detour or dodging.'],
       ['Does it work with doors, lifts and moving platforms?', 'Yes. Any moving actor with a Dynamic Obstacle component updates the octree live, agents re-route around it, and the change replicates to clients in multiplayer.'],
       ['Which settings control moving-obstacle prediction?', 'Avoid Moving Obstacles turns it on (it is on by default), Moving Obstacle Look-Ahead sets how far ahead Fly To predicts, and Moving Obstacle Margin sets the clearance it keeps.'],
     ],
@@ -379,7 +379,7 @@ function footer(scripts = '') {
       <div class="footer__col">
         <h3>3D Navigation AI</h3>
         <a href="../${PRODUCT}">3D pathfinding for UE5</a>
-        <a href="../${PRODUCT}#whats-new">What's new in <span data-fact="product.version">3.6.0</span></a>
+        <a href="https://lcmnav3d.github.io/whats-new.html" target="_blank" rel="noopener">What's new in <span data-fact="product.version">3.6.0</span></a>
 ${uc}
         <a href="${DOCS}" target="_blank" rel="noopener">Documentation</a>
       </div>
@@ -503,13 +503,13 @@ ${nav(u.slug + '/')}
       <p class="xh__chip"><b>v<span data-fact="product.version">3.6.0</span></b> ${u.kicker}</p>
       <h1>${u.h1}</h1>
       <p class="lede">${u.lede}</p>
+      <a class="xrating" href="${FAB}?tab=reviews" target="_blank" rel="noopener"><span class="xstars" data-fact-stars="reviews.ratingValue" aria-hidden="true">★★★★★</span><span class="xsr">Rated </span><b data-fact="reviews.ratingDisplay">5.0</b><span class="xsr"> out of 5 from</span><span><span data-fact="reviews.ratingCount">3</span> ratings on Fab</span><span class="xrating__go" aria-hidden="true">↗</span></a>
       <div class="xh__cta">
         <a class="btn btn--glow" href="${FAB}" target="_blank" rel="noopener">Get it on Fab</a>
         <a class="btn btn--ghost" href="#demos">See the demo levels</a>
         <a class="btn btn--ghost" href="../${PRODUCT}#how">How it works</a>
       </div>
       <ul class="xh__proof">
-        <li><a href="${FAB}?tab=reviews" target="_blank" rel="noopener"><span class="xstars" aria-hidden="true">★★★★★</span> <b><span data-fact="reviews.ratingDisplay">5.0</span> on Fab</b> · <span data-fact="reviews.ratingCount">3</span> ratings</a></li>
         <li>LCM 3D Navigation AI</li>
         <li>Unreal Engine <span data-fact="compatibility.engineRange">5.2–5.8</span></li>
       </ul>
@@ -573,7 +573,7 @@ ${related}
 </article>
 </main>
 
-${cta('Give your AI the <span class="grad">whole sky.</span>', 'LCM 3D Navigation AI — true 3D pathfinding and volumetric navigation for Unreal Engine 5, built and supported by a working game developer.')}
+${cta('Give your AI the <span class="grad">whole sky.</span>', 'LCM 3D Navigation AI: true 3D pathfinding and volumetric navigation for Unreal Engine 5, built and supported by a working game developer.')}
 
 ${footer()}`;
   return head({ slug: u.slug, title: u.title, description: u.description, image, imageAlt: heroStill.alt, ld }) + body;
@@ -595,7 +595,7 @@ const CAT_COPY = {
 function storePage() {
   const slug = 'unreal-engine-niagara-vfx';
   const url = SITE + slug + '/';
-  const title = 'Niagara VFX Packs for Unreal Engine — UEDEV';
+  const title = 'Niagara VFX Packs for Unreal Engine | UEDEV';
   const description = `${store.products.filter((p) => p.cat !== 'Plugins').length} Niagara VFX packs and plugins for Unreal Engine by UEDEV: weapon beams, explosions, shields, environmental and character effects, plus LCM 3D Navigation AI.`;
   const flag = store.products.find((p) => p.flagship);
   const image = SITE + still(flag.still).jpg;
@@ -635,7 +635,7 @@ ${nav('unreal-engine-niagara-vfx/')}
       <p class="crumb"><a href="../">UEDEV</a> &nbsp;/&nbsp; Niagara VFX packs &nbsp;·&nbsp; Prices checked <time datetime="${store.checked}">24 October 2026</time></p>
       <span class="kicker">The UEDEV store on Fab</span>
       <h1>Niagara VFX packs for <em>Unreal Engine</em></h1>
-      <p class="lede">Production-grade Niagara effects built the same way as the plugins — profiled, documented and shipped in real games. Weapon beams, explosions, shields, portals, environmental systems and character overlays, alongside the C++ plugins.</p>
+      <p class="lede">Production-grade Niagara effects built the same way as the plugins: profiled, documented and shipped in real games. Weapon beams, explosions, shields, portals, environmental systems and character overlays, alongside the C++ plugins.</p>
       <div class="xh__cta">
         <a class="btn btn--glow" href="${store.seller}" target="_blank" rel="noopener">Browse the store on Fab ↗</a>
         <a class="btn btn--ghost" href="#weapons">Jump to the packs</a>

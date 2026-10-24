@@ -223,10 +223,10 @@
         if(res.ok && body.success!==false && !body.error){
           form.reset(); flash(okBox);
         }else{
-          flash(errBox, (body && (body.message||body.error)) || 'Could not send right now — please email charith945@gmail.com.');
+          flash(errBox, (body && (body.message||body.error)) || 'Could not send right now. Please email charith945@gmail.com.');
         }
       }catch(err){
-        flash(errBox,'Network error — please email charith945@gmail.com.');
+        flash(errBox,'Network error. Please email charith945@gmail.com.');
       }finally{
         sendBtn&&(sendBtn.disabled=false,sendBtn.textContent=sendLabel);
       }
