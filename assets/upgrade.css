@@ -168,7 +168,7 @@ html.no-anim .chars span{opacity:1}
   border:1px dashed var(--nv-line);border-radius:14px;padding:15px;color:var(--muted);font-size:14px;background:rgba(47,224,106,.04)}
 .ai3d__more svg{width:18px;height:18px;color:var(--nv);flex:0 0 auto}
 
-.plat{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.plat{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .plat > div{background:rgba(8,11,9,.85);padding:20px 18px;display:flex;align-items:center;gap:14px}
 .plat svg{width:26px;height:26px;flex:0 0 auto;color:var(--nv)}
 .plat b{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em}

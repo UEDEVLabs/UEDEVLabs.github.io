@@ -1,0 +1,92 @@
+{
+  "$comment": "Machine-readable facts for LCM 3D Navigation AI (LCM Nav3D). Every value is counted from the shipped 3.6.0 plugin; the counting method for each is in the author's claims sheet. Pages on uedevlabs.github.io quote these values.",
+  "updated": "2026-10-24",
+  "product": {
+    "name": "LCM 3D Navigation AI",
+    "alternateNames": ["LCM Nav3D", "LCM 3D Navigation", "Nav3D"],
+    "category": "Unreal Engine plugin: volumetric 3D navigation and pathfinding",
+    "version": "3.6.0",
+    "released": "2026-10",
+    "author": "L. Charitha Madhushanka",
+    "publisher": "UEDEV",
+    "url": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/",
+    "releaseNotes": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/#whats-new",
+    "fab": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73",
+    "docs": "https://lcmnav3d.github.io/",
+    "discord": "https://discord.gg/nXkpD6uaBG",
+    "freeDemo": "https://uedevlabs.itch.io/lcm-3d-navigation",
+    "video": "https://www.youtube.com/watch?v=7_F3AvgQIQU",
+    "technicalVideo": "https://www.youtube.com/watch?v=-02ah0bLMb4",
+    "fabTitle": "LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation for UE5",
+    "fabPublished": "2026-08-15"
+  },
+  "reviews": {
+    "source": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews",
+    "checked": "2026-10-24",
+    "ratingValue": 5.0,
+    "bestRating": 5,
+    "ratingCount": 3,
+    "featured": {
+      "title": "Best 3D Navigation Plugin on the Marketplace",
+      "author": "VecFourDigital",
+      "rating": 5,
+      "date": "2026-09",
+      "quote": "Nothing compares to this. Got drones working for my prototype in a few hours."
+    }
+  },
+  "compatibility": {
+    "engines": ["5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8"],
+    "platformsTested": ["Windows (Win64)", "Linux", "PlayStation 5", "Xbox Series X|S"],
+    "platformsNote": "Consoles build from source with your own platform SDK. Nintendo Switch support is in progress.",
+    "source": "Complete C++ source, fully exposed to Blueprint; no C++ required"
+  },
+  "navigation": {
+    "representation": "Sparse voxel octree of navigable volume (empty air and water), not a walkable surface",
+    "worldModes": ["Finite (built or baked to an asset)", "Infinite (chunks stream around agents, with pre-baked chunks and a persistent long-range graph)"],
+    "solvers": ["A* (fastest, grid locked)", "Theta* (any angle)", "Lazy Theta* (any angle, balanced default)"],
+    "solving": "Multi-threaded, deterministic CPU path solving",
+    "smoothing": ["Raw", "Linear Shortcut", "Curved Spline"],
+    "gpu": "GPU-built navigation on by default: voxelization, chunk octrees, their links, finite-world builds and obstacle re-tests run on the GPU (D3D12, D3D11, Vulkan; SM5 and SM6)",
+    "gpuVoxelizationCheck": "With Voxelization Method Auto, each machine's GPU proves its voxels before it builds navigation; a GPU that fails voxelizes on the CPU for that session",
+    "gpuPathSolving": "Per-agent GPU path solver in experimental validation; coming as a free update",
+    "minVoxelCm": 0.5,
+    "defaults": { "minVoxelCm": 100, "finiteWorldCubeM": 200 },
+    "avoidance": ["Reactive (boids)", "Predictive (ORCA)", "Context-Based Steering", "Moving-obstacle prediction in Fly To (3.6)"],
+    "costAreas": "Storms, preferred lanes, toll gates and no-fly zones with stock NavArea classes, priced per agent with Navigation Query Filters",
+    "dynamicObstacles": "Moving geometry restamps the octree and agents re-route live; Fly To predicts each mover and times its pass",
+    "hybridRecast": true
+  },
+  "ai": {
+    "behaviorTree": { "tasks": 21, "decorators": 5, "services": 5 },
+    "stateTree": { "tasks": 25, "conditions": 8, "evaluators": 8 },
+    "massStateTree": { "tasks": 10, "evaluators": 3 },
+    "aiNodesTotal": 85,
+    "behaviours": ["Fly To", "Patrol", "Orbit Target", "Follow Target", "Hover", "Move To And Face", "Take Off", "Land (including on moving decks)", "Perch", "Scan Area", "Engage Target", "Find Cover", "Flee", "Investigate", "Look At", "Turn In Place"],
+    "flyToLocationNode": "A latent Blueprint node that flies any pawn with no Behavior Tree, StateTree or AI Controller",
+    "stockNavigation": "Unreal's own Move To, AI Move To and EQS plan through the octree",
+    "eqs": { "generators": 5, "tests": 8, "contexts": 4 },
+    "massTraits": 8,
+    "crowdScale": "10,000+ agents through Mass Entity (per-agent paths or a shared flow field)",
+    "flightArchetypes": ["Multirotor Drone", "Jet / Fixed-Wing", "Bird (flap-glide)", "Fish (undulatory)"],
+    "multiplayer": "Server-authoritative replication",
+    "blueprintSymbols": 726
+  },
+  "content": {
+    "demoLevels": 57,
+    "demoBreakdown": "17 worlds in Behavior Tree and StateTree editions (34), 15 Mass Entity editions, 8 Feature Examples levels",
+    "featureExampleDisplays": 69,
+    "worlds": ["City", "Forest", "Deep Space", "Cost Areas, Streamed", "Hunter Drone", "Harbour", "Sea Cliffs", "Coral Reef", "Warehouse", "Sentry Drones", "Space Dogfight", "Fish Tank", "Cost Areas", "Vertical Skyscraper", "Dynamic Obstacles", "Obstacle Tunnel", "Obstacle Gauntlet"],
+    "demoDelivery": "Free, from inside the editor: LCM Nav3D menu > Get the Demo Levels",
+    "manualPages": 165,
+    "quickStartPages": 13,
+    "tutorials": 15,
+    "stockPatternSheets": 7
+  },
+  "whatsNew": {
+    "3.6.0": ["Fly To predicts moving obstacles and times its pass", "Obstacle Gauntlet demo: 370 m, six zones, 42 movers", "GPU voxelization that checks itself on each machine", "GPU-built navigation verified on more graphics cards (D3D12, D3D11, Vulkan)", "Fish hold depth, swim upright and school in layers; tail beat follows speed", "Steadier drones; Engage holds position, flies in formation, leads crossing targets; hunters search what they lose", "Water volumes and triggers no longer read as walls", "No crash on a dedicated server or -nullrhi", "Thirty fixes from a plugin-wide code audit"],
+    "3.5.0": ["Engage, Investigate, Flee, Scan Area and Perch nodes for BT, StateTree and Mass", "Land and Take Off, including on moving decks", "Six scenario demos and eight Feature Examples levels", "Demo levels as a free in-editor download"],
+    "3.4.1": ["Fish schooling for pawns and Mass crowds", "Hold Avoidance and Contact Push for dense crowds"],
+    "3.4.0": ["Cost areas with per-agent query filters", "Stock Move To and EQS plan through LCM Nav3D", "Fly To Location Blueprint node"],
+    "3.3.0": ["Agent task library for BT, StateTree and Mass", "Centimetre-scale voxels", "Automatic rebuilds when levels stream in"]
+  }
+}
