@@ -162,7 +162,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/company.css" />
 <link rel="stylesheet" href="assets/transition.css" />
-<link rel="stylesheet" href="assets/upgrade.css" />
+<link rel="stylesheet" href="assets/upgrade.css?v=20261024" />
+<link rel="stylesheet" href="assets/nav3d.css?v=20261024" />
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <script>try{if(sessionStorage.getItem('xition_nav'))document.documentElement.classList.add('xnav');}catch(e){}</script>
 </head>
 <body>
@@ -219,13 +221,13 @@
 <section class="sec n3d" id="nav3d">
   <div class="wrap">
     <div class="n3d__head">
-      <img class="n3d__logo reveal" src="assets/nav3d/logo.png" alt="LCM 3D Navigation AI (Nav3D) logo" />
+      <picture><source type="image/webp" srcset="assets/nav3d/logo-208.webp"><img class="n3d__logo reveal" src="assets/nav3d/logo-208.png" alt="LCM 3D Navigation AI (Nav3D) logo" width="104" height="104" /></picture>
       <div>
         <span class="kicker reveal">Flagship UE5 plugin · v3.6.0 · Unreal Engine 5.2–5.8</span>
         <h2 class="mega mega--sec reveal" data-d="1">LCM 3D <em>Navigation AI</em></h2>
         <p class="n3d__tag reveal" data-d="2">The 3D pathfinding &amp; volumetric navigation plugin for Unreal Engine 5</p>
         <div class="n3d__badges reveal" data-d="2">
-          <span>Sparse Voxel Octree</span><span>GPU-built navigation</span><span>85 AI nodes</span><span>10,000+ agents</span><span>Moving-obstacle prediction</span><span>Multiplayer replication</span><span>Blueprint &amp; C++</span>
+          <span class="xrate">★ 5.0 on Fab</span><span>Sparse Voxel Octree</span><span>GPU-built navigation</span><span>85 AI nodes</span><span>10,000+ agents</span><span>Moving-obstacle prediction</span><span>Multiplayer replication</span><span>Blueprint &amp; C++</span>
         </div>
       </div>
     </div>
@@ -233,9 +235,49 @@
     <p class="sec-intro reveal" data-d="2" data-chars style="max-width:760px;margin-top:26px"><strong>LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5</strong> — flying AI pathfinding for drones, dragons, spaceships, helicopters and underwater agents that Recast navmesh simply cannot express. Unreal's Recast navmesh answers one question: where can I stand? It flattens your level into walkable polygons — exactly right for a soldier, completely wrong for a dragon. LCM 3D Navigation AI answers a different one: where is there empty air? It carves the whole playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky costs almost nothing and detail appears only where geometry actually is.</p>
 
     <figure class="n3d__reel reveal" data-d="2">
-      <iframe src="https://www.youtube-nocookie.com/embed/7_F3AvgQIQU" title="LCM 3D Navigation AI — True Volumetric 3D Navigation Showcase Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      <figcaption><span>LCM 3D Navigation AI — <b>showcase trailer</b></span><a class="n3d__sound" href="https://www.youtube.com/watch?v=7_F3AvgQIQU" target="_blank" rel="noopener">▶ Watch on YouTube</a></figcaption>
+      <a class="xyt" href="https://www.youtube.com/watch?v=7_F3AvgQIQU" data-yt="7_F3AvgQIQU" data-title="LCM 3D Navigation AI — True Volumetric 3D Navigation Showcase Trailer" target="_blank" rel="noopener">
+        <!-- @picture slug="drone-swarm-city-towers" sizes="(min-width:1320px) 1240px, 100vw" alt="" -->
+        <picture>
+          <source type="image/avif" srcset="assets/media/stills/drone-swarm-city-towers-640.avif 640w, assets/media/stills/drone-swarm-city-towers-1280.avif 1280w, assets/media/stills/drone-swarm-city-towers-1920.avif 1920w" sizes="(min-width:1320px) 1240px, 100vw">
+          <source type="image/webp" srcset="assets/media/stills/drone-swarm-city-towers-640.webp 640w, assets/media/stills/drone-swarm-city-towers-1280.webp 1280w, assets/media/stills/drone-swarm-city-towers-1920.webp 1920w" sizes="(min-width:1320px) 1240px, 100vw">
+          <img src="assets/media/stills/drone-swarm-city-towers-1280.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+        </picture>
+        <!-- /@picture -->
+        <span class="xyt__btn" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9.5-5.5z"/></svg></span>
+      </a>
+      <figcaption><span>LCM 3D Navigation AI — <b>showcase trailer</b></span><a class="n3d__sound" href="unreal-engine-3d-pathfinding/#trailer">▶ Technical trailer &amp; more</a></figcaption>
     </figure>
+
+    <ul class="xscenes reveal" data-d="2" aria-label="Scenes from the free demo levels">
+      <li><a href="unreal-engine-3d-pathfinding/#worlds"><div class="xm"><!-- @picture slug="harbour-drone-lands-moving-ship" sizes="(min-width:860px) 25vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="assets/media/stills/harbour-drone-lands-moving-ship-640.avif 640w, assets/media/stills/harbour-drone-lands-moving-ship-1280.avif 1280w, assets/media/stills/harbour-drone-lands-moving-ship-1920.avif 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <source type="image/webp" srcset="assets/media/stills/harbour-drone-lands-moving-ship-640.webp 640w, assets/media/stills/harbour-drone-lands-moving-ship-1280.webp 1280w, assets/media/stills/harbour-drone-lands-moving-ship-1920.webp 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <img src="assets/media/stills/harbour-drone-lands-moving-ship-1280.jpg" alt="A courier drone descends and lands on the deck of a moving, rolling ship in the Harbour demo" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Harbour</b><span>Landing on a moving ship</span></a></li>
+      <li><a href="unreal-engine-3d-pathfinding/#worlds"><div class="xm"><!-- @picture slug="gulls-perch-sea-stack" sizes="(min-width:860px) 25vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="assets/media/stills/gulls-perch-sea-stack-640.avif 640w, assets/media/stills/gulls-perch-sea-stack-1280.avif 1280w, assets/media/stills/gulls-perch-sea-stack-1920.avif 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <source type="image/webp" srcset="assets/media/stills/gulls-perch-sea-stack-640.webp 640w, assets/media/stills/gulls-perch-sea-stack-1280.webp 1280w, assets/media/stills/gulls-perch-sea-stack-1920.webp 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <img src="assets/media/stills/gulls-perch-sea-stack-1280.jpg" alt="Seagulls sweep in and one lands to perch on a sea stack ledge" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Sea Cliffs</b><span>6-DOF gulls that perch</span></a></li>
+      <li><a href="unreal-engine-3d-pathfinding/#worlds"><div class="xm"><!-- @picture slug="reef-school-mass" sizes="(min-width:860px) 25vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="assets/media/stills/reef-school-mass-640.avif 640w, assets/media/stills/reef-school-mass-1280.avif 1280w, assets/media/stills/reef-school-mass-1920.avif 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <source type="image/webp" srcset="assets/media/stills/reef-school-mass-640.webp 640w, assets/media/stills/reef-school-mass-1280.webp 1280w, assets/media/stills/reef-school-mass-1920.webp 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <img src="assets/media/stills/reef-school-mass-1280.jpg" alt="A Mass Entity school of fish streams over the coral, parting round the pinnacles" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Coral Reef</b><span>A Mass school of fish</span></a></li>
+      <li><a href="unreal-engine-3d-pathfinding/#worlds"><div class="xm"><!-- @picture slug="space-dogfight-lasers" sizes="(min-width:860px) 25vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="assets/media/stills/space-dogfight-lasers-640.avif 640w, assets/media/stills/space-dogfight-lasers-1280.avif 1280w, assets/media/stills/space-dogfight-lasers-1920.avif 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <source type="image/webp" srcset="assets/media/stills/space-dogfight-lasers-640.webp 640w, assets/media/stills/space-dogfight-lasers-1280.webp 1280w, assets/media/stills/space-dogfight-lasers-1920.webp 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <img src="assets/media/stills/space-dogfight-lasers-1280.jpg" alt="Starfighters exchange laser fire in the Space Dogfight demo for Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Space Dogfight</b><span>Lead intercept in an asteroid belt</span></a></li>
+    </ul>
 
     <dl class="specs reveal" data-d="2">
       <div><dt>Pathfinding</dt><dd>A* · Theta* · <em>Lazy Theta*</em></dd></div>
@@ -268,7 +310,7 @@
         </div>
       </div>
       <div class="n3d__panel reveal" data-d="1">
-        <div class="n3d__slot"><img src="assets/nav3d/splash.png" alt="LCM 3D Navigation AI for Unreal Engine" style="width:100%;display:block" /></div>
+        <div class="n3d__slot"><img src="assets/nav3d/splash.png" alt="LCM 3D Navigation AI for Unreal Engine" width="1600" height="800" style="width:100%;height:auto;display:block" /></div>
         <div class="n3d__meta"><span>Engine support</span><b>UE 5.2–5.8</b></div>
         <div class="n3d__spec">
           <div><b>100 cm</b><span>Default min voxel</span></div>
@@ -429,7 +471,7 @@
           <a class="ghostbtn" href="https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296" target="_blank" rel="noopener">View on Fab</a>
         </div>
         <div class="stackcard__media">
-          <img src="https://media.fab.com/image_previews/gallery_images/a63dd0e4-7db8-44eb-9ddb-55e4914ff39d/46de4277-a8f1-4ebf-95ad-b79ca6364644.jpg" alt="Niagara Energy Beam Pack V2 — Unreal Engine weapon VFX by UEDEV" />
+          <img src="https://media.fab.com/image_previews/gallery_images/a63dd0e4-7db8-44eb-9ddb-55e4914ff39d/46de4277-a8f1-4ebf-95ad-b79ca6364644.jpg" alt="Niagara Energy Beam Pack V2 — Unreal Engine weapon VFX by UEDEV" width="639" height="349" loading="lazy" />
           <div class="stackcard__price">$15.99 <em>★ 5.0 (6)</em></div>
         </div>
       </article>
@@ -442,7 +484,7 @@
           <a class="ghostbtn" href="https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770" target="_blank" rel="noopener">View on Fab</a>
         </div>
         <div class="stackcard__media">
-          <img src="https://media.fab.com/image_previews/gallery_images/065fb827-0f4e-49ae-8a48-71f80ca6c629/94284eb4-d059-4db3-a3e2-e0ef0734be17.jpg" alt="Ultimate Explosion VFX — Unreal Engine combat effects by UEDEV" />
+          <img src="https://media.fab.com/image_previews/gallery_images/065fb827-0f4e-49ae-8a48-71f80ca6c629/94284eb4-d059-4db3-a3e2-e0ef0734be17.jpg" alt="Ultimate Explosion VFX — Unreal Engine combat effects by UEDEV" width="639" height="349" loading="lazy" />
           <div class="stackcard__price">$14.99 <em>★ 5.0 (4)</em></div>
         </div>
       </article>
@@ -455,7 +497,7 @@
           <a class="ghostbtn" href="https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5" target="_blank" rel="noopener">View on Fab</a>
         </div>
         <div class="stackcard__media">
-          <img src="https://media.fab.com/image_previews/gallery_images/dc1a29a9-58bd-44e2-a42f-b368b8d6cad9/877787de-287a-4b54-a0de-02e9f1720c99.jpg" alt="Ultimate Scan and Screen Effects — Unreal Engine VFX by UEDEV" />
+          <img src="https://media.fab.com/image_previews/gallery_images/dc1a29a9-58bd-44e2-a42f-b368b8d6cad9/877787de-287a-4b54-a0de-02e9f1720c99.jpg" alt="Ultimate Scan and Screen Effects — Unreal Engine VFX by UEDEV" width="639" height="349" loading="lazy" />
           <div class="stackcard__price">$12.99 <em>★ 4.8 (4)</em></div>
         </div>
       </article>
@@ -621,5 +663,6 @@
 <script src="assets/company.js"></script>
 <script src="assets/navmesh.js"></script>
 <script src="assets/upgrade.js"></script>
+<script src="assets/nav3d.js?v=20261024" defer></script>
 </body>
 </html>
