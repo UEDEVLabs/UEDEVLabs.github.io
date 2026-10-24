@@ -226,6 +226,8 @@ A pathfinding plugin hands you a list of points. Turning that into an agent that
 | Documentation | README | 165-page manual, 15 tutorials, full API reference |
 | Support | Community issue tracker | Direct from the developer who wrote it |
 
+Compare it with Mercuna, Flying Navigation System, AeonixNavigation and Nav3D, product by product →
+
 Networking
 
 ## Server-authoritative multiplayer 3D navigation
@@ -310,7 +312,15 @@ Yes. LCM 3D Navigation AI runs in two modes. A **finite** world builds its octre
 
 ### How is this different from the free open-source SVO navigation plugins?
 
-The solvers are comparable: A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built around the solver: infinite streaming worlds rather than a required bounds volume, GPU-built navigation, a 6-DOF flight and swim locomotion component, an 85-node Behaviour Tree, StateTree and Mass agent library, moving-obstacle prediction, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, 57 demo levels, a 165-page manual with 15 tutorials, and direct support from the developer. See the full comparison →
+The solvers are comparable: A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built around the solver: infinite streaming worlds rather than a required bounds volume, GPU-built navigation, a 6-DOF flight and swim locomotion component, an 85-node Behaviour Tree, StateTree and Mass agent library, moving-obstacle prediction, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, 57 demo levels, a 165-page manual with 15 tutorials, and direct support from the developer. Compare it product by product →
+
+### How does it compare with Mercuna and other UE5 3D navigation plugins?
+
+Mercuna's cheapest 3D Navigation licence is £2,500 per title (Windows only, no source), against a one-time $199.99 or $1,499.99 for LCM 3D Navigation AI with full C++ source. Fab plugins such as Flying Navigation System cost less but need a bounds volume and have no StateTree or moving-obstacle support, and the free open-source options (AeonixNavigation, Nav3D) need a bounds volume too. None of the alternatives we checked document Mass Entity crowds or a GPU build.
+
+### Is there a 3D navmesh for flying AI in Unreal Engine 5?
+
+Not built in: Unreal's Recast navmesh covers walkable surfaces only. LCM 3D Navigation AI is the volumetric equivalent, a sparse voxel octree of the navigable air and water, built in the editor, at runtime or on the GPU, which flying, swimming and space AI path through the way ground AI uses a navmesh.
 
 ### Which Unreal Engine versions and platforms are supported?
 
@@ -362,12 +372,12 @@ From $12.99★★★★★4.8 (4)](https://www.fab.com/listings/446dea06-546a-4f
 ---
 
 URL: https://uedevlabs.github.io/
-Title: LCM 3D Navigation AI | Infinite 3D Pathfinding for UE5
-Description: LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5: infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab.
+Title: NextGen 3D Navigation for UE5 AI | LCM 3D Navigation AI
+Description: NextGen true 3D navigation for AI agents in Unreal Engine 5: flying, swimming and space AI, infinite worlds, 85 AI nodes, 10,000+ agents. One-time buy on Fab.
 
 **v3.6.0** New: agents that see moving obstacles coming
 
-# LCM 3D Navigation AI True 3D navigation for Unreal Engine 5
+# LCM 3D Navigation AI NextGen True 3D navigation for AI agents in Unreal Engine 5
 
 Drones, birds, fish and starfighters that fly through the whole volume of your level: over, under and between everything, in open worlds without edges. A sparse voxel octree of the empty air, 85 Behaviour Tree, StateTree and Mass nodes, and crowds of 10,000+ agents, from the developer who built it.
 [★★★★★Rated 5.0 out of 5 from3 ratings on Fab↗](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
@@ -649,6 +659,29 @@ A 165-page manual, 15 step-by-step tutorials and a 13-page Quick Start, free to 
 [06–15**Going further**Mass crowds, tactical EQS, AI perception, hybrid Recast, cost areas and nav links, debugger, small worlds, Fly To Location, stock Move To, behaviour nodes.](https://lcmnav3d.github.io/mass-entity-crowds.html)
 [REF**Reference**Settings, troubleshooting, flight locomotion, Mass traits, BT patterns and the full API reference.](https://lcmnav3d.github.io/api-reference.html)
 
+How it compares
+
+## NextGen scope, plugin price
+
+Checked against Mercuna, Havok, Flying Navigation System, AeonixNavigation and Nav3D on 24 October 2026, from each product's own pages.
+
+Price
+### Middleware scope, plugin price
+
+$199.99 Personal or $1,499.99 Professional, once, with full C++ source. Mercuna's cheapest 3D licence is £2,500 per title (Windows only, no source); Havok Navigation is $50,000 per product.
+
+Worlds
+### No bounds volume in open worlds
+
+Mercuna, Flying Navigation System, AeonixNavigation and Nav3D each need a bounds volume. In infinite mode, navigation streams in chunks around the agents, with no volume to place or outgrow.
+
+AI systems
+### Every Unreal AI system, ready to use
+
+31 Behaviour Tree, 41 StateTree and 13 Mass nodes, 3D EQS and a 6-DOF flight and swim component. None of the alternatives we checked document Mass Entity support or a GPU build.
+
+See the full side-by-side comparison →
+
 5.0
 ★★★★★
 3 ratings on Fab
@@ -704,8 +737,171 @@ How it works →
 
 ---
 
+URL: https://uedevlabs.github.io/unreal-engine-3d-pathfinding-plugins-compared/
+Title: Compare UE5 3D Pathfinding Plugins | LCM 3D Navigation AI
+Description: LCM 3D Navigation AI against Mercuna, Flying Navigation System, AeonixNavigation and Nav3D for UE5: price, licence, open worlds, StateTree, Mass and more.
+
+UEDEV / 3D Navigation AI / Compare · Checked 24 October 2026
+Comparison · Unreal Engine 5
+
+# UE5 3D pathfinding plugins, compared
+
+LCM 3D Navigation AI is a NextGen, complete 3D navigation system for Unreal Engine 5. We make it, so read this as a vendor's comparison: every cell about another product comes from that product's own page, read on 24 October 2026 and linked below, and where a vendor doesn't say, the table says so. Where another option fits better, we say that too.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+See the table
+
+Price
+## Middleware scope, plugin price
+
+$199.99 Personal or $1,499.99 Professional, once, with full C++ source. Mercuna's cheapest 3D licence is £2,500 per title (Windows only, no source); Havok Navigation is $50,000 per product.
+
+Worlds
+## No bounds volume in open worlds
+
+Each of the other options in the table needs a bounds volume. In infinite mode, navigation streams in chunks around the agents, with no volume to place or outgrow.
+
+AI systems
+## Every Unreal AI system, ready to use
+
+31 Behaviour Tree, 41 StateTree and 13 Mass nodes, 3D EQS and a 6-DOF flight and swim component. None of the alternatives we checked document Mass Entity support or a GPU build.
+
+Side by side
+
+## The options UE5 developers compare
+
+Read on 24 October 2026. "Not documented" means the vendor's pages don't say, not that the feature is missing. Scroll sideways on a phone.
+
+| | LCM 3D Navigation AIFab plugin | Mercuna 3D NavigationMiddleware | Flying Navigation SystemFab plugin | AeonixNavigationOpen source (MIT) | Nav3DOpen source (MIT) |
+| --- | --- | --- | --- | --- | --- |
+| Price | $199.99 Personal · $1,499.99 Professional | £2,500 Indie (budget under $500k, Windows only, no source) · £15,000 Standard | $49.99 · $79.99 | Free | Free |
+| Licence | One-time purchase on Fab, full C++ source | Per title, with 1 year of support | One-time purchase on Fab | MIT, beta | MIT |
+| Unreal Engine | 5.2 to 5.8 | 5.4 and later | 4.24 to 5.8 | 5.5 to 5.8 | 5.6 |
+| Last update | October 2026 (3.6.0) | June 2026 (3.6) | June 2026 | October 2026 | January 2026 |
+| Bounds volume | Not needed in infinite mode | Required (Nav Octree Volume) | Required (Nav Mesh Bounds Volume) | Required (bounding volume) | Required (Nav3D Bounds Volume) |
+| Open worlds | Infinite streamed chunks, pre-baked chunks, World Partition | World Partition and level streaming | One octree per level; no level streaming | Not documented | Chunking and World Partition |
+| Behaviour Tree | 31 nodes | Move To and Is Reachable | Works with the stock Move To | Move To task | Move To |
+| StateTree | 41 nodes | Not documented | No | Move To task | No |
+| Mass Entity crowds | 13 nodes, 8 traits, 10,000+ agents | Not documented | Not documented | Not documented | No |
+| 3D EQS | 5 generators, 8 tests, 4 contexts | Yes | Yes | EQS generators | Not documented |
+| Moving obstacles | Restamps the octree; Fly To predicts movers and times its pass | Obstacle component; volumes rebuild at runtime | Constantly moving obstacles not supported | Experimental dynamic regions | Granular rebuild |
+| Multiplayer | Server-authoritative replication | Not documented | Paths solved on the server; navigation data not replicated | Not documented | No |
+| GPU-built navigation | Yes, on D3D12, D3D11 and Vulkan, checked on each machine | Not documented | Not documented | Not documented | Not documented |
+| Flight and swim movement | 6-DOF component: multirotor, jet, bird, fish | Not documented | No movement component | Flying movement component | No |
+| Fab rating | 5.0 (3 ratings) | Not on Fab | 4.65 (17 ratings) | Not on Fab | Not on Fab |
+
+Where it differs
+
+## What makes it NextGen
+
+- **Unbounded worlds.** Infinite mode streams navigation chunks around agents and unloads them behind, with pre-baked chunks and a persistent long-range graph, so World Partition and streamed open worlds need no bounds volume.
+
+- **GPU-built navigation that checks itself.** Voxelization, the octree and its links build on the GPU on D3D12, D3D11 and Vulkan; each machine's GPU proves its voxels before it is trusted.
+
+- **Prediction, not just reaction.** Since 3.6, Fly To predicts every moving obstacle and times its pass: it waits for a gap, detours, or dodges what it cannot outrun.
+
+- **One system for every AI author.** 85 ready-made nodes across Behaviour Tree, StateTree and Mass StateTree at full parity, 3D EQS for cover and line of sight, and crowds of 10,000+ agents.
+
+- **Agents that fly and swim.** A 6-DOF movement component with multirotor, jet, bird and fish archetypes turns a route into flight, down to landing on a moving ship's deck.
+
+- **Built to ship.** Server-authoritative multiplayer replication, Unreal Engine 5.2 to 5.8, Windows, macOS, Linux, Android, iOS, PS5 and Xbox, a 165-page manual and 57 free demo levels.
+
+Honest fit
+
+## When another option fits better
+
+- [**Mercuna 3D Navigation**](https://mercuna.com/)A studio that wants commercial middleware with a support contract.
+
+- [**Flying Navigation System**](https://www.fab.com/listings/343a9376-61f1-43ec-9bd3-6fe8370df064)A single, bounded level where a low price matters most and agents use the stock Move To.
+
+- [**AeonixNavigation**](https://github.com/midgen/AeonixNavigation)A free, open-source starting point for teams ready to build on beta code.
+
+- [**Nav3D**](https://github.com/darbycostello/Nav3D)Free 3D A* with chunking for teams who will maintain the code themselves.
+
+Also checked
+
+## Other options
+
+- [**Havok Navigation for Unreal**](https://www.havok.com/havok-navigation-for-unreal/)Microsoft middleware with voxel volumes for flying and swimming; $50,000 per Havok product for budgets up to $20m (havok.com/pricing).
+
+- [**Kythera AI**](https://kythera.ai/)AI middleware licensed per title with source; prices are not published, and flight navigation is not documented.
+
+- [**AeroNav 3D**](https://www.fab.com/listings/780d4113-034d-456a-8a47-d1adbfb3f19c)Fab, $49.99 / $119.99, UE 5.3 to 5.8: an octree baked inside a volume, Blueprint nodes; runtime rebaking is planned.
+
+- [**Smart Flying Navigation**](https://www.fab.com/listings/256ea996-5989-4c8c-b9f4-ce2182fe0999)Free on Fab for UE 5.6: an editor-baked octree with A*, Lazy Theta* and ORCA avoidance, Windows only.
+
+- [**3D Path Finding**](https://www.fab.com/listings/f38f8172-7409-4a4c-b7bd-7e166ef75a96)Fab, $99.99 / $349.99, UE 5.0 to 5.8: a 3D grid with Behaviour Tree support; avoidance is in progress.
+
+- [**DoN's 3D Pathfinding (DonAINavigation)**](https://github.com/VSZue/DonAINavigation)Free (MIT), built for UE4: its last substantive update targets UE 4.19 (2018).
+
+- [**HyperNav**](https://assetstore.unity.com/packages/tools/behavior-ai/hypernav-3d-pathfinding-and-navigation-235638)A Unity asset, not available for Unreal Engine.
+
+FAQ
+
+## Common questions
+
+### What is the best 3D pathfinding plugin for Unreal Engine 5?
+
+It depends on scope. For a complete system (open worlds without a bounds volume, Behaviour Tree, StateTree and Mass Entity crowds, moving-obstacle prediction and multiplayer replication), LCM 3D Navigation AI covers the most ground at a one-time Fab price of $199.99. For a single bounded level on a tight budget, Flying Navigation System ($49.99) is the established Fab option, and AeonixNavigation (beta) and Nav3D are free and open source.
+
+### Is there a cheaper alternative to Mercuna for Unreal Engine 5?
+
+Yes. LCM 3D Navigation AI costs $199.99 (Personal) or $1,499.99 (Professional) as a one-time Fab purchase with full C++ source. Mercuna's cheapest 3D Navigation licence is £2,500 per title for budgets under $500k, Windows only and without source; its Standard licence is £15,000 per title.
+
+### Which UE5 3D navigation plugins support StateTree and Mass Entity?
+
+LCM 3D Navigation AI ships 41 StateTree nodes and 13 Mass StateTree nodes with 8 Mass traits, for crowds of 10,000+ agents. AeonixNavigation includes a StateTree Move To task. None of the other options we checked document Mass Entity support.
+
+### Do I need a bounds volume for 3D navigation in Unreal Engine 5?
+
+With Mercuna, Flying Navigation System, AeonixNavigation and Nav3D, yes: each asks for a bounds or octree volume around the navigable space. LCM 3D Navigation AI's infinite mode needs none: navigation chunks stream in around the agents and unload behind them, so an open world has no edge to outgrow.
+
+### Does DoN's 3D Pathfinding work in Unreal Engine 5?
+
+DoN's 3D Pathfinding (DonAINavigation) was built for Unreal Engine 4; its last substantive update targets UE 4.19 (2018). LCM 3D Navigation AI supports Unreal Engine 5.2 to 5.8 and was last updated in October 2026.
+
+### Is HyperNav available for Unreal Engine?
+
+No. HyperNav 3D Pathfinding and Navigation is a Unity asset. For Unreal Engine 5, LCM 3D Navigation AI provides volumetric 3D navigation and pathfinding for flying, swimming and space AI.
+
+Method
+
+## Sources
+
+Each product's own store page, documentation or repository, read on 24 October 2026. The data behind this page is in competitors.json. Spotted something out of date? [Tell us on Discord](https://discord.gg/nXkpD6uaBG).
+
+- [fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+
+- [mercuna.com/licensing](https://mercuna.com/licensing/)
+
+- [mercuna.com/documentation/unreal-user-guide](https://mercuna.com/documentation/unreal-user-guide/)
+
+- [fab.com/listings/343a9376-61f1-43ec-9bd3-6fe8370df064](https://www.fab.com/listings/343a9376-61f1-43ec-9bd3-6fe8370df064)
+
+- [blendersleuth.github.io/FlyingNavSystemSite/troubleshooting.html](https://blendersleuth.github.io/FlyingNavSystemSite/troubleshooting.html)
+
+- [github.com/midgen/AeonixNavigation](https://github.com/midgen/AeonixNavigation)
+
+- [github.com/darbycostello/Nav3D](https://github.com/darbycostello/Nav3D)
+
+- [havok.com/pricing](https://www.havok.com/pricing/)
+
+- [kythera.ai/licensing](https://kythera.ai/licensing/)
+
+- [fab.com/listings/780d4113-034d-456a-8a47-d1adbfb3f19c](https://www.fab.com/listings/780d4113-034d-456a-8a47-d1adbfb3f19c)
+
+- [fab.com/listings/256ea996-5989-4c8c-b9f4-ce2182fe0999](https://www.fab.com/listings/256ea996-5989-4c8c-b9f4-ce2182fe0999)
+
+- [fab.com/listings/f38f8172-7409-4a4c-b7bd-7e166ef75a96](https://www.fab.com/listings/f38f8172-7409-4a4c-b7bd-7e166ef75a96)
+
+- [github.com/VSZue/DonAINavigation](https://github.com/VSZue/DonAINavigation)
+
+- [assetstore.unity.com/packages/tools/behavior-ai/hypernav-3d-pathfinding-and-navigation-235638](https://assetstore.unity.com/packages/tools/behavior-ai/hypernav-3d-pathfinding-and-navigation-235638)
+
+---
+
 URL: https://uedevlabs.github.io/unreal-engine-flying-ai/
-Title: Drone & Flying AI for UE5 | LCM 3D Navigation AI
+Title: Flying AI & Drone AI for UE5 | LCM 3D Navigation AI
 Description: Flying AI and drone AI for Unreal Engine 5: true 3D routes, 6-DOF flight, landing on moving decks, perching birds and combat drones that hunt and engage.
 
 UEDEV / 3D Navigation AI / Flying AI · Updated 24 October 2026
@@ -851,6 +1047,14 @@ Four 6-DOF archetypes: Multirotor drone (tilt-to-translate), Jet / Fixed-Wing, B
 ### Can flying AI and ground AI share a level?
 
 Yes. Run hybrid levels where walking agents use Unreal's Recast navmesh and flying agents use the volumetric octree; the Crowd Avoidance Bridge lets Detour steer Recast agents around flying pawns.
+
+### Why doesn't AI Move To work for flying AI in Unreal Engine 5?
+
+AI Move To follows Unreal's Recast navmesh, which only describes walkable floors, so it has no route through the air. LCM 3D Navigation AI adds a volumetric octree of the empty space with its own Fly To task and Fly To Location node, so a pawn moves to any point in 3D, over, under and between obstacles, with no floor needed.
+
+### How do I make a flying enemy that chases the player?
+
+Use the Follow Target or Engage Target task in a Behaviour Tree or StateTree. The drone plans a 3D route to the player and re-plans as they move, and the 3D EQS tests pick positions with a clear line of sight. The Hunter Drone demo shows one hunting a target through container stacks.
 
 Read more in the free documentation:
 
@@ -1385,6 +1589,10 @@ No. Add the traits to a Mass Entity Config; an editor validator flags illegal tr
 
 Yes. Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee, and agents share viewpoints, perches and cover so no two take the same one.
 
+### Does it support 3D flow fields for crowds?
+
+Yes. A Mass crowd can share one CPU flow field toward a goal, which every agent samples in constant time, or plan per-agent asynchronous paths; both work in full 3D, through the air or water.
+
 Read more in the free documentation:
 
 - [Mass Entity crowds ↗](https://lcmnav3d.github.io/mass-entity-crowds.html)
@@ -1434,7 +1642,7 @@ How it works
 
 - 3: Prediction settings
 
-_A drone waits for the gate it predicted, then takes the gap_
+_Same start, three departure times: each drone predicts the gate and takes the route that is fastest for its moment_
 
 01 · Prediction
 

@@ -19,7 +19,7 @@ const PRODUCT = 'unreal-engine-3d-pathfinding/';
 const FAB = facts.product.fab;
 const DOCS = facts.product.docs;
 const UPDATED = facts.updated;
-const V = '?v=20261024n';
+const V = '?v=20261024p';
 // Best sellers, the VFX marquee, capabilities and support, moved here from the home page.
 const STORE_SECTIONS = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'partials', 'store-sections.html'), 'utf8')
   .replace(/^<!--[\s\S]*?-->\r?\n/, '');
@@ -59,7 +59,7 @@ const USE_CASES = [
   {
     slug: 'unreal-engine-flying-ai',
     nav: 'Flying AI',
-    title: 'Drone & Flying AI for UE5 | LCM 3D Navigation AI',
+    title: 'Flying AI & Drone AI for UE5 | LCM 3D Navigation AI',
     description: 'Flying AI and drone AI for Unreal Engine 5: true 3D routes, 6-DOF flight, landing on moving decks, perching birds and combat drones that hunt and engage.',
     kicker: 'Use case · Flying AI',
     h1: 'Flying AI and <em>drones</em> for Unreal Engine 5',
@@ -100,6 +100,8 @@ const USE_CASES = [
       ['Can a drone land on a moving ship or vehicle?', 'Yes. The Land task finds its own landing point and flies the approach relative to the deck, so a drone can land on a moving, rolling ship or a moving lorry and take off again with the deck\'s velocity. The Harbour demo shows both.'],
       ['Which flight models are included?', 'Four 6-DOF archetypes: Multirotor drone (tilt-to-translate), Jet / Fixed-Wing, Bird (flap-glide) and Fish (undulatory), each with its own banking, climb and turn character and tuned per agent.'],
       ['Can flying AI and ground AI share a level?', 'Yes. Run hybrid levels where walking agents use Unreal\'s Recast navmesh and flying agents use the volumetric octree; the Crowd Avoidance Bridge lets Detour steer Recast agents around flying pawns.'],
+      ['Why doesn\'t AI Move To work for flying AI in Unreal Engine 5?', 'AI Move To follows Unreal\'s Recast navmesh, which only describes walkable floors, so it has no route through the air. LCM 3D Navigation AI adds a volumetric octree of the empty space with its own Fly To task and Fly To Location node, so a pawn moves to any point in 3D, over, under and between obstacles, with no floor needed.'],
+      ['How do I make a flying enemy that chases the player?', 'Use the Follow Target or Engage Target task in a Behaviour Tree or StateTree. The drone plans a 3D route to the player and re-plans as they move, and the 3D EQS tests pick positions with a clear line of sight. The Hunter Drone demo shows one hunting a target through container stacks.'],
     ],
     docs: [['Your first flying agent', 'your-first-flying-agent.html'], ['Flight and locomotion', 'flight-locomotion.html'], ['Fly To Location node', 'fly-to-location.html'], ['AI perception', 'ai-perception.html'], ['Tactical EQS', 'tactical-eqs.html']],
     related: ['unreal-engine-moving-obstacle-avoidance', 'unreal-engine-space-combat-ai', 'unreal-engine-mass-entity-crowds'],
@@ -262,6 +264,7 @@ const USE_CASES = [
       ['How many agents can navigate in 3D through Mass Entity?', '10,000 or more. Crowds can use per-agent asynchronous paths or one shared flow field that the whole swarm samples in constant time, and they render through instanced meshes with LOD.'],
       ['Do I need C++ to use Mass crowds?', 'No. Add the traits to a Mass Entity Config; an editor validator flags illegal trait combinations, and Mass StateTree tasks drive the behaviour.'],
       ['Can crowds use behaviours like perch and engage?', 'Yes. Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee, and agents share viewpoints, perches and cover so no two take the same one.'],
+      ['Does it support 3D flow fields for crowds?', 'Yes. A Mass crowd can share one CPU flow field toward a goal, which every agent samples in constant time, or plan per-agent asynchronous paths; both work in full 3D, through the air or water.'],
     ],
     docs: [['Mass Entity crowds', 'mass-entity-crowds.html'], ['Mass traits reference', 'mass-traits.html'], ['Gameplay Debugger', 'gameplay-debugger.html']],
     related: ['unreal-engine-underwater-ai', 'unreal-engine-flying-ai', 'unreal-engine-space-combat-ai'],
@@ -386,6 +389,7 @@ function footer(scripts = '') {
       <div class="footer__col">
         <h3>3D Navigation AI</h3>
         <a href="../${PRODUCT}">3D pathfinding for UE5</a>
+        <a href="../${COMPARE}/">Compare 3D pathfinding plugins</a>
         <a href="https://lcmnav3d.github.io/whats-new.html" target="_blank" rel="noopener">What's new in <span data-fact="product.version">3.6.0</span></a>
 ${uc}
         <a href="${DOCS}" target="_blank" rel="noopener">Documentation</a>
@@ -698,6 +702,167 @@ ${footer(`<script src="../assets/upgrade.js${V}" defer></script>
 
 /* ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ */
+/* Comparison page: data/competitors.json, every cell sourced          */
+/* ------------------------------------------------------------------ */
+
+const COMPARE = 'unreal-engine-3d-pathfinding-plugins-compared';
+const CMP = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'competitors.json'), 'utf8'));
+const longDate = (iso) => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const PRICE = facts.product.price;
+
+const COMPARE_FAQ = [
+  ['What is the best 3D pathfinding plugin for Unreal Engine 5?', `It depends on scope. For a complete system (open worlds without a bounds volume, Behaviour Tree, StateTree and Mass Entity crowds, moving-obstacle prediction and multiplayer replication), LCM 3D Navigation AI covers the most ground at a one-time Fab price of $${PRICE.value}. For a single bounded level on a tight budget, Flying Navigation System ($49.99) is the established Fab option, and AeonixNavigation (beta) and Nav3D are free and open source.`],
+  ['Is there a cheaper alternative to Mercuna for Unreal Engine 5?', `Yes. LCM 3D Navigation AI costs $${PRICE.value} (Personal) or $${Number(PRICE.professional).toLocaleString('en-US')} (Professional) as a one-time Fab purchase with full C++ source. Mercuna's cheapest 3D Navigation licence is £2,500 per title for budgets under $500k, Windows only and without source; its Standard licence is £15,000 per title.`],
+  ['Which UE5 3D navigation plugins support StateTree and Mass Entity?', 'LCM 3D Navigation AI ships 41 StateTree nodes and 13 Mass StateTree nodes with 8 Mass traits, for crowds of 10,000+ agents. AeonixNavigation includes a StateTree Move To task. None of the other options we checked document Mass Entity support.'],
+  ['Do I need a bounds volume for 3D navigation in Unreal Engine 5?', 'With Mercuna, Flying Navigation System, AeonixNavigation and Nav3D, yes: each asks for a bounds or octree volume around the navigable space. LCM 3D Navigation AI\'s infinite mode needs none: navigation chunks stream in around the agents and unload behind them, so an open world has no edge to outgrow.'],
+  ['Does DoN\'s 3D Pathfinding work in Unreal Engine 5?', 'DoN\'s 3D Pathfinding (DonAINavigation) was built for Unreal Engine 4; its last substantive update targets UE 4.19 (2018). LCM 3D Navigation AI supports Unreal Engine 5.2 to 5.8 and was last updated in October 2026.'],
+  ['Is HyperNav available for Unreal Engine?', 'No. HyperNav 3D Pathfinding and Navigation is a Unity asset. For Unreal Engine 5, LCM 3D Navigation AI provides volumetric 3D navigation and pathfinding for flying, swimming and space AI.'],
+];
+
+function comparePage() {
+  const url = SITE + COMPARE + '/';
+  const heroStill = still('city-open-world-drone-routes');
+  const checked = longDate(CMP.checked);
+  const title = 'Compare UE5 3D Pathfinding Plugins | LCM 3D Navigation AI';
+  const description = 'LCM 3D Navigation AI against Mercuna, Flying Navigation System, AeonixNavigation and Nav3D for UE5: price, licence, open worlds, StateTree, Mass and more.';
+  const ld = [
+    crumbsLd([['UEDEV', SITE], ['LCM 3D Navigation AI', SITE], ['Compare 3D pathfinding plugins', url]]),
+    { '@type': 'WebPage', '@id': url + '#webpage', url, name: title, description, inLanguage: 'en', dateModified: CMP.checked,
+      about: { '@id': SITE + PRODUCT + '#software' }, isPartOf: { '@id': SITE + '#website' },
+      primaryImageOfPage: { '@type': 'ImageObject', url: SITE + heroStill.jpg } },
+    { '@type': 'FAQPage', mainEntity: COMPARE_FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+  ];
+  const rest = CMP.products.slice(1);
+  // Our rating follows facts.json; in other columns a gap ("Not documented", "No", "Required") is marked.
+  const cell = (p, key) => {
+    if (p.id === 'lcm') return key === 'rating'
+      ? '<span data-fact="reviews.ratingDisplay">5.0</span> (<span data-fact="reviews.ratingCount">3</span> ratings)'
+      : esc(p.cells[key]);
+    return esc(p.cells[key]).replace(/^(Not documented|No|Required)\b/, (m) => `<span class="${m === 'Not documented' ? 'xcmp__nd' : 'xcmp__gap'}">${m}</span>`);
+  };
+  const head2 = CMP.products.map((p) => `<th scope="col"${p.id === 'lcm' ? ' class="xcmp__us"' : ''}><a href="${p.url}" target="_blank" rel="noopener">${esc(p.name)}</a><small>${esc(p.kind)}</small></th>`).join('');
+  const rows = CMP.rows.map(([key, label]) => `            <tr><th scope="row">${label}</th>${CMP.products.map((p) => `<td${p.id === 'lcm' ? ' class="xcmp__us"' : ''}>${cell(p, key)}</td>`).join('')}</tr>`).join('\n');
+  const sources = [...new Set(CMP.products.flatMap((p) => p.sources || [p.url]).concat(CMP.others.flatMap((o) => o.sources || [o.url])))];
+
+  const body = `
+<body>
+<div class="aurora"></div>
+<div class="grid-overlay"></div>
+
+<!-- @nav active="compare" -->
+<!-- /@nav -->
+
+<main class="lp">
+<article>
+  <header class="xtech">
+    <div class="wrap">
+      <p class="crumb"><a href="../">UEDEV</a> &nbsp;/&nbsp; <a href="../">3D Navigation AI</a> &nbsp;/&nbsp; Compare &nbsp;·&nbsp; Checked <time datetime="${CMP.checked}">${checked}</time></p>
+      <span class="kicker">Comparison · Unreal Engine 5</span>
+      <h1>UE5 3D pathfinding plugins, <em>compared</em></h1>
+      <p class="lede">LCM 3D Navigation AI is a NextGen, complete 3D navigation system for Unreal Engine 5. We make it, so read this as a vendor's comparison: every cell about another product comes from that product's own page, read on ${checked} and linked below, and where a vendor doesn't say, the table says so. Where another option fits better, we say that too.</p>
+      <div class="xh__cta">
+        <a class="btn btn--glow" href="${FAB}" target="_blank" rel="noopener">Get it on Fab</a>
+        <a class="btn btn--ghost" href="#table">See the table</a>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="xwhy">
+        <div><span class="xn">Price</span><h2>Middleware scope, plugin price</h2><p>$${PRICE.value} Personal or $${Number(PRICE.professional).toLocaleString('en-US')} Professional, once, with full C++ source. Mercuna's cheapest 3D licence is £2,500 per title (Windows only, no source); Havok Navigation is $50,000 per product.</p></div>
+        <div><span class="xn">Worlds</span><h2>No bounds volume in open worlds</h2><p>Each of the other options in the table needs a bounds volume. In infinite mode, navigation streams in chunks around the agents, with no volume to place or outgrow.</p></div>
+        <div><span class="xn">AI systems</span><h2>Every Unreal AI system, ready to use</h2><p>31 Behaviour Tree, 41 StateTree and 13 Mass nodes, 3D EQS and a 6-DOF flight and swim component. None of the alternatives we checked document Mass Entity support or a GPU build.</p></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="table" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Side by side</span>
+        <h2>The options UE5 developers compare</h2>
+        <p class="lede">Read on ${checked}. "Not documented" means the vendor's pages don't say, not that the feature is missing. Scroll sideways on a phone.</p>
+      </div>
+      <div class="tblwrap xr">
+        <table class="tbl xcmp">
+          <caption>Sources for every column are listed at the foot of this page.</caption>
+          <thead><tr><th scope="col">&nbsp;</th>${head2}</tr></thead>
+          <tbody>
+${rows}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Where it differs</span>
+        <h2>What makes it <em>NextGen</em></h2>
+      </div>
+      <ul class="tick xr xcmp__list">
+        <li><strong>Unbounded worlds.</strong> Infinite mode streams navigation chunks around agents and unloads them behind, with pre-baked chunks and a persistent long-range graph, so World Partition and streamed open worlds need no bounds volume.</li>
+        <li><strong>GPU-built navigation that checks itself.</strong> Voxelization, the octree and its links build on the GPU on D3D12, D3D11 and Vulkan; each machine's GPU proves its voxels before it is trusted.</li>
+        <li><strong>Prediction, not just reaction.</strong> Since 3.6, Fly To predicts every moving obstacle and times its pass: it waits for a gap, detours, or dodges what it cannot outrun.</li>
+        <li><strong>One system for every AI author.</strong> ${facts.ai.aiNodesTotal} ready-made nodes across Behaviour Tree, StateTree and Mass StateTree at full parity, 3D EQS for cover and line of sight, and crowds of 10,000+ agents.</li>
+        <li><strong>Agents that fly and swim.</strong> A 6-DOF movement component with multirotor, jet, bird and fish archetypes turns a route into flight, down to landing on a moving ship's deck.</li>
+        <li><strong>Built to ship.</strong> Server-authoritative multiplayer replication, Unreal Engine 5.2 to 5.8, Windows, macOS, Linux, Android, iOS, PS5 and Xbox, a 165-page manual and 57 free demo levels.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="fit" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Honest fit</span>
+        <h2>When another option fits better</h2>
+      </div>
+      <ul class="xcmp__fit xr">
+${rest.map((p) => `        <li><a href="${p.url}" target="_blank" rel="noopener"><b>${esc(p.name)}</b></a><span>${esc(p.fit)}</span></li>`).join('\n')}
+      </ul>
+      <div class="xhead xr" style="margin-top:56px">
+        <span class="kicker">Also checked</span>
+        <h2>Other options</h2>
+      </div>
+      <ul class="xcmp__fit xr">
+${CMP.others.map((o) => `        <li><a href="${o.url}" target="_blank" rel="noopener"><b>${esc(o.name)}</b></a><span>${esc(o.note)}</span></li>`).join('\n')}
+      </ul>
+    </div>
+  </section>
+
+  <section id="faq" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">FAQ</span>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq">
+${COMPARE_FAQ.map(([q, a], i) => `        <details${i === 0 ? ' open' : ''}><summary>${q}</summary><div><p>${a}</p></div></details>`).join('\n')}
+      </div>
+    </div>
+  </section>
+
+  <section id="sources" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Method</span>
+        <h2>Sources</h2>
+        <p class="lede">Each product's own store page, documentation or repository, read on ${checked}. The data behind this page is in <a class="ln" href="../data/competitors.json">competitors.json</a>. Spotted something out of date? <a class="ln" href="${facts.product.discord}" target="_blank" rel="noopener">Tell us on Discord</a>.</p>
+      </div>
+      <ul class="xcmp__src xr">
+${sources.map((s) => `        <li><a href="${s}" target="_blank" rel="noopener">${esc(s.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, ''))}</a></li>`).join('\n')}
+      </ul>
+    </div>
+  </section>
+</article>
+</main>
+
+${cta('Give your AI the <span class="grad">whole sky.</span>', 'LCM 3D Navigation AI: NextGen true 3D navigation for AI agents in Unreal Engine 5, built and supported by a working game developer.')}
+
+${footer()}`;
+  return head({ slug: COMPARE, title, description, image: SITE + heroStill.jpg, imageAlt: heroStill.alt, ld }) + body;
+}
+
 let n = 0;
 const write = (slug, html) => {
   const dir = path.join(ROOT, slug);
@@ -710,4 +875,5 @@ const write = (slug, html) => {
 };
 for (const u of USE_CASES) write(u.slug, useCasePage(u));
 write('unreal-engine-niagara-vfx', storePage());
+write(COMPARE, comparePage());
 console.log(`pages: ${n} page(s) written`);

@@ -228,6 +228,22 @@
         },
         {
           "@type": "Question",
+          "name": "How does it compare with Mercuna and other UE5 3D navigation plugins?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mercuna's cheapest 3D Navigation licence is £2,500 per title (Windows only, no source), against a one-time $199.99 or $1,499.99 for LCM 3D Navigation AI with full C++ source. Fab plugins such as Flying Navigation System cost less but need a bounds volume and have no StateTree or moving-obstacle support, and the free open-source options (AeonixNavigation, Nav3D) need a bounds volume too. None of the alternatives we checked document Mass Entity crowds or a GPU build."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a 3D navmesh for flying AI in Unreal Engine 5?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not built in: Unreal's Recast navmesh covers walkable surfaces only. LCM 3D Navigation AI is the volumetric equivalent, a sparse voxel octree of the navigable air and water, built in the editor, at runtime or on the GPU, which flying, swimming and space AI path through the way ground AI uses a navmesh."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Which Unreal Engine versions and platforms are supported?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -291,8 +307,8 @@
 <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="../assets/company.css" />
-<link rel="stylesheet" href="../assets/upgrade.css?v=20261024n" />
-<link rel="stylesheet" href="../assets/nav3d.css?v=20261024n" />
+<link rel="stylesheet" href="../assets/upgrade.css?v=20261024p" />
+<link rel="stylesheet" href="../assets/nav3d.css?v=20261024p" />
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -677,6 +693,7 @@
           </tbody>
         </table>
       </div>
+      <p class="xr" style="margin-top:22px"><a class="ln" href="../unreal-engine-3d-pathfinding-plugins-compared/">Compare it with Mercuna, Flying Navigation System, AeonixNavigation and Nav3D, product by product →</a></p>
     </div>
   </section>
 
@@ -763,7 +780,9 @@
         <details><summary>How many AI agents can it handle?</summary><div><p>10,000 or more through Mass Entity. Two crowd modes are available: per-agent asynchronous pathfinding via the Nav3D Agent trait, or a single shared CPU flow field that an entire swarm samples in constant time. Mass StateTree tasks let crowds perch, scan, engage, investigate and flee, and schooling, Hold Avoidance and Contact Push keep dense crowds apart. A per-agent GPU solver is in experimental validation and ships as a free update.</p></div></details>
         <details><summary>Does 3D pathfinding work in multiplayer?</summary><div><p>Yes, server-authoritatively. Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles multicast their navigation footprint. CPU compute stays bit-deterministic for replays and lockstep, and a headless validation suite exercises the replicated paths.</p></div></details>
         <details><summary>Does it work in open worlds or with World Partition?</summary><div><p>Yes. LCM 3D Navigation AI runs in two modes. A <strong>finite</strong> world builds its octree once at <code>BeginPlay</code> inside defined bounds. An <strong>infinite</strong> world has no fixed extent. Navigation chunks stream in around agents and unload behind them, so memory stays flat however far the map runs. Long routes use macro/micro routing, solving coarsely across chunks and finely within the current one. Most volumetric navigation plugins require a bounds volume and cannot navigate outside it. <a class="ln" href="#infinite">More on infinite worlds →</a></p></div></details>
-        <details><summary>How is this different from the free open-source SVO navigation plugins?</summary><div><p>The solvers are comparable: A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built <em>around</em> the solver: infinite streaming worlds rather than a required bounds volume, GPU-built navigation, a 6-DOF flight and swim locomotion component, an 85-node Behaviour Tree, StateTree and Mass agent library, moving-obstacle prediction, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, 57 demo levels, a 165-page manual with 15 tutorials, and direct support from the developer. <a class="ln" href="#beyond">See the full comparison →</a></p></div></details>
+        <details><summary>How is this different from the free open-source SVO navigation plugins?</summary><div><p>The solvers are comparable: A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built <em>around</em> the solver: infinite streaming worlds rather than a required bounds volume, GPU-built navigation, a 6-DOF flight and swim locomotion component, an 85-node Behaviour Tree, StateTree and Mass agent library, moving-obstacle prediction, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, 57 demo levels, a 165-page manual with 15 tutorials, and direct support from the developer. <a class="ln" href="../unreal-engine-3d-pathfinding-plugins-compared/">Compare it product by product →</a></p></div></details>
+        <details><summary>How does it compare with Mercuna and other UE5 3D navigation plugins?</summary><div><p>Mercuna's cheapest 3D Navigation licence is £2,500 per title (Windows only, no source), against a one-time $199.99 or $1,499.99 for LCM 3D Navigation AI with full C++ source. Fab plugins such as Flying Navigation System cost less but need a bounds volume and have no StateTree or moving-obstacle support, and the free open-source options (AeonixNavigation, Nav3D) need a bounds volume too. None of the alternatives we checked document Mass Entity crowds or a GPU build.</p></div></details>
+        <details><summary>Is there a 3D navmesh for flying AI in Unreal Engine 5?</summary><div><p>Not built in: Unreal's Recast navmesh covers walkable surfaces only. LCM 3D Navigation AI is the volumetric equivalent, a sparse voxel octree of the navigable air and water, built in the editor, at runtime or on the GPU, which flying, swimming and space AI path through the way ground AI uses a navmesh.</p></div></details>
         <details><summary>Which Unreal Engine versions and platforms are supported?</summary><div><p>LCM 3D Navigation AI 3.6.0 supports Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8, and is supported on Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S. Consoles compile from source with your own platform SDK. Nintendo Switch support is in progress. Check the <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab listing</a> for the current engine compatibility list.</p></div></details>
         <details><summary>Do I need C++, or does it work with Blueprints?</summary><div><p>It works from Blueprints. The plugin is C++ for performance and ships complete source, but exposes 726 symbols to Blueprint, documented in a full API reference, so a full flying AI can be built without writing code. The <code>Fly To Location</code> node flies a pawn from plain Blueprint with no AI Controller. The C++ API is available when you want it.</p></div></details>
         <details><summary>Can it handle moving or dynamic obstacles?</summary><div><p>Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors, and the change replicates to clients in multiplayer. Since 3.6, Fly To also predicts every moving obstacle and times its pass: it learns a gate's or a piston's cycle, waits for a gap, takes a detour, and dodges what it cannot outrun.</p></div></details>
@@ -819,6 +838,7 @@
         <a href="https://lcmnav3d.github.io/whats-new.html" target="_blank" rel="noopener">What's new in 3.6</a>
         <a href="../#worlds">Demo worlds</a>
         <a href="#how">How it works</a>
+        <a href="../unreal-engine-3d-pathfinding-plugins-compared/">Compare 3D pathfinding plugins</a>
         <a href="#infinite">Infinite worlds</a>
         <a href="#beyond">Vs. free plugins</a>
         <a href="#faq">FAQ</a>
@@ -855,6 +875,6 @@
   </div>
 </footer>
 
-<script src="../assets/nav3d.js?v=20261024n" defer></script>
+<script src="../assets/nav3d.js?v=20261024p" defer></script>
 </body>
 </html>
