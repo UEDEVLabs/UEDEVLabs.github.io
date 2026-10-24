@@ -750,6 +750,102 @@
         "flying-ai-drones"
       ],
       "alt": "Looping clip: sentry drones patrol a depot with perception sight cones drawn"
+    },
+    {
+      "slug": "loop-hunter-drones",
+      "clip": "hunter",
+      "a": 30,
+      "d": 6,
+      "speed": 1.5,
+      "crop": "hud",
+      "use": [
+        "hover"
+      ],
+      "alt": "Looping clip: hunter drones weave between shipping container stacks"
+    },
+    {
+      "slug": "loop-coral-reef",
+      "clip": "reef",
+      "a": 24,
+      "d": 6,
+      "speed": 1,
+      "crop": "hud",
+      "use": [
+        "hover"
+      ],
+      "alt": "Looping clip: tropical fish swim over the coral reef"
+    },
+    {
+      "slug": "loop-warehouse",
+      "clip": "warehouse",
+      "a": 11,
+      "d": 6,
+      "speed": 1.5,
+      "crop": "hud",
+      "use": [
+        "hover"
+      ],
+      "alt": "Looping clip: a security drone flies the length of a warehouse aisle"
+    },
+    {
+      "slug": "loop-fish-tank",
+      "clip": "tank",
+      "a": 2,
+      "d": 6,
+      "speed": 1,
+      "crop": "hud_tight",
+      "use": [
+        "hover"
+      ],
+      "alt": "Looping clip: small fish swim through a 120 cm aquarium navigated at 1 cm"
+    },
+    {
+      "slug": "loop-forest-routes",
+      "clip": "forest",
+      "a": 8.3,
+      "d": 6,
+      "speed": 1,
+      "crop": "hud",
+      "use": [
+        "hover"
+      ],
+      "alt": "Looping clip: flight routes over the forest canopy"
+    },
+    {
+      "slug": "loop-deep-space",
+      "clip": "space",
+      "a": 55,
+      "d": 6,
+      "speed": 1,
+      "crop": "hud",
+      "use": [
+        "hover"
+      ],
+      "alt": "Looping clip: a fleet flies through a drifting asteroid field"
+    },
+    {
+      "slug": "loop-skyscraper-swarm",
+      "clip": "swarm_tower",
+      "a": 12,
+      "d": 6,
+      "speed": 1,
+      "crop": "hud",
+      "use": [
+        "hover"
+      ],
+      "alt": "Looping clip: a drone swarm rises through a skyscraper"
+    },
+    {
+      "slug": "loop-land-platform",
+      "clip": "behav_nodes",
+      "a": 110,
+      "d": 6,
+      "speed": 1.5,
+      "crop": "bay",
+      "use": [
+        "hover"
+      ],
+      "alt": "Looping clip: a drone lands on a moving platform"
     }
   ]
 }

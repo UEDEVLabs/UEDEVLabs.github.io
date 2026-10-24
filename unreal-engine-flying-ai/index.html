@@ -119,30 +119,43 @@
 </script>
 <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="../assets/company.css?v=20261024b" />
-<link rel="stylesheet" href="../assets/upgrade.css?v=20261024b" />
-<link rel="stylesheet" href="../assets/nav3d.css?v=20261024b" />
+<link rel="stylesheet" href="../assets/company.css?v=20261024c" />
+<link rel="stylesheet" href="../assets/upgrade.css?v=20261024c" />
+<link rel="stylesheet" href="../assets/nav3d.css?v=20261024c" />
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <div class="aurora"></div>
 <div class="grid-overlay"></div>
 
+<!-- @nav active="uses" current="unreal-engine-flying-ai/" -->
 <header class="nav" id="nav">
   <div class="nav__in">
-    <a href="../" class="brand"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
-    <nav class="nav__links" aria-label="Site">
-      <a href="../unreal-engine-3d-pathfinding/">3D Pathfinding</a>
-      <a href="../unreal-engine-flying-ai/" class="active" aria-current="page">Flying AI</a>
-      <a href="../unreal-engine-underwater-ai/" class="nav__opt">Underwater</a>
-      <a href="../unreal-engine-space-combat-ai/" class="nav__opt">Space</a>
-      <a href="../unreal-engine-moving-obstacle-avoidance/">Moving obstacles</a>
-      <a href="../unreal-engine-niagara-vfx/">Niagara VFX</a>
+    <a href="../" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Main">
+      <a href="../">3D Navigation AI</a>
+      <a href="../unreal-engine-3d-pathfinding/">How it works</a>
+      <div class="nav__dd active">
+        <button class="nav__ddbtn" type="button" aria-expanded="false" aria-controls="nav-uses">Use cases<svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="nav__menu" id="nav-uses">
+        <a href="./" aria-current="page"><b>Flying AI &amp; drones</b><span>6-DOF flight, landing on moving decks, perching</span></a>
+        <a href="../unreal-engine-underwater-ai/"><b>Underwater &amp; fish AI</b><span>Schooling through the whole water column</span></a>
+        <a href="../unreal-engine-space-combat-ai/"><b>Space combat</b><span>Chase, intercept and raider swarms</span></a>
+        <a href="../unreal-engine-open-world-navigation/"><b>Open worlds</b><span>No bounds volume, no edge</span></a>
+        <a href="../unreal-engine-mass-entity-crowds/"><b>Mass Entity crowds</b><span>10,000+ agents navigating in 3D</span></a>
+        <a href="../unreal-engine-moving-obstacle-avoidance/"><b>Moving obstacles</b><span>New in 3.6: predict and time the pass</span></a>
+        </div>
+      </div>
+      <a href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Docs<span class="nav__ext" aria-hidden="true">↗</span></a>
+      <a href="../unreal-engine-niagara-vfx/">More Products</a>
+      <a href="../portfolio.html" class="nav__opt">Developer</a>
+      <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__mcta">Get it on Fab ↗</a>
     </nav>
     <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__cta">Get it on Fab ↗</a>
-    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
   </div>
 </header>
+<!-- /@nav -->
 
 <main class="lp">
 <article>
@@ -303,6 +316,16 @@
             <img src="../assets/media/stills/harbour-drone-lands-moving-ship-1280.jpg" alt="A courier drone descends and lands on the deck of a moving, rolling ship in the Harbour demo" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-harbour-ship-landing" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: a drone descends and lands on a moving ship's deck">
+            <source src="../assets/media/loops/loop-harbour-ship-landing.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-harbour-ship-landing.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: a drone descends and lands on a moving ship's deck">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Harbour</h3><p>A courier drone lands on a moving, rolling ship and a moving lorry.</p><ul class="xchips"><li>Land</li><li>Take Off</li><li>BT · StateTree</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -313,6 +336,16 @@
             <img src="../assets/media/stills/hunter-drone-closeup-1280.jpg" alt="Close-up of the Hunter Drone with its glowing sensor eye in the LCM 3D Navigation AI demo" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-hunter-drones" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: hunter drones weave between shipping container stacks">
+            <source src="../assets/media/loops/loop-hunter-drones.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-hunter-drones.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: hunter drones weave between shipping container stacks">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Hunter Drone</h3><p>A gunner drone hunts a runner through the streets; Hunter Pack in Mass.</p><ul class="xchips"><li>Engage Target</li><li>BT · ST · Mass</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -323,6 +356,16 @@
             <img src="../assets/media/stills/sentry-drones-depot-octree-1280.jpg" alt="Sentry drones patrol a depot with the navigation octree and AI Perception sight cones drawn" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-sentry-perception" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: sentry drones patrol a depot with perception sight cones drawn">
+            <source src="../assets/media/loops/loop-sentry-perception.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-sentry-perception.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: sentry drones patrol a depot with perception sight cones drawn">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Sentry Drones</h3><p>Sentries see only through AI Perception, take EQS firing positions and land.</p><ul class="xchips"><li>AI Perception</li><li>BT · ST · Mass</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -333,6 +376,16 @@
             <img src="../assets/media/stills/warehouse-drone-aisle-1280.jpg" alt="A security drone flies the length of a warehouse aisle between tall racking" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-warehouse" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: a security drone flies the length of a warehouse aisle">
+            <source src="../assets/media/loops/loop-warehouse.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-warehouse.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: a security drone flies the length of a warehouse aisle">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Warehouse</h3><p>A security drone perches, sweeps the hall, engages a thief and searches.</p><ul class="xchips"><li>Perch</li><li>Investigate</li><li>BT · ST · Mass</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -343,6 +396,16 @@
             <img src="../assets/media/stills/gull-sea-cliffs-1280.jpg" alt="A seagull glides along sea cliffs in the Sea Cliffs demo of LCM 3D Navigation AI" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-gulls-perch" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: gulls sweep in and one lands on a sea stack">
+            <source src="../assets/media/loops/loop-gulls-perch.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-gulls-perch.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: gulls sweep in and one lands on a sea stack">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Sea Cliffs</h3><p>A colony of 6-DOF gulls perch, ride an updraft and scatter.</p><ul class="xchips"><li>Perch</li><li>Orbit</li><li>BT · StateTree</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -353,6 +416,16 @@
             <img src="../assets/media/stills/mass-swarm-over-skyline-1280.jpg" alt="A drone swarm sweeping over a city skyline, driven by a shared 3D flow field" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-drone-swarm-city" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: a drone swarm pours between city towers">
+            <source src="../assets/media/loops/loop-drone-swarm-city.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-drone-swarm-city.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: a drone swarm pours between city towers">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>City</h3><p>Streamed open world with rooftop gaps and street canyons.</p><ul class="xchips"><li>Open world</li><li>BT · ST · Mass</li></ul></div>
         </article>
       </div>
@@ -466,6 +539,6 @@
   </div>
 </footer>
 
-<script src="../assets/nav3d.js?v=20261024b" defer></script>
+<script src="../assets/nav3d.js?v=20261024c" defer></script>
 </body>
 </html>

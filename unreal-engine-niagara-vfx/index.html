@@ -199,30 +199,43 @@
 </script>
 <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="../assets/company.css?v=20261024b" />
-<link rel="stylesheet" href="../assets/upgrade.css?v=20261024b" />
-<link rel="stylesheet" href="../assets/nav3d.css?v=20261024b" />
+<link rel="stylesheet" href="../assets/company.css?v=20261024c" />
+<link rel="stylesheet" href="../assets/upgrade.css?v=20261024c" />
+<link rel="stylesheet" href="../assets/nav3d.css?v=20261024c" />
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <div class="aurora"></div>
 <div class="grid-overlay"></div>
 
+<!-- @nav active="store" -->
 <header class="nav" id="nav">
   <div class="nav__in">
-    <a href="../" class="brand"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
-    <nav class="nav__links" aria-label="Site">
-      <a href="../unreal-engine-3d-pathfinding/">3D Pathfinding</a>
-      <a href="../unreal-engine-flying-ai/">Flying AI</a>
-      <a href="../unreal-engine-underwater-ai/" class="nav__opt">Underwater</a>
-      <a href="../unreal-engine-space-combat-ai/" class="nav__opt">Space</a>
-      <a href="../unreal-engine-moving-obstacle-avoidance/">Moving obstacles</a>
-      <a href="../unreal-engine-niagara-vfx/" class="active" aria-current="page">Niagara VFX</a>
+    <a href="../" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Main">
+      <a href="../">3D Navigation AI</a>
+      <a href="../unreal-engine-3d-pathfinding/">How it works</a>
+      <div class="nav__dd">
+        <button class="nav__ddbtn" type="button" aria-expanded="false" aria-controls="nav-uses">Use cases<svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="nav__menu" id="nav-uses">
+        <a href="../unreal-engine-flying-ai/"><b>Flying AI &amp; drones</b><span>6-DOF flight, landing on moving decks, perching</span></a>
+        <a href="../unreal-engine-underwater-ai/"><b>Underwater &amp; fish AI</b><span>Schooling through the whole water column</span></a>
+        <a href="../unreal-engine-space-combat-ai/"><b>Space combat</b><span>Chase, intercept and raider swarms</span></a>
+        <a href="../unreal-engine-open-world-navigation/"><b>Open worlds</b><span>No bounds volume, no edge</span></a>
+        <a href="../unreal-engine-mass-entity-crowds/"><b>Mass Entity crowds</b><span>10,000+ agents navigating in 3D</span></a>
+        <a href="../unreal-engine-moving-obstacle-avoidance/"><b>Moving obstacles</b><span>New in 3.6: predict and time the pass</span></a>
+        </div>
+      </div>
+      <a href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Docs<span class="nav__ext" aria-hidden="true">↗</span></a>
+      <a href="./" class="active" aria-current="page">More Products</a>
+      <a href="../portfolio.html" class="nav__opt">Developer</a>
+      <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__mcta">Get it on Fab ↗</a>
     </nav>
     <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__cta">Get it on Fab ↗</a>
-    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
   </div>
 </header>
+<!-- /@nav -->
 
 <main class="lp">
   <header class="xstore">
@@ -549,7 +562,7 @@
   </div>
 </footer>
 
-<script src="../assets/upgrade.js?v=20261024b" defer></script>
-<script src="../assets/nav3d.js?v=20261024b" defer></script>
+<script src="../assets/upgrade.js?v=20261024c" defer></script>
+<script src="../assets/nav3d.js?v=20261024c" defer></script>
 </body>
 </html>

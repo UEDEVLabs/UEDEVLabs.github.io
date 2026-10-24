@@ -192,10 +192,10 @@
 
 <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="assets/company.css?v=20261024b" />
-<link rel="stylesheet" href="assets/transition.css?v=20261024b" />
-<link rel="stylesheet" href="assets/upgrade.css?v=20261024b" />
-<link rel="stylesheet" href="assets/nav3d.css?v=20261024b" />
+<link rel="stylesheet" href="assets/company.css?v=20261024c" />
+<link rel="stylesheet" href="assets/transition.css?v=20261024c" />
+<link rel="stylesheet" href="assets/upgrade.css?v=20261024c" />
+<link rel="stylesheet" href="assets/nav3d.css?v=20261024c" />
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <script>try{if(sessionStorage.getItem('xition_nav'))document.documentElement.classList.add('xnav');}catch(e){}</script>
 </head>
@@ -214,23 +214,34 @@
 <div class="aurora"></div>
 <div class="grid-overlay"></div>
 
-<!-- NAV -->
+<!-- @nav active="home" -->
 <header class="nav" id="nav">
   <div class="nav__in">
-    <a href="#top" class="brand"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
-    <nav class="nav__links" aria-label="Site">
-      <a href="#whats-new">What's new</a>
-      <a href="#worlds">Demo worlds</a>
-      <a href="#use-cases">Use cases</a>
+    <a href="./" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Main">
+      <a href="./" class="active" aria-current="page">3D Navigation AI</a>
       <a href="unreal-engine-3d-pathfinding/">How it works</a>
-      <a href="https://lcmnav3d.github.io/" class="nav__opt">Docs</a>
-      <a href="unreal-engine-niagara-vfx/">Niagara VFX</a>
+      <div class="nav__dd">
+        <button class="nav__ddbtn" type="button" aria-expanded="false" aria-controls="nav-uses">Use cases<svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="nav__menu" id="nav-uses">
+        <a href="unreal-engine-flying-ai/"><b>Flying AI &amp; drones</b><span>6-DOF flight, landing on moving decks, perching</span></a>
+        <a href="unreal-engine-underwater-ai/"><b>Underwater &amp; fish AI</b><span>Schooling through the whole water column</span></a>
+        <a href="unreal-engine-space-combat-ai/"><b>Space combat</b><span>Chase, intercept and raider swarms</span></a>
+        <a href="unreal-engine-open-world-navigation/"><b>Open worlds</b><span>No bounds volume, no edge</span></a>
+        <a href="unreal-engine-mass-entity-crowds/"><b>Mass Entity crowds</b><span>10,000+ agents navigating in 3D</span></a>
+        <a href="unreal-engine-moving-obstacle-avoidance/"><b>Moving obstacles</b><span>New in 3.6: predict and time the pass</span></a>
+        </div>
+      </div>
+      <a href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Docs<span class="nav__ext" aria-hidden="true">↗</span></a>
+      <a href="unreal-engine-niagara-vfx/">More Products</a>
       <a href="portfolio.html" class="nav__opt">Developer</a>
+      <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__mcta">Get it on Fab ↗</a>
     </nav>
     <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__cta">Get it on Fab ↗</a>
-    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
   </div>
 </header>
+<!-- /@nav -->
 <main id="main">
 <div class="lp">
 
@@ -413,6 +424,10 @@
             <source src="assets/media/loops/loop-harbour-ship-landing.webm" type='video/webm; codecs="av01.0.05M.08"'>
             <source src="assets/media/loops/loop-harbour-ship-landing.mp4" type="video/mp4">
           </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: a drone descends and lands on a moving ship's deck">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
           <!-- /@loop -->
           <div class="xw__body"><h3>Harbour</h3><p>A courier drone lands on a moving, rolling ship and a moving lorry, flying each approach relative to the deck.</p><ul class="xchips"><li>Land on moving decks</li><li>Take Off</li></ul></div>
         </article>
@@ -429,6 +444,10 @@
             <source src="assets/media/loops/loop-gulls-perch.webm" type='video/webm; codecs="av01.0.05M.08"'>
             <source src="assets/media/loops/loop-gulls-perch.mp4" type="video/mp4">
           </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: gulls sweep in and one lands on a sea stack">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
           <!-- /@loop -->
           <div class="xw__body"><h3>Sea Cliffs</h3><p>6-DOF seagulls that cannot hover glide in to perch on free ledges, ride an updraft and scatter.</p><ul class="xchips"><li>Perch</li><li>Flee</li></ul></div>
         </article>
@@ -440,6 +459,16 @@
             <img src="assets/media/stills/hunter-drone-closeup-1280.jpg" alt="Close-up of the Hunter Drone with its glowing sensor eye in the LCM 3D Navigation AI demo" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-hunter-drones" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: hunter drones weave between shipping container stacks">
+            <source src="assets/media/loops/loop-hunter-drones.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="assets/media/loops/loop-hunter-drones.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: hunter drones weave between shipping container stacks">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Hunter Drone</h3><p>A gunner drone hunts a runner through the streets and fires only on a clean shot.</p><ul class="xchips"><li>Engage Target</li><li>BT · ST · Mass</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -450,6 +479,16 @@
             <img src="assets/media/stills/coral-reef-fish-1280.jpg" alt="Tropical fish swim over a coral reef using volumetric navigation in Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-coral-reef" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: tropical fish swim over the coral reef">
+            <source src="assets/media/loops/loop-coral-reef.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="assets/media/loops/loop-coral-reef.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: tropical fish swim over the coral reef">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Coral Reef</h3><p>An ROV surveys the reef while the school hides in the coral out of its sight.</p><ul class="xchips"><li>Scan Area</li><li>Schooling</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -465,6 +504,10 @@
             <source src="assets/media/loops/loop-space-dogfight.webm" type='video/webm; codecs="av01.0.05M.08"'>
             <source src="assets/media/loops/loop-space-dogfight.mp4" type="video/mp4">
           </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: starfighters trade laser fire through an asteroid belt">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
           <!-- /@loop -->
           <div class="xw__body"><h3>Space Dogfight</h3><p>Fighters chase raiders through a streamed asteroid belt, re-planning as the target breaks.</p><ul class="xchips"><li>Fly To chase</li><li>6-DOF</li></ul></div>
         </article>
@@ -805,10 +848,10 @@
   </div>
 </footer>
 
-<script src="assets/transition.js?v=20261024b"></script>
-<script src="assets/company.js?v=20261024b"></script>
-<script src="assets/navmesh.js?v=20261024b"></script>
-<script src="assets/upgrade.js?v=20261024b"></script>
-<script src="assets/nav3d.js?v=20261024b" defer></script>
+<script src="assets/transition.js?v=20261024c"></script>
+<script src="assets/company.js?v=20261024c"></script>
+<script src="assets/navmesh.js?v=20261024c"></script>
+<script src="assets/upgrade.js?v=20261024c"></script>
+<script src="assets/nav3d.js?v=20261024c" defer></script>
 </body>
 </html>

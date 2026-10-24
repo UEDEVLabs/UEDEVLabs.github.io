@@ -1126,6 +1126,174 @@
         "speed": 2,
         "crop": "hud"
       }
+    },
+    {
+      "slug": "loop-hunter-drones",
+      "alt": "Looping clip: hunter drones weave between shipping container stacks",
+      "use": [
+        "hover"
+      ],
+      "width": 1280,
+      "height": 720,
+      "seconds": 6,
+      "webm": "assets/media/loops/loop-hunter-drones.webm",
+      "mp4": "assets/media/loops/loop-hunter-drones.mp4",
+      "posterAvif": "assets/media/loops/loop-hunter-drones-poster-1280.avif",
+      "posterJpg": "assets/media/loops/loop-hunter-drones-poster-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/HunterDrone_Infnite_Finite_BT_ST_MASS.mp4",
+        "a": 30,
+        "d": 6,
+        "speed": 1.5,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "loop-coral-reef",
+      "alt": "Looping clip: tropical fish swim over the coral reef",
+      "use": [
+        "hover"
+      ],
+      "width": 1280,
+      "height": 720,
+      "seconds": 6,
+      "webm": "assets/media/loops/loop-coral-reef.webm",
+      "mp4": "assets/media/loops/loop-coral-reef.mp4",
+      "posterAvif": "assets/media/loops/loop-coral-reef-poster-1280.avif",
+      "posterJpg": "assets/media/loops/loop-coral-reef-poster-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/CoralReef_Infnite_Finite_BT_ST_MASS_1.mp4",
+        "a": 24,
+        "d": 6,
+        "speed": 1,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "loop-warehouse",
+      "alt": "Looping clip: a security drone flies the length of a warehouse aisle",
+      "use": [
+        "hover"
+      ],
+      "width": 1280,
+      "height": 720,
+      "seconds": 6,
+      "webm": "assets/media/loops/loop-warehouse.webm",
+      "mp4": "assets/media/loops/loop-warehouse.mp4",
+      "posterAvif": "assets/media/loops/loop-warehouse-poster-1280.avif",
+      "posterJpg": "assets/media/loops/loop-warehouse-poster-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/Warhouse_Infnite_Finite_BT_ST_MASS.mp4",
+        "a": 11,
+        "d": 6,
+        "speed": 1.5,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "loop-fish-tank",
+      "alt": "Looping clip: small fish swim through a 120 cm aquarium navigated at 1 cm",
+      "use": [
+        "hover"
+      ],
+      "width": 1280,
+      "height": 720,
+      "seconds": 6,
+      "webm": "assets/media/loops/loop-fish-tank.webm",
+      "mp4": "assets/media/loops/loop-fish-tank.mp4",
+      "posterAvif": "assets/media/loops/loop-fish-tank-poster-1280.avif",
+      "posterJpg": "assets/media/loops/loop-fish-tank-poster-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/FishTank_Infnite_Finite_BT_ST_MASS.mp4",
+        "a": 2,
+        "d": 6,
+        "speed": 1,
+        "crop": "hud_tight"
+      }
+    },
+    {
+      "slug": "loop-forest-routes",
+      "alt": "Looping clip: flight routes over the forest canopy",
+      "use": [
+        "hover"
+      ],
+      "width": 1280,
+      "height": 720,
+      "seconds": 6,
+      "webm": "assets/media/loops/loop-forest-routes.webm",
+      "mp4": "assets/media/loops/loop-forest-routes.mp4",
+      "posterAvif": "assets/media/loops/loop-forest-routes-poster-1280.avif",
+      "posterJpg": "assets/media/loops/loop-forest-routes-poster-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/ForestOpenWorld.mp4",
+        "a": 8.3,
+        "d": 6,
+        "speed": 1,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "loop-deep-space",
+      "alt": "Looping clip: a fleet flies through a drifting asteroid field",
+      "use": [
+        "hover"
+      ],
+      "width": 1280,
+      "height": 720,
+      "seconds": 6,
+      "webm": "assets/media/loops/loop-deep-space.webm",
+      "mp4": "assets/media/loops/loop-deep-space.mp4",
+      "posterAvif": "assets/media/loops/loop-deep-space-poster-1280.avif",
+      "posterJpg": "assets/media/loops/loop-deep-space-poster-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/SpaceOpenWorld.mp4",
+        "a": 55,
+        "d": 6,
+        "speed": 1,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "loop-skyscraper-swarm",
+      "alt": "Looping clip: a drone swarm rises through a skyscraper",
+      "use": [
+        "hover"
+      ],
+      "width": 1280,
+      "height": 720,
+      "seconds": 6,
+      "webm": "assets/media/loops/loop-skyscraper-swarm.webm",
+      "mp4": "assets/media/loops/loop-skyscraper-swarm.mp4",
+      "posterAvif": "assets/media/loops/loop-skyscraper-swarm-poster-1280.avif",
+      "posterJpg": "assets/media/loops/loop-skyscraper-swarm-poster-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/Nav3DUE5 2026.10.10 - 18.31.47.04.mp4",
+        "a": 12,
+        "d": 6,
+        "speed": 1,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "loop-land-platform",
+      "alt": "Looping clip: a drone lands on a moving platform",
+      "use": [
+        "hover"
+      ],
+      "width": 1280,
+      "height": 720,
+      "seconds": 6,
+      "webm": "assets/media/loops/loop-land-platform.webm",
+      "mp4": "assets/media/loops/loop-land-platform.mp4",
+      "posterAvif": "assets/media/loops/loop-land-platform-poster-1280.avif",
+      "posterJpg": "assets/media/loops/loop-land-platform-poster-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/BehaviourNodes_Showcase.mp4",
+        "a": 110,
+        "d": 6,
+        "speed": 1.5,
+        "crop": "bay"
+      }
     }
   ]
 }
