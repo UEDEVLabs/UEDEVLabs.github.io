@@ -51,11 +51,11 @@ h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1}
 .nav.scrolled{background:rgba(5,7,5,.78);backdrop-filter:blur(16px) saturate(1.3);border-color:var(--line)}
 .nav__in{max-width:var(--maxw);margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px;letter-spacing:.02em}
-.brand__mark{width:34px;height:34px;position:relative;flex:0 0 auto;display:grid;place-items:center}
-.brand__mark i{position:absolute;inset:0;border-radius:9px;background:conic-gradient(from 140deg,var(--cyan),var(--violet),var(--magenta),var(--cyan));opacity:.9;animation:spin 8s linear infinite}
-.brand__mark b{position:relative;z-index:2;width:26px;height:26px;border-radius:7px;background:var(--bg);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--ink)}
+/* UEDEV logo (assets/brand): the mark and the wordmark, from the brand pack */
+.brand__mark{width:34px;height:34px;flex:0 0 auto;display:block;filter:drop-shadow(0 0 10px rgba(38,187,255,.32));transition:filter .3s}
+.brand:hover .brand__mark{filter:drop-shadow(0 0 16px rgba(38,187,255,.6))}
+.brand__word{display:block;width:auto;height:17px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.brand span b{color:var(--cyan)}
 .nav__links{display:flex;gap:28px;align-items:center}
 .nav__links a{font-size:14px;color:var(--muted);position:relative;padding:6px 0;transition:.2s}
 .nav__links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--cyan);transition:width .3s var(--ease)}
@@ -117,7 +117,7 @@ h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1}
 .reveal[data-d="1"]{transition-delay:.07s}.reveal[data-d="2"]{transition-delay:.14s}
 .reveal[data-d="3"]{transition-delay:.21s}.reveal[data-d="4"]{transition-delay:.28s}
 html.no-anim .reveal{opacity:1!important;transform:none!important;transition:none!important}
-html.no-anim .aurora::before,html.no-anim .aurora::after,html.no-anim .strip__t,html.no-anim .brand__mark i{animation:none!important}
+html.no-anim .aurora::before,html.no-anim .aurora::after,html.no-anim .strip__t{animation:none!important}
 
 /* ---------- FEATURED ---------- */
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -207,6 +207,7 @@ html.no-anim .aurora::before,html.no-anim .aurora::after,html.no-anim .strip__t,
 .footer__in{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
 .footer__col h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 14px}
 .footer__col a{display:block;color:var(--muted);font-size:14px;margin-bottom:9px;transition:.2s}
+.footer__col a.brand{display:inline-flex;margin-bottom:14px}
 .footer__col a:hover{color:var(--cyan)}
 .footer__bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
 
@@ -237,5 +238,5 @@ html.no-anim .aurora::before,html.no-anim .aurora::after,html.no-anim .strip__t,
 }
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none}
-  .aurora::before,.aurora::after,.strip__t,.scrolldown i,.brand__mark i,.pill .dot{animation:none}
+  .aurora::before,.aurora::after,.strip__t,.scrolldown i,.pill .dot{animation:none}
 }

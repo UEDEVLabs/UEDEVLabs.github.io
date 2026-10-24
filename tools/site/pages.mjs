@@ -19,7 +19,7 @@ const PRODUCT = 'unreal-engine-3d-pathfinding/';
 const FAB = facts.product.fab;
 const DOCS = facts.product.docs;
 const UPDATED = facts.updated;
-const V = '?v=20261024e';
+const V = '?v=20261024g';
 // Best sellers, the VFX marquee, capabilities and support, moved here from the home page.
 const STORE_SECTIONS = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'partials', 'store-sections.html'), 'utf8')
   .replace(/^<!--[\s\S]*?-->\r?\n/, '');
@@ -333,8 +333,9 @@ function head({ slug, title, description, image, imageAlt, ld }) {
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="theme-color" content="#050705" />
 <link rel="canonical" href="${url}" />
-<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
-<link rel="apple-touch-icon" href="../assets/og-company.png" />
+<link rel="icon" href="../favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=2" />
+<link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="UEDEV" />
 <meta property="og:title" content="${esc(title)}" />
@@ -373,7 +374,7 @@ function footer(scripts = '') {
   <div class="wrap">
     <div class="footer__in">
       <div class="footer__col" style="max-width:280px">
-        <a href="../" class="brand" style="margin-bottom:14px"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+        <a href="../" class="brand" style="margin-bottom:14px"><img class="brand__mark" src="../assets/brand/uedev-mark.svg" width="34" height="34" alt=""><img class="brand__word" src="../assets/brand/uedev-wordmark.svg" width="109" height="17" alt="UEDEV"></a>
         <p style="color:var(--faint);font-size:14px;line-height:1.6;margin:0">High-performance plugins, gameplay systems &amp; advanced VFX for Unreal Engine. Built and supported by a working game developer.</p>
       </div>
       <div class="footer__col">

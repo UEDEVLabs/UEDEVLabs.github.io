@@ -8,7 +8,7 @@ URL: https://uedevlabs.github.io/unreal-engine-3d-pathfinding/
 Title: 3D Pathfinding for Unreal Engine 5 | LCM 3D Navigation AI
 Description: True 3D pathfinding for Unreal Engine 5 with infinite streaming worlds, not just a bounds volume. Flying AI, 6-DOF flight, Mass crowds, multiplayer.
 
-UEDEV / 3D Navigation AI / How it works · Updated 24 October 2026 for v3.6.0
+UEDEV / 3D Navigation AI / How it works · Updated 24 October 2026
 Technical overview
 
 # How 3D pathfinding works in Unreal Engine 5
