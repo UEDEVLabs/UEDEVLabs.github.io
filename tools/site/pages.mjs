@@ -20,6 +20,9 @@ const FAB = facts.product.fab;
 const DOCS = facts.product.docs;
 const UPDATED = facts.updated;
 const V = '?v=20261024';
+// Best sellers, the VFX marquee, capabilities and support, moved here from the home page.
+const STORE_SECTIONS = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'partials', 'store-sections.html'), 'utf8')
+  .replace(/^<!--[\s\S]*?-->\r?\n/, '');
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const text = (html) => html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
@@ -366,7 +369,7 @@ ${items.map(([href, label, cls]) => `      <a href="../${href}"${[cls, href === 
 </header>`;
 }
 
-function footer() {
+function footer(scripts = '') {
   const uc = USE_CASES.map((u) => `        <a href="../${u.slug}/">${u.nav === 'Crowds' ? 'Mass crowds' : u.nav}</a>`).join('\n');
   return `<footer class="footer">
   <div class="wrap">
@@ -404,7 +407,7 @@ ${uc}
   </div>
 </footer>
 
-<script src="../assets/nav3d.js${V}" defer></script>
+${scripts}<script src="../assets/nav3d.js${V}" defer></script>
 </body>
 </html>
 `;
@@ -669,8 +672,10 @@ ${nav('unreal-engine-niagara-vfx/')}
     </div>
   </section>
 
+${STORE_SECTIONS.split('<section class="caps"')[0]}
 ${sections}
 
+  <section class="caps"${STORE_SECTIONS.split('<section class="caps"')[1]}
   <section class="xcat">
     <div class="wrap">
       <p class="xnote">Prices and ratings as listed on Fab on 24 October 2026. Fab shows the current price, any sale and the supported engine versions on each listing.</p>
@@ -680,7 +685,8 @@ ${sections}
 
 ${cta('Need something <span class="grad">custom built?</span>', 'Bespoke effects, gameplay systems and plugins from the developer behind the packs.').replace(`<a class="btn btn--primary" href="${FAB}" target="_blank" rel="noopener">Get it on Fab ↗</a>`, `<a class="btn btn--primary" href="${store.seller}" target="_blank" rel="noopener">Browse on Fab ↗</a>`).replace(`<a class="btn btn--ghost" href="../${PRODUCT}">Explore LCM 3D Navigation AI →</a>`, '<a class="btn btn--ghost" href="../portfolio.html#contact">Contact the developer →</a>')}
 
-${footer()}`;
+${footer(`<script src="../assets/upgrade.js${V}" defer></script>
+`)}`;
   return head({ slug, title, description, image, imageAlt: 'UEDEV Niagara VFX packs and plugins for Unreal Engine', ld }) + body;
 }
 
