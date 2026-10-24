@@ -41,9 +41,30 @@ for (const file of pages()) {
   const graphs = [];
   for (const [, body] of ld) { try { graphs.push(JSON.parse(body)); } catch (e) { fail(page, `JSON-LD does not parse: ${e.message}`); } }
 
+  // Structured data: the fields Google needs for each rich result, and our own URLs must exist.
+  const nodes = graphs.flatMap((g) => g['@graph'] || [g]);
+  const need = (n, keys) => keys.filter((k) => k.split('|').every((alt) => n[alt] === undefined || n[alt] === '')).map((k) => `${n['@type']} is missing ${k}`);
+  for (const n of nodes) {
+    const t = n['@type'];
+    const miss =
+      t === 'VideoObject' ? need(n, ['name', 'description', 'thumbnailUrl', 'uploadDate', 'duration', 'contentUrl|embedUrl'])
+      : t === 'SoftwareApplication' ? need(n, ['name', 'applicationCategory', 'operatingSystem', 'offers'])
+      : t === 'FAQPage' ? (n.mainEntity || []).filter((q) => !q.name || !q.acceptedAnswer?.text).map(() => 'FAQPage has a question without name or answer')
+      : t === 'BreadcrumbList' ? (n.itemListElement || []).filter((it, i, all) => !it.position || !it.name || (!it.item && i < all.length - 1)).map(() => 'BreadcrumbList item without position, name or item')
+      : [];
+    if (t === 'SoftwareApplication' && n.offers && (!n.offers.price || !n.offers.priceCurrency)) miss.push('SoftwareApplication offers without price and priceCurrency');
+    if (t === 'VideoObject' && !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2}|Z)$/.test(n.uploadDate || '')) miss.push(`VideoObject uploadDate "${n.uploadDate}" is not a full ISO 8601 date-time`);
+    for (const m of miss) fail(page, `JSON-LD: ${m}`);
+  }
+  for (const [, body] of ld) {
+    for (const m of body.matchAll(/"https:\/\/uedevlabs\.github\.io\/([^"#?]+\.(?:png|jpe?g|webp|avif|svg|json|txt|xml))"/g)) {
+      if (!fs.existsSync(path.join(ROOT, decodeURIComponent(m[1])))) fail(page, `JSON-LD points at a missing file: ${m[1]}`);
+    }
+  }
+
   // Local references
   const refs = [];
-  for (const m of visible.matchAll(/\s(?:src|href|poster)="([^"]+)"/g)) refs.push(m[1]);
+  for (const m of visible.matchAll(/\s(?:src|href|poster|data-poster)="([^"]+)"/g)) refs.push(m[1]);
   for (const m of visible.matchAll(/\ssrcset="([^"]+)"/g)) for (const part of m[1].split(',')) refs.push(part.trim().split(/\s+/)[0]);
   for (const ref of refs) {
     if (/^(https?:|mailto:|tel:|#|data:|javascript:)/.test(ref) || ref === '') continue;

@@ -811,6 +811,150 @@
         "t": 43,
         "crop": "bay"
       }
+    },
+    {
+      "slug": "poster-drone-swarm-city",
+      "alt": "A drone swarm pours between city towers in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-drone-swarm-city, shown until the loop plays.",
+      "use": [
+        "hero:loop-drone-swarm-city"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "avif": "assets/media/stills/poster-drone-swarm-city-640.avif 640w, assets/media/stills/poster-drone-swarm-city-1280.avif 1280w, assets/media/stills/poster-drone-swarm-city-1920.avif 1920w",
+      "webp": "assets/media/stills/poster-drone-swarm-city-640.webp 640w, assets/media/stills/poster-drone-swarm-city-1280.webp 1280w, assets/media/stills/poster-drone-swarm-city-1920.webp 1920w",
+      "jpg": "assets/media/stills/poster-drone-swarm-city-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/Nav3DUE5 2026.10.10 - 18.29.09.03.mp4",
+        "t": 47,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "poster-harbour-ship-landing",
+      "alt": "A drone descends and lands on a moving ship's deck in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-harbour-ship-landing, shown until the loop plays.",
+      "use": [
+        "hero:loop-harbour-ship-landing"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "avif": "assets/media/stills/poster-harbour-ship-landing-640.avif 640w, assets/media/stills/poster-harbour-ship-landing-1280.avif 1280w, assets/media/stills/poster-harbour-ship-landing-1920.avif 1920w",
+      "webp": "assets/media/stills/poster-harbour-ship-landing-640.webp 640w, assets/media/stills/poster-harbour-ship-landing-1280.webp 1280w, assets/media/stills/poster-harbour-ship-landing-1920.webp 1920w",
+      "jpg": "assets/media/stills/poster-harbour-ship-landing-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/Harbour_Landing_Infnite_Finite_BT_ST_MASS.mp4",
+        "t": 9,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "poster-space-dogfight",
+      "alt": "Starfighters trade laser fire through an asteroid belt in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-space-dogfight, shown until the loop plays.",
+      "use": [
+        "hero:loop-space-dogfight"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "avif": "assets/media/stills/poster-space-dogfight-640.avif 640w, assets/media/stills/poster-space-dogfight-1280.avif 1280w, assets/media/stills/poster-space-dogfight-1920.avif 1920w",
+      "webp": "assets/media/stills/poster-space-dogfight-640.webp 640w, assets/media/stills/poster-space-dogfight-1280.webp 1280w, assets/media/stills/poster-space-dogfight-1920.webp 1920w",
+      "jpg": "assets/media/stills/poster-space-dogfight-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/SpaceDogFight_Infnite_Finite_BT_ST_MASS.mp4",
+        "t": 78,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "poster-gulls-perch",
+      "alt": "Gulls sweep in and one lands on a sea stack in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-gulls-perch, shown until the loop plays.",
+      "use": [
+        "hero:loop-gulls-perch"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "avif": "assets/media/stills/poster-gulls-perch-640.avif 640w, assets/media/stills/poster-gulls-perch-1280.avif 1280w, assets/media/stills/poster-gulls-perch-1920.avif 1920w",
+      "webp": "assets/media/stills/poster-gulls-perch-640.webp 640w, assets/media/stills/poster-gulls-perch-1280.webp 1280w, assets/media/stills/poster-gulls-perch-1920.webp 1920w",
+      "jpg": "assets/media/stills/poster-gulls-perch-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/SeaCliffs_Infnite_Finite_BT_ST_MASS_1.mp4",
+        "t": 91.5,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "poster-reef-school",
+      "alt": "A school of fish streams over the coral reef in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-reef-school, shown until the loop plays.",
+      "use": [
+        "hero:loop-reef-school"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "avif": "assets/media/stills/poster-reef-school-640.avif 640w, assets/media/stills/poster-reef-school-1280.avif 1280w, assets/media/stills/poster-reef-school-1920.avif 1920w",
+      "webp": "assets/media/stills/poster-reef-school-640.webp 640w, assets/media/stills/poster-reef-school-1280.webp 1280w, assets/media/stills/poster-reef-school-1920.webp 1920w",
+      "jpg": "assets/media/stills/poster-reef-school-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/CoralReef_Infnite_Finite_MASS.mp4",
+        "t": 4,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "poster-city-routes",
+      "alt": "Drones fly their planned routes over a streamed city in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-city-routes, shown until the loop plays.",
+      "use": [
+        "hero:loop-city-routes"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "avif": "assets/media/stills/poster-city-routes-640.avif 640w, assets/media/stills/poster-city-routes-1280.avif 1280w, assets/media/stills/poster-city-routes-1920.avif 1920w",
+      "webp": "assets/media/stills/poster-city-routes-640.webp 640w, assets/media/stills/poster-city-routes-1280.webp 1280w, assets/media/stills/poster-city-routes-1920.webp 1920w",
+      "jpg": "assets/media/stills/poster-city-routes-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/OpenWorldCity.mp4",
+        "t": 2,
+        "crop": "hud"
+      }
+    },
+    {
+      "slug": "poster-octree-sea-stack",
+      "alt": "The live navigation octree around a sea stack in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-octree-sea-stack, shown until the loop plays.",
+      "use": [
+        "hero:loop-octree-sea-stack"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "avif": "assets/media/stills/poster-octree-sea-stack-640.avif 640w, assets/media/stills/poster-octree-sea-stack-1280.avif 1280w, assets/media/stills/poster-octree-sea-stack-1920.avif 1920w",
+      "webp": "assets/media/stills/poster-octree-sea-stack-640.webp 640w, assets/media/stills/poster-octree-sea-stack-1280.webp 1280w, assets/media/stills/poster-octree-sea-stack-1920.webp 1920w",
+      "jpg": "assets/media/stills/poster-octree-sea-stack-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/SeaCliffs_Infnite_Finite_BT_ST_MASS_1.mp4",
+        "t": 23,
+        "crop": "proof"
+      }
+    },
+    {
+      "slug": "poster-sentry-perception",
+      "alt": "Sentry drones patrol a depot with perception sight cones drawn in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-sentry-perception, shown until the loop plays.",
+      "use": [
+        "hero:loop-sentry-perception"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "avif": "assets/media/stills/poster-sentry-perception-640.avif 640w, assets/media/stills/poster-sentry-perception-1280.avif 1280w, assets/media/stills/poster-sentry-perception-1920.avif 1920w",
+      "webp": "assets/media/stills/poster-sentry-perception-640.webp 640w, assets/media/stills/poster-sentry-perception-1280.webp 1280w, assets/media/stills/poster-sentry-perception-1920.webp 1920w",
+      "jpg": "assets/media/stills/poster-sentry-perception-1280.jpg",
+      "source": {
+        "clip": "NewVideo_Materials/SentryDrones_Infnite_Finite_BT_ST_MASS.mp4",
+        "t": 25,
+        "crop": "hud"
+      }
     }
   ],
   "loops": [

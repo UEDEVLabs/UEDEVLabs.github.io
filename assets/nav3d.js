@@ -10,7 +10,18 @@
 
   function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
 
-  /* ---- Loops that play while in view ---- */
+  /* ---- Posters, fetched only as their loop comes near the screen ---- */
+  var lazy = [].slice.call(document.querySelectorAll('video[data-poster]'));
+  var setPoster = function (v) { v.poster = v.dataset.poster; v.removeAttribute('data-poster'); };
+  if ('IntersectionObserver' in window) {
+    var near = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { setPoster(e.target); near.unobserve(e.target); } });
+    }, { rootMargin: '800px 0px' });
+    lazy.forEach(function (v) { near.observe(v); });
+  } else lazy.forEach(setPoster);
+
+  /* ---- Loops that play while in view, starting only after the page has loaded, so no video
+     download competes with the first paint (the hero shows its poster until then) ---- */
   var auto = [].slice.call(document.querySelectorAll('video[data-autoplay]'));
   if (calm) {
     auto.forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
@@ -22,8 +33,14 @@
         if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; play(v); } else v.pause();
       });
     }, { threshold: 0.25 });
-    auto.forEach(function (v) { seen.observe(v); });
+    var start = function () { auto.forEach(function (v) { seen.observe(v); }); };
+    if (document.readyState === 'complete') start(); else addEventListener('load', start);
   }
+
+  /* ---- A hero loop fades in over its first-frame still once it is really playing ---- */
+  [].forEach.call(document.querySelectorAll('video[data-hero]'), function (v) {
+    v.addEventListener('playing', function () { v.parentNode.classList.add('is-playing'); });
+  });
 
   /* ---- Hero pause / play ---- */
   [].forEach.call(document.querySelectorAll('.xplay[data-target]'), function (btn) {
