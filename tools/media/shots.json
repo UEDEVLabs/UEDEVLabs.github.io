@@ -1,192 +1,755 @@
 {
   "$comment": "Stills and loops for the website, cut from the in-engine captures in 'Marketing Materials'. Times are seconds into the source clip. The shot list follows the 3.5 showcase edit (v3.5/showcase_5min/beats.py). Build with: node tools/media/build.mjs",
   "clips": {
-    "swarm_city":   "NewVideo_Materials/Nav3DUE5 2026.10.10 - 18.29.09.03.mp4",
-    "swarm_tower":  "NewVideo_Materials/Nav3DUE5 2026.10.10 - 18.31.47.04.mp4",
+    "swarm_city": "NewVideo_Materials/Nav3DUE5 2026.10.10 - 18.29.09.03.mp4",
+    "swarm_tower": "NewVideo_Materials/Nav3DUE5 2026.10.10 - 18.31.47.04.mp4",
     "flock_forest": "NewVideo_Materials/Nav3DUE5 2026.08.15 - 03.35.55.13.mp4",
-    "dogfight":     "NewVideo_Materials/SpaceDogFight_Infnite_Finite_BT_ST_MASS.mp4",
-    "harbour":      "NewVideo_Materials/Harbour_Landing_Infnite_Finite_BT_ST_MASS.mp4",
-    "hunter":       "NewVideo_Materials/HunterDrone_Infnite_Finite_BT_ST_MASS.mp4",
-    "sentry":       "NewVideo_Materials/SentryDrones_Infnite_Finite_BT_ST_MASS.mp4",
-    "warehouse":    "NewVideo_Materials/Warhouse_Infnite_Finite_BT_ST_MASS.mp4",
-    "cliffs":       "NewVideo_Materials/SeaCliffs_Infnite_Finite_BT_ST_MASS_1.mp4",
-    "reef":         "NewVideo_Materials/CoralReef_Infnite_Finite_BT_ST_MASS_1.mp4",
-    "reef_mass":    "NewVideo_Materials/CoralReef_Infnite_Finite_MASS.mp4",
-    "tank":         "NewVideo_Materials/FishTank_Infnite_Finite_BT_ST_MASS.mp4",
-    "city":         "NewVideo_Materials/OpenWorldCity.mp4",
-    "forest":       "NewVideo_Materials/ForestOpenWorld.mp4",
-    "space":        "NewVideo_Materials/SpaceOpenWorld.mp4",
-    "navcost":      "NewVideo_Materials/NavCost_Infinite_Finite.mp4",
-    "move_nodes":   "NewVideo_Materials/Move,entNodes_Showcase.mp4",
-    "behav_nodes":  "NewVideo_Materials/BehaviourNodes_Showcase.mp4",
-    "eqs":          "NewVideo_Materials/TacticalQueries and EQS_Showcase.mp4",
-    "cost_areas":   "NewVideo_Materials/CostAreas_Showcase.mp4"
+    "dogfight": "NewVideo_Materials/SpaceDogFight_Infnite_Finite_BT_ST_MASS.mp4",
+    "harbour": "NewVideo_Materials/Harbour_Landing_Infnite_Finite_BT_ST_MASS.mp4",
+    "hunter": "NewVideo_Materials/HunterDrone_Infnite_Finite_BT_ST_MASS.mp4",
+    "sentry": "NewVideo_Materials/SentryDrones_Infnite_Finite_BT_ST_MASS.mp4",
+    "warehouse": "NewVideo_Materials/Warhouse_Infnite_Finite_BT_ST_MASS.mp4",
+    "cliffs": "NewVideo_Materials/SeaCliffs_Infnite_Finite_BT_ST_MASS_1.mp4",
+    "reef": "NewVideo_Materials/CoralReef_Infnite_Finite_BT_ST_MASS_1.mp4",
+    "reef_mass": "NewVideo_Materials/CoralReef_Infnite_Finite_MASS.mp4",
+    "tank": "NewVideo_Materials/FishTank_Infnite_Finite_BT_ST_MASS.mp4",
+    "city": "NewVideo_Materials/OpenWorldCity.mp4",
+    "forest": "NewVideo_Materials/ForestOpenWorld.mp4",
+    "space": "NewVideo_Materials/SpaceOpenWorld.mp4",
+    "navcost": "NewVideo_Materials/NavCost_Infinite_Finite.mp4",
+    "move_nodes": "NewVideo_Materials/Move,entNodes_Showcase.mp4",
+    "behav_nodes": "NewVideo_Materials/BehaviourNodes_Showcase.mp4",
+    "eqs": "NewVideo_Materials/TacticalQueries and EQS_Showcase.mp4",
+    "cost_areas": "NewVideo_Materials/CostAreas_Showcase.mp4"
   },
   "crops": {
     "$comment": "x, y, w, h in the 2560x1440 captures. hud drops the demo HUD panel; bay frames a Feature Examples display; proof keeps the FPS counter beside the debug view.",
-    "full":      [0, 0, 2560, 1440],
-    "hud":       [500, 205, 2048, 1152],
-    "hud_tight": [500, 150, 1920, 1080],
-    "proof":     [500, 0, 2060, 1159],
-    "bay":       [480, 260, 1600, 900]
+    "full": [
+      0,
+      0,
+      2560,
+      1440
+    ],
+    "hud": [
+      500,
+      205,
+      2048,
+      1152
+    ],
+    "hud_tight": [
+      500,
+      150,
+      1920,
+      1080
+    ],
+    "proof": [
+      500,
+      0,
+      2060,
+      1159
+    ],
+    "bay": [
+      480,
+      260,
+      1600,
+      900
+    ]
   },
-  "stillWidths": [640, 1280, 1920],
+  "stillWidths": [
+    640,
+    1280,
+    1920
+  ],
   "stills": [
-    { "slug": "drone-swarm-city-towers", "clip": "swarm_city", "t": 48.4, "crop": "hud", "use": ["home:hero", "mass-entity-3d-crowds"],
+    {
+      "slug": "drone-swarm-city-towers",
+      "clip": "swarm_city",
+      "t": 48.4,
+      "crop": "hud",
+      "use": [
+        "home:hero",
+        "mass-entity-3d-crowds"
+      ],
       "alt": "A swarm of drones pours between brick towers in the LCM 3D Navigation AI City demo for Unreal Engine 5",
-      "caption": "A Mass drone swarm threading the City open world." },
-    { "slug": "drone-swarm-close-fly-through", "clip": "swarm_city", "t": 93.2, "crop": "hud", "use": ["mass-entity-3d-crowds"],
+      "caption": "A Mass drone swarm threading the City open world."
+    },
+    {
+      "slug": "drone-swarm-close-fly-through",
+      "clip": "swarm_city",
+      "t": 93.2,
+      "crop": "hud",
+      "use": [
+        "mass-entity-3d-crowds"
+      ],
       "alt": "Close view of a Mass Entity drone swarm flying through a city in Unreal Engine 5",
-      "caption": "Close fly-through of the swarm: every drone on its own 6-DOF body." },
-    { "slug": "mass-swarm-over-skyline", "clip": "swarm_city", "t": 74.5, "crop": "hud", "use": ["mass-entity-3d-crowds"],
+      "caption": "Close fly-through of the swarm: every drone on its own 6-DOF body."
+    },
+    {
+      "slug": "mass-swarm-over-skyline",
+      "clip": "swarm_city",
+      "t": 74.5,
+      "crop": "hud",
+      "use": [
+        "mass-entity-3d-crowds"
+      ],
       "alt": "A drone swarm sweeping over a city skyline, driven by a shared 3D flow field",
-      "caption": "One shared flow field carries the whole swarm over the skyline." },
-    { "slug": "mass-swarm-rising-skyscraper", "clip": "swarm_tower", "t": 14.5, "crop": "hud", "use": ["mass-entity-3d-crowds", "product:use-cases"],
+      "caption": "One shared flow field carries the whole swarm over the skyline."
+    },
+    {
+      "slug": "mass-swarm-rising-skyscraper",
+      "clip": "swarm_tower",
+      "t": 14.5,
+      "crop": "hud",
+      "use": [
+        "mass-entity-3d-crowds",
+        "product:use-cases"
+      ],
       "alt": "A crowd of drones rising floor by floor through a skyscraper in Unreal Engine 5",
-      "caption": "Vertical navigation: a swarm climbing through a tower." },
-    { "slug": "bird-flock-forest-rings", "clip": "flock_forest", "t": 46.0, "crop": "hud", "use": ["flying-ai-drones", "mass-entity-3d-crowds"],
+      "caption": "Vertical navigation: a swarm climbing through a tower."
+    },
+    {
+      "slug": "bird-flock-forest-rings",
+      "clip": "flock_forest",
+      "t": 46,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones",
+        "mass-entity-3d-crowds"
+      ],
       "alt": "A flock of birds threads a series of rings above a forest using true 3D pathfinding",
-      "caption": "A bird flock threading the rings over the forest." },
-
-    { "slug": "hunter-drone-closeup", "clip": "hunter", "t": 47.9, "crop": "hud", "use": ["home:hero", "flying-ai-drones"],
+      "caption": "A bird flock threading the rings over the forest."
+    },
+    {
+      "slug": "hunter-drone-closeup",
+      "clip": "hunter",
+      "t": 47.9,
+      "crop": "hud",
+      "use": [
+        "home:hero",
+        "flying-ai-drones"
+      ],
       "alt": "Close-up of the Hunter Drone with its glowing sensor eye in the LCM 3D Navigation AI demo",
-      "caption": "Hunter Drone: Engage Target with prediction and a clean line of fire." },
-    { "slug": "hunter-drones-container-stacks", "clip": "hunter", "t": 33.0, "crop": "hud", "use": ["flying-ai-drones"],
+      "caption": "Hunter Drone: Engage Target with prediction and a clean line of fire."
+    },
+    {
+      "slug": "hunter-drones-container-stacks",
+      "clip": "hunter",
+      "t": 33,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones"
+      ],
       "alt": "Hunter drones weave between shipping container stacks while chasing a runner",
-      "caption": "Hunters weave between container stacks on real 3D routes." },
-    { "slug": "hunter-engagement-path", "clip": "hunter", "t": 71.5, "crop": "hud", "use": ["flying-ai-drones"],
+      "caption": "Hunters weave between container stacks on real 3D routes."
+    },
+    {
+      "slug": "hunter-engagement-path",
+      "clip": "hunter",
+      "t": 71.5,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones"
+      ],
       "alt": "A hunter drone flies its engagement path around a container stack in Unreal Engine 5",
-      "caption": "Engage Target picks a firing position and flies to it." },
-    { "slug": "harbour-drone-lands-moving-ship", "clip": "harbour", "t": 14.25, "crop": "hud", "use": ["flying-ai-drones", "product:whats-new"],
+      "caption": "Engage Target picks a firing position and flies to it."
+    },
+    {
+      "slug": "harbour-drone-lands-moving-ship",
+      "clip": "harbour",
+      "t": 14.25,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones",
+        "product:whats-new"
+      ],
       "alt": "A courier drone descends and lands on the deck of a moving, rolling ship in the Harbour demo",
-      "caption": "Land on a moving deck: the approach is flown relative to the rolling ship." },
-    { "slug": "harbour-drone-lands-moving-lorry", "clip": "harbour", "t": 147.0, "crop": "hud", "use": ["flying-ai-drones"],
+      "caption": "Land on a moving deck: the approach is flown relative to the rolling ship."
+    },
+    {
+      "slug": "harbour-drone-lands-moving-lorry",
+      "clip": "harbour",
+      "t": 147,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones"
+      ],
       "alt": "A drone lands on the flatbed of a moving lorry on the harbour quay",
-      "caption": "The same Land task puts a drone down on a moving lorry." },
-    { "slug": "harbour-drone-quay-closeup", "clip": "harbour", "t": 61.5, "crop": "hud", "use": ["flying-ai-drones"],
+      "caption": "The same Land task puts a drone down on a moving lorry."
+    },
+    {
+      "slug": "harbour-drone-quay-closeup",
+      "clip": "harbour",
+      "t": 61.5,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones"
+      ],
       "alt": "Close-up of a quadcopter drone hovering over the harbour quay in Unreal Engine 5",
-      "caption": "Multirotor flight dynamics: thrust, drag and attitude control." },
-    { "slug": "sentry-drones-depot-octree", "clip": "sentry", "t": 37.5, "crop": "hud", "use": ["flying-ai-drones"],
+      "caption": "Multirotor flight dynamics: thrust, drag and attitude control."
+    },
+    {
+      "slug": "sentry-drones-depot-octree",
+      "clip": "sentry",
+      "t": 37.5,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones"
+      ],
       "alt": "Sentry drones patrol a depot with the navigation octree and AI Perception sight cones drawn",
-      "caption": "Sentry Drones: AI Perception sight cones and EQS firing positions." },
-    { "slug": "warehouse-drone-aisle", "clip": "warehouse", "t": 14.0, "crop": "hud", "use": ["flying-ai-drones", "product:use-cases"],
+      "caption": "Sentry Drones: AI Perception sight cones and EQS firing positions."
+    },
+    {
+      "slug": "warehouse-drone-aisle",
+      "clip": "warehouse",
+      "t": 14,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones",
+        "product:use-cases"
+      ],
       "alt": "A security drone flies the length of a warehouse aisle between tall racking",
-      "caption": "Warehouse: perch, scan, engage, investigate and flee indoors." },
-    { "slug": "warehouse-archive-hall", "clip": "warehouse", "t": 86.0, "crop": "hud", "use": ["flying-ai-drones"],
+      "caption": "Warehouse: perch, scan, engage, investigate and flee indoors."
+    },
+    {
+      "slug": "warehouse-archive-hall",
+      "clip": "warehouse",
+      "t": 86,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones"
+      ],
       "alt": "A drone crosses the archive hall of the warehouse demo level",
-      "caption": "Interior navigation through the archive hall." },
-
-    { "slug": "gull-sea-cliffs", "clip": "cliffs", "t": 10.2, "crop": "hud", "use": ["home:hero", "flying-ai-drones"],
+      "caption": "Interior navigation through the archive hall."
+    },
+    {
+      "slug": "gull-sea-cliffs",
+      "clip": "cliffs",
+      "t": 10.2,
+      "crop": "hud",
+      "use": [
+        "home:hero",
+        "flying-ai-drones"
+      ],
       "alt": "A seagull glides along sea cliffs in the Sea Cliffs demo of LCM 3D Navigation AI",
-      "caption": "6-DOF gulls glide; they cannot hover." },
-    { "slug": "gulls-perch-sea-stack", "clip": "cliffs", "t": 95.75, "crop": "hud", "use": ["flying-ai-drones", "product:use-cases"],
+      "caption": "6-DOF gulls glide; they cannot hover."
+    },
+    {
+      "slug": "gulls-perch-sea-stack",
+      "clip": "cliffs",
+      "t": 95.75,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones",
+        "product:use-cases"
+      ],
       "alt": "Seagulls sweep in and one lands to perch on a sea stack ledge",
-      "caption": "Perch: gulls glide in and settle on free cliff ledges." },
-    { "slug": "octree-debug-sea-stack", "clip": "cliffs", "t": 25.5, "crop": "proof", "use": ["product:how", "home:nav3d"],
+      "caption": "Perch: gulls glide in and settle on free cliff ledges."
+    },
+    {
+      "slug": "octree-debug-sea-stack",
+      "clip": "cliffs",
+      "t": 25.5,
+      "crop": "proof",
+      "use": [
+        "product:how",
+        "home:nav3d"
+      ],
       "alt": "The live sparse voxel octree drawn around a sea stack, with the frame-rate counter in view",
-      "caption": "The live octree around the sea stack, captured in real time." },
-
-    { "slug": "coral-reef-fish", "clip": "reef", "t": 26.5, "crop": "hud", "use": ["underwater-ai-fish-schooling", "product:use-cases"],
+      "caption": "The live octree around the sea stack, captured in real time."
+    },
+    {
+      "slug": "coral-reef-fish",
+      "clip": "reef",
+      "t": 26.5,
+      "crop": "hud",
+      "use": [
+        "underwater-ai-fish-schooling",
+        "product:use-cases"
+      ],
       "alt": "Tropical fish swim over a coral reef using volumetric navigation in Unreal Engine 5",
-      "caption": "Coral Reef: fish use the whole water column." },
-    { "slug": "coral-reef-angelfish", "clip": "reef", "t": 46.5, "crop": "hud", "use": ["underwater-ai-fish-schooling"],
+      "caption": "Coral Reef: fish use the whole water column."
+    },
+    {
+      "slug": "coral-reef-angelfish",
+      "clip": "reef",
+      "t": 46.5,
+      "crop": "hud",
+      "use": [
+        "underwater-ai-fish-schooling"
+      ],
       "alt": "Angelfish swimming above the reef in the Coral Reef demo",
-      "caption": "Undulatory fish locomotion over the reef." },
-    { "slug": "reef-school-mass", "clip": "reef_mass", "t": 6.5, "crop": "hud", "use": ["underwater-ai-fish-schooling", "mass-entity-3d-crowds"],
+      "caption": "Undulatory fish locomotion over the reef."
+    },
+    {
+      "slug": "reef-school-mass",
+      "clip": "reef_mass",
+      "t": 6.5,
+      "crop": "hud",
+      "use": [
+        "underwater-ai-fish-schooling",
+        "mass-entity-3d-crowds"
+      ],
       "alt": "A Mass Entity school of fish streams over the coral, parting round the pinnacles",
-      "caption": "Reef School: a Mass school follows its leader on the flow field." },
-    { "slug": "reef-school-crowd", "clip": "reef_mass", "t": 31.25, "crop": "hud", "use": ["underwater-ai-fish-schooling"],
+      "caption": "Reef School: a Mass school follows its leader on the flow field."
+    },
+    {
+      "slug": "reef-school-crowd",
+      "clip": "reef_mass",
+      "t": 31.25,
+      "crop": "hud",
+      "use": [
+        "underwater-ai-fish-schooling"
+      ],
       "alt": "A large school of fish turning together above the reef in Unreal Engine 5",
-      "caption": "Schooling: personal space, heading matching and turning off rocks." },
-    { "slug": "fish-tank-120cm", "clip": "tank", "t": 3.5, "crop": "hud_tight", "use": ["underwater-ai-fish-schooling", "product:specs"],
+      "caption": "Schooling: personal space, heading matching and turning off rocks."
+    },
+    {
+      "slug": "fish-tank-120cm",
+      "clip": "tank",
+      "t": 3.5,
+      "crop": "hud_tight",
+      "use": [
+        "underwater-ai-fish-schooling",
+        "product:specs"
+      ],
       "alt": "A 120 cm aquarium navigated at 1 cm voxels, with small fish swimming through a rock arch",
-      "caption": "Fish Tank: a 120 cm aquarium navigated at 1 cm." },
-    { "slug": "fish-tank-closeup", "clip": "tank", "t": 25.5, "crop": "hud_tight", "use": ["underwater-ai-fish-schooling"],
+      "caption": "Fish Tank: a 120 cm aquarium navigated at 1 cm."
+    },
+    {
+      "slug": "fish-tank-closeup",
+      "clip": "tank",
+      "t": 25.5,
+      "crop": "hud_tight",
+      "use": [
+        "underwater-ai-fish-schooling"
+      ],
       "alt": "Close-up of 8 cm fish in the Fish Tank small-world demo",
-      "caption": "8 cm fish at small-world scale." },
-    { "slug": "fish-tank-realtime", "clip": "tank", "t": 22.0, "crop": "proof", "use": ["underwater-ai-fish-schooling"],
+      "caption": "8 cm fish at small-world scale."
+    },
+    {
+      "slug": "fish-tank-realtime",
+      "clip": "tank",
+      "t": 22,
+      "crop": "proof",
+      "use": [
+        "underwater-ai-fish-schooling"
+      ],
       "alt": "The 1 cm fish tank running in real time in Unreal Engine 5, with the frame-rate counter in view",
-      "caption": "The 1 cm fish tank, captured in real time with the frame counter in view." },
-
-    { "slug": "space-dogfight-lasers", "clip": "dogfight", "t": 51.2, "crop": "hud", "use": ["home:hero", "space-combat-ai"],
+      "caption": "The 1 cm fish tank, captured in real time with the frame counter in view."
+    },
+    {
+      "slug": "space-dogfight-lasers",
+      "clip": "dogfight",
+      "t": 51.2,
+      "crop": "hud",
+      "use": [
+        "home:hero",
+        "space-combat-ai"
+      ],
       "alt": "Starfighters exchange laser fire in the Space Dogfight demo for Unreal Engine 5",
-      "caption": "Space Dogfight: lead intercept through a streamed asteroid belt." },
-    { "slug": "dogfight-lead-intercept", "clip": "dogfight", "t": 76.0, "crop": "hud", "use": ["space-combat-ai"],
+      "caption": "Space Dogfight: lead intercept through a streamed asteroid belt."
+    },
+    {
+      "slug": "dogfight-lead-intercept",
+      "clip": "dogfight",
+      "t": 76,
+      "crop": "hud",
+      "use": [
+        "space-combat-ai"
+      ],
       "alt": "A fighter leads its target with laser fire between asteroids",
-      "caption": "Fly To in chase mode re-plans through the octree as the target breaks." },
-    { "slug": "dogfight-pursuit-asteroids", "clip": "dogfight", "t": 103.0, "crop": "hud", "use": ["space-combat-ai"],
+      "caption": "Fly To in chase mode re-plans through the octree as the target breaks."
+    },
+    {
+      "slug": "dogfight-pursuit-asteroids",
+      "clip": "dogfight",
+      "t": 103,
+      "crop": "hud",
+      "use": [
+        "space-combat-ai"
+      ],
       "alt": "A pursuit past bright asteroids in a streamed space level",
-      "caption": "No floor, no up, no walls: 6-DOF pursuit." },
-    { "slug": "space-fleet-asteroid-field", "clip": "space", "t": 57.0, "crop": "hud", "use": ["space-combat-ai", "open-world-3d-navigation"],
+      "caption": "No floor, no up, no walls: 6-DOF pursuit."
+    },
+    {
+      "slug": "space-fleet-asteroid-field",
+      "clip": "space",
+      "t": 57,
+      "crop": "hud",
+      "use": [
+        "space-combat-ai",
+        "open-world-3d-navigation"
+      ],
       "alt": "A fleet of ships flies through a drifting asteroid field in the Deep Space open world",
-      "caption": "Deep Space: an asteroid field streamed around the fleet." },
-
-    { "slug": "city-open-world-drone-routes", "clip": "city", "t": 4.5, "crop": "hud", "use": ["open-world-3d-navigation", "product:infinite"],
+      "caption": "Deep Space: an asteroid field streamed around the fleet."
+    },
+    {
+      "slug": "city-open-world-drone-routes",
+      "clip": "city",
+      "t": 4.5,
+      "crop": "hud",
+      "use": [
+        "open-world-3d-navigation",
+        "product:infinite"
+      ],
       "alt": "Drones and their planned routes drawn over a city open world in Unreal Engine 5",
-      "caption": "City open world: routes planned through streamed chunks." },
-    { "slug": "octree-routes-city-debug", "clip": "city", "t": 16.0, "crop": "proof", "use": ["open-world-3d-navigation", "product:infinite"],
+      "caption": "City open world: routes planned through streamed chunks."
+    },
+    {
+      "slug": "octree-routes-city-debug",
+      "clip": "city",
+      "t": 16,
+      "crop": "proof",
+      "use": [
+        "open-world-3d-navigation",
+        "product:infinite"
+      ],
       "alt": "The streamed octree and agent routes over the city, with chunk boundaries visible",
-      "caption": "The octree and routes over the city, chunk by chunk." },
-    { "slug": "forest-open-world-routes", "clip": "forest", "t": 10.8, "crop": "hud", "use": ["open-world-3d-navigation"],
+      "caption": "The octree and routes over the city, chunk by chunk."
+    },
+    {
+      "slug": "forest-open-world-routes",
+      "clip": "forest",
+      "t": 10.8,
+      "crop": "hud",
+      "use": [
+        "open-world-3d-navigation"
+      ],
       "alt": "Flight routes over a forest canopy towards a rocky massif in the Forest open world",
-      "caption": "Forest: canopy, clearings and tunnels through rock." },
-    { "slug": "cost-areas-streamed-chunks", "clip": "navcost", "t": 2.65, "crop": "hud", "use": ["open-world-3d-navigation", "product:how"],
+      "caption": "Forest: canopy, clearings and tunnels through rock."
+    },
+    {
+      "slug": "cost-areas-streamed-chunks",
+      "clip": "navcost",
+      "t": 2.65,
+      "crop": "hud",
+      "use": [
+        "open-world-3d-navigation",
+        "product:how"
+      ],
       "alt": "Cost areas priced across streamed chunk seams in a 3D navigation demo",
-      "caption": "Cost areas hold across streamed chunk seams." },
-
-    { "slug": "node-fly-to-location", "clip": "move_nodes", "t": 23.75, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "Cost areas hold across streamed chunk seams."
+    },
+    {
+      "slug": "node-fly-to-location",
+      "clip": "move_nodes",
+      "t": 23.75,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "The Fly To Location Blueprint node demonstrated in the Movement Nodes Feature Examples level",
-      "caption": "Fly To Location: one Blueprint node, no AI Controller." },
-    { "slug": "node-patrol", "clip": "move_nodes", "t": 39.75, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "Fly To Location: one Blueprint node, no AI Controller."
+    },
+    {
+      "slug": "node-patrol",
+      "clip": "move_nodes",
+      "t": 39.75,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "A drone runs the Patrol task between waypoints in the Feature Examples hall",
-      "caption": "Patrol: routes between waypoints, BT and StateTree." },
-    { "slug": "node-orbit-target", "clip": "move_nodes", "t": 53.25, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "Patrol: routes between waypoints, BT and StateTree."
+    },
+    {
+      "slug": "node-orbit-target",
+      "clip": "move_nodes",
+      "t": 53.25,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "A drone circles a pillar with the Orbit Target task",
-      "caption": "Orbit Target, at a set radius and speed." },
-    { "slug": "node-engage-target", "clip": "behav_nodes", "t": 5.75, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "Orbit Target, at a set radius and speed."
+    },
+    {
+      "slug": "node-engage-target",
+      "clip": "behav_nodes",
+      "t": 5.75,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "The Engage Target behaviour node choosing a firing position with line of sight",
-      "caption": "Engage Target: a firing position that keeps line of sight." },
-    { "slug": "node-follow-target", "clip": "move_nodes", "t": 62.0, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "Engage Target: a firing position that keeps line of sight."
+    },
+    {
+      "slug": "node-follow-target",
+      "clip": "move_nodes",
+      "t": 62,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "Three follower drones hold formation slots behind a leader with the Follow Target task",
-      "caption": "Follow Target: followers hold their slots in the leader's frame." },
-    { "slug": "node-scan-area", "clip": "behav_nodes", "t": 67.75, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "Follow Target: followers hold their slots in the leader's frame."
+    },
+    {
+      "slug": "node-scan-area",
+      "clip": "behav_nodes",
+      "t": 67.75,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "Drones sweep a volume with the Scan Area behaviour node",
-      "caption": "Scan Area: a volume swept from shared viewpoints." },
-    { "slug": "node-perch", "clip": "behav_nodes", "t": 92.0, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "Scan Area: a volume swept from shared viewpoints."
+    },
+    {
+      "slug": "node-perch",
+      "clip": "behav_nodes",
+      "t": 92,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "Three drones land on three posts with the Perch node, never on the same one",
-      "caption": "Perch: tagged ledges and pads, no two agents on one." },
-    { "slug": "node-land-moving-platform", "clip": "behav_nodes", "t": 113.75, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "Perch: tagged ledges and pads, no two agents on one."
+    },
+    {
+      "slug": "node-land-moving-platform",
+      "clip": "behav_nodes",
+      "t": 113.75,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "A drone lands on a moving platform with the Land task",
-      "caption": "Land on a moving platform." },
-    { "slug": "eqs-points-in-volume", "clip": "eqs", "t": 76.0, "crop": "bay", "use": ["ai-nodes", "product:ai-systems"],
+      "caption": "Land on a moving platform."
+    },
+    {
+      "slug": "eqs-points-in-volume",
+      "clip": "eqs",
+      "t": 76,
+      "crop": "bay",
+      "use": [
+        "ai-nodes",
+        "product:ai-systems"
+      ],
       "alt": "A true 3D EQS generator drawing scored candidate points throughout a navigation volume",
-      "caption": "EQS in true 3D: candidate points anywhere in the volume." },
-    { "slug": "eqs-reachability-3d", "clip": "eqs", "t": 99.0, "crop": "bay", "use": ["ai-nodes"],
+      "caption": "EQS in true 3D: candidate points anywhere in the volume."
+    },
+    {
+      "slug": "eqs-reachability-3d",
+      "clip": "eqs",
+      "t": 99,
+      "crop": "bay",
+      "use": [
+        "ai-nodes"
+      ],
       "alt": "The Reachability 3D EQS test colouring points an agent can and cannot reach",
-      "caption": "Reachability 3D, answered before any search." },
-    { "slug": "cost-area-storm", "clip": "cost_areas", "t": 13.0, "crop": "bay", "use": ["product:how", "ai-nodes"],
+      "caption": "Reachability 3D, answered before any search."
+    },
+    {
+      "slug": "cost-area-storm",
+      "clip": "cost_areas",
+      "t": 13,
+      "crop": "bay",
+      "use": [
+        "product:how",
+        "ai-nodes"
+      ],
       "alt": "A drone route bends around a storm cost area in the Cost Areas Feature Examples level",
-      "caption": "A storm cost area: the route bends round it." },
-    { "slug": "cost-area-preferred-lane", "clip": "cost_areas", "t": 43.0, "crop": "bay", "use": ["product:how"],
+      "caption": "A storm cost area: the route bends round it."
+    },
+    {
+      "slug": "cost-area-preferred-lane",
+      "clip": "cost_areas",
+      "t": 43,
+      "crop": "bay",
+      "use": [
+        "product:how"
+      ],
       "alt": "A drone follows a cheaper preferred lane cost area in Unreal Engine 5",
-      "caption": "A preferred lane: the planner picks the cheaper corridor." }
+      "caption": "A preferred lane: the planner picks the cheaper corridor."
+    },
+    {
+      "slug": "poster-drone-swarm-city",
+      "clip": "swarm_city",
+      "t": 47,
+      "crop": "hud",
+      "use": [
+        "hero:loop-drone-swarm-city"
+      ],
+      "alt": "A drone swarm pours between city towers in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-drone-swarm-city, shown until the loop plays."
+    },
+    {
+      "slug": "poster-harbour-ship-landing",
+      "clip": "harbour",
+      "t": 9,
+      "crop": "hud",
+      "use": [
+        "hero:loop-harbour-ship-landing"
+      ],
+      "alt": "A drone descends and lands on a moving ship's deck in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-harbour-ship-landing, shown until the loop plays."
+    },
+    {
+      "slug": "poster-space-dogfight",
+      "clip": "dogfight",
+      "t": 78,
+      "crop": "hud",
+      "use": [
+        "hero:loop-space-dogfight"
+      ],
+      "alt": "Starfighters trade laser fire through an asteroid belt in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-space-dogfight, shown until the loop plays."
+    },
+    {
+      "slug": "poster-gulls-perch",
+      "clip": "cliffs",
+      "t": 91.5,
+      "crop": "hud",
+      "use": [
+        "hero:loop-gulls-perch"
+      ],
+      "alt": "Gulls sweep in and one lands on a sea stack in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-gulls-perch, shown until the loop plays."
+    },
+    {
+      "slug": "poster-reef-school",
+      "clip": "reef_mass",
+      "t": 4,
+      "crop": "hud",
+      "use": [
+        "hero:loop-reef-school"
+      ],
+      "alt": "A school of fish streams over the coral reef in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-reef-school, shown until the loop plays."
+    },
+    {
+      "slug": "poster-city-routes",
+      "clip": "city",
+      "t": 2,
+      "crop": "hud",
+      "use": [
+        "hero:loop-city-routes"
+      ],
+      "alt": "Drones fly their planned routes over a streamed city in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-city-routes, shown until the loop plays."
+    },
+    {
+      "slug": "poster-octree-sea-stack",
+      "clip": "cliffs",
+      "t": 23,
+      "crop": "proof",
+      "use": [
+        "hero:loop-octree-sea-stack"
+      ],
+      "alt": "The live navigation octree around a sea stack in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-octree-sea-stack, shown until the loop plays."
+    },
+    {
+      "slug": "poster-sentry-perception",
+      "clip": "sentry",
+      "t": 25,
+      "crop": "hud",
+      "use": [
+        "hero:loop-sentry-perception"
+      ],
+      "alt": "Sentry drones patrol a depot with perception sight cones drawn in LCM 3D Navigation AI for Unreal Engine 5",
+      "caption": "First frame of loop-sentry-perception, shown until the loop plays."
+    }
   ],
   "loops": [
-    { "slug": "loop-drone-swarm-city", "clip": "swarm_city", "a": 47.0, "d": 6.0, "speed": 1.0, "crop": "hud", "use": ["home:hero"],
-      "alt": "Looping clip: a drone swarm pours between city towers" },
-    { "slug": "loop-harbour-ship-landing", "clip": "harbour", "a": 9.0, "d": 6.0, "speed": 1.75, "crop": "hud", "use": ["flying-ai-drones", "product:whats-new"],
-      "alt": "Looping clip: a drone descends and lands on a moving ship's deck" },
-    { "slug": "loop-space-dogfight", "clip": "dogfight", "a": 78.0, "d": 6.0, "speed": 1.0, "crop": "hud", "use": ["space-combat-ai"],
-      "alt": "Looping clip: starfighters trade laser fire through an asteroid belt" },
-    { "slug": "loop-gulls-perch", "clip": "cliffs", "a": 91.5, "d": 7.0, "speed": 1.0, "crop": "hud", "use": ["flying-ai-drones"],
-      "alt": "Looping clip: gulls sweep in and one lands on a sea stack" },
-    { "slug": "loop-reef-school", "clip": "reef_mass", "a": 4.0, "d": 6.0, "speed": 1.25, "crop": "hud", "use": ["underwater-ai-fish-schooling"],
-      "alt": "Looping clip: a school of fish streams over the coral reef" },
-    { "slug": "loop-city-routes", "clip": "city", "a": 2.0, "d": 6.0, "speed": 1.0, "crop": "hud", "use": ["open-world-3d-navigation"],
-      "alt": "Looping clip: drones fly their planned routes over a streamed city" },
-    { "slug": "loop-octree-sea-stack", "clip": "cliffs", "a": 23.0, "d": 5.0, "speed": 1.0, "crop": "proof", "use": ["product:how"],
-      "alt": "Looping clip: the live navigation octree around a sea stack" },
-    { "slug": "loop-sentry-perception", "clip": "sentry", "a": 25.0, "d": 7.0, "speed": 2.0, "crop": "hud", "use": ["flying-ai-drones"],
-      "alt": "Looping clip: sentry drones patrol a depot with perception sight cones drawn" }
+    {
+      "slug": "loop-drone-swarm-city",
+      "clip": "swarm_city",
+      "a": 47,
+      "d": 6,
+      "speed": 1,
+      "crop": "hud",
+      "use": [
+        "home:hero"
+      ],
+      "alt": "Looping clip: a drone swarm pours between city towers"
+    },
+    {
+      "slug": "loop-harbour-ship-landing",
+      "clip": "harbour",
+      "a": 9,
+      "d": 6,
+      "speed": 1.75,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones",
+        "product:whats-new"
+      ],
+      "alt": "Looping clip: a drone descends and lands on a moving ship's deck"
+    },
+    {
+      "slug": "loop-space-dogfight",
+      "clip": "dogfight",
+      "a": 78,
+      "d": 6,
+      "speed": 1,
+      "crop": "hud",
+      "use": [
+        "space-combat-ai"
+      ],
+      "alt": "Looping clip: starfighters trade laser fire through an asteroid belt"
+    },
+    {
+      "slug": "loop-gulls-perch",
+      "clip": "cliffs",
+      "a": 91.5,
+      "d": 7,
+      "speed": 1,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones"
+      ],
+      "alt": "Looping clip: gulls sweep in and one lands on a sea stack"
+    },
+    {
+      "slug": "loop-reef-school",
+      "clip": "reef_mass",
+      "a": 4,
+      "d": 6,
+      "speed": 1.25,
+      "crop": "hud",
+      "use": [
+        "underwater-ai-fish-schooling"
+      ],
+      "alt": "Looping clip: a school of fish streams over the coral reef"
+    },
+    {
+      "slug": "loop-city-routes",
+      "clip": "city",
+      "a": 2,
+      "d": 6,
+      "speed": 1,
+      "crop": "hud",
+      "use": [
+        "open-world-3d-navigation"
+      ],
+      "alt": "Looping clip: drones fly their planned routes over a streamed city"
+    },
+    {
+      "slug": "loop-octree-sea-stack",
+      "clip": "cliffs",
+      "a": 23,
+      "d": 5,
+      "speed": 1,
+      "crop": "proof",
+      "use": [
+        "product:how"
+      ],
+      "alt": "Looping clip: the live navigation octree around a sea stack"
+    },
+    {
+      "slug": "loop-sentry-perception",
+      "clip": "sentry",
+      "a": 25,
+      "d": 7,
+      "speed": 2,
+      "crop": "hud",
+      "use": [
+        "flying-ai-drones"
+      ],
+      "alt": "Looping clip: sentry drones patrol a depot with perception sight cones drawn"
+    }
   ]
 }

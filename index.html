@@ -190,14 +190,12 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="assets/media/loops/loop-drone-swarm-city-poster-1280.jpg" fetchpriority="high" />
-<link rel="stylesheet" href="assets/company.css?v=20261024" />
-<link rel="stylesheet" href="assets/transition.css?v=20261024" />
-<link rel="stylesheet" href="assets/upgrade.css?v=20261024" />
-<link rel="stylesheet" href="assets/nav3d.css?v=20261024" />
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/company.css?v=20261024b" />
+<link rel="stylesheet" href="assets/transition.css?v=20261024b" />
+<link rel="stylesheet" href="assets/upgrade.css?v=20261024b" />
+<link rel="stylesheet" href="assets/nav3d.css?v=20261024b" />
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <script>try{if(sessionStorage.getItem('xition_nav'))document.documentElement.classList.add('xnav');}catch(e){}</script>
 </head>
@@ -240,7 +238,12 @@
   <header class="xh" id="top">
     <div class="xh__media" aria-hidden="true">
       <!-- @loop slug="loop-drone-swarm-city" class="xh__video" id="heroLoop" hero -->
-      <video id="heroLoop" class="xh__video" muted loop playsinline autoplay preload="auto" data-autoplay poster="assets/media/loops/loop-drone-swarm-city-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: a drone swarm pours between city towers">
+      <picture>
+        <source type="image/avif" srcset="assets/media/stills/poster-drone-swarm-city-640.avif 640w, assets/media/stills/poster-drone-swarm-city-1280.avif 1280w, assets/media/stills/poster-drone-swarm-city-1920.avif 1920w" sizes="100vw">
+        <source type="image/webp" srcset="assets/media/stills/poster-drone-swarm-city-640.webp 640w, assets/media/stills/poster-drone-swarm-city-1280.webp 1280w, assets/media/stills/poster-drone-swarm-city-1920.webp 1920w" sizes="100vw">
+        <img src="assets/media/stills/poster-drone-swarm-city-1280.jpg" alt="" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async" class="xh__still">
+      </picture>
+      <video id="heroLoop" class="xh__video" muted loop playsinline preload="none" data-autoplay data-hero width="1280" height="720" aria-label="Looping clip: a drone swarm pours between city towers">
         <source src="assets/media/loops/loop-drone-swarm-city.webm" type='video/webm; codecs="av01.0.05M.08"'>
         <source src="assets/media/loops/loop-drone-swarm-city.mp4" type="video/mp4">
       </video>
@@ -333,7 +336,7 @@
         <article class="xcard xr">
           <div class="xcard__media">
             <!-- @loop slug="loop-reef-school" -->
-            <video class="" muted loop playsinline preload="none" data-autoplay poster="assets/media/loops/loop-reef-school-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: a school of fish streams over the coral reef">
+            <video class="" muted loop playsinline preload="none" data-autoplay data-poster="assets/media/loops/loop-reef-school-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: a school of fish streams over the coral reef">
               <source src="assets/media/loops/loop-reef-school.webm" type='video/webm; codecs="av01.0.05M.08"'>
               <source src="assets/media/loops/loop-reef-school.mp4" type="video/mp4">
             </video>
@@ -406,7 +409,7 @@
           </picture>
           <!-- /@picture -->
           <!-- @loop slug="loop-harbour-ship-landing" hover -->
-          <video class="" muted loop playsinline preload="none" data-hoverplay poster="assets/media/loops/loop-harbour-ship-landing-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: a drone descends and lands on a moving ship's deck">
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: a drone descends and lands on a moving ship's deck">
             <source src="assets/media/loops/loop-harbour-ship-landing.webm" type='video/webm; codecs="av01.0.05M.08"'>
             <source src="assets/media/loops/loop-harbour-ship-landing.mp4" type="video/mp4">
           </video>
@@ -422,7 +425,7 @@
           </picture>
           <!-- /@picture -->
           <!-- @loop slug="loop-gulls-perch" hover -->
-          <video class="" muted loop playsinline preload="none" data-hoverplay poster="assets/media/loops/loop-gulls-perch-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: gulls sweep in and one lands on a sea stack">
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: gulls sweep in and one lands on a sea stack">
             <source src="assets/media/loops/loop-gulls-perch.webm" type='video/webm; codecs="av01.0.05M.08"'>
             <source src="assets/media/loops/loop-gulls-perch.mp4" type="video/mp4">
           </video>
@@ -458,7 +461,7 @@
           </picture>
           <!-- /@picture -->
           <!-- @loop slug="loop-space-dogfight" hover -->
-          <video class="" muted loop playsinline preload="none" data-hoverplay poster="assets/media/loops/loop-space-dogfight-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: starfighters trade laser fire through an asteroid belt">
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: starfighters trade laser fire through an asteroid belt">
             <source src="assets/media/loops/loop-space-dogfight.webm" type='video/webm; codecs="av01.0.05M.08"'>
             <source src="assets/media/loops/loop-space-dogfight.mp4" type="video/mp4">
           </video>
@@ -576,7 +579,7 @@
         </div>
       </div>
       <div class="n3d__panel reveal" data-d="1">
-        <div class="n3d__slot"><img src="assets/nav3d/splash.png" alt="LCM 3D Navigation AI for Unreal Engine" width="1600" height="800" style="width:100%;height:auto;display:block" /></div>
+        <div class="n3d__slot"><picture><source type="image/webp" srcset="assets/nav3d/splash-960.webp"><img src="assets/nav3d/splash-960.jpg" alt="LCM 3D Navigation AI for Unreal Engine" width="960" height="480" loading="lazy" decoding="async" style="width:100%;height:auto;display:block" /></picture></div>
         <div class="n3d__meta"><span>Engine support</span><b>UE 5.2–5.8</b></div>
         <div class="n3d__spec">
           <div><b>100 cm</b><span>Default min voxel</span></div>
@@ -716,10 +719,10 @@
       </div>
       <div class="prod-grid">
         <!-- @catalog ids="energy-beam-v2,explosion,laser-beam-v3,scan-screen" -->
-        <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><img src="https://media.fab.com/image_previews/gallery_images/a63dd0e4-7db8-44eb-9ddb-55e4914ff39d/46de4277-a8f1-4ebf-95ad-b79ca6364644.jpg" alt="Niagara Energy Beam Pack V2 — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Energy Beam Pack V2</h3><div class="card__meta"><span class="price">From $15.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(6)</span></span></div></div></a>
-        <a class="card" data-cat="Combat" href="https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/065fb827-0f4e-49ae-8a48-71f80ca6c629/94284eb4-d059-4db3-a3e2-e0ef0734be17.jpg" alt="Ultimate Explosion VFX — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Explosion VFX</h3><div class="card__meta"><span class="price">From $14.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(4)</span></span></div></div></a>
-        <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/b776d3d2-5d87-4f8b-8466-d7bbb17ab2a4" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><img src="https://media.fab.com/image_previews/gallery_images/bca7e537-40a8-4591-8bff-fd976bed2039/1d50e793-32ed-4727-9af9-c88675714f0b.jpg" alt="Niagara Laser Beam Weapon V3 — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Laser Beam Weapon V3</h3><div class="card__meta"><span class="price">From $18.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(2)</span></span></div></div></a>
-        <a class="card" data-cat="Combat" href="https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/dc1a29a9-58bd-44e2-a42f-b368b8d6cad9/877787de-287a-4b54-a0de-02e9f1720c99.jpg" alt="Ultimate Scan &amp; Screen Effects — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Scan &amp; Screen Effects</h3><div class="card__meta"><span class="price">From $12.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>4.8 <span class="rating__n">(4)</span></span></div></div></a>
+        <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><picture><source type="image/webp" srcset="assets/store/energy-beam-v2.webp"><img src="assets/store/energy-beam-v2.jpg" alt="Niagara Energy Beam Pack V2 — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"></picture><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Energy Beam Pack V2</h3><div class="card__meta"><span class="price">From $15.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(6)</span></span></div></div></a>
+        <a class="card" data-cat="Combat" href="https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><picture><source type="image/webp" srcset="assets/store/explosion.webp"><img src="assets/store/explosion.jpg" alt="Ultimate Explosion VFX — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"></picture><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Explosion VFX</h3><div class="card__meta"><span class="price">From $14.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(4)</span></span></div></div></a>
+        <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/b776d3d2-5d87-4f8b-8466-d7bbb17ab2a4" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><picture><source type="image/webp" srcset="assets/store/laser-beam-v3.webp"><img src="assets/store/laser-beam-v3.jpg" alt="Niagara Laser Beam Weapon V3 — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"></picture><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Laser Beam Weapon V3</h3><div class="card__meta"><span class="price">From $18.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(2)</span></span></div></div></a>
+        <a class="card" data-cat="Combat" href="https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><picture><source type="image/webp" srcset="assets/store/scan-screen.webp"><img src="assets/store/scan-screen.jpg" alt="Ultimate Scan &amp; Screen Effects — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"></picture><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Scan &amp; Screen Effects</h3><div class="card__meta"><span class="price">From $12.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>4.8 <span class="rating__n">(4)</span></span></div></div></a>
         <!-- /@catalog -->
       </div>
     </div>
@@ -736,7 +739,7 @@
           <span class="kicker">The Developer</span>
           <h2>Need something <em>custom built?</em></h2>
           <div class="dev__face">
-            <image-slot id="uedev-face" shape="circle" src="https://cdn1.epicgames.com/fab/seller/o-9f8urqc2ufdfkftuxkaxvn5pa8vq9t/profile/375ceb80.png" placeholder="Photo"></image-slot>
+            <picture><source type="image/webp" srcset="assets/img/charitha-madhushanka.webp"><img src="assets/img/charitha-madhushanka.jpg" alt="L. Charitha Madhushanka" width="84" height="84" loading="lazy" decoding="async"></picture>
             <div><b>L. Charitha Madhushanka</b><span>Senior Game Developer · Unreal &amp; Unity</span></div>
           </div>
           <p>UEDEV is the Unreal engineering label of L. Charitha Madhushanka — a senior gameplay engineer shipping commercial games, VR/AR, high-performance C++ plugins and engine tools. For studio work, contract jobs, or a bespoke plugin or system, head to the full developer portfolio.</p>
@@ -758,9 +761,9 @@
 
 <!-- CTA -->
 <section class="cta wrap" id="cta">
-  <h2 class="reveal">Give your AI the<br/><span class="grad">whole sky.</span></h2>
-  <p class="reveal" data-d="1">LCM 3D Navigation AI — true 3D navigation and pathfinding for Unreal Engine 5, built and supported by a working game developer.</p>
-  <div class="hero__row reveal" data-d="2">
+  <h2>Give your AI the<br/><span class="grad">whole sky.</span></h2>
+  <p>LCM 3D Navigation AI — true 3D navigation and pathfinding for Unreal Engine 5, built and supported by a working game developer.</p>
+  <div class="hero__row">
     <a class="btn btn--primary" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Get it on Fab ↗</a>
     <a class="btn btn--ghost" href="unreal-engine-3d-pathfinding/">How it works →</a>
   </div>
@@ -775,7 +778,7 @@
         <p style="color:var(--faint);font-size:14px;line-height:1.6;margin:0">High-performance plugins, gameplay systems &amp; advanced VFX for Unreal Engine. Built and supported by a working game developer.</p>
       </div>
       <div class="footer__col">
-        <h4>Store</h4>
+        <h3>Store</h3>
         <a href="unreal-engine-niagara-vfx/">Niagara VFX packs</a>
         <a href="unreal-engine-niagara-vfx/#bestsellers">Best sellers</a>
         <a href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Browse on Fab</a>
@@ -783,13 +786,13 @@
         <a href="unreal-engine-flying-ai/">Flying &amp; drone AI</a>
       </div>
       <div class="footer__col">
-        <h4>Support</h4>
+        <h3>Support</h3>
         <a href="https://www.youtube.com/@experimentdev3935" target="_blank" rel="noopener">Video Tutorials</a>
         <a href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Documentation</a>
         <a href="portfolio.html#contact">Contact</a>
       </div>
       <div class="footer__col">
-        <h4>Developer</h4>
+        <h3>Developer</h3>
         <a href="portfolio.html">Portfolio</a>
         <a href="portfolio.html#work">Projects</a>
         <a href="portfolio.html#playground">Playground</a>
@@ -802,11 +805,10 @@
   </div>
 </footer>
 
-<script src="assets/image-slot.js?v=20261024"></script>
-<script src="assets/transition.js?v=20261024"></script>
-<script src="assets/company.js?v=20261024"></script>
-<script src="assets/navmesh.js?v=20261024"></script>
-<script src="assets/upgrade.js?v=20261024"></script>
-<script src="assets/nav3d.js?v=20261024" defer></script>
+<script src="assets/transition.js?v=20261024b"></script>
+<script src="assets/company.js?v=20261024b"></script>
+<script src="assets/navmesh.js?v=20261024b"></script>
+<script src="assets/upgrade.js?v=20261024b"></script>
+<script src="assets/nav3d.js?v=20261024b" defer></script>
 </body>
 </html>

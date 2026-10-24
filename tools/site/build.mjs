@@ -87,11 +87,18 @@ function loop(a, page, indent) {
   const s = loops.get(a.slug);
   if (!s) throw new Error(`${page}: no loop "${a.slug}" in media.json`);
   const fix = relTo(page);
-  // Hero loops start at once; the rest load nothing until nav3d.js plays them in view (or on hover).
-  const mode = a.hero ? 'autoplay preload="auto" data-autoplay' : a.hover ? 'preload="none" data-hoverplay' : 'preload="none" data-autoplay';
-  const tag = [a.id ? `id="${a.id}"` : '', `class="${a.class || ''}"`, 'muted loop playsinline', mode, `poster="${fix(s.posterJpg)}"`,
+  // Nothing downloads video before the page has painted. A hero sits on a responsive still of its
+  // own first frame (the LCP image: ~40 KB on a phone, where a poster could only be one fixed JPEG)
+  // and fades in once nav3d.js has it playing after load. Other loops get their poster when they
+  // come near the screen; a hover loop has no poster, because the still underneath is showing.
+  const mode = a.hero ? 'preload="none" data-autoplay data-hero' : a.hover ? 'preload="none" data-hoverplay' : 'preload="none" data-autoplay';
+  const poster = a.hero || a.hover ? '' : `data-poster="${fix(s.posterJpg)}"`;
+  const tag = [a.id ? `id="${a.id}"` : '', `class="${a.class || ''}"`, 'muted loop playsinline', mode, poster,
     `width="${s.width}"`, `height="${s.height}"`, `aria-label="${esc(a.alt || s.alt)}"`].filter(Boolean).join(' ');
-  return [
+  const still = a.hero
+    ? picture({ slug: 'poster-' + a.slug.replace(/^loop-/, ''), sizes: '100vw', loading: 'eager', class: 'xh__still', alt: '' }, page, indent) + '\n'
+    : '';
+  return still + [
     `<video ${tag}>`,
     `  <source src="${fix(s.webm)}" type='video/webm; codecs="av01.0.05M.08"'>`,
     `  <source src="${fix(s.mp4)}" type="video/mp4">`,
@@ -124,7 +131,9 @@ function catalog(a, page, indent) {
     const ext = p.page ? '' : ' target="_blank" rel="noopener"';
     const media = p.still
       ? picture({ slug: p.still, sizes, alt: `${p.short} — ${label} for Unreal Engine` }, page, '').replace(/\n\s*/g, '')
-      : `<img src="${store.imageBase}${p.img[0]}/${p.img[1]}.jpg" alt="${esc(p.short)} — ${label} for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async">`;
+      // Self-hosted by tools/media/store-images.mjs: Fab's CDN sets third-party cookies.
+      : `<picture><source type="image/webp" srcset="${fix(`assets/store/${p.id}.webp`)}">` +
+        `<img src="${fix(`assets/store/${p.id}.jpg`)}" alt="${esc(p.short)} — ${label} for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"></picture>`;
     const rating = p.rating
       ? `<span class="rating"><span class="stars" aria-hidden="true">${stars(p.rating)}</span>${p.rating} <span class="rating__n">(${p.ratings})</span></span>`
       : '<span class="rating rating--new">New</span>';

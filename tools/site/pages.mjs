@@ -19,7 +19,7 @@ const PRODUCT = 'unreal-engine-3d-pathfinding/';
 const FAB = facts.product.fab;
 const DOCS = facts.product.docs;
 const UPDATED = facts.updated;
-const V = '?v=20261024';
+const V = '?v=20261024b';
 // Best sellers, the VFX marquee, capabilities and support, moved here from the home page.
 const STORE_SECTIONS = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'partials', 'store-sections.html'), 'utf8')
   .replace(/^<!--[\s\S]*?-->\r?\n/, '');
@@ -338,9 +338,8 @@ function head({ slug, title, description, image, imageAlt, ld }) {
 <script type="application/ld+json">
 ${JSON.stringify({ '@context': 'https://schema.org', '@graph': ld }, null, 2)}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="../assets/company.css${V}" />
 <link rel="stylesheet" href="../assets/upgrade.css${V}" />
 <link rel="stylesheet" href="../assets/nav3d.css${V}" />
@@ -379,14 +378,14 @@ function footer(scripts = '') {
         <p style="color:var(--faint);font-size:14px;line-height:1.6;margin:0">High-performance plugins, gameplay systems &amp; advanced VFX for Unreal Engine. Built and supported by a working game developer.</p>
       </div>
       <div class="footer__col">
-        <h4>3D Navigation AI</h4>
+        <h3>3D Navigation AI</h3>
         <a href="../${PRODUCT}">3D pathfinding for UE5</a>
         <a href="../${PRODUCT}#whats-new">What's new in <span data-fact="product.version">3.6.0</span></a>
 ${uc}
         <a href="${DOCS}" target="_blank" rel="noopener">Documentation</a>
       </div>
       <div class="footer__col">
-        <h4>Store</h4>
+        <h3>Store</h3>
         <a href="../unreal-engine-niagara-vfx/">Niagara VFX packs</a>
         <a href="${store.seller}" target="_blank" rel="noopener">Browse on Fab</a>
         <a href="${facts.product.freeDemo}" target="_blank" rel="noopener">Free demo</a>
@@ -394,7 +393,7 @@ ${uc}
         <a href="${facts.product.discord}" target="_blank" rel="noopener">Discord support</a>
       </div>
       <div class="footer__col">
-        <h4>Developer</h4>
+        <h3>Developer</h3>
         <a href="../">UEDEV home</a>
         <a href="../portfolio.html">Portfolio</a>
         <a href="../portfolio.html#contact">Contact</a>
