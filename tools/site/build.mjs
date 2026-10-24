@@ -176,7 +176,7 @@ function nav(a, page, indent) {
     `        <a href="${fix(href)}"${a.current === href ? ' aria-current="page"' : ''}><b>${label}</b><span>${sub}</span></a>`).join('\n');
   return `<header class="nav" id="nav">
   <div class="nav__in">
-    <a href="${home}" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+    <a href="${home}" class="brand" aria-label="UEDEV home"><img class="brand__mark" src="${fix('assets/brand/uedev-mark.svg')}" width="34" height="34" alt=""><img class="brand__word" src="${fix('assets/brand/uedev-wordmark.svg')}" width="109" height="17" alt=""></a>
     <nav class="nav__links" id="nav-links" aria-label="Main">
       <a href="${home}"${cur('home')}>3D Navigation AI</a>
       <a href="${fix('unreal-engine-3d-pathfinding/')}"${cur('how')}>How it works</a>
