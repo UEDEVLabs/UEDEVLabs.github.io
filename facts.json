@@ -58,7 +58,16 @@
     "platformsNote": "Consoles build from source with your own platform SDK. Nintendo Switch support is in progress.",
     "source": "Complete C++ source, fully exposed to Blueprint; no C++ required",
     "engineRange": "5.2–5.8",
-    "engineCount": 7
+    "engineCount": 7,
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "Android",
+      "iOS",
+      "PlayStation 5",
+      "Xbox Series X|S"
+    ]
   },
   "navigation": {
     "representation": "Sparse voxel octree of navigable volume (empty air and water), not a walkable surface",

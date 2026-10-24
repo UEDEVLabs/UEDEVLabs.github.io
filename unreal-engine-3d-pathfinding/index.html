@@ -67,7 +67,7 @@
       ],
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "Unreal Engine plugin",
-      "operatingSystem": "Windows, Linux, PlayStation 5, Xbox Series X|S",
+      "operatingSystem": "Windows, macOS, Linux, Android, iOS, PlayStation 5, Xbox Series X|S",
       "softwareVersion": "3.6.0",
       "dateModified": "2026-10-24",
       "releaseNotes": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/#whats-new",
@@ -210,7 +210,7 @@
           "name": "Which Unreal Engine versions and platforms are supported?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LCM 3D Navigation AI 3.6.0 supports Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8, and is tested on Windows, Linux, PlayStation 5 and Xbox Series X|S. Consoles compile from source with your own platform SDK. Nintendo Switch support is in progress. Check the Fab listing for the current engine compatibility list."
+            "text": "LCM 3D Navigation AI 3.6.0 supports Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8, and is supported on Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S. Consoles compile from source with your own platform SDK. Nintendo Switch support is in progress. Check the Fab listing for the current engine compatibility list."
           }
         },
         {
@@ -325,7 +325,7 @@
       <ul class="xh__proof">
         <li><a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews" target="_blank" rel="noopener"><span class="xstars" aria-hidden="true">★★★★★</span> <b><span data-fact="reviews.ratingDisplay">5.0</span> on Fab</b> · <span data-fact="reviews.ratingCount">3</span> ratings</a></li>
         <li>Unreal Engine <span data-fact="compatibility.engineRange">5.2–5.8</span></li>
-        <li>Windows · Linux · PS5 · Xbox Series X|S</li>
+        <li>Windows · macOS · Linux · Android · iOS · PS5 · Xbox</li>
         <li>Complete C++ source</li>
       </ul>
     </div>
@@ -1012,7 +1012,7 @@
       </div>
       <div class="xr">
         <p>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles replay their navigation footprint to every peer over a multicast. CPU compute is bit-deterministic, which keeps replays and lockstep viable, and a headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths so regressions surface in CI rather than in a playtest.</p>
-        <p>Tested on <strong>Windows, Linux, PlayStation 5 and Xbox Series X|S</strong>, with the C++ core held to the same standard on every target; consoles compile from source with your own platform SDK. Dedicated servers and <code>-nullrhi</code> runs are supported. Nintendo Switch support is in progress.</p>
+        <p>Supported on <strong>Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S</strong>, with the C++ core held to the same standard on every target; consoles compile from source with your own platform SDK. Dedicated servers and <code>-nullrhi</code> runs are supported. Nintendo Switch support is in progress.</p>
       </div>
     </div>
   </section>
@@ -1060,7 +1060,7 @@
             <tr><th scope="row">Locomotion</th><td>6-DOF flight and swim — Multirotor drone, Jet / Fixed-Wing, Bird, Fish</td></tr>
             <tr><th scope="row">Networking</th><td>Server-authoritative replication, bit-deterministic CPU compute</td></tr>
             <tr><th scope="row">Scripting</th><td>Blueprint and C++ — 726 Blueprint-exposed symbols, complete C++ source</td></tr>
-            <tr><th scope="row">Platforms</th><td>Windows · Linux · PlayStation 5 · Xbox Series X|S, all tested; consoles compile from source with your platform SDK (Switch in progress)</td></tr>
+            <tr><th scope="row">Platforms</th><td>Windows · macOS · Linux · Android · iOS · PlayStation 5 · Xbox Series X|S; consoles compile from source with your platform SDK (Switch in progress)</td></tr>
             <tr><th scope="row">Demo levels</th><td>57, free from inside the editor — 17 worlds in Behaviour Tree and StateTree editions, 15 Mass editions, and 8 Feature Examples levels with 69 single-feature displays</td></tr>
             <tr><th scope="row">Documentation</th><td><a class="ln" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">lcmnav3d.github.io</a> — free to read online · 165-page manual · 15 tutorials · 13-page Quick Start</td></tr>
             <tr><th scope="row">Defaults</th><td>100&nbsp;cm minimum voxel · 200&nbsp;m world cube</td></tr>
@@ -1088,7 +1088,7 @@
         <details><summary>Does 3D pathfinding work in multiplayer?</summary><div><p>Yes, server-authoritatively. Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles multicast their navigation footprint. CPU compute stays bit-deterministic for replays and lockstep, and a headless validation suite exercises the replicated paths.</p></div></details>
         <details><summary>Does it work in open worlds or with World Partition?</summary><div><p>Yes. LCM 3D Navigation AI runs in two modes. A <strong>finite</strong> world builds its octree once at <code>BeginPlay</code> inside defined bounds. An <strong>infinite</strong> world has no fixed extent — navigation chunks stream in around agents and unload behind them, so memory stays flat however far the map runs. Long routes use macro/micro routing, solving coarsely across chunks and finely within the current one. Most volumetric navigation plugins require a bounds volume and cannot navigate outside it. <a class="ln" href="#infinite">More on infinite worlds →</a></p></div></details>
         <details><summary>How is this different from the free open-source SVO navigation plugins?</summary><div><p>The solvers are comparable — A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built <em>around</em> the solver: infinite streaming worlds rather than a required bounds volume, GPU-built navigation, a 6-DOF flight and swim locomotion component, an 85-node Behaviour Tree, StateTree and Mass agent library, moving-obstacle prediction, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, 57 demo levels, a 165-page manual with 15 tutorials, and direct support from the developer. <a class="ln" href="#beyond">See the full comparison →</a></p></div></details>
-        <details><summary>Which Unreal Engine versions and platforms are supported?</summary><div><p>LCM 3D Navigation AI 3.6.0 supports Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8, and is tested on Windows, Linux, PlayStation 5 and Xbox Series X|S. Consoles compile from source with your own platform SDK. Nintendo Switch support is in progress. Check the <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab listing</a> for the current engine compatibility list.</p></div></details>
+        <details><summary>Which Unreal Engine versions and platforms are supported?</summary><div><p>LCM 3D Navigation AI 3.6.0 supports Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8, and is supported on Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S. Consoles compile from source with your own platform SDK. Nintendo Switch support is in progress. Check the <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab listing</a> for the current engine compatibility list.</p></div></details>
         <details><summary>Do I need C++, or does it work with Blueprints?</summary><div><p>It works from Blueprints. The plugin is C++ for performance and ships complete source, but exposes 726 symbols to Blueprint, documented in a full API reference, so a full flying AI can be built without writing code. The <code>Fly To Location</code> node flies a pawn from plain Blueprint with no AI Controller. The C++ API is available when you want it.</p></div></details>
         <details><summary>Can it handle moving or dynamic obstacles?</summary><div><p>Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors — and the change replicates to clients in multiplayer. Since 3.6, Fly To also predicts every moving obstacle and times its pass: it learns a gate's or a piston's cycle, waits for a gap, takes a detour, and dodges what it cannot outrun.</p></div></details>
         <details><summary>Can flying AI land on moving platforms?</summary><div><p>Yes. The Land task finds its own landing point and flies the approach relative to the deck, so a drone can land on a rolling ship or a moving lorry and take off again with the deck's velocity. Birds and fish glide in with a braking flare, and EQS generators and tests find landing sites for flying agents.</p></div></details>
