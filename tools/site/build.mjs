@@ -23,6 +23,20 @@ const facts = JSON.parse(fs.readFileSync(path.join(ROOT, 'facts.json'), 'utf8'))
 const media = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'media', 'media.json'), 'utf8'));
 const stills = new Map(media.stills.map((s) => [s.slug, s]));
 const loops = new Map(media.loops.map((s) => [s.slug, s]));
+const store = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'products.json'), 'utf8'));
+
+// Store totals are facts too (data-fact="store.ratings"), so no page has to count by hand.
+{
+  const rated = store.products.filter((p) => p.rating);
+  const ratings = rated.reduce((n, p) => n + p.ratings, 0);
+  const avg = rated.reduce((n, p) => n + parseFloat(p.rating) * p.ratings, 0) / ratings;
+  facts.store = {
+    products: store.products.length,
+    vfx: store.products.filter((p) => p.cat !== 'Plugins').length,
+    plugins: store.products.filter((p) => p.cat === 'Plugins').length,
+    ratings, average: avg.toFixed(1), checked: store.checked,
+  };
+}
 
 function pages(dir = ROOT, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -85,6 +99,44 @@ function loop(a, page, indent) {
   ].map((l) => indent + l).join('\n');
 }
 
+// Store cards, styled by company.css (.card). Attributes: cat="Combat", ids="a,b,c", no-flagship, sizes.
+const CATGRAD = {
+  Combat: 'linear-gradient(135deg,#7fe05a,#c8ff5e)', Weapons: 'linear-gradient(135deg,#2fe06a,#10c9b0)',
+  Environment: 'linear-gradient(135deg,#2fe06a,#2fe06a)', Character: 'linear-gradient(135deg,#10c9b0,#c8ff5e)',
+  Packs: 'linear-gradient(135deg,#d6f77a,#7fe05a)', Plugins: 'linear-gradient(135deg,#10c9b0,#2fe06a)',
+};
+const stars = (r) => { const n = Math.round(parseFloat(r)); return '★'.repeat(n) + '☆'.repeat(5 - n); };
+
+function catalog(a, page, indent) {
+  let list = store.products;
+  if (a.ids) list = a.ids.split(',').map((id) => {
+    const p = store.products.find((x) => x.id === id);
+    if (!p) throw new Error(`${page}: no product "${id}" in data/products.json`);
+    return p;
+  });
+  if (a.cat) list = list.filter((p) => p.cat === a.cat);
+  if (a['no-flagship']) list = list.filter((p) => !p.flagship);
+  const fix = relTo(page);
+  const sizes = a.sizes || '(min-width:1100px) 25vw, (min-width:560px) 50vw, 100vw';
+  return list.map((p) => {
+    const label = store.categories[p.cat];
+    const href = p.page ? fix(p.page) : store.listingBase + p.fab;
+    const ext = p.page ? '' : ' target="_blank" rel="noopener"';
+    const media = p.still
+      ? picture({ slug: p.still, sizes, alt: `${p.short} — ${label} for Unreal Engine` }, page, '').replace(/\n\s*/g, '')
+      : `<img src="${store.imageBase}${p.img[0]}/${p.img[1]}.jpg" alt="${esc(p.short)} — ${label} for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async">`;
+    const rating = p.rating
+      ? `<span class="rating"><span class="stars" aria-hidden="true">${stars(p.rating)}</span>${p.rating} <span class="rating__n">(${p.ratings})</span></span>`
+      : '<span class="rating rating--new">New</span>';
+    return `${indent}<a class="card" data-cat="${p.cat}" href="${href}"${ext}>` +
+      `<div class="card__media" style="background:${CATGRAD[p.cat]}">${media}<span class="card__cat">${label}</span>` +
+      `<div class="card__view"><span>${p.page ? 'Explore the plugin →' : 'View on Fab ↗'}</span></div></div>` +
+      `<div class="card__body"><h3 class="card__title">${esc(p.short)}</h3>` +
+      `<div class="card__meta"><span class="price">From $${p.price}</span>${rating}</div></div></a>`;
+  }).join('\n');
+}
+
+const KINDS = { picture, loop, catalog };
 let changed = 0;
 for (const file of pages()) {
   const page = path.relative(ROOT, file).split(path.sep).join('/');
@@ -94,14 +146,16 @@ for (const file of pages()) {
 
   html = html.replace(/(<([a-z0-9]+)\b[^>]*\sdata-fact="([^"]+)"[^>]*>)([^<]*)(<\/\2>)/g,
     (_, open, _tag, key, _old, close) => open + fact(key) + close);
+  // Animated counters keep their target in data-count; data-fact-count sets it.
+  html = html.replace(/data-fact-count="([^"]+)" data-count="[^"]*"/g, (_, key) => `data-fact-count="${key}" data-count="${fact(key)}"`);
 
-  html = html.replace(/([ \t]*)<!-- @(picture|loop) ([^>]*?) -->\n(?:[\s\S]*?\n)??[ \t]*<!-- \/@\2 -->/g, (_, indent, kind, a) => {
-    const body = kind === 'picture' ? picture(attrs(a), page, indent) : loop(attrs(a), page, indent);
-    return `${indent}<!-- @${kind} ${a} -->\n${body}\n${indent}<!-- /@${kind} -->`;
+  html = html.replace(/([ \t]*)<!-- @(picture|loop|catalog)(?: ([^>]*?))? -->\n(?:[\s\S]*?\n)??[ \t]*<!-- \/@\2 -->/g, (_, indent, kind, a = '') => {
+    const body = KINDS[kind](attrs(a), page, indent);
+    return `${indent}<!-- @${kind}${a ? ' ' + a : ''} -->\n${body}\n${indent}<!-- /@${kind} -->`;
   });
 
-  const open = (html.match(/<!-- @(picture|loop) /g) || []).length;
-  const shut = (html.match(/<!-- \/@(picture|loop) -->/g) || []).length;
+  const open = (html.match(/<!-- @(picture|loop|catalog)[ -]/g) || []).length;
+  const shut = (html.match(/<!-- \/@(picture|loop|catalog) -->/g) || []).length;
   if (open !== shut) throw new Error(`${page}: ${open} markers opened, ${shut} closed`);
 
   html = html.replace(/\n/g, eol);

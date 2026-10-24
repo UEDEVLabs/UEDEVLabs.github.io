@@ -24,8 +24,9 @@ function pages(dir = ROOT, out = []) {
 
 const fails = [], warns = [];
 const fail = (page, msg) => fails.push(`${page}: ${msg}`);
-// Pages outside this list get image-size problems as warnings, not failures.
-const STRICT = new Set(PAGES_WITH_CLAIMS);
+// Older pages outside the redesign get image-size problems as warnings, not failures.
+const LOOSE = new Set(['portfolio.html', 'Style Directions.html']);
+const titles = new Map();
 let checkedRefs = 0;
 
 for (const file of pages()) {
@@ -58,7 +59,7 @@ for (const file of pages()) {
     if (!/\salt="/.test(tag)) fail(page, `<img> without alt: ${tag.slice(0, 90)}`);
     if (!/\swidth="\d+"/.test(tag) || !/\sheight="\d+"/.test(tag)) {
       const msg = `<img> without width/height: ${tag.slice(0, 90)}`;
-      if (STRICT.has(page)) fail(page, msg); else warns.push(`${page}: ${msg}`);
+      if (!LOOSE.has(page)) fail(page, msg); else warns.push(`${page}: ${msg}`);
     }
   }
 
@@ -72,6 +73,19 @@ for (const file of pages()) {
     const asked = faq.mainEntity.map((q) => q.name);
     const shown = [...visible.matchAll(/<summary>([\s\S]*?)<\/summary>/g)].map((m) => m[1].replace(/<[^>]+>/g, '').trim());
     if (asked.length !== shown.length) fail(page, `FAQ schema has ${asked.length} questions, the page shows ${shown.length}`);
+  }
+
+  // Search basics: a title Google will not cut, a usable description, one canonical that is this page.
+  if (!LOOSE.has(page)) {
+    const dec = (t) => t.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    const title = dec((html.match(/<title>([^<]*)<\/title>/) || [])[1] || '');
+    const desc = dec((html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '');
+    const canon = (html.match(/<link rel="canonical" href="([^"]*)"/) || [])[1] || '';
+    const want = 'https://uedevlabs.github.io/' + page.replace(/index\.html$/, '');
+    if (!title || title.length > 60) fail(page, `title is ${title.length} characters (max 60): ${title}`);
+    if (desc.length < 70 || desc.length > 160) fail(page, `meta description is ${desc.length} characters (70-160)`);
+    if (canon !== want) fail(page, `canonical ${canon || '(none)'} should be ${want}`);
+    if (titles.has(title)) fail(page, `same title as ${titles.get(title)}`); else titles.set(title, page);
   }
 
   for (const re of STALE) if (re.test(visible) || ld.some(([, b]) => re.test(b))) fail(page, `stale text ${re}`);
