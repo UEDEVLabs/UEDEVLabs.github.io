@@ -1,0 +1,2353 @@
+# UEDEV — full text of uedevlabs.github.io
+
+Generated from the pages on 2026-10-24. Each section is one page; its canonical URL comes first.
+
+---
+
+URL: https://uedevlabs.github.io/unreal-engine-3d-pathfinding/
+Title: 3D Pathfinding for Unreal Engine 5 — LCM 3D Navigation AI
+Description: True 3D pathfinding for Unreal Engine 5 with infinite streaming worlds — not just a bounds volume. Flying AI, 6-DOF flight, Mass crowds, multiplayer.
+
+UEDEV / 3D Pathfinding for Unreal Engine 5 · Updated 24 October 2026 for v3.6.0
+
+**v3.6.0** LCM 3D Navigation AI · agents that see moving obstacles coming
+
+# True 3D pathfinding for Unreal Engine 5
+
+Unreal Engine's built-in Recast navmesh can only answer one question: where can I stand? This plugin answers the one that flying AI actually needs — where is there empty air? It is a volumetric 3D navigation and pathfinding plugin for UE5 that turns the whole playable volume into a Sparse Voxel Octree, so drones, dragons, spaceships, helicopters, birds and underwater agents path through real 3D space instead of along a floor.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+Watch the trailers
+[Try the free demo](https://uedevlabs.itch.io/lcm-3d-navigation)
+
+- [★★★★★ **5.0 on Fab** · 3 ratings](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
+
+- Unreal Engine 5.2–5.8
+
+- Windows · macOS · Linux · Android · iOS · PS5 · Xbox
+
+- Complete C++ source
+
+- 85 — BT, StateTree & Mass nodes
+
+- 17 — True-3D EQS items
+
+- 10,000+ — Mass Entity agents
+
+- 0.5cm — Smallest voxel
+
+- 57 — Free demo levels
+
+- 7 — Engine versions
+
+Release notes · October 2026
+
+## What's new in 3.6
+
+Version 3.6.0 is a free update for existing licences: agents that see moving obstacles coming, and GPU voxelization that checks itself.
+
+New in 3.6
+
+### Fly To sees moving obstacles coming
+
+Fly To predicts where every moving obstacle will be and times its pass: it learns a gate's or a piston's cycle and replays it, turns a spinning blade with it, eases off, waits for a gap or takes a detour — and dodges what it cannot outrun. It is on by default in the Behaviour Tree and StateTree Fly To. The new **Obstacle Gauntlet** demo throws 42 movers in six zones at twelve drones — or a crowd of 200 in the Mass edition — down a 370 m hall. Moving obstacle avoidance →
+
+New in 3.6
+
+### GPU voxelization that checks itself
+
+Each machine's GPU proves its voxels before it builds navigation — a capability check, a self-test through the real pipeline (remembered per GPU, driver and build) and sampled checks while it runs. A GPU that fails voxelizes on the CPU for the rest of the session, and the log says which check failed.
+
+Improved in 3.6
+
+### Fish that swim like fish
+
+They keep their depth by pointing the nose, swim upright, school side by side and in layers, and turn away from walls at once; the tail beats with the swimming speed.
+
+### Also in 3.6
+
+- **GPU navigation on more graphics cards.** The GPU build checks its own output word by word, rewrites what did not land and rebuilds what it cannot repair — on D3D12, D3D11 and Vulkan.
+
+- **Steadier drones, smarter hunters.** No bobbing over a perch; Engage holds its firing position, flies to it in formation and leads a crossing target; hunters remember what they lose sight of and search for it.
+
+- **Fixes.** Water volumes and triggers no longer read as walls, a mover that jumps back to the start of its track is treated as a jump, dedicated servers and `-nullrhi` runs no longer crash on streamed levels, and thirty defects were fixed in a plugin-wide code audit.
+
+### Earlier in 3.x
+
+- **3.5** — Engage, Investigate, Flee, Scan Area and Perch for Behaviour Tree, StateTree and Mass; Land and Take Off, including on moving decks; six scenario demos and eight Feature Examples levels; the demo levels became a free download from inside the editor.
+
+- **3.4** — cost areas with per-agent query filters; Unreal's stock Move To and EQS plan through the octree; the Fly To Location node; fish schooling for pawns and Mass crowds.
+
+- **3.3** — the agent task library for Behaviour Tree, StateTree and Mass; centimetre-scale voxels; automatic rebuilds when levels stream in.
+
+See it running
+
+## See 3D pathfinding running in UE5
+
+Volumetric navigation, flying AI pathfinding, Mass Entity crowds and tactical 3D EQS inside Unreal Engine 5 — every shot captured in the engine.
+
+Video: LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation Showcase Trailer-UE5 — https://www.youtube.com/watch?v=7_F3AvgQIQU
+
+Video: NextGen Infinite 3D Pathfinding in Unreal Engine 5 - 10,000 Flying AI Agents Thinks in 3D — https://www.youtube.com/watch?v=-02ah0bLMb4
+
+The live octree, chunk streaming and solver views behind every route — the same views ship in the editor and the Gameplay Debugger.
+
+57 free demo levels
+
+## Seventeen worlds. One navigation system.
+
+Every demo world ships in Behaviour Tree and StateTree editions, most of them in a Mass Entity crowd edition too, so you can open the same behaviour in the system your team uses. They are a free download from inside the editor.
+
+### Harbour
+
+A courier drone lands on a moving, rolling ship and a moving lorry, flying each approach relative to the deck, then takes off with the deck's velocity.
+
+- Land on moving decks
+- Take Off
+- EQS landing sites
+
+### Sea Cliffs
+
+A colony of 6-DOF seagulls that cannot hover: they glide in to perch on free ledges, ride an updraft and scatter when a survey drone flies the face.
+
+- Perch
+- Orbit
+- Flee
+- BT · StateTree
+
+### Hunter Drone
+
+A gunner drone hunts a runner through the streets: prediction, a chosen firing position, fire only on a clean shot.
+
+- Engage Target
+- BT · ST · Mass
+
+### Coral Reef
+
+An ROV surveys the reef; the school darts into the coral out of its sight and turtles settle on the seabed.
+
+- Scan Area
+- Schooling
+- BT · ST · Mass
+
+### Space Dogfight
+
+Fighters hunt raiders through a streamed asteroid belt, re-planning through the octree as the target breaks.
+
+- Fly To chase
+- 6-DOF
+- BT · ST · Mass
+
+### Sentry Drones
+
+Sentries see an intruder only through AI Perception sight cones, take EQS firing positions, engage and land under cover.
+
+- AI Perception
+- EQS
+- BT · ST · Mass
+
+### Warehouse
+
+A security drone perches on the racking, sweeps the hall, engages a thief and searches where it lost it.
+
+- Perch
+- Investigate
+- BT · ST · Mass
+
+### Fish Tank
+
+A 120 cm aquarium navigated at 1 cm: 8 cm fish through a rock arch, round a predator's lair.
+
+- 1 cm voxels
+- BT · ST · Mass
+
+### City
+
+Rooftop gaps and street canyons, streamed around the agents.
+
+- Open world
+
+### Forest
+
+Canopy, clearings and tunnels bored through rock.
+
+- Open world
+
+### Deep Space
+
+A drifting asteroid field: no floor, no up, no walls.
+
+- Open world
+
+### Vertical Skyscraper
+
+The classic true-3D climb, floor by floor.
+
+- Interiors
+
+Plus **Cost Areas**, **Cost Areas, Streamed**, **Dynamic Obstacles**, **Obstacle Tunnel** and the new **Obstacle Gauntlet** — and eight Feature Examples levels with 69 single-feature displays that check themselves as they run. All 57 levels download free from the LCM Nav3D menu › Get the Demo Levels.
+
+The problem
+
+## Why Unreal Engine's navmesh can't do 3D pathfinding
+
+Recast, the navigation system that ships with Unreal Engine 5, voxelizes your level and then extracts the **walkable surfaces** from it — the result is a set of polygons draped over the floor. That is exactly the right representation for a soldier, and completely the wrong one for a dragon. A flying AI has no floor to walk on, so a Recast navmesh gives it nothing to query.
+
+The usual workarounds all leak. Raycast-and-steer looks fine in an open field and gets stuck the moment there is a concave building. Hand-placed waypoint graphs are expensive to author and go stale the instant a level artist moves a wall. Stacking navmeshes at several altitudes turns 3D navigation into a set of disconnected 2D floors, and still can't route diagonally through a shaft.
+
+Volumetric navigation solves it properly by inverting the question. Instead of storing where geometry is, it stores where it isn't, in a Sparse Voxel Octree — and pathfinds through that empty volume in full 3D.
+
+_A bird flock threading rings in mid-air — there is no floor to walk on_
+
+| | UE5 Recast navmesh | LCM 3D Navigation AI (SVO) |
+| --- | --- | --- |
+| What it stores | Walkable surfaces — polygons on the floor | Navigable volume — the empty air and water |
+| Dimensionality | 2.5D: a surface with height offsets | True 3D: any point in the playable volume |
+| Suits | Humanoids, vehicles, ground crowds | Flying AI, drones, spaceships, submarines, insects |
+| Vertical movement | Nav links, jumps, stacked meshes | Native — up, down and diagonal are the same query |
+| Cost profile | Scales with floor area | Scales with clutter, not level size — open sky is a few large nodes |
+| Solvers | A* over polygons | A*, Theta* and Lazy Theta* over octree nodes |
+| Crowd scale | Detour crowd manager | 10,000+ agents via Mass Entity, per-agent or shared flow field |
+| Can they coexist? | Yes — run hybrid levels where ground troops use Recast and air units use the SVO. | |
+
+Under the hood
+
+## How volumetric 3D pathfinding works
+
+_The live octree around a sea stack, captured in real time_
+
+01 · The octree
+
+### A Sparse Voxel Octree of the empty space
+
+Drop a single `LcmNavigationManagerSVO` actor into the level and it owns the octree, the pathfinder and every query. The manager subdivides the playable volume only where geometry actually exists: a wide-open sky becomes a handful of large nodes, while a cluttered hangar interior subdivides down to the minimum voxel size. Cost therefore tracks how busy your level is rather than how big it is.
+
+Voxelization, the octree and its links are built on the GPU (D3D12, D3D11 and Vulkan), and each machine's GPU proves its voxels before it builds; one that fails voxelizes on the CPU for that session. The defaults — a 100 cm minimum voxel inside a 200 m world cube — are tuned to be sane on a first build, and voxels go down to 0.5 cm for centimetre-scale worlds.
+
+_A hunter's planned route around a container stack_
+
+02 · The solvers
+
+### Three pathfinding solvers, three smoothing modes
+
+Pick the trade-off that fits the agent: **A*** for raw throughput, **Theta*** for true any-angle routes that cut the corners a grid would force you around, and **Lazy Theta*** for near-Theta* path quality at close to A* cost. Solving is multi-threaded and deterministic, so the same input gives the same path every run.
+
+Then choose smoothing — Raw, Linear Shortcut or Curved Spline — each validated against level geometry, so a smoothed path never slices through a wall.
+
+_The world can move underneath them: a drone lands on a moving lorry_
+
+03 · A world that moves
+
+### Dynamic obstacles that restamp — and agents that predict them
+
+Moving geometry writes its own footprint back into the octree as it travels, so lifts, blast doors, destructible cover and patrolling capital ships all change routing live — and in multiplayer that change is multicast to every peer.
+
+Since 3.6, Fly To also predicts each mover's motion and times its pass, so a drone waits for a gate's cycle or slips behind a sweeper instead of re-planning into it.
+
+_A storm cost area: the route bends round it_
+
+04 · Cost areas
+
+### Cost areas priced per agent
+
+Mark volumes as storms, preferred lanes, toll gates or no-fly zones with Unreal's stock NavArea classes. A stock Navigation Query Filter on each agent decides what an area costs that agent — or forbids it — so a cargo drone and a fighter read the same storm differently.
+
+Fly To, Fly To Location, Mass crowds, Find Path and the stock Move To all route by them, across streamed chunk seams too.
+
+The hard part
+
+## Infinite worlds, not a bounded volume
+
+Almost every volumetric navigation implementation for Unreal — including the open-source ones — starts by asking you to place a **bounds volume** and builds its octree inside it.
+
+For an arena or a level-sized map a bounds volume is perfectly fine, and LCM 3D Navigation AI supports exactly that model: a finite world builds once at `BeginPlay` and stays put.
+
+It stops being fine in an open world. A bounds volume has to be big enough to contain everywhere an agent may ever fly, memory scales with that box whether or not anything is happening inside it, and the moment your player crosses the edge, navigation simply ends.
+
+**Infinite mode removes the box.** Navigation chunks stream in around agents and are discarded behind them, so memory stays flat no matter how far the map extends — the same reason you stream level geometry rather than loading a continent. Long routes use **macro/micro routing**: the path solves coarsely across chunks first and finely within the chunk the agent is actually in, so a cross-map flight never pays full-resolution search cost end to end.
+
+That combination — unbounded streaming navigation with hierarchical routing on top — is what makes 3D pathfinding usable in an open-world or World Partition project rather than only inside a hand-placed box.
+
+**Finite mode**Defined bounds, octree built once at `BeginPlay` or baked to an asset. Lowest overhead when your playable space genuinely is a box.
+
+**Infinite mode**Chunks stream around agents and unload behind, with pre-baked chunks where you want them. Fixed memory budget across an unbounded map.
+
+**Macro / micro routing**Coarse across chunks, fine within them — long routes stay cheap instead of scaling with distance.
+
+A behaviour for every job
+
+## Works with every Unreal Engine AI system
+
+Whichever way your team authors behaviour, the same navigation data is available through every surface — with ready-made behaviours at full parity.
+
+**31**Behaviour Tree nodes
+21 tasks, 5 decorators, 5 services
+
+**41**StateTree nodes
+25 tasks, 8 conditions, 8 evaluators
+
+**13**Mass StateTree nodes
+10 tasks, 3 evaluators, on 8 traits
+
+17True-3D EQS items
+5 generators, 8 tests, 4 contexts
+
+-
+
+**Fly To Location**One Blueprint node, no AI Controller
+
+-
+
+**Patrol**Routes between waypoints
+
+-
+
+**Orbit Target**At a set radius and speed
+
+-
+
+**Follow Target**Formation slots in the leader's frame
+
+-
+
+**Engage Target**A firing position with line of sight
+
+-
+
+**Scan Area**A volume swept from shared viewpoints
+
+-
+
+**Perch**No two agents on one post
+
+-
+
+**Land**Onto a moving platform or deck
+
+-
+
+**Points in SVO Volume**EQS candidates anywhere in 3D
+
+-
+
+**Reachability 3D**Answered before any search
+
+- **Behaviour Tree** — 21 tasks, 5 decorators and 5 services, including `FlyTo`, Patrol, Orbit Target, Follow Target, Hover, Take Off, Land, Perch, Scan Area, Engage Target, Find Cover, Flee, Investigate, line-of-sight and chunk-loaded checks, with seven documented stock-node patterns showing where an LCM node earns its place over an engine one.
+
+- **StateTree** — 25 tasks, 8 conditions and 8 evaluators at full parity with the Behaviour Tree nodes, so state-driven agents get the same routing and behaviours with no Behaviour Tree in the stack.
+
+- **Mass Entity (ECS)** — eight traits: per-agent asynchronous pathfinding or a shared CPU flow field sampled in O(1) by an entire swarm, driven by auto-registered processors for request, solve and steer. Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee. You never call the solver yourself.
+
+- **Blueprint and stock Unreal navigation** — the `Fly To Location` latent node flies any pawn with no Behaviour Tree, StateTree or AI Controller, and Unreal's own Move To, AI Move To and EQS queries plan through the octree.
+
+- **Tactical 3D EQS** — 5 generators, 8 tests and 4 contexts that score real volume: volumetric line-of-sight, cover, threat exposure, height advantage, landing sites and true path distance, so a sniper perch is chosen in 3D rather than on a floor plane.
+
+- **AI Perception and the Gameplay Debugger** — threat tracking, nav links, area modifiers and a live in-editor debugger for inspecting the octree and solved routes, plus a setup wizard and a one-click health check.
+
+Everything is exposed to Blueprint: **726 Blueprint-exposed symbols**, documented in a full API reference, so a complete flying AI can be built without opening Visual Studio. Complete C++ source ships with it when you want it.
+
+Beyond the solver
+
+## Pathfinding is the easy half
+
+A pathfinding plugin hands you a list of points. Turning that into an agent that flies convincingly, is authored by your AI designers, scales to a crowd and survives a multiplayer session is the rest of the work — and in practice it is where the integration time actually goes. That gap is what LCM 3D Navigation AI is built to close.
+
+| Capability | Pathfinding-only plugins | LCM 3D Navigation AI |
+| --- | --- | --- |
+| Route solving | A*, Theta*, Lazy Theta* | The same three solvers |
+| World model | Bounds volume required | Finite or infinite streaming chunks |
+| Agent locomotion | Bring your own movement | 6-DOF flight & swim component — Multirotor, Jet / Fixed-Wing, Bird, Fish |
+| Behaviour Tree | Stock MoveTo nodes | 21 tasks, 5 decorators, 5 services |
+| StateTree | — | 25 tasks, 8 conditions, 8 evaluators |
+| Ready-made behaviours | — | Patrol, Orbit, Follow, Hover, Land on moving decks, Perch, Scan Area, Engage, Find Cover, Flee, Investigate |
+| Mass Entity crowds | — | 8 traits, Mass StateTree behaviours, 10,000+ agents |
+| Moving obstacles | Varies | Octree restamping plus Fly To prediction that times its pass |
+| Multiplayer | — | Server-authoritative replication, deterministic CPU compute |
+| Tactical queries | Varies | 3D EQS — 5 generators, 8 tests, 4 contexts scoring real volume |
+| Consoles | Varies | PlayStation 5, Xbox Series X/S |
+| Demo content | Varies | 57 demo levels, free from inside the editor |
+| Documentation | README | 165-page manual, 15 tutorials, full API reference |
+| Support | Community issue tracker | Direct from the developer who wrote it |
+
+What you can build
+
+## Flying AI, drones, submarines and space combat
+
+Anything that moves through a volume rather than across a surface is a candidate for 3D pathfinding in Unreal Engine 5.
+
+### Flying AI, birds and dragons
+
+Aerial predators that dive between towers, circle for an approach, glide in and perch on a free ledge — with 6-DOF flight locomotion driving the body, not just the route. See the Sea Cliffs gull colony. Flying AI and drones →
+
+### Drone and helicopter AI
+
+Multirotor archetypes with thrust, lift, drag and attitude PID, so a drone banks into its turns instead of sliding along a spline — and lands on a rolling ship's deck. See the Hunter Drone, Harbour and Sentry Drones demos. Flying AI and drones →
+
+### Space and dogfight combat
+
+No up, no floor, no gravity — the octree treats a debris field or asteroid belt as ordinary navigable volume. See Space Dogfight and the Raider Swarm. Space combat AI →
+
+### Underwater and swim navigation
+
+Fish archetypes that hold depth, school in layers and part round predators, plus ROVs and turtles routing around reefs and wrecks. See Coral Reef and the 1 cm Fish Tank. Underwater and fish AI →
+
+### Insect and creature swarms
+
+10,000+ Mass Entity agents sampling a shared flow field for bats, drone swarms and locusts at frame budget — and crowds that perch, scan, engage and flee. Mass Entity crowds →
+
+### Vertical and interior levels
+
+Shafts, atriums, scaffolding, warehouses and multi-storey interiors where stacked 2D navmeshes fall apart. See Vertical Skyscraper and Warehouse. Open-world navigation →
+
+5.0
+★★★★★
+3 ratings on Fab
+
+Best 3D Navigation Plugin on the Marketplace
+
+_VecFourDigital · five-star review on Fab · Read the reviews ↗_
+
+Networking
+
+## Server-authoritative multiplayer 3D navigation
+
+Clients request a route, the server solves it and delivers it back through `Client_DeliverPath`, and moving obstacles replay their navigation footprint to every peer over a multicast. CPU compute is bit-deterministic, which keeps replays and lockstep viable, and a headless validation suite (`-LcmMpTest`) exercises the sanity, replicated-request, multicast-transport and digest-chain paths so regressions surface in CI rather than in a playtest.
+
+Supported on **Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S**, with the C++ core held to the same standard on every target; consoles compile from source with your own platform SDK. Dedicated servers and `-nullrhi` runs are supported. Nintendo Switch support is in progress.
+
+Getting started
+
+## Adding 3D pathfinding to a UE5 project
+
+- **Install the plugin**Add LCM 3D Navigation AI from Fab to your Unreal Engine 5.2–5.8 project and enable it in the plugin browser. Open the built-in QuickStart level, or fetch the 57 demo levels from the LCM Nav3D menu › Get the Demo Levels. Installation is chapter 1 of the manual.
+
+- **Place the navigation manager**Drop one `LcmNavigationManagerSVO` into the level and set the world bounds and minimum voxel size. It builds the Sparse Voxel Octree and owns every navigation query from then on.
+
+- **Give the agent a body**Add `LcmFlightMovementComponent` to the pawn and pick an archetype — Multirotor drone, Jet / Fixed-Wing, Bird or Fish — then tune thrust, lift, drag, buoyancy and the attitude PID. An animation-drive struct feeds your blendspaces.
+
+- **Author the behaviour**Use the `FlyTo` Behaviour Tree task, the equivalent StateTree task, a Mass trait for crowds — or the `Fly To Location` Blueprint node for no AI setup at all. Chapter 3 of the manual walks through a first flying agent end to end.
+
+- **Scale up**Add behaviours like Land, Perch, Engage and Flee, dynamic obstacles, cost areas, tactical 3D EQS queries, hybrid Recast levels for ground units, and switch to infinite chunked worlds when the map outgrows a single volume.
+
+Documentation is a **165-page manual with 15 step-by-step tutorials** and a 13-page Quick Start, not a plugin dump: every setting is listed with its verified default and limits, and the full API is documented in a reference. [Read the full documentation online →](https://lcmnav3d.github.io/)
+
+Reference
+
+## Specifications
+
+| Plugin | LCM 3D Navigation AI, version 3.6.0 (October 2026) — previously published as LCM Nav3D, still the name on the logo mark |
+| --- | --- |
+| Engine | Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8 |
+| Navigation | Sparse Voxel Octree volumetric navigation, hybrid with Recast |
+| Pathfinding | A* · Theta* · Lazy Theta* — multi-threaded, deterministic CPU solving |
+| Smoothing | Raw · Linear Shortcut · Curved Spline, geometry-validated |
+| GPU | Voxelization, octree and links built on the GPU (D3D12, D3D11, Vulkan); each GPU proves its voxels first, and one that fails voxelizes on the CPU for the session · GPU path solver in experimental validation |
+| World mode | Finite (built or baked), or infinite streaming chunks with pre-baked chunks |
+| Voxel size | Down to 0.5 cm — the Fish Tank demo navigates a 120 cm aquarium at 1 cm |
+| AI nodes | 85 — Behaviour Tree 21 tasks, 5 decorators, 5 services · StateTree 25 tasks, 8 conditions, 8 evaluators · Mass StateTree 10 tasks, 3 evaluators |
+| Tactical EQS | 5 generators · 8 tests · 4 contexts |
+| Crowds | 10,000+ agents via Mass Entity — 8 traits, per-agent paths or a shared flow field, schooling |
+| Avoidance | Reactive (boids) · Predictive (ORCA) · Context-Based Steering · moving-obstacle prediction in Fly To |
+| Locomotion | 6-DOF flight and swim — Multirotor drone, Jet / Fixed-Wing, Bird, Fish |
+| Networking | Server-authoritative replication, bit-deterministic CPU compute |
+| Scripting | Blueprint and C++ — 726 Blueprint-exposed symbols, complete C++ source |
+| Platforms | Windows · macOS · Linux · Android · iOS · PlayStation 5 · Xbox Series X/S; consoles compile from source with your platform SDK (Switch in progress) |
+| Demo levels | 57, free from inside the editor — 17 worlds in Behaviour Tree and StateTree editions, 15 Mass editions, and 8 Feature Examples levels with 69 single-feature displays |
+| Documentation | lcmnav3d.github.io — free to read online · 165-page manual · 15 tutorials · 13-page Quick Start |
+| Defaults | 100 cm minimum voxel · 200 m world cube |
+| Rating | 5.0 out of 5 on Fab (3 ratings) |
+| Where to get it | Fab marketplace · free demo on itch.io · Discord support |
+
+FAQ
+
+## 3D pathfinding in Unreal Engine 5 — common questions
+
+### Does Unreal Engine 5 support 3D pathfinding out of the box?
+
+No. UE5 ships with Recast, which builds a navmesh of walkable surfaces — a 2.5D representation designed for characters that stand on the ground. A flying, swimming or space-borne agent has nothing to path along. LCM 3D Navigation AI adds a true volumetric representation that treats open air and water as navigable space, giving Unreal Engine 5 real 3D pathfinding.
+
+### What is the difference between a Recast navmesh and volumetric 3D navigation?
+
+A Recast navmesh describes surfaces you can stand on; it flattens a level into walkable polygons. Volumetric navigation describes the empty space you can move through. LCM 3D Navigation AI carves the playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky is stored cheaply as a few large nodes while detail appears only where geometry actually is.
+
+### How do I make flying AI in Unreal Engine 5?
+
+Add an `LcmNavigationManagerSVO` actor so the level can build its navigation octree, give the AI pawn an `LcmFlightMovementComponent` for 6-DOF flight, then drive it from a Behaviour Tree `FlyTo` task, a StateTree task or a Mass Entity trait. For the simplest case, the `Fly To Location` Blueprint node flies a pawn with no AI Controller at all. The plugin handles the request, the solve and the steering; you author the behaviour.
+
+### Does LCM 3D Navigation AI work with Behaviour Trees, StateTree and Mass Entity?
+
+Yes — all three, at full parity and reading the same navigation data. It ships 21 Behaviour Tree tasks, 5 decorators and 5 services; 25 StateTree tasks, 8 conditions and 8 evaluators; and 8 Mass Entity traits with 10 Mass StateTree tasks and 3 evaluators for large crowds. The behaviours include Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land, Perch, Scan Area, Engage Target, Find Cover, Flee and Investigate.
+
+### How many AI agents can it handle?
+
+10,000 or more through Mass Entity. Two crowd modes are available: per-agent asynchronous pathfinding via the Nav3D Agent trait, or a single shared CPU flow field that an entire swarm samples in constant time. Mass StateTree tasks let crowds perch, scan, engage, investigate and flee, and schooling, Hold Avoidance and Contact Push keep dense crowds apart. A per-agent GPU solver is in experimental validation and ships as a free update.
+
+### Does 3D pathfinding work in multiplayer?
+
+Yes, server-authoritatively. Clients request a route, the server solves it and delivers it back through `Client_DeliverPath`, and moving obstacles multicast their navigation footprint. CPU compute stays bit-deterministic for replays and lockstep, and a headless validation suite exercises the replicated paths.
+
+### Does it work in open worlds or with World Partition?
+
+Yes. LCM 3D Navigation AI runs in two modes. A **finite** world builds its octree once at `BeginPlay` inside defined bounds. An **infinite** world has no fixed extent — navigation chunks stream in around agents and unload behind them, so memory stays flat however far the map runs. Long routes use macro/micro routing, solving coarsely across chunks and finely within the current one. Most volumetric navigation plugins require a bounds volume and cannot navigate outside it. More on infinite worlds →
+
+### How is this different from the free open-source SVO navigation plugins?
+
+The solvers are comparable — A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built around the solver: infinite streaming worlds rather than a required bounds volume, GPU-built navigation, a 6-DOF flight and swim locomotion component, an 85-node Behaviour Tree, StateTree and Mass agent library, moving-obstacle prediction, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, 57 demo levels, a 165-page manual with 15 tutorials, and direct support from the developer. See the full comparison →
+
+### Which Unreal Engine versions and platforms are supported?
+
+LCM 3D Navigation AI 3.6.0 supports Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8, and is supported on Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S. Consoles compile from source with your own platform SDK. Nintendo Switch support is in progress. Check the [Fab listing](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73) for the current engine compatibility list.
+
+### Do I need C++, or does it work with Blueprints?
+
+It works from Blueprints. The plugin is C++ for performance and ships complete source, but exposes 726 symbols to Blueprint, documented in a full API reference, so a full flying AI can be built without writing code. The `Fly To Location` node flies a pawn from plain Blueprint with no AI Controller. The C++ API is available when you want it.
+
+### Can it handle moving or dynamic obstacles?
+
+Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors — and the change replicates to clients in multiplayer. Since 3.6, Fly To also predicts every moving obstacle and times its pass: it learns a gate's or a piston's cycle, waits for a gap, takes a detour, and dodges what it cannot outrun.
+
+### Can flying AI land on moving platforms?
+
+Yes. The Land task finds its own landing point and flies the approach relative to the deck, so a drone can land on a rolling ship or a moving lorry and take off again with the deck's velocity. Birds and fish glide in with a braking flare, and EQS generators and tests find landing sites for flying agents.
+
+### Does it work for small worlds such as an aquarium?
+
+Yes. Voxels go down to 0.5 cm, and a World Scale profile handles centimetre-scale worlds. The Fish Tank demo navigates a 120 cm aquarium at 1 cm, with 8 cm fish schooling through a rock arch.
+
+### What is new in LCM 3D Navigation AI 3.6?
+
+Version 3.6.0 (October 2026) adds moving-obstacle prediction to Fly To, the Obstacle Gauntlet demo (a 370 m hall with 42 movers), GPU voxelization that proves itself on each machine before it builds navigation, a self-repairing GPU build on D3D12, D3D11 and Vulkan, more natural fish swimming and schooling, steadier drones and smarter hunters, and more than thirty fixes from a plugin-wide code audit. Full release notes →
+
+### Is there a free demo?
+
+Yes — a free playable demo is on [itch.io](https://uedevlabs.itch.io/lcm-3d-navigation), and buyers get 57 demo levels free from inside the editor (LCM Nav3D menu › Get the Demo Levels). The full plugin is sold on [Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73).
+
+More from UEDEV
+
+## Niagara VFX from the same developer
+
+Weapon beams, explosions, shields and environmental effects — 19 Niagara VFX packs on Fab, 4.5★ across 47 ratings. See every pack →
+
+[Weapon VFXView on Fab ↗
+### Niagara Energy Beam Pack V2
+From $15.99★★★★★5.0 (6)](https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296)
+[Combat VFXView on Fab ↗
+### Ultimate Explosion VFX
+From $14.99★★★★★5.0 (4)](https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770)
+[Weapon VFXView on Fab ↗
+### Niagara Laser Beam Weapon V3
+From $18.99★★★★★5.0 (2)](https://www.fab.com/listings/b776d3d2-5d87-4f8b-8466-d7bbb17ab2a4)
+[Combat VFXView on Fab ↗
+### Ultimate Scan & Screen Effects
+From $12.99★★★★★4.8 (4)](https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5)
+
+---
+
+URL: https://uedevlabs.github.io/
+Title: LCM 3D Navigation AI — Infinite 3D Pathfinding for UE5
+Description: LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5 — infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab.
+
+LCM 3D Navigation AI — Infinite 3D Pathfinding for UE5
+
+-
+
+UE
+
+Loading**_**
+
+**U**UE**DEV**
+
+3D Navigation AI
+3D Pathfinding
+Capabilities
+Best Sellers
+VFX
+Docs
+Developer
+
+[Browse on Fab ↗](https://www.fab.com/sellers/UEDEV)
+
+v3.6.0 **LCM 3D Navigation AI** — agents that see moving obstacles coming · UE 5.2–5.8 →
+
+uedev
+
+Built for performance.
+
+# True 3D pathfinding & volumetric navigation for Unreal Engine 5 — plus high-performance C++ plugins
+
+Explore the plugin
+
+Flagship UE5 plugin · v3.6.0 · Unreal Engine 5.2–5.8
+
+## LCM 3D Navigation AI
+
+The 3D pathfinding & volumetric navigation plugin for Unreal Engine 5
+
+★ 5.0 on FabSparse Voxel OctreeGPU-built navigation85 AI nodes10,000+ agentsMoving-obstacle predictionMultiplayer replicationBlueprint & C++
+
+**LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5** — flying AI pathfinding for drones, dragons, spaceships, helicopters and underwater agents that Recast navmesh simply cannot express. Unreal's Recast navmesh answers one question: where can I stand? It flattens your level into walkable polygons — exactly right for a soldier, completely wrong for a dragon. LCM 3D Navigation AI answers a different one: where is there empty air? It carves the whole playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky costs almost nothing and detail appears only where geometry actually is.
+
+Video: LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation Showcase Trailer-UE5 — https://www.youtube.com/watch?v=7_F3AvgQIQU
+
+_LCM 3D Navigation AI — showcase trailer▶ Technical trailer & more_
+
+**Harbour**Landing on a moving ship
+
+-
+
+**Sea Cliffs**6-DOF gulls that perch
+
+-
+
+**Coral Reef**A Mass school of fish
+
+-
+
+**Space Dogfight**Lead intercept in an asteroid belt
+
+- Flying AI & drones →
+
+- Underwater & fish AI →
+
+- Space combat AI →
+
+- Open-world navigation →
+
+- Mass Entity crowds →
+
+- Moving obstacles →
+
+- A* · Theta* · Lazy Theta* — Pathfinding
+
+- GPU build · CPU solve · GPU solver coming soon — Compute
+
+- Finite or Infinite chunks — World mode
+
+- 85 BT · StateTree · Mass — AI nodes
+
+- 01**Sparse Voxel Octree**The level's empty air is subdivided only where geometry exists — one node covers open sky, so cost tracks clutter, not level size. Voxels go down to 0.5 cm, so the same plugin navigates a 120 cm aquarium at 1 cm and a streamed open world. Drop a single `LcmNavigationManagerSVO` per level and it owns the octree, the pathfinder and every query.
+
+- 02**Three solvers, three smoothing modes**A* for raw throughput, Theta* for true any-angle routes, Lazy Theta* for near-Theta* quality at near-A* cost — multi-threaded and deterministic. Then Raw, Linear Shortcut or Curved Spline smoothing — validated against geometry, so a smoothed path never cuts a wall.
+
+- 03**GPU-built navigation that checks itself**Voxelization, the octree and its links are built on the GPU on D3D12, D3D11 and Vulkan. New in 3.6: each machine's GPU proves its voxels before it builds navigation — a capability check, a self-test remembered per GPU and driver, and sampled audits while it runs. A GPU that fails voxelizes on the CPU for that session, and the log says why.
+
+- 04**Macro / micro routing & infinite worlds**Long routes solve coarsely across chunks, then finely within them. Finite worlds build once or bake to an asset; infinite worlds stream chunks around agents and throw them away behind, with pre-baked chunks and a long-range graph that plans beyond loaded geometry.
+
+- 05**Agents that see moving obstacles coming**New in 3.6: Fly To predicts every moving obstacle and times its pass. It learns a gate's or a piston's cycle, turns a spinning blade with it, eases off, waits for a gap or takes a detour — and dodges what it cannot outrun. Moving geometry still restamps the octree, so routes re-plan live.
+
+- 06**A behaviour for every job — 85 AI nodes**Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land (even on a rolling ship's deck), Perch, Scan Area, Engage Target, Find Cover, Flee and Investigate — 31 Behaviour Tree nodes, 41 StateTree nodes and 13 Mass StateTree nodes at full parity. One `Fly To Location` Blueprint node flies any pawn with no AI Controller, and Unreal's own Move To and EQS plan through the octree.
+
+- 07**10,000+ agents through Mass ECS**Eight Mass traits: per-agent asynchronous pathfinding, or one shared CPU flow field sampled O(1) by an entire swarm. Mass StateTree lets crowds perch, scan, engage, investigate and flee; schooling, Hold Avoidance and Contact Push keep dense crowds apart. A per-agent GPU solver is in experimental validation — coming as a free update.
+
+- 08**Tactical EQS in true 3D**5 generators, 8 tests and 4 contexts that score real volume — volumetric line-of-sight, cover, threat exposure, height advantage, landing sites and true path distance — so a sniper perch is chosen in 3D, not on a floor plane.
+
+- 09**6-DOF flight & swim locomotion**Navigation gives guidance; `LcmFlightMovementComponent` turns it into a body. Multirotor drone, Jet / Fixed-Wing, Bird (flap-glide) and Fish (undulatory) archetypes with thrust, lift, drag, buoyancy and attitude PID. Fish hold depth, school in layers and beat their tails with their speed; flight follows the level's gravity.
+
+- 10**Cost areas, priced per agent**Mark volumes as storms, preferred lanes, toll gates or no-fly zones with stock NavArea classes. A stock Navigation Query Filter decides what each area costs each agent — or forbids it — and every planner routes by them, across streamed chunk seams too.
+
+- 11**Server-authoritative multiplayer replication**Clients request a route, the server solves it and delivers it back through `Client_DeliverPath`; moving obstacles replay their nav footprint to every peer over a multicast. A headless validation suite (`-LcmMpTest`) exercises the sanity, replicated-request, multicast-transport and digest-chain paths, and CPU compute stays bit-deterministic for replays and lockstep.
+
+- 12**Built for real projects**Dynamic obstacle restamping, AI Perception threat tracking, hybrid Recast + SVO levels, nav links, area modifiers, a setup wizard, a one-click health check and a live Gameplay Debugger — plus 57 free demo levels you download from inside the editor.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+How 3D pathfinding works →
+[Try the free demo](https://uedevlabs.itch.io/lcm-3d-navigation)
+Talk to the developer
+
+Engine support**UE 5.2–5.8**
+
+**100 cm**Default min voxel
+
+**200 m**Default world cube
+
+**165 pp**User manual
+
+### Works with every Unreal AI system
+
+Whichever way your team authors behaviour, LCM 3D Navigation AI plugs into it — the same navigation data, three authoring surfaces.
+
+Behaviour Tree
+
+21 tasks, 5 decorators and 5 services — `FlyTo`, Patrol, Land, Perch, Engage Target, Find Cover, Flee, Investigate, line-of-sight and chunk-loaded checks — alongside seven documented stock-node patterns showing where an LCM node earns its place.
+
+StateTree
+
+25 tasks, 8 conditions and 8 evaluators at full parity with the Behaviour Tree nodes, so state-driven agents get identical routing and behaviours without a Behaviour Tree in the stack.
+
+Mass Entity
+
+Eight ECS traits — per-agent pathfinding or a shared flow field — plus 10 Mass StateTree tasks and 3 evaluators, so a crowd of 10,000+ entities can perch, scan, engage, investigate and flee.
+
+Plus a **Fly To Location** Blueprint node that flies any pawn with no AI Controller, and Unreal's own Move To, AI Move To and EQS planning through the octree.
+
+### Platform support
+
+Supported on desktop, mobile and current-gen consoles — Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S — with the C++ core built to the same standard on every target. Consoles compile from source with your own platform SDK.
+
+**Windows PC**Supported
+
+**Linux**Supported
+
+**macOS**Supported
+
+**Android**Supported
+
+**iOS**Supported
+
+**PlayStation 5**Supported
+
+**Xbox Series X|S**Supported
+
+**Nintendo Switch**Coming soon
+
+Shipped · v3.3 → v3.6
+
+### What's new
+
+Free updates for existing licences
+
+**3.6 · Agents see moving obstacles coming**
+Fly To predicts every mover and times its pass, and the new Obstacle Gauntlet demo throws 42 of them at twelve drones — or a crowd of 200 — down a 370 m hall.
+
+**3.6 · GPU voxelization that checks itself**
+Every GPU proves its voxels before it builds navigation, the GPU build repairs its own output on D3D12, D3D11 and Vulkan, and fish swim, turn and school like fish.
+
+**3.5 · Agents that land, hunt, hide and investigate**
+Engage, Investigate, Flee, Scan Area, Perch, Land and Take Off — onto a rolling ship's deck if needed — plus six scenario demos and eight Feature Examples levels, free from inside the editor.
+
+**3.3 – 3.4 · The agent task library**
+The full BT, StateTree and Mass task library, centimetre-scale voxels, cost areas with per-agent filters, stock Move To and EQS through the octree, the Fly To Location node and fish schooling.
+
+Next · v4.0
+
+### In development
+
+Free update for existing licences
+
+**GPU path solving · experimental**
+A per-agent GPU path solver and GPU flow field — currently in experimental validation through our research programme — plus further profiling to widen frame-budget headroom at crowd scale.
+
+**Replication improvements**
+A wider server-authoritative surface and lower-bandwidth path and obstacle sync for larger multiplayer sessions.
+
+### Documented like a product, not a plugin dump
+
+A 165-page manual, 15 step-by-step tutorials and a 13-page Quick Start, free to read online — every setting is listed with its verified default and limits, and all 726 Blueprint-exposed symbols are in a full API reference.
+
+[Read the documentation ↗](https://lcmnav3d.github.io/)
+
+[01–05**Getting started**Installation, core concepts, your first flying agent, StateTree, dynamic obstacles.](https://lcmnav3d.github.io/installation.html)
+[06–15**Going further**Mass crowds, tactical EQS, AI perception, hybrid Recast, cost areas and nav links, debugger, small worlds, Fly To Location, stock Move To, behaviour nodes.](https://lcmnav3d.github.io/mass-entity-crowds.html)
+[REF**Reference**Settings, troubleshooting, flight locomotion, Mass traits, BT patterns and the full API reference.](https://lcmnav3d.github.io/api-reference.html)
+
+0Products
+
+0Assets
+
+0Fab ratings
+
+**4.5★**Avg Rating
+
+## Capabilities
+
+What UEDEV builds for Unreal teams — from navigation and AI down through the effects layer.
+
+01
+
+### Volumetric 3D Navigation
+
+LCM 3D Navigation AI — sparse voxel octree pathfinding with GPU voxelization, Mass crowds and true-3D tactical queries for flying and swimming agents.
+
+02
+
+### Game AI
+
+Behaviour trees, detour steering and decision systems that stay smooth as agent counts climb.
+
+03
+
+### Gameplay Systems
+
+Combat, physics and runtime ECS architectures written in C++ for shipping-grade performance.
+
+04
+
+### Real-time VFX
+
+Production-grade Niagara effects — explosions, beams, shields and environments — profiled to hold frame budget.
+
+05
+
+### Engine Tooling
+
+Editor plugins and pipeline tools that take the repetitive work out of your team's day.
+
+Best sellers
+
+## Top rated
+
+01
+
+Weapons · Niagara
+### Niagara Energy Beam Pack V2
+
+[View on Fab](https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296)
+
+$15.99 ★ 5.0 (6)
+
+02
+
+Combat · Niagara
+### Ultimate Explosion VFX
+
+[View on Fab](https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770)
+
+$14.99 ★ 5.0 (4)
+
+03
+
+Combat · Screen FX
+### Ultimate Scan & Screen Effects
+
+[View on Fab](https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5)
+
+$12.99 ★ 4.8 (4)
+
+The VFX library
+
+## Real-time VFX
+
+Production-grade Niagara built the same way as the plugins — profiled, documented and shipped in real games. Explosions, energy beams, muzzle flashes, shields, portals and full environmental systems.
+
+21Products
+
+**150+**Effects
+
+47Fab ratings
+
+**4.5★**Average rating
+
+Browse the full library
+
+The Full Library
+
+## Every asset pack
+
+21 products · 150+ assets — from C++ plugins to advanced Niagara VFX. Filter by category and open any pack on Fab, or see them all on the Niagara VFX packs page.
+
+Plugins
+Explore the plugin →
+
+### LCM 3D Navigation AI
+
+From $199.99★★★★★5.0 (3)
+[Weapon VFXView on Fab ↗
+### Niagara Energy Beam Pack V2
+From $15.99★★★★★5.0 (6)](https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296)
+[Combat VFXView on Fab ↗
+### Ultimate Explosion VFX
+From $14.99★★★★★5.0 (4)](https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770)
+[Combat VFXView on Fab ↗
+### Ultimate Scan & Screen Effects
+From $12.99★★★★★4.8 (4)](https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5)
+[Weapon VFXView on Fab ↗
+### Niagara Laser Beam Weapon V3
+From $18.99★★★★★5.0 (2)](https://www.fab.com/listings/b776d3d2-5d87-4f8b-8466-d7bbb17ab2a4)
+[Combat VFXView on Fab ↗
+### Ultimate Action Niagara VFX
+From $12.99New](https://www.fab.com/listings/849e3115-2efd-4f23-99ca-29415e319587)
+[Character VFXView on Fab ↗
+### Ultimate Character VFX V2
+From $14.99New](https://www.fab.com/listings/63810c36-b2f9-4401-8554-c0db33e0db18)
+[Character VFXView on Fab ↗
+### Ultimate Character VFX
+From $14.99★★★★☆4.4 (5)](https://www.fab.com/listings/0c1216fb-ddca-4351-9571-a199b158b420)
+[Weapon VFXView on Fab ↗
+### Niagara Weapon Muzzle Flash
+From $9.99New](https://www.fab.com/listings/314ebc33-5fdf-4420-824a-bc6f4f6a0595)
+[Environmental VFXView on Fab ↗
+### Ultimate Niagara Environmental VFX V2
+From $19.99★★★★☆4.0 (3)](https://www.fab.com/listings/6db5d306-e208-41c4-9221-f074cf7b2d3b)
+[Environmental VFXView on Fab ↗
+### Ultimate Niagara Environmental VFX
+From $17.99★★★★☆4.2 (5)](https://www.fab.com/listings/e25c0150-ec47-4e9f-a818-8aa9f501c481)
+[Environmental VFXView on Fab ↗
+### Niagara Tornado VFX
+From $8.99★★★★★5.0 (1)](https://www.fab.com/listings/5df56d5e-cccd-4c1c-b907-0e7007d227f8)
+[Environmental VFXView on Fab ↗
+### Portal Pack
+From $9.99★★★★★4.5 (2)](https://www.fab.com/listings/089ec99b-9fbb-406c-8442-7912a39553fc)
+[Combat VFXView on Fab ↗
+### Advanced Niagara Slash & Trail VFX
+From $9.99★★★★★5.0 (1)](https://www.fab.com/listings/c1bdd925-e4a6-4eae-a6a7-a39abec1ecbb)
+[Combat VFXView on Fab ↗
+### Advanced Niagara Projectiles VFX
+From $9.99★★★☆☆3.0 (1)](https://www.fab.com/listings/6fa94df2-a5df-44a4-89a6-714189c67a38)
+[Combat VFXView on Fab ↗
+### Advanced Shield VFX V2
+From $12.99★★★★☆4.0 (4)](https://www.fab.com/listings/38d01588-777f-4074-b915-4badc5276e76)
+[Combat VFXView on Fab ↗
+### Shield Pack
+From $9.99New](https://www.fab.com/listings/0a07e5c6-1cde-429b-987e-bd79d2d68d76)
+[BundlesView on Fab ↗
+### Essential Niagara VFX Pack
+From $15.99★★★★☆3.8 (5)](https://www.fab.com/listings/843f3b56-092f-444c-a200-599cf0692c9d)
+[BundlesView on Fab ↗
+### Advanced Niagara Essential VFX Vol:01
+From $9.99New](https://www.fab.com/listings/9fed3f1c-27b1-4371-8ca4-77df38f2b978)
+[BundlesView on Fab ↗
+### Niagara Essential VFX Vol:02
+From $9.99★★★★☆4.0 (1)](https://www.fab.com/listings/bef35a22-b411-45d6-aad8-360c6d422d51)
+[PluginsView on Fab ↗
+### AnyDetourComponent Plugin
+From $4.99New](https://www.fab.com/listings/ba4574f2-4549-41a5-99ff-79cb28a8d1cb)
+
+[See everything on Fab ↗](https://www.fab.com/sellers/UEDEV)
+
+Documentation & Support
+
+## Everything you need to integrate
+
+Guides, video tutorials and direct support to get any pack running in your project fast.
+
+[▶
+
+### Video Tutorials
+Step-by-step setup and showcase videos for the VFX packs on the UEDEV YouTube channel.Watch on YouTube ↗](https://www.youtube.com/@experimentdev3935)
+[📘
+
+### Product Documentation
+Each listing ships with written docs covering install, parameters and example usage. Find them on every product page.Open product docs ↗](https://www.fab.com/sellers/UEDEV)
+
+🚀
+
+### Quick Start
+
+New to Niagara? Drop the system into your level, assign a spawn point, and tune the exposed parameters — that's it.How it works →
+
+💬
+
+### Get Support
+
+Hit a snag or need a custom effect? Reach out directly and get help from the developer behind the packs.Contact support →
+
+The Developer
+
+## Need something custom built?
+
+**L. Charitha Madhushanka**Senior Game Developer · Unreal & Unity
+
+UEDEV is the Unreal engineering label of L. Charitha Madhushanka — a senior gameplay engineer shipping commercial games, VR/AR, high-performance C++ plugins and engine tools. For studio work, contract jobs, or a bespoke plugin or system, head to the full developer portfolio.
+
+View Developer Portfolio →
+Contact / Hire
+
+- 01**22 projects launched** across Unreal & Unity — 4 Steam titles, 10 VR and 6 AR builds.
+
+- 02**MSc in Computer Games** (Distinction, University of Essex) — Game AI, physics & VFX.
+
+- 03**Senior Gameplay Engineer** — currently at Ripstone Games on an unannounced PlayStation title.
+
+- 04**Marketplace publisher since 2021** — the systems behind these packs come from real shipped games.
+
+## Power up your game withUEDEV systems.
+
+High-performance plugins, gameplay systems and advanced VFX, ready to drop into Unreal Engine today.
+
+[Browse the Store on Fab ↗](https://www.fab.com/sellers/UEDEV)
+Meet the Developer →
+
+**U**UE**DEV**
+
+High-performance plugins, gameplay systems & advanced VFX for Unreal Engine. Built and supported by a working game developer.
+
+Store
+[Browse on Fab](https://www.fab.com/sellers/UEDEV)
+3D Pathfinding for UE5
+Niagara VFX packs
+Flying & drone AI
+Best Sellers
+Full Library
+
+Support
+[Video Tutorials](https://www.youtube.com/@experimentdev3935)
+[Documentation](https://lcmnav3d.github.io/)
+Contact
+
+Developer
+Portfolio
+Projects
+Playground
+
+© 2018–2026 UEDEV · L. Charitha Madhushanka
+For AI agents: llms.txt · facts.json · sitemap
+
+---
+
+URL: https://uedevlabs.github.io/unreal-engine-flying-ai/
+Title: Drone & Flying AI for UE5 — LCM 3D Navigation AI
+Description: Flying AI and drone AI for Unreal Engine 5: true 3D routes, 6-DOF flight, landing on moving decks, perching birds and combat drones that hunt and engage.
+
+UEDEV / 3D Navigation AI / Flying AI · Updated 24 October 2026
+
+**v3.6.0** Use case · Flying AI
+
+# Flying AI and drones for Unreal Engine 5
+
+Drones that bank into their turns, land on a rolling ship's deck and hunt through city streets — and birds that glide in to perch on a cliff ledge. LCM 3D Navigation AI gives every flying agent a real route through the air, a 6-DOF body that flies it, and a library of ready-made behaviours, from one hero drone to a Mass Entity flock.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+See the demo levels
+How it works
+
+- [★★★★★ **5.0 on Fab** · 3 ratings](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
+
+- LCM 3D Navigation AI
+
+- Unreal Engine 5.2–5.8
+
+- 4 — Flight archetypes
+
+- 85 — BT, StateTree & Mass nodes
+
+- 10,000+ — Mass Entity agents
+
+- 5.2–5.8 — Unreal Engine
+
+_Drones and their planned routes over a streamed city_
+
+01 · Routes
+
+## A route through the air, not along a floor
+
+Unreal's Recast navmesh describes where a character can stand. A drone needs to know where there is empty air, so LCM 3D Navigation AI carves the level into a Sparse Voxel Octree of navigable volume and plans through it in full 3D — up, down and diagonally through shafts, under bridges and between towers.
+
+Theta* and Lazy Theta* give any-angle routes that cut the corners a grid would force, and every smoothed path is checked against the level's geometry, so a drone never cuts through a wall to reach its goal.
+
+_A multirotor drone over the harbour quay_
+
+02 · Flight
+
+## A body that flies like the real thing
+
+Navigation gives guidance; `LcmFlightMovementComponent` turns it into flight. Four archetypes each bank, climb, glide and stop differently: **Multirotor drone** (tilt-to-translate), **Jet / Fixed-Wing**, **Bird** (flap-glide) and **Fish**. Thrust, lift, drag and an attitude PID drive the body, with inertia, turn-rate limits and arrival deceleration, and an animation-drive struct feeds your blendspaces.
+
+Flight follows the level's gravity (World Settings or a Physics Volume), and Max Pitch, Flare Pitch and Leg Friction are set per bird in its Flight Config.
+
+_Gulls sweep in and one settles on the sea stack_
+
+03 · Take off, land, perch
+
+## Landing — even on a moving deck
+
+The **Land** task finds its own landing point and flies the approach relative to the deck, so a courier drone can put down on a moving, rolling ship or a moving lorry and take off again with the deck's velocity. Drones descend vertically; birds glide in with a braking flare. EQS generators and tests find landing sites for flying agents.
+
+**Perch** lands on tagged ledges and pads, and agents in a crowd share the work: no two take the same perch. Since 3.6 drones no longer bob over a perch or a landing pad, and gliding birds land from where they are.
+
+_Hunter drones weave between container stacks_
+
+04 · Combat AI
+
+## Drones that hunt, engage and search
+
+**Engage Target** finds a firing position, keeps line of sight and fires only on a clean shot. In 3.6 it holds that position until the target leaves it, flies to it in formation and leads a crossing target. **Investigate** searches around a last-known position, hunters remember what they lose sight of, **Flee** breaks line of sight and hides, and **Scan Area** sweeps a volume.
+
+Sentries can see only through Unreal's AI Perception sight cones, and Engage can take its sightings from AI Perception.
+
+_The Fly To Location node in the Feature Examples hall_
+
+05 · Authoring
+
+## Behaviour Tree, StateTree — or one Blueprint node
+
+Author the same flight in the system your team already uses: 21 Behaviour Tree tasks, 5 decorators and 5 services; 25 StateTree tasks, 8 conditions and 8 evaluators at full parity; or Mass StateTree for crowds. For the simplest case, the `Fly To Location` latent node flies any pawn to a point or an actor with no Behaviour Tree, StateTree or AI Controller, and Unreal's own Move To and EQS can plan through the octree too.
+
+Free demo levels
+
+## See it in the demo levels
+
+These levels are part of the 57 free demo levels you download from inside the editor (LCM Nav3D menu › Get the Demo Levels).
+
+### Harbour
+
+A courier drone lands on a moving, rolling ship and a moving lorry.
+
+- Land
+- Take Off
+- BT · StateTree
+
+### Hunter Drone
+
+A gunner drone hunts a runner through the streets; Hunter Pack in Mass.
+
+- Engage Target
+- BT · ST · Mass
+
+### Sentry Drones
+
+Sentries see only through AI Perception, take EQS firing positions and land.
+
+- AI Perception
+- BT · ST · Mass
+
+### Warehouse
+
+A security drone perches, sweeps the hall, engages a thief and searches.
+
+- Perch
+- Investigate
+- BT · ST · Mass
+
+### Sea Cliffs
+
+A colony of 6-DOF gulls perch, ride an updraft and scatter.
+
+- Perch
+- Orbit
+- BT · StateTree
+
+### City
+
+Streamed open world with rooftop gaps and street canyons.
+
+- Open world
+- BT · ST · Mass
+
+FAQ
+
+## Common questions
+
+### How do I make a drone fly to a location in Unreal Engine 5?
+
+Place one LcmNavigationManagerSVO in the level so it builds the navigation octree, add LcmFlightMovementComponent to the drone pawn with the Multirotor archetype, then use the Fly To task in a Behaviour Tree or StateTree. For a one-off move, the Fly To Location Blueprint node flies the pawn with no AI Controller at all.
+
+### Can a drone land on a moving ship or vehicle?
+
+Yes. The Land task finds its own landing point and flies the approach relative to the deck, so a drone can land on a moving, rolling ship or a moving lorry and take off again with the deck's velocity. The Harbour demo shows both.
+
+### Which flight models are included?
+
+Four 6-DOF archetypes: Multirotor drone (tilt-to-translate), Jet / Fixed-Wing, Bird (flap-glide) and Fish (undulatory), each with its own banking, climb and turn character and tuned per agent.
+
+### Can flying AI and ground AI share a level?
+
+Yes. Run hybrid levels where walking agents use Unreal's Recast navmesh and flying agents use the volumetric octree; the Crowd Avoidance Bridge lets Detour steer Recast agents around flying pawns.
+
+Read more in the free documentation:
+
+- [Your first flying agent ↗](https://lcmnav3d.github.io/your-first-flying-agent.html)
+
+- [Flight and locomotion ↗](https://lcmnav3d.github.io/flight-locomotion.html)
+
+- [Fly To Location node ↗](https://lcmnav3d.github.io/fly-to-location.html)
+
+- [AI perception ↗](https://lcmnav3d.github.io/ai-perception.html)
+
+- [Tactical EQS ↗](https://lcmnav3d.github.io/tactical-eqs.html)
+
+More use cases
+
+## What else it can fly
+
+**Moving obstacle avoidance for Unreal Engine 5 AI**Moving obstacle avoidance for Unreal Engine 5 AI.
+
+**Space combat and dogfight AI for Unreal Engine 5**Space combat and dogfight AI for Unreal Engine 5.
+
+**Mass Entity flying crowds for Unreal Engine 5**3D Mass Entity crowds for Unreal Engine 5.
+
+---
+
+URL: https://uedevlabs.github.io/unreal-engine-underwater-ai/
+Title: Fish & Underwater AI for UE5 — LCM 3D Navigation AI
+Description: Underwater and fish AI for Unreal Engine 5: schooling, true 3D swim navigation through the whole water column, Mass Entity schools and 1 cm aquariums.
+
+UEDEV / 3D Navigation AI / Underwater · Updated 24 October 2026
+
+**v3.6.0** Use case · Underwater AI
+
+# Underwater and fish AI for Unreal Engine 5
+
+Schools that hold their depth, part round a predator and turn off the glass before they reach it; an ROV that surveys a reef; turtles that settle on the seabed. Swimming agents use the whole water column on true 3D routes — from an open reef to a 120 cm aquarium navigated at 1 cm.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+See the demo levels
+How it works
+
+- [★★★★★ **5.0 on Fab** · 3 ratings](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
+
+- LCM 3D Navigation AI
+
+- Unreal Engine 5.2–5.8
+
+- 0.5cm — Smallest voxel
+
+- 1cm — Fish Tank demo voxels
+
+- 10,000+ — Mass Entity agents
+
+- 3.6 — New swim model
+
+_Fish over the coral in the Coral Reef demo_
+
+01 · Volume
+
+## The whole water column
+
+A navmesh with a depth offset is a floor plan. LCM 3D Navigation AI routes swimming agents through the full volume — over reefs, under structures and through arches — on genuine 3D paths. Fish inside a Water Volume never swim out of it, and since 3.6 water volumes and overlap-only triggers no longer read as solid to the agents' own checks, so fish find cover and turtles find the seabed.
+
+_Angelfish above the reef_
+
+02 · New in 3.6
+
+## Fish that swim like fish
+
+Fish keep their depth by pointing the nose instead of sliding up and down, swim upright, school side by side and in layers, and turn away from walls at once. The tail beats with the swimming speed (Tail Beat From Speed in the Flight Config) and a skeletal fish's swim animation plays at the same rate.
+
+A fish slows down so its turning circle fits the way onto its target instead of circling it, and keeps its personal space even with schooling off. Its body size is measured from its meshes.
+
+_A Mass school turning together over the reef_
+
+03 · Schooling
+
+## Schooling, for one pawn or a Mass crowd
+
+Turn on Schooling on a Mass crowd or on a pawn's Flight Movement component and it steers as a school: personal space, collision anticipation, heading matching, and turning away from rocks and glass before reaching them. A few informed fish lead the rest, a predator sets off a fountain escape that spreads through the school, and fish swim in bursts and glides. Distances are in body lengths, so it works at any scale.
+
+_The 1 cm fish tank, captured in real time_
+
+04 · Small worlds
+
+## An aquarium at 1 cm
+
+Voxels go down to 0.5 cm, and a World Scale profile handles centimetre-scale worlds. The Fish Tank demo navigates a 120 cm aquarium at 1 cm: 8 cm fish through a rock arch and round a predator's lair, in Behaviour Tree, StateTree and Mass editions.
+
+_8 cm fish at small-world scale_
+
+05 · Behaviours
+
+## Behaviours under water
+
+The same behaviour library works for swimmers. In the Coral Reef demo an ROV surveys the reef with **Scan Area**, the school darts into the coral out of its sight with **Flee**, groupers turn to watch it with **Look At**, and turtles settle on the seabed with **Perch**.
+
+Free demo levels
+
+## See it in the demo levels
+
+These levels are part of the 57 free demo levels you download from inside the editor (LCM Nav3D menu › Get the Demo Levels).
+
+### Coral Reef
+
+An ROV surveys a reef; the school hides in the coral; turtles settle on the seabed.
+
+- Scan Area
+- Flee
+- BT · StateTree
+
+### Reef School
+
+A Mass school of forty follows its lead fish round the reef on the flow field.
+
+- Mass
+- Schooling
+
+### Fish Tank
+
+A 120 cm aquarium navigated at 1 cm, round a hunting predator.
+
+- 1 cm voxels
+- BT · ST · Mass
+
+FAQ
+
+## Common questions
+
+### How do I make fish AI swim in Unreal Engine 5?
+
+Add LcmFlightMovementComponent to the fish pawn with the Fish archetype, place an LcmNavigationManagerSVO so the water volume is navigable in 3D, and drive it with the Fly To task in a Behaviour Tree or StateTree, or with a Mass trait for a school.
+
+### Does it support fish schooling?
+
+Yes, for single pawns and for Mass Entity crowds: personal space, collision anticipation, heading matching, informed leaders, predator escape and burst-and-glide swimming, with distances in body lengths.
+
+### Can it navigate a small aquarium?
+
+Yes. Voxels go down to 0.5 cm and a World Scale profile handles centimetre-scale worlds; the Fish Tank demo navigates a 120 cm aquarium at 1 cm.
+
+### Do fish stay inside a Water Volume?
+
+Yes. Fish inside a Water Volume never swim out of it, and water volumes and overlap-only triggers are not treated as walls by the agents' own checks.
+
+Read more in the free documentation:
+
+- [Small worlds ↗](https://lcmnav3d.github.io/small-worlds.html)
+
+- [Flight and locomotion ↗](https://lcmnav3d.github.io/flight-locomotion.html)
+
+- [Mass Entity crowds ↗](https://lcmnav3d.github.io/mass-entity-crowds.html)
+
+More use cases
+
+## What else it can fly
+
+**Mass Entity flying crowds for Unreal Engine 5**3D Mass Entity crowds for Unreal Engine 5.
+
+**Flying AI and drones for Unreal Engine 5**Flying AI and drone AI for Unreal Engine 5.
+
+**Open-world 3D navigation for Unreal Engine 5**Open-world 3D navigation for Unreal Engine 5.
+
+---
+
+URL: https://uedevlabs.github.io/unreal-engine-space-combat-ai/
+Title: Space Combat & Dogfight AI for UE5 — LCM 3D Navigation AI
+Description: Space combat and dogfight AI for Unreal Engine 5: 6-DOF fighters that chase, lead and re-plan through streamed asteroid belts, and Mass Entity raider swarms.
+
+UEDEV / 3D Navigation AI / Space · Updated 24 October 2026
+
+**v3.6.0** Use case · Space combat
+
+# Space combat and dogfight AI for Unreal Engine 5
+
+No floor, no up, no walls. Fighters chase a target through a streamed asteroid belt, lead it with fire and re-plan through the octree as it breaks — while a Mass raider swarm closes round whatever it sees.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+See the demo levels
+How it works
+
+- [★★★★★ **5.0 on Fab** · 3 ratings](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
+
+- LCM 3D Navigation AI
+
+- Unreal Engine 5.2–5.8
+
+- 6-DOF — Full pitch and roll
+
+- 18 — Raiders in the Mass swarm
+
+- ∞ — Streamed asteroid belt
+
+- 85 — AI nodes
+
+_A fleet through the Deep Space asteroid field_
+
+01 · Free-floating
+
+## Navigation with nothing to stand on
+
+A surface navmesh has nothing to project onto in space. The octree treats a debris field, an asteroid belt or a station interior as ordinary navigable volume, so routes go over, under and between rocks in any direction. Flight takes its gravity from the level (World Settings or a Physics Volume) instead of a fixed value.
+
+_A fighter leads its target between asteroids_
+
+02 · Chase
+
+## Chase, intercept, re-plan
+
+In the Space Dogfight demo, Fly To in chase mode follows a target that breaks, jinks behind rocks and turns back for head-on passes, re-planning through the octree as it moves while both squads trade fire. Engage Target leads a crossing target and holds a firing position until the target leaves it.
+
+_Pursuit past bright asteroids in a streamed level_
+
+03 · Streaming
+
+## A belt with no edge
+
+The asteroid belt is an infinite world: navigation chunks stream in around the fighters and are discarded behind them, so memory stays flat however far the fight drifts. Long routes solve coarsely across chunks and finely within the current one.
+
+_Starfighters trading laser fire_
+
+04 · Swarms
+
+## Raider swarms on Mass Entity
+
+The Raider Swarm demo runs a Mass swarm of eighteen raiders that sweeps the belt and closes round any fighter it sees, sharing the positions round it, while six fighters hunt them one by one with Fly To in chase mode. Fighters use the Jet / Fixed-Wing archetype: a thrust body with banking, inertia and turn-rate limits.
+
+Free demo levels
+
+## See it in the demo levels
+
+These levels are part of the 57 free demo levels you download from inside the editor (LCM Nav3D menu › Get the Demo Levels).
+
+### Space Dogfight
+
+Fighters hunt raiders through a streamed asteroid belt.
+
+- Fly To chase
+- BT · StateTree
+
+### Raider Swarm
+
+A Mass swarm of eighteen raiders against six hunting fighters.
+
+- Mass StateTree
+- Engage
+
+### Deep Space
+
+A drifting asteroid field streamed around the fleet.
+
+- Open world
+- BT · ST · Mass
+
+FAQ
+
+## Common questions
+
+### How do I make spaceship AI in Unreal Engine 5?
+
+Place an LcmNavigationManagerSVO (in infinite mode for a large or unbounded space), give the ship LcmFlightMovementComponent with the Jet / Fixed-Wing archetype, and drive it with the Fly To task in a Behaviour Tree or StateTree; Fly To has a chase mode for moving targets.
+
+### Does it need a floor or gravity?
+
+No. The octree stores navigable volume in every direction, and flight takes its gravity from the level rather than a fixed value.
+
+### Can it handle an asteroid field that streams in?
+
+Yes. In infinite mode navigation chunks stream in around agents and unload behind them, and the Space Dogfight and Deep Space demos both run in streamed asteroid fields.
+
+Read more in the free documentation:
+
+- [Core concepts ↗](https://lcmnav3d.github.io/core-concepts.html)
+
+- [Flight and locomotion ↗](https://lcmnav3d.github.io/flight-locomotion.html)
+
+- [Mass Entity crowds ↗](https://lcmnav3d.github.io/mass-entity-crowds.html)
+
+More use cases
+
+## What else it can fly
+
+**Open-world 3D navigation for Unreal Engine 5**Open-world 3D navigation for Unreal Engine 5.
+
+**Flying AI and drones for Unreal Engine 5**Flying AI and drone AI for Unreal Engine 5.
+
+**Mass Entity flying crowds for Unreal Engine 5**3D Mass Entity crowds for Unreal Engine 5.
+
+---
+
+URL: https://uedevlabs.github.io/unreal-engine-open-world-navigation/
+Title: Open-World 3D Navigation for UE5 — LCM 3D Navigation AI
+Description: Open-world 3D navigation for Unreal Engine 5: chunks stream around your agents with no bounds volume, a long-range graph, pre-baked chunks and GPU builds.
+
+UEDEV / 3D Navigation AI / Open worlds · Updated 24 October 2026
+
+**v3.6.0** Use case · Open worlds
+
+# Open-world 3D navigation for Unreal Engine 5
+
+Most volumetric navigation starts by asking for a bounds volume, and navigation simply ends at its edge. Infinite mode removes the box: navigation streams in around your agents and is discarded behind them, so memory stays flat however far the map runs.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+See the demo levels
+How it works
+
+- [★★★★★ **5.0 on Fab** · 3 ratings](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
+
+- LCM 3D Navigation AI
+
+- Unreal Engine 5.2–5.8
+
+- 0 — Bounds volumes needed
+
+- GPU — Built chunk octrees
+
+- 3 — Streamed demo worlds
+
+- 5.2–5.8 — Unreal Engine
+
+_The streamed octree and routes over the city, chunk by chunk_
+
+01 · Streaming
+
+## No bounds volume, no edge
+
+A bounds volume has to contain everywhere an agent may ever fly, and memory scales with that box whether or not anything is happening inside it. In infinite mode, navigation chunks are generated around the agents as they travel and discarded behind them — the same reason you stream level geometry rather than loading a continent.
+
+For an arena or a level-sized map, finite mode builds once at `BeginPlay` or bakes to an asset, with the lowest overhead.
+
+_Drones on long routes across the city_
+
+02 · Long routes
+
+## Planning beyond what has loaded
+
+Long routes use macro/micro routing: the path solves coarsely across chunks and finely within the chunk the agent is in, so a cross-map flight never pays full-resolution search cost end to end. A persistent long-range graph keeps planning through geometry that has not streamed in yet.
+
+`Find Path Detailed` tells a complete route from one that stops short of the goal in a streamed world, and the query option Require Complete Path makes a partial route fail instead.
+
+_Routes over the forest canopy to the rocky massif_
+
+03 · Bake or stream
+
+## Pre-baked where you want it, streamed everywhere else
+
+Bake the authored parts of a world ahead of time and stream the rest: streamed worlds can use pre-baked chunks, and navigation rebuilds automatically when levels stream in. Moving obstacles are cheap in streamed worlds too.
+
+_Cost areas priced across streamed chunk seams_
+
+04 · GPU-built
+
+## Chunks built on the GPU — and checked
+
+Each streamed chunk's voxels, octree and links are built on the GPU on D3D12, D3D11 and Vulkan. Each machine's GPU proves its voxels before it builds navigation, and the GPU build checks its own output word by word and rebuilds what it cannot repair. Cost areas — storms, no-fly zones, toll gates — are priced across chunk seams.
+
+Free demo levels
+
+## See it in the demo levels
+
+These levels are part of the 57 free demo levels you download from inside the editor (LCM Nav3D menu › Get the Demo Levels).
+
+### City
+
+Dense blocks, rooftop gaps and street canyons, streamed around the agents.
+
+- BT · ST · Mass
+
+### Forest
+
+Canopy, clearings and a rocky massif with tunnels bored through it.
+
+- BT · ST · Mass
+
+### Deep Space
+
+A drifting asteroid field: no floor, no up, no walls.
+
+- BT · ST · Mass
+
+FAQ
+
+## Common questions
+
+### Does it work with World Partition and open worlds?
+
+Yes. In infinite mode navigation chunks stream in around agents and unload behind them, so 3D pathfinding keeps working across an open-world or World Partition project rather than only inside a hand-placed box.
+
+### What happens when a route reaches past the loaded area?
+
+A persistent long-range graph keeps planning beyond loaded geometry, and Find Path Detailed reports whether a route is complete or stops short of the goal; Require Complete Path makes a partial route fail instead.
+
+### Can I pre-bake parts of an open world?
+
+Yes. Finite levels can be baked to an asset, and streamed worlds can use pre-baked chunks alongside chunks generated at runtime.
+
+Read more in the free documentation:
+
+- [Core concepts ↗](https://lcmnav3d.github.io/core-concepts.html)
+
+- [Settings reference ↗](https://lcmnav3d.github.io/settings.html)
+
+- [Editor tools ↗](https://lcmnav3d.github.io/editor-tools.html)
+
+More use cases
+
+## What else it can fly
+
+**Space combat and dogfight AI for Unreal Engine 5**Space combat and dogfight AI for Unreal Engine 5.
+
+**Mass Entity flying crowds for Unreal Engine 5**3D Mass Entity crowds for Unreal Engine 5.
+
+**Flying AI and drones for Unreal Engine 5**Flying AI and drone AI for Unreal Engine 5.
+
+---
+
+URL: https://uedevlabs.github.io/unreal-engine-mass-entity-crowds/
+Title: Mass Entity Flying Crowds for UE5 — LCM 3D Navigation AI
+Description: 3D Mass Entity crowds for Unreal Engine 5: 10,000+ flying and swimming agents on per-agent paths or a shared flow field, with Mass StateTree behaviours.
+
+UEDEV / 3D Navigation AI / Crowds · Updated 24 October 2026
+
+**v3.6.0** Use case · Mass crowds
+
+# Mass Entity flying crowds for Unreal Engine 5
+
+Drone swarms, bird flocks and fish schools in true 3D through Unreal's Mass ECS — 10,000+ agents on per-agent paths or one shared flow field, with crowds that perch, scan, engage, investigate and flee.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+See the demo levels
+How it works
+
+- [★★★★★ **5.0 on Fab** · 3 ratings](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
+
+- LCM 3D Navigation AI
+
+- Unreal Engine 5.2–5.8
+
+- 10,000+ — Mass Entity agents
+
+- 8 — Mass traits
+
+- 13 — Mass StateTree nodes
+
+- O(1) — Flow-field sampling
+
+_One shared flow field carries the swarm over the skyline_
+
+01 · Two modes
+
+## Per-agent paths or one shared flow field
+
+Crowds heading the same way sample one shared CPU flow field in constant time, while the agents that matter get their own asynchronous paths. Auto-registered processors handle request, solve and steer, so you never call the solver yourself. A crowd's first flow field is built off the game thread, so a crowd spawning into a streamed world does not cost one long frame.
+
+_Close fly-through of the swarm_
+
+02 · Behaviours
+
+## Crowds that behave, not just move
+
+Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee. Agents in a crowd share the work: they sweep an area sharing the viewpoints, close round an intruder the moment any of them sees it, and no two take the same perch, cover or vantage point.
+
+_A school turning together without overlapping_
+
+03 · Density
+
+## Dense crowds that do not overlap
+
+Hold Avoidance Between Scans keeps separation on every frame, and Contact Push pushes apart bodies that overlap — including agents that have arrived — so a crowd no longer piles onto its goal. A crowd agent pushed off the flow field's covered space steers back instead of freezing, and schooling works for Mass crowds as well as pawns.
+
+_A swarm climbing through a tower interior_
+
+04 · Setup
+
+## One trait, no code
+
+Add a trait to a Mass Entity Config and the crowd navigates in full 3D, with no per-agent controller and no tick function. Eight traits cover movement, guidance, goals, perception, behaviour status and rendering, and an editor validator flags illegal combinations — the one rule is exactly one movement trait per agent. Crowds render through instanced meshes with LOD representation.
+
+Free demo levels
+
+## See it in the demo levels
+
+These levels are part of the 57 free demo levels you download from inside the editor (LCM Nav3D menu › Get the Demo Levels).
+
+### Hunter Pack
+
+Five Mass drones hunt as a pack through the container terminal.
+
+- Mass StateTree
+- Engage
+
+### Reef School
+
+A school of forty follows its lead fish on the flow field.
+
+- Schooling
+
+### Sentry Swarm
+
+Six Mass drones guard a depot as one, then rest on the pads.
+
+- Scan Area
+- Perch
+
+### Warehouse Security
+
+Four Mass security drones watch, sweep, engage and search.
+
+- Investigate
+
+### Raider Swarm
+
+Eighteen raiders sweep the asteroid belt and close round fighters.
+
+- Engage
+
+### Vertical Skyscraper
+
+A crowd threading a tower interior, floor by floor.
+
+- Flow field
+
+FAQ
+
+## Common questions
+
+### How many agents can navigate in 3D through Mass Entity?
+
+10,000 or more. Crowds can use per-agent asynchronous paths or one shared flow field that the whole swarm samples in constant time, and they render through instanced meshes with LOD.
+
+### Do I need C++ to use Mass crowds?
+
+No. Add the traits to a Mass Entity Config; an editor validator flags illegal trait combinations, and Mass StateTree tasks drive the behaviour.
+
+### Can crowds use behaviours like perch and engage?
+
+Yes. Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee, and agents share viewpoints, perches and cover so no two take the same one.
+
+Read more in the free documentation:
+
+- [Mass Entity crowds ↗](https://lcmnav3d.github.io/mass-entity-crowds.html)
+
+- [Mass traits reference ↗](https://lcmnav3d.github.io/mass-traits.html)
+
+- [Gameplay Debugger ↗](https://lcmnav3d.github.io/gameplay-debugger.html)
+
+More use cases
+
+## What else it can fly
+
+**Underwater and fish AI for Unreal Engine 5**Underwater and fish AI for Unreal Engine 5.
+
+**Flying AI and drones for Unreal Engine 5**Flying AI and drone AI for Unreal Engine 5.
+
+**Space combat and dogfight AI for Unreal Engine 5**Space combat and dogfight AI for Unreal Engine 5.
+
+---
+
+URL: https://uedevlabs.github.io/unreal-engine-moving-obstacle-avoidance/
+Title: Moving Obstacle Avoidance for UE5 AI — LCM 3D Navigation AI
+Description: Moving obstacle avoidance for Unreal Engine 5 AI: Fly To predicts gates, pistons and sweepers and times its pass, and moving geometry restamps the octree.
+
+UEDEV / 3D Navigation AI / Moving obstacles · Updated 24 October 2026
+
+**v3.6.0** Use case · New in 3.6
+
+# Moving obstacle avoidance for Unreal Engine 5 AI
+
+Re-planning around a door after it closes is too late for a drone at speed. Since 3.6, Fly To predicts where every moving obstacle will be and times its pass — and the octree still restamps itself as the world moves, so routes stay true.
+
+[Get it on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+See the demo levels
+How it works
+
+- [★★★★★ **5.0 on Fab** · 3 ratings](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews)
+
+- LCM 3D Navigation AI
+
+- Unreal Engine 5.2–5.8
+
+- 42 — Movers in the Gauntlet
+
+- 370m — Gauntlet hall
+
+- 200 — Agent Mass edition
+
+- 3 — Prediction settings
+
+_A drone waits for the gate it predicted, then takes the gap_
+
+01 · Prediction
+
+## Predict, don't just react
+
+Fly To predicts where every moving obstacle — any actor with an LCM Dynamic Obstacle component — will be, and times its pass. It learns a gate's or a piston's cycle and replays it, turns a spinning blade with it, eases off, waits for a gap or takes a detour, and dodges what it cannot outrun.
+
+It is on by default in the Behaviour Tree and StateTree Fly To, controlled by three settings: **Avoid Moving Obstacles**, **Moving Obstacle Look-Ahead** and **Moving Obstacle Margin**.
+
+_Land on a moving platform in the Feature Examples hall_
+
+02 · Live octree
+
+## The octree moves with the world
+
+Moving geometry writes its own footprint back into the octree as it travels, so doors, lifts, moving platforms, destructible cover and patrolling ships change routing live — and in multiplayer the change is multicast to every peer. A mover put back to the start of its track is treated as a jump, not a very fast move, so the space it left is freed.
+
+In streamed worlds a moving obstacle's update next to a 168k-triangle room costs about 1 ms, down from 20 ms.
+
+_Agents keeping apart in a dense swarm_
+
+03 · Each other
+
+## Avoiding each other, too
+
+Agents avoid each other with Reactive (boids), Predictive (ORCA) or Context-Based Steering, chosen per agent. Fly To's wall-avoidance whiskers ignore other agents and leave them to agent avoidance, and Mass crowds keep apart with Hold Avoidance and Contact Push.
+
+New demo · 3.6
+
+## The Obstacle Gauntlet
+
+A 370 m hall of six zones with 42 movers driven by Unreal's own movement components. Twelve drones fly it end to end in the Behaviour Tree and StateTree editions; a crowd of 200 follows a beacon through it in the Mass edition. Open it from the demo menu.
+
+- **ZONE 01**Fast gates
+
+- **ZONE 02**Crossing traffic
+
+- **ZONE 03**Windmills and sweepers
+
+- **ZONE 04**Pistons
+
+- **ZONE 05**Head-on blocks
+
+- **ZONE 06**Bouncers
+
+Free demo levels
+
+## See it in the demo levels
+
+These levels are part of the 57 free demo levels you download from inside the editor (LCM Nav3D menu › Get the Demo Levels).
+
+### Dynamic Obstacles
+
+Moving gates seal and open corridors while agents re-route live; 200 flow-field agents in Mass.
+
+- BT · ST · Mass
+
+### Harbour
+
+Landing on a moving, rolling ship and a moving lorry.
+
+- Land
+- BT · StateTree
+
+### Hunter Drone
+
+A hunter re-plans round container stacks as its target runs.
+
+- Engage
+- BT · ST · Mass
+
+FAQ
+
+## Common questions
+
+### How do AI agents avoid moving obstacles in Unreal Engine 5?
+
+Give the moving actor an LCM Dynamic Obstacle component. Its footprint restamps the navigation octree as it moves, and since 3.6 the Fly To task predicts its motion and times its pass — waiting for a gap, taking a detour or dodging.
+
+### Does it work with doors, lifts and moving platforms?
+
+Yes. Any moving actor with a Dynamic Obstacle component updates the octree live, agents re-route around it, and the change replicates to clients in multiplayer.
+
+### Which settings control moving-obstacle prediction?
+
+Avoid Moving Obstacles turns it on (it is on by default), Moving Obstacle Look-Ahead sets how far ahead Fly To predicts, and Moving Obstacle Margin sets the clearance it keeps.
+
+Read more in the free documentation:
+
+- [Dynamic obstacles ↗](https://lcmnav3d.github.io/dynamic-obstacles.html)
+
+- [Settings reference ↗](https://lcmnav3d.github.io/settings.html)
+
+- [Troubleshooting ↗](https://lcmnav3d.github.io/troubleshooting.html)
+
+More use cases
+
+## What else it can fly
+
+**Flying AI and drones for Unreal Engine 5**Flying AI and drone AI for Unreal Engine 5.
+
+**Mass Entity flying crowds for Unreal Engine 5**3D Mass Entity crowds for Unreal Engine 5.
+
+**Open-world 3D navigation for Unreal Engine 5**Open-world 3D navigation for Unreal Engine 5.
+
+---
+
+URL: https://uedevlabs.github.io/unreal-engine-niagara-vfx/
+Title: Niagara VFX Packs for Unreal Engine — UEDEV
+Description: 19 Niagara VFX packs and plugins for Unreal Engine by UEDEV: weapon beams, explosions, shields, environmental and character effects, plus LCM 3D Navigation AI.
+
+UEDEV / Niagara VFX packs · Prices checked 24 October 2026
+The UEDEV store on Fab
+
+# Niagara VFX packs for Unreal Engine
+
+Production-grade Niagara effects built the same way as the plugins — profiled, documented and shipped in real games. Weapon beams, explosions, shields, portals, environmental systems and character overlays, alongside the C++ plugins.
+
+[Browse the store on Fab ↗](https://www.fab.com/sellers/UEDEV)
+Jump to the packs
+
+- 21 — Products on Fab
+
+- 19 — Niagara VFX packs
+
+- 47 — Ratings on Fab
+
+- 4.5★ — Average rating
+
+Flagship plugin · v3.6.0
+
+## LCM 3D Navigation AI
+
+True 3D pathfinding and volumetric navigation for Unreal Engine 5: flying, swimming and free-floating AI, 85 Behaviour Tree, StateTree and Mass nodes, 10,000+ agent crowds and infinite streaming worlds. ★★★★★ 5.0 on Fab.
+
+Explore the plugin
+[View on Fab ↗](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73)
+
+Weapon VFX
+
+## Weapon VFX for Unreal Engine
+
+Energy beams, laser beam weapons and muzzle flashes built in Niagara.
+
+[Weapon VFXView on Fab ↗
+### Niagara Energy Beam Pack V2
+From $15.99★★★★★5.0 (6)](https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296)
+[Weapon VFXView on Fab ↗
+### Niagara Laser Beam Weapon V3
+From $18.99★★★★★5.0 (2)](https://www.fab.com/listings/b776d3d2-5d87-4f8b-8466-d7bbb17ab2a4)
+[Weapon VFXView on Fab ↗
+### Niagara Weapon Muzzle Flash
+From $9.99New](https://www.fab.com/listings/314ebc33-5fdf-4420-824a-bc6f4f6a0595)
+
+Combat VFX
+
+## Combat VFX for Unreal Engine
+
+Explosions, slashes and trails, projectiles, shields, and scan and screen effects.
+
+[Combat VFXView on Fab ↗
+### Ultimate Explosion VFX
+From $14.99★★★★★5.0 (4)](https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770)
+[Combat VFXView on Fab ↗
+### Ultimate Scan & Screen Effects
+From $12.99★★★★★4.8 (4)](https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5)
+[Combat VFXView on Fab ↗
+### Ultimate Action Niagara VFX
+From $12.99New](https://www.fab.com/listings/849e3115-2efd-4f23-99ca-29415e319587)
+[Combat VFXView on Fab ↗
+### Advanced Niagara Slash & Trail VFX
+From $9.99★★★★★5.0 (1)](https://www.fab.com/listings/c1bdd925-e4a6-4eae-a6a7-a39abec1ecbb)
+[Combat VFXView on Fab ↗
+### Advanced Niagara Projectiles VFX
+From $9.99★★★☆☆3.0 (1)](https://www.fab.com/listings/6fa94df2-a5df-44a4-89a6-714189c67a38)
+[Combat VFXView on Fab ↗
+### Advanced Shield VFX V2
+From $12.99★★★★☆4.0 (4)](https://www.fab.com/listings/38d01588-777f-4074-b915-4badc5276e76)
+[Combat VFXView on Fab ↗
+### Shield Pack
+From $9.99New](https://www.fab.com/listings/0a07e5c6-1cde-429b-987e-bd79d2d68d76)
+
+Environmental VFX
+
+## Environmental VFX for Unreal Engine
+
+Environmental Niagara systems, a tornado and portals.
+
+[Environmental VFXView on Fab ↗
+### Ultimate Niagara Environmental VFX V2
+From $19.99★★★★☆4.0 (3)](https://www.fab.com/listings/6db5d306-e208-41c4-9221-f074cf7b2d3b)
+[Environmental VFXView on Fab ↗
+### Ultimate Niagara Environmental VFX
+From $17.99★★★★☆4.2 (5)](https://www.fab.com/listings/e25c0150-ec47-4e9f-a818-8aa9f501c481)
+[Environmental VFXView on Fab ↗
+### Niagara Tornado VFX
+From $8.99★★★★★5.0 (1)](https://www.fab.com/listings/5df56d5e-cccd-4c1c-b907-0e7007d227f8)
+[Environmental VFXView on Fab ↗
+### Portal Pack
+From $9.99★★★★★4.5 (2)](https://www.fab.com/listings/089ec99b-9fbb-406c-8442-7912a39553fc)
+
+Character VFX
+
+## Character VFX for Unreal Engine
+
+Advanced overlays and Niagara effects for characters.
+
+[Character VFXView on Fab ↗
+### Ultimate Character VFX V2
+From $14.99New](https://www.fab.com/listings/63810c36-b2f9-4401-8554-c0db33e0db18)
+[Character VFXView on Fab ↗
+### Ultimate Character VFX
+From $14.99★★★★☆4.4 (5)](https://www.fab.com/listings/0c1216fb-ddca-4351-9571-a199b158b420)
+
+Bundles
+
+## Bundles for Unreal Engine
+
+Essentials bundles: fire, impact, smoke, spark and explosion effects.
+
+[BundlesView on Fab ↗
+### Essential Niagara VFX Pack
+From $15.99★★★★☆3.8 (5)](https://www.fab.com/listings/843f3b56-092f-444c-a200-599cf0692c9d)
+[BundlesView on Fab ↗
+### Advanced Niagara Essential VFX Vol:01
+From $9.99New](https://www.fab.com/listings/9fed3f1c-27b1-4371-8ca4-77df38f2b978)
+[BundlesView on Fab ↗
+### Niagara Essential VFX Vol:02
+From $9.99★★★★☆4.0 (1)](https://www.fab.com/listings/bef35a22-b411-45d6-aad8-360c6d422d51)
+
+Plugins
+
+## Plugins for Unreal Engine
+
+C++ plugins for Unreal Engine.
+
+[PluginsView on Fab ↗
+### AnyDetourComponent Plugin
+From $4.99New](https://www.fab.com/listings/ba4574f2-4549-41a5-99ff-79cb28a8d1cb)
+
+Prices and ratings as listed on Fab on 24 October 2026. Fab shows the current price, any sale and the supported engine versions on each listing.
+
+---
+
+URL: https://uedevlabs.github.io/portfolio.html
+Title: L. Charitha Madhushanka — Senior Unreal Engine Developer
+Description: L. Charitha Madhushanka — Senior Game Developer and Unreal Engine C++ programmer. Gameplay systems, game AI, VR/AR and engine tooling across 22 shipped projects.
+
+L. Charitha Madhushanka — Senior Unreal Engine Developer
+
+-
+
+UE
+
+Loading**_**
+
+◄ UEDEV Store
+
+CHARITHA**.**DEV
+
+Initializing engine**_**
+
+★
+
+Achievement Unlocked
+Konami Master
+
+CHARITHA**.**DEV
+
+Work
+Studio
+Devlog
+Play
+Store
+
+Get in touch
+
+CHARITHA**.**DEV
+
+Work
+Studio
+Skills
+Devlog
+Play
+Experience
+Store
+
+Get in touch
+
+L. Charitha Madhushanka · Senior Game Developer
+
+# Code.Build.Ship.
+
+Gameplay systems, game AI and 3D navigation in Unreal & Unity — **22 launched projects**, 4 Steam titles, and tools other developers build on.
+
+View Projects
+
+MSc DistinctionUniversity of Essex
+
+0Projects Launched
+
+0Steam Games
+
+0VR / AR Builds
+
+0Marketplace Assets
+
+Unreal Engine 5UnityC++Game AINiagara VFXVirtual RealityAugmented RealityGameplay SystemsBlueprintsECS / DOTS
+Unreal Engine 5UnityC++Game AINiagara VFXVirtual RealityAugmented RealityGameplay SystemsBlueprintsECS / DOTS
+
+Game Dev Enthusiast
+
+01 About Me
+
+## Building worlds, one system at a time
+
+I'm **L. Charitha Madhushanka**, a Senior Game Developer with an **MSc in Computer Games (Distinction)** from the University of Essex. For over six years I've shipped commercial games, VR/AR experiences and engine tools — currently as Senior Gameplay Engineer at **Ripstone Games** on an unannounced PlayStation title.
+
+My focus is the craft behind play: combat and AI, physics-driven mechanics, crowd and pathfinding systems, runtime ECS and Niagara VFX. I also publish high-quality content to the Unreal marketplace — **11 products, 150+ assets** used by developers worldwide.
+
+### Unreal Engine
+
+4 commercially published games
+
+- 4+ virtual reality applications
+
+- 2+ augmented reality applications
+
+- Marketplace asset publishing
+
+### Unity Engine
+
+- 2 commercially published games
+
+- 5+ virtual reality applications
+
+- 4+ augmented reality applications
+
+- Interactive media & simulators
+
+[⤓ Download Resume](https://drive.google.com/file/d/1DY-A916ZtGkvCpUVTBej0ajIMbD1ZKTd/view?usp=sharing)
+Get in Touch
+
+02 Skills & Tools
+
+## Expertise in making games
+
+Game Development — Unreal Engine95%
+
+Game Development — Unity88%
+
+Game AI, 3D Navigation & Pathfinding90%
+
+Virtual Reality (Unreal / Unity)85%
+
+Augmented Reality (Unity)80%
+
+Niagara VFX & Tech Art82%
+
+### The toolbox I build with
+
+From low-level C++ gameplay code to designer-friendly Blueprints, ECS architectures and VFX — I work end-to-end across the stack.
+
+C++C#BlueprintsUnreal Engine 5UnityGame AIBehaviour Trees3D NavigationPathfindingNavMeshCrowd SimulationECS / DOTSNiagaraPhysicsMultiplayerVRARShadersGit / Perforce
+
+03 Selected Work
+
+## Recent projects
+
+Shipped titles and experiences across Unreal and Unity — PC games, VR experiences and marketplace work.
+
+Unreal Engine · Steam
+
+▶
+
+Action RPG · PC
+
+### Monsters Domain
+
+An evil first-person Action RPG built with a 3-person indie team. I led gameplay AI & combat over 1.5 years in Unreal Engine.
+
+[Steam ↗](https://store.steampowered.com/app/1442450/Monsters_Domain/)
+Watch Trailer ▶
+
+Unreal · Steam
+
+▶
+
+Third-Person Shooter
+
+### NERO
+
+Single-player action TPS developed over 2 years in Unreal Engine.
+
+[Steam ↗](https://store.steampowered.com/app/1448610/NERO/)
+
+Unreal Engine
+
+▶
+
+Historical Epic · PC
+
+### Kanchayudha
+
+One of Sri Lanka's biggest games — 1.6M reach, 25K downloads. Built with the Arimac team.
+
+Unity · VR
+
+▶
+
+Virtual Reality
+
+### Sigiriya VR
+
+A VR tour of Sri Lanka's ancient kingdom for HTC Vive.
+
+Unity
+
+▶
+
+Third-Person Action
+
+### Mithuraa
+
+Single-player indie action game built in Unity.
+
+Unity · Backend
+
+▶
+
+Simulation
+
+### Horse Betting System
+
+Realistic virtual horse racing with dynamic environments & runtime winner selection via API integration.
+
+Unreal · AI
+
+Racing · AI Agents
+
+### Race Against the Machine
+
+Drive a McLaren against a machine-learning-trained AI car agent.
+
+04 Showreel
+
+## See it in motion
+
+Gameplay captures from shipped and personal projects.
+
+▶
+Featured — Monsters Domain
+
+NERO — Gameplay PC
+
+Chess Infinity
+
+Rich Dad Simulator
+
+05 Devlog · Systems
+
+## Game AI & 3D navigation systems
+
+Engineering deep-dives into the systems I build in Unreal Engine — 3D navigation & pathfinding, crowd AI, runtime ECS and Niagara VFX. The code behind the games.
+
+AI · Pathfinding
+### Voxel 3D Pathfinding System
+
+Full 3D navigation through voxelized space for flying & climbing agents.
+
+AI · Crowds
+### Detour Crowd Avoidance
+
+Scalable crowd movement with smooth local avoidance between agents.
+
+Architecture
+### Runtime ECS Development
+
+Data-oriented entity-component-system for high-performance gameplay.
+
+VFX · Tech Art
+### Advanced Niagara VFX
+
+Marketplace-grade particle systems & effects authored in Niagara.
+
+Combat
+### Monsters Domain Combat Dev
+
+Building the melee combat & enemy AI behaviours for the RPG.
+
+Gameplay
+### Sci-Fi Blade Game Dev
+
+Prototyping a stylised sci-fi melee combat experience.
+
+▶ Live · Three.js
+Launch ↗
+
+⬢ Playground · Built with Three.js + React
+
+## Play my Rubik's Cube Solver
+
+A fully interactive 3D Rubik's cube — drag to rotate, scan a real cube with your camera, then follow a guided **7-phase solve** with live algorithm playback. A little side project that shows how I turn systems into playable, teachable tools.
+
+3D engineCamera scanKociemba solverGuided tutorial
+
+▶ Launch Cube Solver
+Want one like this?
+
+06 Fab / Unreal Marketplace
+
+## Production-ready assets for developers
+
+I publish high-quality, documented content to the Unreal Engine marketplace — VFX, systems and tools used in commercial and educational projects. Every pack ships with clear documentation and support.
+
+**11**Products
+
+**150+**Assets
+
+**4.8★**Avg. Rating
+
+Niagara VFXAI SystemsToolsDocumented
+
+Visit UEDEV Store →
+LCM 3D Navigation AI — 3D pathfinding for UE5 →
+Request Docs / Support
+
+07 Experience
+
+## Where I've shipped
+
+2023 — NowCurrent
+
+Senior Gameplay Engineer
+
+Ripstone Games
+
+Working on an unannounced PlayStation-exclusive multiplayer game — core gameplay features, player interaction systems and in-game mechanics.
+
+PS5 · Xbox · PC · SwitchUnreal Engine 5Multiplayer
+
+2021 — 20232 yrs
+
+Senior Gameplay Engineer
+
+G-Devs
+
+Head Gameplay AI Developer on "Monsters Domain" and Lead Gameplay Developer on "Rich Dad Simulator" (PC).
+
+PCUnreal Engine 4 → 5Gameplay AI
+
+2018 — 20224 yrs
+
+Software Research Engineer
+
+Arimac Lanka
+
+Built interactive media — PC games, virtual reality and augmented reality applications.
+
+PC · VR · ARUnity & Unreal
+
+2021 — NowCurrent
+
+Publisher
+
+Unreal Marketplace
+
+Publishing high-quality content for Unreal developers — 11 products containing more than 150 assets.
+
+VFX · Tools150+ Assets
+
+## Education
+
+### MSc in Computer Games
+
+University of Essex, UK · 2022–2023
+
+Awarded with Distinction. Specialised in Game Design, Game AI, Physics-based Games, Virtual Reality & Augmented Reality.
+
+### BSc (Hons) Software Engineering
+
+University of Kelaniya, Sri Lanka · 2016–2020
+
+Second Class Upper Division (GPA 3.61 / 4.00). Specialised in Game Development.
+
+08 Contact
+
+## Let's buildsomething playable
+
+Available for freelance, contract and studio roles — gameplay, AI, VR/AR and marketplace work. Drop a line and let's talk.
+
+Emailcharith945@gmail.com
+StoreUEDEV Marketplace →
+PluginLCM 3D Navigation AI — 3D Pathfinding for UE5 →
+[ResumeDownload CV ↗](https://drive.google.com/file/d/1DY-A916ZtGkvCpUVTBej0ajIMbD1ZKTd/view?usp=sharing)
+
+[FB](https://www.facebook.com/EpicCharith)
+[YT](https://www.youtube.com/channel/UC850cfMEKjFeeKA9ZJDufEw)
+[YT²](https://www.youtube.com/channel/UClWulu2n2isZC1JCjfWFTjA)
+
+NamePlease enter your name
+
+EmailPlease enter a valid email
+
+Project
+
+MessagePlease add a message
+
+✓ Thanks — I'll get back to you shortly.
+
+CHARITHA**.**DEV
+© 2018–2026 L. Charitha Madhushanka · Lead Game Developer
+
+Close ✕
+
+**⬢** Rubik's Cube Solver
+
+Open full page ↗
+
+---
+
+URL: https://uedevlabs.github.io/lab/Rubiks%20Cube%20Solver.html
+Title: Cube Solver — Rubik's Cube Visualiser
+Description: 
+
+Cube Solver — Rubik's Cube Visualiser
+
+CubeSolver
+
+Loading…

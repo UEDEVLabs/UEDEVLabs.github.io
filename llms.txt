@@ -1,0 +1,58 @@
+# LCM 3D Navigation AI (LCM Nav3D) by UEDEV
+
+> True 3D pathfinding and volumetric navigation for Unreal Engine 5.2–5.8: a sparse voxel octree of the empty air and water, for flying, swimming and free-floating AI and Mass Entity crowds. Version 3.6.0 (2026-10), sold on Fab, 5.0 out of 5 from 3 ratings. Complete C++ source, fully exposed to Blueprint.
+
+This is the site of UEDEV, the Unreal Engine label of L. Charitha Madhushanka. It sells LCM 3D Navigation AI and 19 Niagara VFX packs on Fab. Every page below is static HTML with no client-side rendering. The full text of every page is in https://uedevlabs.github.io/llms-full.txt, and the product's verified numbers are machine-readable in https://uedevlabs.github.io/facts.json.
+
+## Key facts
+
+- Product: LCM 3D Navigation AI (also published as LCM Nav3D), version 3.6.0, by L. Charitha Madhushanka, publisher UEDEV.
+- Engines: Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8.
+- Platforms: Windows, macOS, Linux, Android, iOS, PlayStation 5, Xbox Series X|S. Consoles build from source with your own platform SDK. Nintendo Switch support is in progress.
+- Navigation: Sparse voxel octree of navigable volume (empty air and water), not a walkable surface. Solvers: A* (fastest, grid locked); Theta* (any angle); Lazy Theta* (any angle, balanced default). Multi-threaded, deterministic CPU path solving.
+- GPU: GPU-built navigation on by default: voxelization, chunk octrees, their links, finite-world builds and obstacle re-tests run on the GPU (D3D12, D3D11, Vulkan; SM5 and SM6). With Voxelization Method Auto, each machine's GPU proves its voxels before it builds navigation; a GPU that fails voxelizes on the CPU for that session. Per-agent GPU path solver in experimental validation; coming as a free update.
+- AI: 85 nodes — Behavior Tree 21 tasks, 5 decorators, 5 services; StateTree 25 tasks, 8 conditions, 8 evaluators; Mass StateTree 10 tasks, 3 evaluators. EQS: 5 generators, 8 tests, 4 contexts.
+- Behaviours: Fly To, Patrol, Orbit Target, Follow Target, Hover, Move To And Face, Take Off, Land (including on moving decks), Perch, Scan Area, Engage Target, Find Cover, Flee, Investigate, Look At, Turn In Place.
+- Crowds: 10,000+ agents through Mass Entity (per-agent paths or a shared flow field); 8 Mass traits.
+- Locomotion: 6-DOF flight and swim — Multirotor Drone, Jet / Fixed-Wing, Bird (flap-glide), Fish (undulatory).
+- Smallest voxel: 0.5 cm. Worlds: Finite (built or baked to an asset); Infinite (chunks stream around agents, with pre-baked chunks and a persistent long-range graph).
+- Multiplayer: Server-authoritative replication.
+- Content: 57 free demo levels (17 worlds in Behavior Tree and StateTree editions (34), 15 Mass Entity editions, 8 Feature Examples levels), downloaded from inside the editor; a 165-page manual, 15 tutorials and a 13-page Quick Start.
+- New in 3.6.0: Fly To predicts moving obstacles and times its pass; Obstacle Gauntlet demo: 370 m, six zones, 42 movers; GPU voxelization that checks itself on each machine; GPU-built navigation verified on more graphics cards (D3D12, D3D11, Vulkan); Fish hold depth, swim upright and school in layers; tail beat follows speed; Steadier drones; Engage holds position, flies in formation, leads crossing targets; hunters search what they lose; Water volumes and triggers no longer read as walls; No crash on a dedicated server or -nullrhi; Thirty fixes from a plugin-wide code audit.
+- Price: from $199.99 on Fab (checked 2026-10-24).
+
+## Product
+
+- [True 3D pathfinding for Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-3d-pathfinding/): True 3D pathfinding for Unreal Engine 5 with infinite streaming worlds — not just a bounds volume. Flying AI, 6-DOF flight, Mass crowds, multiplayer.
+- [True 3D pathfinding & volumetric navigation for Unreal Engine 5 — plus high-performance C++ plugins](https://uedevlabs.github.io/): LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5 — infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab.
+
+## Use cases
+
+- [Flying AI and drones for Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-flying-ai/): Flying AI and drone AI for Unreal Engine 5: true 3D routes, 6-DOF flight, landing on moving decks, perching birds and combat drones that hunt and engage.
+- [Underwater and fish AI for Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-underwater-ai/): Underwater and fish AI for Unreal Engine 5: schooling, true 3D swim navigation through the whole water column, Mass Entity schools and 1 cm aquariums.
+- [Space combat and dogfight AI for Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-space-combat-ai/): Space combat and dogfight AI for Unreal Engine 5: 6-DOF fighters that chase, lead and re-plan through streamed asteroid belts, and Mass Entity raider swarms.
+- [Open-world 3D navigation for Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-open-world-navigation/): Open-world 3D navigation for Unreal Engine 5: chunks stream around your agents with no bounds volume, a long-range graph, pre-baked chunks and GPU builds.
+- [Mass Entity flying crowds for Unreal Engine 5](https://uedevlabs.github.io/unreal-engine-mass-entity-crowds/): 3D Mass Entity crowds for Unreal Engine 5: 10,000+ flying and swimming agents on per-agent paths or a shared flow field, with Mass StateTree behaviours.
+- [Moving obstacle avoidance for Unreal Engine 5 AI](https://uedevlabs.github.io/unreal-engine-moving-obstacle-avoidance/): Moving obstacle avoidance for Unreal Engine 5 AI: Fly To predicts gates, pistons and sweepers and times its pass, and moving geometry restamps the octree.
+
+## Store
+
+- [Niagara VFX packs for Unreal Engine](https://uedevlabs.github.io/unreal-engine-niagara-vfx/): 19 Niagara VFX packs and plugins for Unreal Engine by UEDEV: weapon beams, explosions, shields, environmental and character effects, plus LCM 3D Navigation AI.
+
+## Developer
+
+- [Code.Build.Ship.](https://uedevlabs.github.io/portfolio.html): L. Charitha Madhushanka — Senior Game Developer and Unreal Engine C++ programmer. Gameplay systems, game AI, VR/AR and engine tooling across 22 shipped projects.
+- [Cube Solver — Rubik's Cube Visualiser](https://uedevlabs.github.io/lab/Rubiks%20Cube%20Solver.html): 
+
+## Elsewhere
+
+- [Buy on Fab](https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73): the official listing.
+- [Documentation](https://lcmnav3d.github.io/): the free online manual; its own index for agents is https://lcmnav3d.github.io/llms.txt.
+- [Showcase trailer](https://www.youtube.com/watch?v=7_F3AvgQIQU) and [technical trailer](https://www.youtube.com/watch?v=-02ah0bLMb4).
+- [Free playable demo](https://uedevlabs.itch.io/lcm-3d-navigation) and [Discord support](https://discord.gg/nXkpD6uaBG).
+
+## Optional
+
+- [facts.json](https://uedevlabs.github.io/facts.json): every product number above, as JSON.
+- [Product catalog](https://uedevlabs.github.io/data/products.json): all 21 UEDEV products on Fab with price and rating (checked 2026-10-24).
+- [Sitemap](https://uedevlabs.github.io/sitemap.xml)

@@ -7,7 +7,7 @@
 <!-- Primary Meta -->
 <title>LCM 3D Navigation AI — Infinite 3D Pathfinding for UE5</title>
 <meta name="description" content="LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5 — infinite streaming worlds, flying AI, 6-DOF flight, Mass crowds and multiplayer. On Fab." />
-<meta name="keywords" content="LCM 3D Navigation AI, 3D navigation Unreal Engine, volumetric pathfinding, sparse voxel octree, SVO navigation, flying AI Unreal, GPU voxelization, multiplayer navigation replication, Mass Entity crowds, StateTree, Behaviour Tree, 3D EQS, PS5, Xbox, Unreal Engine plugins, Niagara VFX, C++ game plugins, UEDEV, L. Charitha Madhushanka" />
+<meta name="keywords" content="LCM 3D Navigation AI, 3D navigation Unreal Engine, volumetric pathfinding, sparse voxel octree, SVO navigation, flying AI Unreal, drone AI, fish schooling AI, moving obstacle avoidance, GPU voxelization, multiplayer navigation replication, Mass Entity crowds, StateTree, Behaviour Tree, 3D EQS, PS5, Xbox, Linux, macOS, Android, iOS, Unreal Engine plugins, Niagara VFX, C++ game plugins, UEDEV, L. Charitha Madhushanka" />
 <meta name="author" content="L. Charitha Madhushanka" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="theme-color" content="#050705" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="UEDEV" />
 <meta property="og:title" content="LCM 3D Navigation AI — Infinite 3D Pathfinding for UE5" />
-<meta property="og:description" content="True 3D pathfinding for Unreal Engine 5 — sparse voxel octree navigation for flying AI, drones and underwater agents. GPU voxelization, 10,000+ Mass agents, tactical 3D EQS and 6-DOF flight locomotion." />
+<meta property="og:description" content="True 3D pathfinding for Unreal Engine 5 — sparse voxel octree navigation for flying AI, drones and underwater agents. GPU-built navigation, 85 AI nodes, 10,000+ Mass agents, moving-obstacle prediction and 6-DOF flight. Now v3.6.0." />
 <meta property="og:url" content="https://uedevlabs.github.io/" />
 <meta property="og:image" content="https://uedevlabs.github.io/assets/og-company.png" />
 <meta property="og:image:width" content="1200" />
@@ -79,27 +79,39 @@
         "LCM 3D Navigation AI — Infinite 3D Pathfinding & Volumetric Navigation for UE5"
       ],
       "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Windows, PlayStation 5, Xbox Series X|S",
-      "softwareVersion": "2.05",
+      "operatingSystem": "Windows, macOS, Linux, Android, iOS, PlayStation 5, Xbox Series X|S",
+      "softwareVersion": "3.6.0",
+      "dateModified": "2026-10-24",
+      "releaseNotes": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/#whats-new",
       "url": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/",
       "mainEntityOfPage": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/",
       "downloadUrl": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73",
       "softwareRequirements": "Unreal Engine 5.2 to 5.8",
       "image": "https://uedevlabs.github.io/assets/nav3d/banner.png",
-      "description": "True volumetric 3D navigation for Unreal Engine 5.2–5.8. Sparse voxel octree pathfinding with A*, Theta* and Lazy Theta* solvers, GPU-accelerated voxelization, infinite chunked worlds, 10,000+ agent Mass Entity crowds, tactical 3D EQS, dynamic obstacles and 6-DOF flight and swim locomotion.",
+      "description": "True volumetric 3D navigation for Unreal Engine 5.2–5.8. Sparse voxel octree pathfinding with A*, Theta* and Lazy Theta* solvers, GPU-built navigation that verifies itself on each machine, infinite streaming worlds, an 85-node Behaviour Tree, StateTree and Mass agent library, 10,000+ agent Mass Entity crowds, tactical 3D EQS, moving-obstacle prediction and 6-DOF flight and swim locomotion.",
       "featureList": [
-        "Sparse Voxel Octree volumetric navigation",
+        "Sparse Voxel Octree volumetric navigation, voxels down to 0.5 cm",
         "A*, Theta* and Lazy Theta* pathfinding solvers",
-        "GPU voxelization with automatic CPU fallback",
+        "Multi-threaded, deterministic CPU path solving",
+        "GPU-built navigation: voxelization, octree and links on the GPU (D3D12, D3D11, Vulkan)",
+        "GPU voxelization that checks itself on each machine",
         "Finite and infinite chunked worlds",
         "10,000+ agent Mass Entity crowds",
-        "Tactical EQS generators and tests in true 3D",
+        "Behaviour Tree: 21 tasks, 5 decorators, 5 services",
+        "StateTree: 25 tasks, 8 conditions, 8 evaluators",
+        "Mass StateTree: 10 tasks, 3 evaluators",
+        "Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land on moving decks, Perch, Scan Area, Engage, Find Cover, Flee, Investigate",
+        "Fly To predicts moving obstacles and times its pass",
+        "Fly To Location Blueprint node, no AI Controller needed",
+        "Stock Move To and EQS plan through the octree",
+        "Nav Area cost regions with per-agent query filters",
+        "Tactical EQS in true 3D: 5 generators, 8 tests, 4 contexts",
         "Server-authoritative multiplayer replication",
-        "Behaviour Tree, StateTree and Mass Entity support",
         "Dynamic obstacle restamping",
-        "Behaviour Tree and StateTree tasks",
-        "6-DOF flight and swim locomotion",
-        "Hybrid Recast and SVO navigation"
+        "6-DOF flight and swim locomotion: multirotor, jet, bird and fish",
+        "Fish schooling for pawns and Mass crowds",
+        "Hybrid Recast and SVO navigation",
+        "57 free demo levels, downloaded from inside the editor"
       ],
       "author": {
         "@id": "https://uedevlabs.github.io/portfolio.html#person"
@@ -118,16 +130,49 @@
         "@type": "CreativeWork",
         "url": "https://lcmnav3d.github.io/",
         "name": "LCM 3D Navigation AI Documentation"
+      },
+      "datePublished": "2026-08-15",
+      "offers": {
+        "@type": "Offer",
+        "price": "199.99",
+        "priceCurrency": "USD",
+        "url": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "UEDEV",
+          "url": "https://www.fab.com/sellers/UEDEV"
+        }
+      },
+      "screenshot": [
+        "https://uedevlabs.github.io/assets/media/stills/drone-swarm-city-towers-1280.jpg",
+        "https://uedevlabs.github.io/assets/media/stills/harbour-drone-lands-moving-ship-1280.jpg",
+        "https://uedevlabs.github.io/assets/media/stills/octree-routes-city-debug-1280.jpg",
+        "https://uedevlabs.github.io/assets/media/stills/reef-school-mass-1280.jpg"
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation Showcase Trailer-UE5",
+      "description": "Showcase trailer for LCM 3D Navigation AI, a 3D pathfinding and volumetric navigation plugin for Unreal Engine 5: sparse voxel octree navigation, flying AI, Mass Entity crowds and tactical 3D EQS.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/7_F3AvgQIQU/maxresdefault.jpg",
+      "uploadDate": "2026-08-16T10:20:11-07:00",
+      "duration": "PT2M33S",
+      "contentUrl": "https://www.youtube.com/watch?v=7_F3AvgQIQU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/7_F3AvgQIQU",
+      "publisher": {
+        "@id": "https://uedevlabs.github.io/#organization"
       }
     },
     {
       "@type": "VideoObject",
-      "name": "LCM 3D Navigation AI — True Volumetric 3D Navigation for Unreal Engine 5",
-      "description": "Showcase trailer for LCM 3D Navigation AI, a 3D pathfinding and volumetric navigation plugin for Unreal Engine 5: sparse voxel octree navigation, flying AI, Mass Entity crowds and tactical 3D EQS.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/7_F3AvgQIQU/maxresdefault.jpg",
-      "uploadDate": "2026-06-08",
-      "contentUrl": "https://www.youtube.com/watch?v=7_F3AvgQIQU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/7_F3AvgQIQU",
+      "name": "NextGen Infinite 3D Pathfinding in Unreal Engine 5  - 10,000 Flying AI Agents Thinks in 3D",
+      "description": "Technical trailer for LCM 3D Navigation AI in Unreal Engine 5: the live sparse voxel octree, infinite streaming chunks, solver and debug views, and thousands of flying AI agents planning in 3D.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/-02ah0bLMb4/maxresdefault.jpg",
+      "uploadDate": "2026-08-19T14:02:56-07:00",
+      "duration": "PT2M13S",
+      "contentUrl": "https://www.youtube.com/watch?v=-02ah0bLMb4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/-02ah0bLMb4",
       "publisher": {
         "@id": "https://uedevlabs.github.io/#organization"
       }
@@ -148,9 +193,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/company.css" />
-<link rel="stylesheet" href="assets/transition.css" />
-<link rel="stylesheet" href="assets/upgrade.css" />
+<link rel="stylesheet" href="assets/company.css?v=20261024" />
+<link rel="stylesheet" href="assets/transition.css?v=20261024" />
+<link rel="stylesheet" href="assets/upgrade.css?v=20261024" />
+<link rel="stylesheet" href="assets/nav3d.css?v=20261024" />
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <script>try{if(sessionStorage.getItem('xition_nav'))document.documentElement.classList.add('xnav');}catch(e){}</script>
 </head>
 <body>
@@ -192,7 +239,7 @@
   <div class="hero__veil"></div>
   <div class="heroX">
     <div class="heroX__mid">
-      <a class="announce" href="#nav3d"><span class="tag">v2.05</span> <b>LCM 3D Navigation AI</b> <span class="desc">— true volumetric 3D navigation for UE 5.2–5.8</span> <span aria-hidden="true">→</span></a>
+      <a class="announce" href="#nav3d"><span class="tag">v3.6.0</span> <b>LCM 3D Navigation AI</b> <span class="desc">— agents that see moving obstacles coming · UE 5.2–5.8</span> <span aria-hidden="true">→</span></a>
       <div class="heroX__head"><div class="mega mega--fit" role="text">uedev</div></div>
       <p class="heroX__sub">Built for <em id="rotw">performance.</em></p>
     </div>
@@ -207,13 +254,13 @@
 <section class="sec n3d" id="nav3d">
   <div class="wrap">
     <div class="n3d__head">
-      <img class="n3d__logo reveal" src="assets/nav3d/logo.png" alt="LCM 3D Navigation AI (Nav3D) logo" />
+      <picture><source type="image/webp" srcset="assets/nav3d/logo-208.webp"><img class="n3d__logo reveal" src="assets/nav3d/logo-208.png" alt="LCM 3D Navigation AI (Nav3D) logo" width="104" height="104" /></picture>
       <div>
-        <span class="kicker reveal">Flagship UE5 plugin · v2.05 · Unreal Engine 5.2–5.8</span>
+        <span class="kicker reveal">Flagship UE5 plugin · v3.6.0 · Unreal Engine 5.2–5.8</span>
         <h2 class="mega mega--sec reveal" data-d="1">LCM 3D <em>Navigation AI</em></h2>
         <p class="n3d__tag reveal" data-d="2">The 3D pathfinding &amp; volumetric navigation plugin for Unreal Engine 5</p>
         <div class="n3d__badges reveal" data-d="2">
-          <span>Sparse Voxel Octree</span><span>GPU voxelization</span><span>10,000+ agents</span><span>Multiplayer replication</span><span>Blueprint &amp; C++</span>
+          <span class="xrate">★ 5.0 on Fab</span><span>Sparse Voxel Octree</span><span>GPU-built navigation</span><span>85 AI nodes</span><span>10,000+ agents</span><span>Moving-obstacle prediction</span><span>Multiplayer replication</span><span>Blueprint &amp; C++</span>
         </div>
       </div>
     </div>
@@ -221,28 +268,80 @@
     <p class="sec-intro reveal" data-d="2" data-chars style="max-width:760px;margin-top:26px"><strong>LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5</strong> — flying AI pathfinding for drones, dragons, spaceships, helicopters and underwater agents that Recast navmesh simply cannot express. Unreal's Recast navmesh answers one question: where can I stand? It flattens your level into walkable polygons — exactly right for a soldier, completely wrong for a dragon. LCM 3D Navigation AI answers a different one: where is there empty air? It carves the whole playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky costs almost nothing and detail appears only where geometry actually is.</p>
 
     <figure class="n3d__reel reveal" data-d="2">
-      <iframe src="https://www.youtube-nocookie.com/embed/7_F3AvgQIQU" title="LCM 3D Navigation AI — True Volumetric 3D Navigation Showcase Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      <figcaption><span>LCM 3D Navigation AI — <b>showcase trailer</b></span><a class="n3d__sound" href="https://www.youtube.com/watch?v=7_F3AvgQIQU" target="_blank" rel="noopener">▶ Watch on YouTube</a></figcaption>
+      <a class="xyt" href="https://www.youtube.com/watch?v=7_F3AvgQIQU" data-yt="7_F3AvgQIQU" data-title="LCM 3D Navigation AI — True Volumetric 3D Navigation Showcase Trailer" target="_blank" rel="noopener">
+        <!-- @picture slug="drone-swarm-city-towers" sizes="(min-width:1320px) 1240px, 100vw" alt="" -->
+        <picture>
+          <source type="image/avif" srcset="assets/media/stills/drone-swarm-city-towers-640.avif 640w, assets/media/stills/drone-swarm-city-towers-1280.avif 1280w, assets/media/stills/drone-swarm-city-towers-1920.avif 1920w" sizes="(min-width:1320px) 1240px, 100vw">
+          <source type="image/webp" srcset="assets/media/stills/drone-swarm-city-towers-640.webp 640w, assets/media/stills/drone-swarm-city-towers-1280.webp 1280w, assets/media/stills/drone-swarm-city-towers-1920.webp 1920w" sizes="(min-width:1320px) 1240px, 100vw">
+          <img src="assets/media/stills/drone-swarm-city-towers-1280.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+        </picture>
+        <!-- /@picture -->
+        <span class="xyt__btn" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9.5-5.5z"/></svg></span>
+      </a>
+      <figcaption><span>LCM 3D Navigation AI — <b>showcase trailer</b></span><a class="n3d__sound" href="unreal-engine-3d-pathfinding/#trailer">▶ Technical trailer &amp; more</a></figcaption>
     </figure>
+
+    <ul class="xscenes reveal" data-d="2" aria-label="Scenes from the free demo levels">
+      <li><a href="unreal-engine-3d-pathfinding/#worlds"><div class="xm"><!-- @picture slug="harbour-drone-lands-moving-ship" sizes="(min-width:860px) 25vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="assets/media/stills/harbour-drone-lands-moving-ship-640.avif 640w, assets/media/stills/harbour-drone-lands-moving-ship-1280.avif 1280w, assets/media/stills/harbour-drone-lands-moving-ship-1920.avif 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <source type="image/webp" srcset="assets/media/stills/harbour-drone-lands-moving-ship-640.webp 640w, assets/media/stills/harbour-drone-lands-moving-ship-1280.webp 1280w, assets/media/stills/harbour-drone-lands-moving-ship-1920.webp 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <img src="assets/media/stills/harbour-drone-lands-moving-ship-1280.jpg" alt="A courier drone descends and lands on the deck of a moving, rolling ship in the Harbour demo" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Harbour</b><span>Landing on a moving ship</span></a></li>
+      <li><a href="unreal-engine-3d-pathfinding/#worlds"><div class="xm"><!-- @picture slug="gulls-perch-sea-stack" sizes="(min-width:860px) 25vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="assets/media/stills/gulls-perch-sea-stack-640.avif 640w, assets/media/stills/gulls-perch-sea-stack-1280.avif 1280w, assets/media/stills/gulls-perch-sea-stack-1920.avif 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <source type="image/webp" srcset="assets/media/stills/gulls-perch-sea-stack-640.webp 640w, assets/media/stills/gulls-perch-sea-stack-1280.webp 1280w, assets/media/stills/gulls-perch-sea-stack-1920.webp 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <img src="assets/media/stills/gulls-perch-sea-stack-1280.jpg" alt="Seagulls sweep in and one lands to perch on a sea stack ledge" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Sea Cliffs</b><span>6-DOF gulls that perch</span></a></li>
+      <li><a href="unreal-engine-3d-pathfinding/#worlds"><div class="xm"><!-- @picture slug="reef-school-mass" sizes="(min-width:860px) 25vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="assets/media/stills/reef-school-mass-640.avif 640w, assets/media/stills/reef-school-mass-1280.avif 1280w, assets/media/stills/reef-school-mass-1920.avif 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <source type="image/webp" srcset="assets/media/stills/reef-school-mass-640.webp 640w, assets/media/stills/reef-school-mass-1280.webp 1280w, assets/media/stills/reef-school-mass-1920.webp 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <img src="assets/media/stills/reef-school-mass-1280.jpg" alt="A Mass Entity school of fish streams over the coral, parting round the pinnacles" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Coral Reef</b><span>A Mass school of fish</span></a></li>
+      <li><a href="unreal-engine-3d-pathfinding/#worlds"><div class="xm"><!-- @picture slug="space-dogfight-lasers" sizes="(min-width:860px) 25vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="assets/media/stills/space-dogfight-lasers-640.avif 640w, assets/media/stills/space-dogfight-lasers-1280.avif 1280w, assets/media/stills/space-dogfight-lasers-1920.avif 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <source type="image/webp" srcset="assets/media/stills/space-dogfight-lasers-640.webp 640w, assets/media/stills/space-dogfight-lasers-1280.webp 1280w, assets/media/stills/space-dogfight-lasers-1920.webp 1920w" sizes="(min-width:860px) 25vw, 50vw">
+  <img src="assets/media/stills/space-dogfight-lasers-1280.jpg" alt="Starfighters exchange laser fire in the Space Dogfight demo for Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Space Dogfight</b><span>Lead intercept in an asteroid belt</span></a></li>
+    </ul>
+    <ul class="xdocs reveal" data-d="2" aria-label="Use cases">
+      <li><a href="unreal-engine-flying-ai/">Flying AI &amp; drones →</a></li>
+      <li><a href="unreal-engine-underwater-ai/">Underwater &amp; fish AI →</a></li>
+      <li><a href="unreal-engine-space-combat-ai/">Space combat AI →</a></li>
+      <li><a href="unreal-engine-open-world-navigation/">Open-world navigation →</a></li>
+      <li><a href="unreal-engine-mass-entity-crowds/">Mass Entity crowds →</a></li>
+      <li><a href="unreal-engine-moving-obstacle-avoidance/">Moving obstacles →</a></li>
+    </ul>
 
     <dl class="specs reveal" data-d="2">
       <div><dt>Pathfinding</dt><dd>A* · Theta* · <em>Lazy Theta*</em></dd></div>
-      <div><dt>Compute</dt><dd>CPU · GPU solver <em>coming soon</em></dd></div>
+      <div><dt>Compute</dt><dd>GPU build · CPU solve · GPU solver <em>coming soon</em></dd></div>
       <div><dt>World mode</dt><dd>Finite or <em>Infinite</em> chunks</dd></div>
-      <div><dt>Reflected API</dt><dd><em>517</em> symbols · 100% documented</dd></div>
+      <div><dt>AI nodes</dt><dd><em>85</em> BT · StateTree · Mass</dd></div>
     </dl>
 
     <div class="n3d__grid">
       <div>
         <ol class="n3d__list">
-          <li class="reveal"><span class="n">01</span><span><b>Sparse Voxel Octree</b><span>The level's empty air is subdivided only where geometry exists — one node covers open sky, so cost tracks clutter, not level size. Drop a single <code>LcmNavigationManagerSVO</code> per level and it owns the octree, the pathfinder and every query.</span></span></li>
-          <li class="reveal" data-d="1"><span class="n">02</span><span><b>Three solvers, three smoothing modes</b><span>A* for raw throughput, Theta* for true any-angle routes, Lazy Theta* for near-Theta* quality at near-A* cost. Then Raw, Linear Shortcut or Curved Spline smoothing — validated against geometry, so a smoothed path never cuts a wall.</span></span></li>
-          <li class="reveal" data-d="2"><span class="n">03</span><span><b>Macro / micro routing &amp; infinite worlds</b><span>Long routes solve coarsely across chunks, then finely within them. Finite worlds build once at BeginPlay; infinite worlds stream chunks around agents and throw them away behind.</span></span></li>
-          <li class="reveal" data-d="3"><span class="n">04</span><span><b>10,000+ agents through Mass ECS</b><span>Two crowd modes: per-agent asynchronous pathfinding via the Nav3D Agent trait, or one shared CPU flow field sampled O(1) by an entire swarm. Three auto-registered processors run request → solve → steer; you never call the solver. A per-agent GPU solver is in experimental validation — coming as a free update.</span></span></li>
-          <li class="reveal" data-d="4"><span class="n">05</span><span><b>Tactical EQS in true 3D</b><span>Generators and tests that score real volume — volumetric line-of-sight, cover, threat exposure, height advantage and true path distance — so a sniper perch is chosen in 3D, not on a floor plane.</span></span></li>
-          <li class="reveal" data-d="4"><span class="n">06</span><span><b>6-DOF flight &amp; swim locomotion</b><span>Navigation gives guidance; <code>LcmFlightMovementComponent</code> turns it into a body. Multirotor, Bird, Fish and Generic 6-DOF archetypes with thrust, lift, drag, buoyancy and attitude PID — plus an animation-drive struct for blendspaces.</span></span></li>
-          <li class="reveal" data-d="4"><span class="n">07</span><span><b>Server-authoritative multiplayer replication</b><span>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>; moving obstacles replay their nav footprint to every peer over a multicast. A headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths, and CPU compute stays bit-deterministic for replays and lockstep.</span></span></li>
-          <li class="reveal" data-d="4"><span class="n">08</span><span><b>Built for real projects</b><span>Dynamic obstacle restamping, AI Perception threat tracking, hybrid Recast + SVO levels, nav links, area modifiers and a live Gameplay Debugger.</span></span></li>
+          <li class="reveal"><span class="n">01</span><span><b>Sparse Voxel Octree</b><span>The level's empty air is subdivided only where geometry exists — one node covers open sky, so cost tracks clutter, not level size. Voxels go down to 0.5&nbsp;cm, so the same plugin navigates a 120&nbsp;cm aquarium at 1&nbsp;cm and a streamed open world. Drop a single <code>LcmNavigationManagerSVO</code> per level and it owns the octree, the pathfinder and every query.</span></span></li>
+          <li class="reveal" data-d="1"><span class="n">02</span><span><b>Three solvers, three smoothing modes</b><span>A* for raw throughput, Theta* for true any-angle routes, Lazy Theta* for near-Theta* quality at near-A* cost — multi-threaded and deterministic. Then Raw, Linear Shortcut or Curved Spline smoothing — validated against geometry, so a smoothed path never cuts a wall.</span></span></li>
+          <li class="reveal" data-d="2"><span class="n">03</span><span><b>GPU-built navigation that checks itself</b><span>Voxelization, the octree and its links are built on the GPU on D3D12, D3D11 and Vulkan. New in 3.6: each machine's GPU proves its voxels before it builds navigation — a capability check, a self-test remembered per GPU and driver, and sampled audits while it runs. A GPU that fails voxelizes on the CPU for that session, and the log says why.</span></span></li>
+          <li class="reveal" data-d="3"><span class="n">04</span><span><b>Macro / micro routing &amp; infinite worlds</b><span>Long routes solve coarsely across chunks, then finely within them. Finite worlds build once or bake to an asset; infinite worlds stream chunks around agents and throw them away behind, with pre-baked chunks and a long-range graph that plans beyond loaded geometry.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">05</span><span><b>Agents that see moving obstacles coming</b><span>New in 3.6: Fly To predicts every moving obstacle and times its pass. It learns a gate's or a piston's cycle, turns a spinning blade with it, eases off, waits for a gap or takes a detour — and dodges what it cannot outrun. Moving geometry still restamps the octree, so routes re-plan live.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">06</span><span><b>A behaviour for every job — 85 AI nodes</b><span>Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land (even on a rolling ship's deck), Perch, Scan Area, Engage Target, Find Cover, Flee and Investigate — 31 Behaviour Tree nodes, 41 StateTree nodes and 13 Mass StateTree nodes at full parity. One <code>Fly To Location</code> Blueprint node flies any pawn with no AI Controller, and Unreal's own Move To and EQS plan through the octree.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">07</span><span><b>10,000+ agents through Mass ECS</b><span>Eight Mass traits: per-agent asynchronous pathfinding, or one shared CPU flow field sampled O(1) by an entire swarm. Mass StateTree lets crowds perch, scan, engage, investigate and flee; schooling, Hold Avoidance and Contact Push keep dense crowds apart. A per-agent GPU solver is in experimental validation — coming as a free update.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">08</span><span><b>Tactical EQS in true 3D</b><span>5 generators, 8 tests and 4 contexts that score real volume — volumetric line-of-sight, cover, threat exposure, height advantage, landing sites and true path distance — so a sniper perch is chosen in 3D, not on a floor plane.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">09</span><span><b>6-DOF flight &amp; swim locomotion</b><span>Navigation gives guidance; <code>LcmFlightMovementComponent</code> turns it into a body. Multirotor drone, Jet / Fixed-Wing, Bird (flap-glide) and Fish (undulatory) archetypes with thrust, lift, drag, buoyancy and attitude PID. Fish hold depth, school in layers and beat their tails with their speed; flight follows the level's gravity.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">10</span><span><b>Cost areas, priced per agent</b><span>Mark volumes as storms, preferred lanes, toll gates or no-fly zones with stock NavArea classes. A stock Navigation Query Filter decides what each area costs each agent — or forbids it — and every planner routes by them, across streamed chunk seams too.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">11</span><span><b>Server-authoritative multiplayer replication</b><span>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>; moving obstacles replay their nav footprint to every peer over a multicast. A headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths, and CPU compute stays bit-deterministic for replays and lockstep.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">12</span><span><b>Built for real projects</b><span>Dynamic obstacle restamping, AI Perception threat tracking, hybrid Recast + SVO levels, nav links, area modifiers, a setup wizard, a one-click health check and a live Gameplay Debugger — plus 57 free demo levels you download from inside the editor.</span></span></li>
         </ol>
         <div class="hero__row" style="justify-content:flex-start;margin-top:32px">
           <a class="btn btn--glow" data-magnet href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Get it on Fab</a>
@@ -252,12 +351,12 @@
         </div>
       </div>
       <div class="n3d__panel reveal" data-d="1">
-        <div class="n3d__slot"><img src="assets/nav3d/splash.png" alt="LCM 3D Navigation AI for Unreal Engine" style="width:100%;display:block" /></div>
+        <div class="n3d__slot"><img src="assets/nav3d/splash.png" alt="LCM 3D Navigation AI for Unreal Engine" width="1600" height="800" style="width:100%;height:auto;display:block" /></div>
         <div class="n3d__meta"><span>Engine support</span><b>UE 5.2–5.8</b></div>
         <div class="n3d__spec">
           <div><b>100 cm</b><span>Default min voxel</span></div>
           <div><b>200 m</b><span>Default world cube</span></div>
-          <div><b>128 pp</b><span>User manual</span></div>
+          <div><b>165 pp</b><span>User manual</span></div>
         </div>
       </div>
     </div>
@@ -270,32 +369,48 @@
       <div class="ai3d__c reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="5" rx="1.4"></rect><rect x="2" y="16" width="6" height="5" rx="1.4"></rect><rect x="16" y="16" width="6" height="5" rx="1.4"></rect><path d="M12 7v4M5 16v-2.5h14V16"></path></svg>
         <h4>Behaviour Tree</h4>
-        <p>Drop-in tasks, decorators and services — <code>FlyTo</code>, line-of-sight and chunk-loaded checks — alongside seven documented stock-node patterns showing where an LCM node earns its place.</p>
+        <p>21 tasks, 5 decorators and 5 services — <code>FlyTo</code>, Patrol, Land, Perch, Engage Target, Find Cover, Flee, Investigate, line-of-sight and chunk-loaded checks — alongside seven documented stock-node patterns showing where an LCM node earns its place.</p>
       </div>
       <div class="ai3d__c reveal" data-d="1">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="9" height="6" rx="1.6"></rect><rect x="13" y="15" width="9" height="6" rx="1.6"></rect><path d="M6.5 9v6a3 3 0 0 0 3 3H13"></path><path d="M15 6h4.5a2.5 2.5 0 0 1 0 5H17"></path></svg>
         <h4>StateTree</h4>
-        <p>The same flight behaviour authored as StateTree tasks, so state-driven agents get identical routing without a Behaviour Tree in the stack.</p>
+        <p>25 tasks, 8 conditions and 8 evaluators at full parity with the Behaviour Tree nodes, so state-driven agents get identical routing and behaviours without a Behaviour Tree in the stack.</p>
       </div>
       <div class="ai3d__c reveal" data-d="2">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="2.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="9.5" width="5" height="5" rx="1"></rect><rect x="2.5" y="16.5" width="5" height="5" rx="1"></rect><rect x="9.5" y="16.5" width="5" height="5" rx="1"></rect><rect x="16.5" y="16.5" width="5" height="5" rx="1"></rect></svg>
         <h4>Mass Entity</h4>
-        <p>Two ECS traits — per-agent pathfinding or a shared flow field — with three auto-registered processors driving request, solve and steering for 10,000+ entities.</p>
+        <p>Eight ECS traits — per-agent pathfinding or a shared flow field — plus 10 Mass StateTree tasks and 3 evaluators, so a crowd of 10,000+ entities can perch, scan, engage, investigate and flee.</p>
       </div>
       <div class="ai3d__more reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
-        <span>More pre-built nodes and authoring shortcuts are on the way — shipped as free updates.</span>
+        <span>Plus a <b>Fly To Location</b> Blueprint node that flies any pawn with no AI Controller, and Unreal's own Move To, AI Move To and EQS planning through the octree.</span>
       </div>
     </div>
 
     <div class="blk__head reveal">
       <h3>Platform support</h3>
-      <p>Shipping-ready on PC and current-gen consoles, with the C++ core built to the same standard on every target.</p>
+      <p>Supported on desktop, mobile and current-gen consoles — Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S — with the C++ core built to the same standard on every target. Consoles compile from source with your own platform SDK.</p>
     </div>
     <div class="plat reveal">
       <div>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3.5" width="20" height="13" rx="1.8"></rect><path d="M8 20.5h8M12 16.5v4"></path></svg>
         <div><b>Windows PC</b><span>Supported</span></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="1.8"></rect><path d="M3 13h18M9 20h6M12 16.5V20"></path><path d="m7.5 8 2 1.6-2 1.6M11.5 11.2h3"></path></svg>
+        <div><b>Linux</b><span>Supported</span></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4.5" width="16" height="11" rx="1.6"></rect><path d="M2 19h20l-1.6-3.5H3.6Z"></path></svg>
+        <div><b>macOS</b><span>Supported</span></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"></rect><path d="M10.5 18.5h3"></path></svg>
+        <div><b>Android</b><span>Supported</span></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8"></rect><path d="M10.5 5h3"></path><circle cx="12" cy="18.3" r=".9"></circle></svg>
+        <div><b>iOS</b><span>Supported</span></div>
       </div>
       <div>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 7h9a4.5 4.5 0 0 1 4.4 3.6l1 5A2.6 2.6 0 0 1 19.4 19c-1 0-1.6-.5-2.2-1.2L15.6 16H8.4l-1.6 1.8C6.2 18.5 5.6 19 4.6 19a2.6 2.6 0 0 1-2.5-3.4l1-5A4.5 4.5 0 0 1 7.5 7Z"></path><path d="M6.4 11.6v2.2M5.3 12.7h2.2M16.2 12h.01M18.4 13.6h.01"></path></svg>
@@ -312,9 +427,35 @@
     </div>
 
     <div class="blk__head reveal" style="margin-bottom:0"></div>
-    <div class="road reveal">
+    <div class="road reveal" id="whats-new">
       <div class="road__top">
-        <span class="road__pill">Next · v3.0</span>
+        <span class="road__pill">Shipped · v3.3 → v3.6</span>
+        <h3>What's new</h3>
+        <em>Free updates for existing licences</em>
+      </div>
+      <div class="road__grid">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"></path></svg>
+          <div><b>3.6 · Agents see moving obstacles coming</b><p>Fly To predicts every mover and times its pass, and the new Obstacle Gauntlet demo throws 42 of them at twelve drones — or a crowd of 200 — down a 370&nbsp;m hall.</p></div>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6v6H9z"></path><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"></path></svg>
+          <div><b>3.6 · GPU voxelization that checks itself</b><p>Every GPU proves its voxels before it builds navigation, the GPU build repairs its own output on D3D12, D3D11 and Vulkan, and fish swim, turn and school like fish.</p></div>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M8 7l4 4 4-4"></path><path d="M4 15c3-2 13-2 16 0"></path><path d="M3 19h18"></path></svg>
+          <div><b>3.5 · Agents that land, hunt, hide and investigate</b><p>Engage, Investigate, Flee, Scan Area, Perch, Land and Take Off — onto a rolling ship's deck if needed — plus six scenario demos and eight Feature Examples levels, free from inside the editor.</p></div>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"></path><circle cx="8" cy="7" r="1.6"></circle><circle cx="15" cy="12" r="1.6"></circle><circle cx="10" cy="17" r="1.6"></circle></svg>
+          <div><b>3.3 – 3.4 · The agent task library</b><p>The full BT, StateTree and Mass task library, centimetre-scale voxels, cost areas with per-agent filters, stock Move To and EQS through the octree, the Fly To Location node and fish schooling.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="road reveal" style="margin-top:22px">
+      <div class="road__top">
+        <span class="road__pill">Next · v4.0</span>
         <h3>In development</h3>
         <em>Free update for existing licences</em>
       </div>
@@ -327,14 +468,6 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"></circle><circle cx="5" cy="18.5" r="2.4"></circle><circle cx="19" cy="18.5" r="2.4"></circle><path d="M12 7.4v3.2M10.4 12.6 6.6 16.6M13.6 12.6l3.8 4M7.4 18.5h9.2"></path></svg>
           <div><b>Replication improvements</b><p>A wider server-authoritative surface and lower-bandwidth path and obstacle sync for larger multiplayer sessions.</p></div>
         </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2.5 9 4.6-9 4.6-9-4.6 9-4.6Z"></path><path d="m3 12.2 9 4.6 9-4.6"></path><path d="m3 17 9 4.5 9-4.5"></path></svg>
-          <div><b>Mixed pre-baked + realtime infinite worlds</b><p>Bake the authored parts of an open world ahead of time and stream the rest live, in one navigation graph.</p></div>
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M12 8v8M8 12h8"></path></svg>
-          <div><b>More pre-built AI nodes</b><p>Additional Behaviour Tree, StateTree and Mass authoring nodes so common jobs need less wiring.</p></div>
-        </div>
       </div>
     </div>
 
@@ -342,21 +475,21 @@
       <div class="docs3d__top">
         <div>
           <h3>Documented like a product, not a plugin dump</h3>
-          <p>A 128-page manual across 17 chapters, free to read online — every reflected symbol carries a tooltip, and every setting is listed with its verified default and limits.</p>
+          <p>A 165-page manual, 15 step-by-step tutorials and a 13-page Quick Start, free to read online — every setting is listed with its verified default and limits, and all 726 Blueprint-exposed symbols are in a full API reference.</p>
         </div>
         <a class="ghostbtn" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Read the documentation ↗</a>
       </div>
       <div class="docs3d__grid">
         <a href="https://lcmnav3d.github.io/installation.html" target="_blank" rel="noopener"><span class="num">01–05</span><b>Getting started</b><span>Installation, core concepts, your first flying agent, StateTree, dynamic obstacles.</span></a>
-        <a href="https://lcmnav3d.github.io/mass-entity-crowds.html" target="_blank" rel="noopener"><span class="num">06–12</span><b>Going further</b><span>Mass crowds, tactical EQS, AI perception, hybrid Recast, nav links, debugger, BT patterns.</span></a>
-        <a href="https://lcmnav3d.github.io/api-reference.html" target="_blank" rel="noopener"><span class="num">13–17</span><b>Reference</b><span>Settings, troubleshooting, flight locomotion, Mass traits, and the full 517-symbol API.</span></a>
+        <a href="https://lcmnav3d.github.io/mass-entity-crowds.html" target="_blank" rel="noopener"><span class="num">06–15</span><b>Going further</b><span>Mass crowds, tactical EQS, AI perception, hybrid Recast, cost areas and nav links, debugger, small worlds, Fly To Location, stock Move To, behaviour nodes.</span></a>
+        <a href="https://lcmnav3d.github.io/api-reference.html" target="_blank" rel="noopener"><span class="num">REF</span><b>Reference</b><span>Settings, troubleshooting, flight locomotion, Mass traits, BT patterns and the full API reference.</span></a>
       </div>
     </div>
     <div class="hero__stats reveal">
-      <div class="hstat"><b data-count="20" data-suffix="+">0</b><span>Products</span></div>
+      <div class="hstat"><b data-fact-count="store.products" data-count="21">0</b><span>Products</span></div>
       <div class="hstat"><b data-count="150" data-suffix="+">0</b><span>Assets</span></div>
-      <div class="hstat"><b data-count="43">0</b><span>Reviews</span></div>
-      <div class="hstat"><b>4.5★</b><span>Avg Rating</span></div>
+      <div class="hstat"><b data-fact-count="store.ratings" data-count="47">0</b><span>Fab ratings</span></div>
+      <div class="hstat"><b><span data-fact="store.average">4.5</span>★</b><span>Avg Rating</span></div>
     </div>
   </div>
 </section>
@@ -391,7 +524,7 @@
           <a class="ghostbtn" href="https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296" target="_blank" rel="noopener">View on Fab</a>
         </div>
         <div class="stackcard__media">
-          <img src="https://media.fab.com/image_previews/gallery_images/a63dd0e4-7db8-44eb-9ddb-55e4914ff39d/46de4277-a8f1-4ebf-95ad-b79ca6364644.jpg" alt="Niagara Energy Beam Pack V2 — Unreal Engine weapon VFX by UEDEV" />
+          <img src="https://media.fab.com/image_previews/gallery_images/a63dd0e4-7db8-44eb-9ddb-55e4914ff39d/46de4277-a8f1-4ebf-95ad-b79ca6364644.jpg" alt="Niagara Energy Beam Pack V2 — Unreal Engine weapon VFX by UEDEV" width="639" height="349" loading="lazy" />
           <div class="stackcard__price">$15.99 <em>★ 5.0 (6)</em></div>
         </div>
       </article>
@@ -404,7 +537,7 @@
           <a class="ghostbtn" href="https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770" target="_blank" rel="noopener">View on Fab</a>
         </div>
         <div class="stackcard__media">
-          <img src="https://media.fab.com/image_previews/gallery_images/065fb827-0f4e-49ae-8a48-71f80ca6c629/94284eb4-d059-4db3-a3e2-e0ef0734be17.jpg" alt="Ultimate Explosion VFX — Unreal Engine combat effects by UEDEV" />
+          <img src="https://media.fab.com/image_previews/gallery_images/065fb827-0f4e-49ae-8a48-71f80ca6c629/94284eb4-d059-4db3-a3e2-e0ef0734be17.jpg" alt="Ultimate Explosion VFX — Unreal Engine combat effects by UEDEV" width="639" height="349" loading="lazy" />
           <div class="stackcard__price">$14.99 <em>★ 5.0 (4)</em></div>
         </div>
       </article>
@@ -417,7 +550,7 @@
           <a class="ghostbtn" href="https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5" target="_blank" rel="noopener">View on Fab</a>
         </div>
         <div class="stackcard__media">
-          <img src="https://media.fab.com/image_previews/gallery_images/dc1a29a9-58bd-44e2-a42f-b368b8d6cad9/877787de-287a-4b54-a0de-02e9f1720c99.jpg" alt="Ultimate Scan and Screen Effects — Unreal Engine VFX by UEDEV" />
+          <img src="https://media.fab.com/image_previews/gallery_images/dc1a29a9-58bd-44e2-a42f-b368b8d6cad9/877787de-287a-4b54-a0de-02e9f1720c99.jpg" alt="Ultimate Scan and Screen Effects — Unreal Engine VFX by UEDEV" width="639" height="349" loading="lazy" />
           <div class="stackcard__price">$12.99 <em>★ 4.8 (4)</em></div>
         </div>
       </article>
@@ -433,10 +566,10 @@
       <h2 class="mega mega--sec reveal" data-d="1">Real-time <em>VFX</em></h2>
       <p class="sec-intro reveal" data-d="2">Production-grade Niagara built the same way as the plugins — profiled, documented and shipped in real games. Explosions, energy beams, muzzle flashes, shields, portals and full environmental systems.</p>
       <div class="vfxband__meta reveal" data-d="2">
-        <div><b>20</b><span>Products</span></div>
+        <div><b data-fact="store.products">21</b><span>Products</span></div>
         <div><b>150+</b><span>Effects</span></div>
-        <div><b>43</b><span>Reviews</span></div>
-        <div><b>4.5★</b><span>Average rating</span></div>
+        <div><b data-fact="store.ratings">47</b><span>Fab ratings</span></div>
+        <div><b><span data-fact="store.average">4.5</span>★</b><span>Average rating</span></div>
       </div>
     </div>
   </div>
@@ -455,7 +588,7 @@
     <div class="sec-head">
       <span class="kicker reveal">The Full Library</span>
       <h2 class="sec-title reveal" data-d="1">Every <em>asset pack</em></h2>
-      <p class="sec-intro reveal" data-d="2">20 products · 150+ assets — from C++ plugins to advanced Niagara VFX. Filter by category and open any pack on Fab.</p>
+      <p class="sec-intro reveal" data-d="2"><span data-fact="store.products">21</span> products · 150+ assets — from C++ plugins to advanced Niagara VFX. Filter by category and open any pack on Fab, or see them all on the <a class="ln" href="unreal-engine-niagara-vfx/">Niagara VFX packs page</a>.</p>
     </div>
     <div class="filters reveal" data-d="2">
       <button class="filter active" data-filter="all">All</button>
@@ -466,7 +599,31 @@
       <button class="filter" data-filter="Packs">Bundles</button>
       <button class="filter" data-filter="Plugins">Plugins</button>
     </div>
-    <div class="prod-grid" id="prodGrid"></div>
+    <div class="prod-grid" id="prodGrid">
+      <!-- @catalog -->
+      <a class="card" data-cat="Plugins" href="unreal-engine-3d-pathfinding"><div class="card__media" style="background:linear-gradient(135deg,#10c9b0,#2fe06a)"><picture><source type="image/avif" srcset="assets/media/stills/drone-swarm-city-towers-640.avif 640w, assets/media/stills/drone-swarm-city-towers-1280.avif 1280w, assets/media/stills/drone-swarm-city-towers-1920.avif 1920w" sizes="(min-width:1100px) 25vw, (min-width:560px) 50vw, 100vw"><source type="image/webp" srcset="assets/media/stills/drone-swarm-city-towers-640.webp 640w, assets/media/stills/drone-swarm-city-towers-1280.webp 1280w, assets/media/stills/drone-swarm-city-towers-1920.webp 1920w" sizes="(min-width:1100px) 25vw, (min-width:560px) 50vw, 100vw"><img src="assets/media/stills/drone-swarm-city-towers-1280.jpg" alt="LCM 3D Navigation AI — Plugins for Unreal Engine" width="1920" height="1080" loading="lazy" decoding="async"></picture><span class="card__cat">Plugins</span><div class="card__view"><span>Explore the plugin →</span></div></div><div class="card__body"><h3 class="card__title">LCM 3D Navigation AI</h3><div class="card__meta"><span class="price">From $199.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(3)</span></span></div></div></a>
+      <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><img src="https://media.fab.com/image_previews/gallery_images/a63dd0e4-7db8-44eb-9ddb-55e4914ff39d/46de4277-a8f1-4ebf-95ad-b79ca6364644.jpg" alt="Niagara Energy Beam Pack V2 — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Energy Beam Pack V2</h3><div class="card__meta"><span class="price">From $15.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(6)</span></span></div></div></a>
+      <a class="card" data-cat="Combat" href="https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/065fb827-0f4e-49ae-8a48-71f80ca6c629/94284eb4-d059-4db3-a3e2-e0ef0734be17.jpg" alt="Ultimate Explosion VFX — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Explosion VFX</h3><div class="card__meta"><span class="price">From $14.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(4)</span></span></div></div></a>
+      <a class="card" data-cat="Combat" href="https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/dc1a29a9-58bd-44e2-a42f-b368b8d6cad9/877787de-287a-4b54-a0de-02e9f1720c99.jpg" alt="Ultimate Scan &amp; Screen Effects — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Scan &amp; Screen Effects</h3><div class="card__meta"><span class="price">From $12.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>4.8 <span class="rating__n">(4)</span></span></div></div></a>
+      <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/b776d3d2-5d87-4f8b-8466-d7bbb17ab2a4" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><img src="https://media.fab.com/image_previews/gallery_images/bca7e537-40a8-4591-8bff-fd976bed2039/1d50e793-32ed-4727-9af9-c88675714f0b.jpg" alt="Niagara Laser Beam Weapon V3 — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Laser Beam Weapon V3</h3><div class="card__meta"><span class="price">From $18.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(2)</span></span></div></div></a>
+      <a class="card" data-cat="Combat" href="https://www.fab.com/listings/849e3115-2efd-4f23-99ca-29415e319587" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/eec4e391-aa5b-4ea7-8a77-e535c740a355/f22a3da7-1e9b-4787-a395-1a3f170f95d1.jpg" alt="Ultimate Action Niagara VFX — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Action Niagara VFX</h3><div class="card__meta"><span class="price">From $12.99</span><span class="rating rating--new">New</span></div></div></a>
+      <a class="card" data-cat="Character" href="https://www.fab.com/listings/63810c36-b2f9-4401-8554-c0db33e0db18" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#10c9b0,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/46aa1a83-45f9-439d-9545-91e78059cf87/9509b688-e145-4ae8-bcdb-040f5a0f2057.jpg" alt="Ultimate Character VFX V2 — Character VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Character VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Character VFX V2</h3><div class="card__meta"><span class="price">From $14.99</span><span class="rating rating--new">New</span></div></div></a>
+      <a class="card" data-cat="Character" href="https://www.fab.com/listings/0c1216fb-ddca-4351-9571-a199b158b420" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#10c9b0,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/ad8c95d6-f087-4500-85e3-a7161e0ac6d3/cb1a9c6a-fd03-4bfd-97de-8dccf20d79dd.jpg" alt="Ultimate Character VFX — Character VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Character VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Character VFX</h3><div class="card__meta"><span class="price">From $14.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★☆</span>4.4 <span class="rating__n">(5)</span></span></div></div></a>
+      <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/314ebc33-5fdf-4420-824a-bc6f4f6a0595" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><img src="https://media.fab.com/image_previews/gallery_images/efffac1d-6d2e-4b95-8218-b29e918f9eb8/76638dc0-94c6-46bc-83c4-e0a4468c2290.jpg" alt="Niagara Weapon Muzzle Flash — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Weapon Muzzle Flash</h3><div class="card__meta"><span class="price">From $9.99</span><span class="rating rating--new">New</span></div></div></a>
+      <a class="card" data-cat="Environment" href="https://www.fab.com/listings/6db5d306-e208-41c4-9221-f074cf7b2d3b" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#2fe06a)"><img src="https://media.fab.com/image_previews/gallery_images/bf43d093-acad-4b29-a2a1-7af368d7d7e8/f02909d1-0112-447d-b1ec-d173bfaae5fc.jpg" alt="Ultimate Niagara Environmental VFX V2 — Environmental VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Environmental VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Niagara Environmental VFX V2</h3><div class="card__meta"><span class="price">From $19.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★☆</span>4.0 <span class="rating__n">(3)</span></span></div></div></a>
+      <a class="card" data-cat="Environment" href="https://www.fab.com/listings/e25c0150-ec47-4e9f-a818-8aa9f501c481" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#2fe06a)"><img src="https://media.fab.com/image_previews/gallery_images/eebfcfd0-52dc-4ba1-8389-7e96230d0151/32c23c2e-0cdf-4eaf-839e-06c4d229501f.jpg" alt="Ultimate Niagara Environmental VFX — Environmental VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Environmental VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Niagara Environmental VFX</h3><div class="card__meta"><span class="price">From $17.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★☆</span>4.2 <span class="rating__n">(5)</span></span></div></div></a>
+      <a class="card" data-cat="Environment" href="https://www.fab.com/listings/5df56d5e-cccd-4c1c-b907-0e7007d227f8" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#2fe06a)"><img src="https://media.fab.com/image_previews/gallery_images/0bd0788c-e2fc-41bd-ae82-8ec194464ae5/bdae30b7-db5c-4e1d-b5ac-58a695900a42.jpg" alt="Niagara Tornado VFX — Environmental VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Environmental VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Tornado VFX</h3><div class="card__meta"><span class="price">From $8.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(1)</span></span></div></div></a>
+      <a class="card" data-cat="Environment" href="https://www.fab.com/listings/089ec99b-9fbb-406c-8442-7912a39553fc" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#2fe06a)"><img src="https://media.fab.com/image_previews/gallery_images/305c9a54-9bdb-4eae-8912-be5a24e0d55f/a7165871-db7b-42ee-b7a5-52c083570fdf.jpg" alt="Portal Pack — Environmental VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Environmental VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Portal Pack</h3><div class="card__meta"><span class="price">From $9.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>4.5 <span class="rating__n">(2)</span></span></div></div></a>
+      <a class="card" data-cat="Combat" href="https://www.fab.com/listings/c1bdd925-e4a6-4eae-a6a7-a39abec1ecbb" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/c29c56c3-f437-433c-a2a3-f418a528e19f/c969871e-56ad-4f83-895c-907beee75b40.jpg" alt="Advanced Niagara Slash &amp; Trail VFX — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Advanced Niagara Slash &amp; Trail VFX</h3><div class="card__meta"><span class="price">From $9.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(1)</span></span></div></div></a>
+      <a class="card" data-cat="Combat" href="https://www.fab.com/listings/6fa94df2-a5df-44a4-89a6-714189c67a38" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/a85602f9-4f6d-4194-b267-66b373b7a3ea/396f9780-34bc-440a-898b-61701cabde90.jpg" alt="Advanced Niagara Projectiles VFX — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Advanced Niagara Projectiles VFX</h3><div class="card__meta"><span class="price">From $9.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★☆☆</span>3.0 <span class="rating__n">(1)</span></span></div></div></a>
+      <a class="card" data-cat="Combat" href="https://www.fab.com/listings/38d01588-777f-4074-b915-4badc5276e76" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/4310d565-339c-410b-b62e-ccd9247e08f9/675c1382-0f32-4bcf-8628-a1047d55f566.jpg" alt="Advanced Shield VFX V2 — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Advanced Shield VFX V2</h3><div class="card__meta"><span class="price">From $12.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★☆</span>4.0 <span class="rating__n">(4)</span></span></div></div></a>
+      <a class="card" data-cat="Combat" href="https://www.fab.com/listings/0a07e5c6-1cde-429b-987e-bd79d2d68d76" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/ae5d6b91-f30f-4d5b-a105-95fe61a9217d/a01dcb83-b8ae-4569-8a2b-c2dc353ca581.jpg" alt="Shield Pack — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Shield Pack</h3><div class="card__meta"><span class="price">From $9.99</span><span class="rating rating--new">New</span></div></div></a>
+      <a class="card" data-cat="Packs" href="https://www.fab.com/listings/843f3b56-092f-444c-a200-599cf0692c9d" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#d6f77a,#7fe05a)"><img src="https://media.fab.com/image_previews/gallery_images/058d3a81-6df4-4a0e-ab18-83f354cc3072/cd78644a-358c-4430-ab8e-8c657a9b8330.jpg" alt="Essential Niagara VFX Pack — Bundles for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Bundles</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Essential Niagara VFX Pack</h3><div class="card__meta"><span class="price">From $15.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★☆</span>3.8 <span class="rating__n">(5)</span></span></div></div></a>
+      <a class="card" data-cat="Packs" href="https://www.fab.com/listings/9fed3f1c-27b1-4371-8ca4-77df38f2b978" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#d6f77a,#7fe05a)"><img src="https://media.fab.com/image_previews/gallery_images/1a9c9282-92c5-43ac-bb8b-491e31dc6203/3f40a2cf-7d2c-417c-acde-7e4568bb3edf.jpg" alt="Advanced Niagara Essential VFX Vol:01 — Bundles for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Bundles</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Advanced Niagara Essential VFX Vol:01</h3><div class="card__meta"><span class="price">From $9.99</span><span class="rating rating--new">New</span></div></div></a>
+      <a class="card" data-cat="Packs" href="https://www.fab.com/listings/bef35a22-b411-45d6-aad8-360c6d422d51" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#d6f77a,#7fe05a)"><img src="https://media.fab.com/image_previews/gallery_images/3a375c22-c45e-4428-9003-b0ee99f74137/675610d9-e9dd-4d46-bda8-8fa160bd33ae.jpg" alt="Niagara Essential VFX Vol:02 — Bundles for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Bundles</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Essential VFX Vol:02</h3><div class="card__meta"><span class="price">From $9.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★☆</span>4.0 <span class="rating__n">(1)</span></span></div></div></a>
+      <a class="card" data-cat="Plugins" href="https://www.fab.com/listings/ba4574f2-4549-41a5-99ff-79cb28a8d1cb" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#10c9b0,#2fe06a)"><img src="https://media.fab.com/image_previews/gallery_images/792b3e6f-ca0b-4b01-ad13-d614e512fafb/36433c29-8184-423e-9d94-ba957fcc2038.jpg" alt="AnyDetourComponent Plugin — Plugins for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Plugins</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">AnyDetourComponent Plugin</h3><div class="card__meta"><span class="price">From $4.99</span><span class="rating rating--new">New</span></div></div></a>
+      <!-- /@catalog -->
+    </div>
     <div class="grid-more">
       <a class="btn btn--ghost" href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">See everything on Fab ↗</a>
     </div>
@@ -555,7 +712,9 @@
         <h4>Store</h4>
         <a href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Browse on Fab</a>
         <a href="unreal-engine-3d-pathfinding/">3D Pathfinding for UE5</a>
-        <a href="#featured">Best Sellers</a>
+        <a href="unreal-engine-niagara-vfx/">Niagara VFX packs</a>
+        <a href="unreal-engine-flying-ai/">Flying &amp; drone AI</a>
+        <a href="#bestsellers">Best Sellers</a>
         <a href="#catalog">Full Library</a>
       </div>
       <div class="footer__col">
@@ -573,15 +732,16 @@
     </div>
     <div class="footer__bottom">
       <span>© 2018–2026 UEDEV · L. Charitha Madhushanka</span>
-      <span class="mono">Unreal Engine · Niagara · UE4 &amp; UE5</span>
+      <span class="mono">For AI agents: <a href="llms.txt">llms.txt</a> · <a href="facts.json">facts.json</a> · <a href="sitemap.xml">sitemap</a></span>
     </div>
   </div>
 </footer>
 
-<script src="assets/image-slot.js"></script>
-<script src="assets/transition.js"></script>
-<script src="assets/company.js"></script>
-<script src="assets/navmesh.js"></script>
-<script src="assets/upgrade.js"></script>
+<script src="assets/image-slot.js?v=20261024"></script>
+<script src="assets/transition.js?v=20261024"></script>
+<script src="assets/company.js?v=20261024"></script>
+<script src="assets/navmesh.js?v=20261024"></script>
+<script src="assets/upgrade.js?v=20261024"></script>
+<script src="assets/nav3d.js?v=20261024" defer></script>
 </body>
 </html>

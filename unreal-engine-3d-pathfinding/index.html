@@ -22,14 +22,16 @@
 <meta property="og:title" content="3D Pathfinding for Unreal Engine 5 — LCM 3D Navigation AI" />
 <meta property="og:description" content="True volumetric 3D pathfinding for UE5: sparse voxel octree navigation for flying AI, drones and underwater agents, with 10,000+ Mass agents and multiplayer replication." />
 <meta property="og:url" content="https://uedevlabs.github.io/unreal-engine-3d-pathfinding/" />
-<meta property="og:image" content="https://uedevlabs.github.io/assets/nav3d/banner.png" />
-<meta property="og:image:alt" content="LCM 3D Navigation AI — 3D pathfinding for Unreal Engine 5." />
+<meta property="og:image" content="https://uedevlabs.github.io/assets/media/stills/drone-swarm-city-towers-1280.jpg" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="720" />
+<meta property="og:image:alt" content="A drone swarm flying between city towers in LCM 3D Navigation AI for Unreal Engine 5." />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="3D Pathfinding for Unreal Engine 5 — LCM 3D Navigation AI" />
 <meta name="twitter:description" content="Sparse voxel octree pathfinding for flying AI, drones and underwater agents in Unreal Engine 5." />
-<meta name="twitter:image" content="https://uedevlabs.github.io/assets/nav3d/banner.png" />
+<meta name="twitter:image" content="https://uedevlabs.github.io/assets/media/stills/drone-swarm-city-towers-1280.jpg" />
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -65,26 +67,39 @@
       ],
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "Unreal Engine plugin",
-      "operatingSystem": "Windows, PlayStation 5, Xbox Series X|S",
-      "softwareVersion": "2.05",
+      "operatingSystem": "Windows, macOS, Linux, Android, iOS, PlayStation 5, Xbox Series X|S",
+      "softwareVersion": "3.6.0",
+      "dateModified": "2026-10-24",
+      "releaseNotes": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/#whats-new",
       "softwareRequirements": "Unreal Engine 5.2 to 5.8",
       "url": "https://uedevlabs.github.io/unreal-engine-3d-pathfinding/",
       "downloadUrl": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73",
       "image": "https://uedevlabs.github.io/assets/nav3d/banner.png",
-      "description": "True 3D pathfinding for Unreal Engine 5. A sparse voxel octree navigation volume with A*, Theta* and Lazy Theta* solvers for flying AI, drones, spaceships and underwater agents, plus 10,000+ agent Mass Entity crowds, tactical 3D EQS, dynamic obstacles, 6-DOF flight locomotion and server-authoritative multiplayer replication.",
+      "description": "True 3D pathfinding for Unreal Engine 5. A sparse voxel octree navigation volume with A*, Theta* and Lazy Theta* solvers for flying AI, drones, spaceships and underwater agents, built on the GPU and verified on each machine, plus an 85-node Behaviour Tree, StateTree and Mass agent library, 10,000+ agent Mass Entity crowds, moving-obstacle prediction, tactical 3D EQS, 6-DOF flight locomotion and server-authoritative multiplayer replication.",
       "featureList": [
-        "Sparse Voxel Octree volumetric navigation for full 3D pathfinding",
+        "Sparse Voxel Octree volumetric navigation for full 3D pathfinding, voxels down to 0.5 cm",
         "A*, Theta* and Lazy Theta* pathfinding solvers",
+        "Multi-threaded, deterministic CPU path solving",
         "Raw, Linear Shortcut and Curved Spline path smoothing",
-        "GPU voxelization with automatic CPU fallback",
+        "GPU-built navigation: voxelization, octree and links on the GPU (D3D12, D3D11, Vulkan)",
+        "GPU voxelization that checks itself on each machine",
         "Finite and infinite chunked worlds with macro/micro routing",
         "10,000+ agent Mass Entity crowds",
-        "Tactical EQS generators and tests in true 3D",
+        "Behaviour Tree: 21 tasks, 5 decorators, 5 services",
+        "StateTree: 25 tasks, 8 conditions, 8 evaluators",
+        "Mass StateTree: 10 tasks, 3 evaluators",
+        "Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land on moving decks, Perch, Scan Area, Engage, Find Cover, Flee, Investigate",
+        "Fly To predicts moving obstacles and times its pass",
+        "Fly To Location Blueprint node, no AI Controller needed",
+        "Stock Move To and EQS plan through the octree",
+        "Nav Area cost regions with per-agent query filters",
+        "Tactical EQS in true 3D: 5 generators, 8 tests, 4 contexts",
         "Server-authoritative multiplayer replication",
-        "Behaviour Tree, StateTree and Mass Entity support",
         "Dynamic obstacle restamping",
-        "6-DOF flight and swim locomotion",
-        "Hybrid Recast and SVO navigation"
+        "6-DOF flight and swim locomotion: multirotor, jet, bird and fish",
+        "Fish schooling for pawns and Mass crowds",
+        "Hybrid Recast and SVO navigation",
+        "57 free demo levels, downloaded from inside the editor"
       ],
       "author": {
         "@type": "Person",
@@ -107,16 +122,51 @@
         "@type": "CreativeWork",
         "url": "https://lcmnav3d.github.io/",
         "name": "LCM 3D Navigation AI Documentation"
+      },
+      "datePublished": "2026-08-15",
+      "offers": {
+        "@type": "Offer",
+        "price": "199.99",
+        "priceCurrency": "USD",
+        "url": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "UEDEV",
+          "url": "https://www.fab.com/sellers/UEDEV"
+        }
+      },
+      "screenshot": [
+        "https://uedevlabs.github.io/assets/media/stills/drone-swarm-city-towers-1280.jpg",
+        "https://uedevlabs.github.io/assets/media/stills/harbour-drone-lands-moving-ship-1280.jpg",
+        "https://uedevlabs.github.io/assets/media/stills/octree-routes-city-debug-1280.jpg",
+        "https://uedevlabs.github.io/assets/media/stills/reef-school-mass-1280.jpg"
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation Showcase Trailer-UE5",
+      "description": "Showcase trailer for LCM 3D Navigation AI, a 3D pathfinding and volumetric navigation plugin for Unreal Engine 5: sparse voxel octree navigation, flying AI, Mass Entity crowds and tactical 3D EQS.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/7_F3AvgQIQU/maxresdefault.jpg",
+      "uploadDate": "2026-08-16T10:20:11-07:00",
+      "duration": "PT2M33S",
+      "contentUrl": "https://www.youtube.com/watch?v=7_F3AvgQIQU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/7_F3AvgQIQU",
+      "publisher": {
+        "@type": "Organization",
+        "name": "UEDEV",
+        "url": "https://uedevlabs.github.io/"
       }
     },
     {
       "@type": "VideoObject",
-      "name": "LCM 3D Navigation AI — True Volumetric 3D Navigation for Unreal Engine 5",
-      "description": "Showcase trailer for LCM 3D Navigation AI, a 3D pathfinding and volumetric navigation plugin for Unreal Engine 5: sparse voxel octree navigation, flying AI, Mass Entity crowds and tactical 3D EQS.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/7_F3AvgQIQU/maxresdefault.jpg",
-      "uploadDate": "2026-06-08",
-      "contentUrl": "https://www.youtube.com/watch?v=7_F3AvgQIQU",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/7_F3AvgQIQU",
+      "name": "NextGen Infinite 3D Pathfinding in Unreal Engine 5  - 10,000 Flying AI Agents Thinks in 3D",
+      "description": "Technical trailer for LCM 3D Navigation AI in Unreal Engine 5: the live sparse voxel octree, infinite streaming chunks, solver and debug views, and thousands of flying AI agents planning in 3D.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/-02ah0bLMb4/maxresdefault.jpg",
+      "uploadDate": "2026-08-19T14:02:56-07:00",
+      "duration": "PT2M13S",
+      "contentUrl": "https://www.youtube.com/watch?v=-02ah0bLMb4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/-02ah0bLMb4",
       "publisher": {
         "@type": "Organization",
         "name": "UEDEV",
@@ -147,7 +197,7 @@
           "name": "How do I make flying AI in Unreal Engine 5?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Add an LcmNavigationManagerSVO actor to the level so it can build the navigation octree, give the AI pawn an LcmFlightMovementComponent for 6-DOF flight, then drive it from a Behaviour Tree FlyTo task, a StateTree task or a Mass Entity trait. The plugin handles the pathfinding request, the solve and the steering; you author the behaviour."
+            "text": "Add an LcmNavigationManagerSVO actor to the level so it can build the navigation octree, give the AI pawn an LcmFlightMovementComponent for 6-DOF flight, then drive it from a Behaviour Tree FlyTo task, a StateTree task or a Mass Entity trait. For the simplest case, the Fly To Location Blueprint node flies a pawn with no AI Controller at all. The plugin handles the pathfinding request, the solve and the steering; you author the behaviour."
           }
         },
         {
@@ -155,7 +205,7 @@
           "name": "Does LCM 3D Navigation AI work with Behaviour Trees, StateTree and Mass Entity?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — all three. It ships drop-in Behaviour Tree tasks, decorators and services such as FlyTo and line-of-sight checks, the same flight behaviour authored as StateTree tasks, and two Mass Entity traits with three auto-registered processors for large crowds. All three surfaces read the same navigation data."
+            "text": "Yes — all three, at full parity. It ships 21 Behaviour Tree tasks, 5 decorators and 5 services; 25 StateTree tasks, 8 conditions and 8 evaluators; and 8 Mass Entity traits with 10 Mass StateTree tasks and 3 evaluators for large crowds. The behaviours include Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land, Perch, Scan Area, Engage Target, Find Cover, Flee and Investigate. All three surfaces read the same navigation data."
           }
         },
         {
@@ -163,7 +213,7 @@
           "name": "How many AI agents can LCM 3D Navigation AI handle?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "10,000 or more through Mass Entity. There are two crowd modes: per-agent asynchronous pathfinding via the Nav3D Agent trait, or a single shared CPU flow field that an entire swarm samples in constant time. A per-agent GPU solver is in experimental validation and ships as a free update."
+            "text": "10,000 or more through Mass Entity. There are two crowd modes: per-agent asynchronous pathfinding via the Nav3D Agent trait, or a single shared CPU flow field that an entire swarm samples in constant time. Mass StateTree tasks let crowds perch, scan, engage, investigate and flee, and schooling, Hold Avoidance and Contact Push keep dense crowds apart. A per-agent GPU solver is in experimental validation and ships as a free update."
           }
         },
         {
@@ -187,7 +237,7 @@
           "name": "How is this different from the free open-source SVO navigation plugins?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The solvers are comparable — A*, Theta* and Lazy Theta* are well-established and the open-source implementations use them too. The difference is everything built around the solver. LCM 3D Navigation AI adds infinite streaming worlds rather than a required bounds volume, a 6-DOF flight and swim locomotion component, dedicated Behaviour Tree and StateTree tasks, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, a 128-page manual with 517 documented symbols, and direct support from the developer. A pathfinding-only plugin hands you a list of points; the remaining integration work is yours."
+            "text": "The solvers are comparable — A*, Theta* and Lazy Theta* are well-established and the open-source implementations use them too. The difference is everything built around the solver. LCM 3D Navigation AI adds infinite streaming worlds rather than a required bounds volume, GPU-built navigation, a 6-DOF flight and swim locomotion component, an 85-node Behaviour Tree, StateTree and Mass agent library, moving-obstacle prediction, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, 57 demo levels, a 165-page manual with 15 tutorials, and direct support from the developer. A pathfinding-only plugin hands you a list of points; the remaining integration work is yours."
           }
         },
         {
@@ -195,7 +245,7 @@
           "name": "Which Unreal Engine versions and platforms are supported?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LCM 3D Navigation AI 2.05 supports Unreal Engine 5.2 through 5.8 and is shipping-ready on Windows PC, PlayStation 5 and Xbox Series X|S. Nintendo Switch support is in progress. Check the Fab listing for the current engine compatibility list."
+            "text": "LCM 3D Navigation AI 3.6.0 supports Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8, and is supported on Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S. Consoles compile from source with your own platform SDK. Nintendo Switch support is in progress. Check the Fab listing for the current engine compatibility list."
           }
         },
         {
@@ -203,7 +253,7 @@
           "name": "Do I need C++, or does it work with Blueprints?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It works from Blueprints. The plugin is written in C++ for performance but exposes 517 reflected symbols to Blueprint, every one of them documented with a tooltip, so a full flying AI can be built without writing code. The C++ API is available when you want it."
+            "text": "It works from Blueprints. The plugin is written in C++ for performance and ships complete source, but exposes 726 symbols to Blueprint, documented in a full API reference, so a full flying AI can be built without writing code. The Fly To Location node flies a pawn from plain Blueprint with no AI Controller. The C++ API is available when you want it."
           }
         },
         {
@@ -211,7 +261,31 @@
           "name": "Can it handle moving or dynamic obstacles?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors, and the change is replicated to clients in multiplayer sessions."
+            "text": "Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors, and the change is replicated to clients in multiplayer sessions. Since 3.6, Fly To also predicts every moving obstacle and times its pass: it learns a gate's or a piston's cycle, waits for a gap, takes a detour, and dodges what it cannot outrun."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can flying AI land on moving platforms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Land task finds its own landing point and flies the approach relative to the deck, so a drone can land on a rolling ship or a moving lorry and take off again with the deck's velocity. Birds and fish glide in with a braking flare, and EQS generators and tests find landing sites for flying agents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work for small worlds such as an aquarium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Voxels go down to 0.5 cm, and a World Scale profile handles centimetre-scale worlds. The Fish Tank demo navigates a 120 cm aquarium at 1 cm, with 8 cm fish schooling through a rock arch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is new in LCM 3D Navigation AI 3.6?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Version 3.6.0 (October 2026) adds moving-obstacle prediction to Fly To, the Obstacle Gauntlet demo (a 370 m hall with 42 movers), GPU voxelization that proves itself on each machine before it builds navigation, a self-repairing GPU build on D3D12, D3D11 and Vulkan, more natural fish swimming and schooling, steadier drones and smarter hunters, and more than thirty fixes from a plugin-wide code audit."
           }
         },
         {
@@ -219,7 +293,7 @@
           "name": "Is there a free demo of LCM 3D Navigation AI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. A free playable demo is available on itch.io, and the full plugin is sold on the Fab marketplace."
+            "text": "Yes. A free playable demo is available on itch.io, and buyers get 57 demo levels free from inside the editor (LCM Nav3D menu, Get the Demo Levels). The full plugin is sold on the Fab marketplace."
           }
         }
       ]
@@ -231,64 +305,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="../assets/media/loops/loop-drone-swarm-city-poster-1280.jpg" fetchpriority="high" />
 <link rel="stylesheet" href="../assets/company.css" />
-<link rel="stylesheet" href="../assets/upgrade.css" />
-<style>
-  /* Scoped layer for this article page — deliberately no .reveal, so every word
-     renders without JavaScript for crawlers and for no-JS visitors. */
-  .lp{padding-top:120px}
-  .lp .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
-  .crumb{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:22px}
-  .crumb a{color:var(--faint)}.crumb a:hover{color:var(--cyan)}
-  .lp h1{font-size:clamp(34px,5.4vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1.03;margin:0 0 20px}
-  .lp h1 em{font-style:normal;background:linear-gradient(120deg,var(--cyan),var(--violet) 60%,var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lp h2{font-size:clamp(26px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:0 0 16px}
-  .lp h3{font-size:clamp(18px,1.9vw,23px);font-weight:700;letter-spacing:-.01em;margin:28px 0 8px}
-  .lp .lede{font-size:clamp(17px,1.7vw,21px);line-height:1.6;color:var(--muted);max-width:820px;margin:0 0 26px}
-  .lp .lede em{font-style:italic;color:var(--ink);padding-right:.09em}
-  .lp section[id],.lp #faq,#cta{scroll-margin-top:96px}
-  .lp p{line-height:1.72;color:var(--muted);max-width:820px}
-  .lp section{margin:0 0 78px}
-  .lp section > p{margin:0 0 16px}
-  .lp .kicker{display:block;margin-bottom:12px}
-  .lp strong{color:var(--ink);font-weight:600}
-  .lp a.ln{color:var(--cyan);border-bottom:1px solid rgba(47,224,106,.35)}
-  .lp a.ln:hover{border-bottom-color:var(--cyan)}
-  .lp code{font-family:var(--mono);font-size:.9em;color:var(--ink);background:rgba(255,255,255,.06);padding:2px 6px;border-radius:5px}
-  .lp ul.tick{list-style:none;padding:0;margin:0 0 16px;max-width:820px}
-  .lp ul.tick li{position:relative;padding:0 0 0 26px;margin-bottom:11px;line-height:1.65;color:var(--muted)}
-  .lp ul.tick li::before{content:'';position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:2px;background:linear-gradient(135deg,var(--cyan),var(--violet))}
-  .tbl{width:100%;border-collapse:collapse;margin:6px 0 8px;font-size:15px;border-radius:14px;border:1px solid var(--line)}
-  .tbl caption{caption-side:bottom;text-align:left;color:var(--faint);font-size:13px;padding-top:12px}
-  .tbl th,.tbl td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
-  .tbl thead th{background:rgba(255,255,255,.045);color:var(--ink);font-weight:700;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase}
-  .tbl tbody th{color:var(--ink);font-weight:600}
-  .tbl td{color:var(--muted)}
-  .tbl tr:last-child th,.tbl tr:last-child td{border-bottom:0}
-  .tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:8px}
-  .ucase{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:8px}
-  .ucase div{border:1px solid var(--line);border-radius:16px;padding:22px;background:rgba(255,255,255,.02)}
-  .ucase b{display:block;color:var(--ink);font-size:16px;margin-bottom:7px}
-  .ucase span{color:var(--muted);font-size:14.5px;line-height:1.6}
-  .steps{list-style:none;counter-reset:s;padding:0;margin:0;max-width:860px}
-  .steps li{counter-increment:s;position:relative;padding:0 0 0 54px;margin-bottom:24px}
-  .steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:-2px;font-family:var(--mono);font-size:15px;font-weight:700;color:var(--cyan)}
-  .steps b{display:block;color:var(--ink);font-size:17px;margin-bottom:5px}
-  .steps span{color:var(--muted);line-height:1.65}
-  .faq details{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:rgba(255,255,255,.02)}
-  .faq summary{cursor:pointer;padding:18px 22px;font-weight:600;color:var(--ink);font-size:16.5px;list-style:none;line-height:1.45}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:'+';float:right;color:var(--cyan);font-weight:400;font-size:22px;line-height:1;margin-left:14px}
-  .faq details[open] summary::after{content:'\2212'}
-  .faq details[open] summary{border-bottom:1px solid var(--line)}
-  .faq details > div{padding:16px 22px 20px}
-  .faq details > div p{margin:0}
-  .lpvid{position:relative;width:100%;max-width:920px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin:0 0 12px}
-  .lpvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .lp .hero__row{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 0}
-  @media(max-width:860px){.lp{padding-top:96px}.lp .wrap{padding:0 24px}}
-  @media(max-width:560px){.lp .wrap{padding:0 16px}}
-</style>
+<link rel="stylesheet" href="../assets/upgrade.css?v=20261024" />
+<link rel="stylesheet" href="../assets/nav3d.css?v=20261024" />
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <div class="aurora"></div>
@@ -298,14 +319,14 @@
 <header class="nav" id="nav">
   <div class="nav__in">
     <a href="../" class="brand"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
-    <nav class="nav__links">
+    <nav class="nav__links" aria-label="Page sections">
       <a href="../#nav3d">3D Navigation AI</a>
+      <a href="#whats-new">What's new</a>
+      <a href="#worlds">Demo worlds</a>
       <a href="#how">How it works</a>
-      <a href="#infinite">Infinite worlds</a>
-      <a href="#use-cases">Use cases</a>
-      <a href="#quick-start">Quick start</a>
+      <a href="#infinite" class="nav__opt">Infinite worlds</a>
+      <a href="#quick-start" class="nav__opt">Quick start</a>
       <a href="#faq">FAQ</a>
-      <a href="../portfolio.html">Developer</a>
     </nav>
     <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__cta">Get it on Fab ↗</a>
     <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -314,210 +335,824 @@
 
 <main class="lp">
 <article>
-  <div class="wrap">
 
-    <p class="crumb"><a href="../">UEDEV</a> &nbsp;/&nbsp; 3D Pathfinding for Unreal Engine 5</p>
-
-    <header>
-      <span class="kicker">LCM 3D Navigation AI · v2.05 · Unreal Engine 5.2–5.8</span>
+  <!-- HERO -->
+  <header class="xh">
+    <div class="xh__media" aria-hidden="true">
+      <!-- @loop slug="loop-drone-swarm-city" class="xh__video" id="heroLoop" hero -->
+      <video id="heroLoop" class="xh__video" muted loop playsinline autoplay preload="auto" data-autoplay poster="../assets/media/loops/loop-drone-swarm-city-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: a drone swarm pours between city towers">
+        <source src="../assets/media/loops/loop-drone-swarm-city.webm" type='video/webm; codecs="av01.0.05M.08"'>
+        <source src="../assets/media/loops/loop-drone-swarm-city.mp4" type="video/mp4">
+      </video>
+      <!-- /@loop -->
+    </div>
+    <div class="xh__scrim"></div>
+    <div class="wrap xh__in">
+      <p class="crumb"><a href="../">UEDEV</a> &nbsp;/&nbsp; 3D Pathfinding for Unreal Engine 5 &nbsp;·&nbsp; Updated <time datetime="2026-10-24">24 October 2026</time> for v<span data-fact="product.version">3.6.0</span></p>
+      <p class="xh__chip"><b>v<span data-fact="product.version">3.6.0</span></b> LCM 3D Navigation AI · agents that see moving obstacles coming</p>
       <h1>True <em>3D pathfinding</em> for Unreal Engine 5</h1>
       <p class="lede">Unreal Engine's built-in Recast navmesh can only answer one question: <em>where can I stand?</em> This plugin answers the one that flying AI actually needs — <em>where is there empty air?</em> It is a volumetric 3D navigation and pathfinding plugin for UE5 that turns the whole playable volume into a Sparse Voxel Octree, so drones, dragons, spaceships, helicopters, birds and underwater agents path through real 3D space instead of along a floor.</p>
-      <div class="hero__row">
+      <div class="xh__cta">
         <a class="btn btn--glow" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Get it on Fab</a>
+        <a class="btn btn--ghost" href="#trailer">Watch the trailers</a>
         <a class="btn btn--ghost" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">Try the free demo</a>
-        <a class="btn btn--ghost" href="../portfolio.html#contact">Talk to the developer</a>
       </div>
-    </header>
-
-    <section id="trailer" style="margin-top:64px">
-      <h2>See 3D pathfinding running in UE5</h2>
-      <p>A showcase of volumetric navigation, flying AI pathfinding, Mass Entity crowds and tactical 3D EQS inside Unreal Engine 5.</p>
-      <div class="lpvid">
-        <iframe src="https://www.youtube-nocookie.com/embed/7_F3AvgQIQU" title="LCM 3D Navigation AI — 3D Pathfinding for Unreal Engine 5, showcase trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-    </section>
-
-    <section id="why">
-      <h2>Why Unreal Engine's navmesh can't do 3D pathfinding</h2>
-      <p>Recast, the navigation system that ships with Unreal Engine 5, voxelizes your level and then extracts the <strong>walkable surfaces</strong> from it — the result is a set of polygons draped over the floor. That is exactly the right representation for a soldier, and completely the wrong one for a dragon. A flying AI has no floor to walk on, so a Recast navmesh gives it nothing to query.</p>
-      <p>The usual workarounds all leak. Raycast-and-steer looks fine in an open field and gets stuck the moment there is a concave building. Hand-placed waypoint graphs are expensive to author and go stale the instant a level artist moves a wall. Stacking navmeshes at several altitudes turns 3D navigation into a set of disconnected 2D floors, and still can't route diagonally through a shaft.</p>
-      <p>Volumetric navigation solves it properly by inverting the question. Instead of storing where geometry <em>is</em>, it stores where it <em>isn't</em>, in a Sparse Voxel Octree — and pathfinds through that empty volume in full 3D.</p>
-
-      <div class="tblwrap">
-      <table class="tbl">
-        <caption>Recast navmesh vs. LCM 3D Navigation AI volumetric navigation in Unreal Engine 5.</caption>
-        <thead><tr><th scope="col">&nbsp;</th><th scope="col">UE5 Recast navmesh</th><th scope="col">LCM 3D Navigation AI (SVO)</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">What it stores</th><td>Walkable surfaces — polygons on the floor</td><td>Navigable volume — the empty air and water</td></tr>
-          <tr><th scope="row">Dimensionality</th><td>2.5D: a surface with height offsets</td><td>True 3D: any point in the playable volume</td></tr>
-          <tr><th scope="row">Suits</th><td>Humanoids, vehicles, ground crowds</td><td>Flying AI, drones, spaceships, submarines, insects</td></tr>
-          <tr><th scope="row">Vertical movement</th><td>Nav links, jumps, stacked meshes</td><td>Native — up, down and diagonal are the same query</td></tr>
-          <tr><th scope="row">Cost profile</th><td>Scales with floor area</td><td>Scales with clutter, not level size — open sky is a few large nodes</td></tr>
-          <tr><th scope="row">Solvers</th><td>A* over polygons</td><td>A*, Theta* and Lazy Theta* over octree nodes</td></tr>
-          <tr><th scope="row">Crowd scale</th><td>Detour crowd manager</td><td>10,000+ agents via Mass Entity, per-agent or shared flow field</td></tr>
-          <tr><th scope="row">Can they coexist?</th><td colspan="2">Yes — run hybrid levels where ground troops use Recast and air units use the SVO.</td></tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-
-    <section id="how">
-      <span class="kicker">Under the hood</span>
-      <h2>How volumetric 3D pathfinding works</h2>
-
-      <h3>A Sparse Voxel Octree of the empty space</h3>
-      <p>Drop a single <code>LcmNavigationManagerSVO</code> actor into the level and it owns the octree, the pathfinder and every query. The manager subdivides the playable volume only where geometry actually exists: a wide-open sky becomes a handful of large nodes, while a cluttered hangar interior subdivides down to the minimum voxel size. Cost therefore tracks how busy your level is rather than how big it is. Voxelization runs on the GPU with an automatic CPU fallback, and the defaults — a 100&nbsp;cm minimum voxel inside a 200&nbsp;m world cube — are tuned to be sane on a first build.</p>
-
-      <h3>Three pathfinding solvers, three smoothing modes</h3>
-      <p>Pick the trade-off that fits the agent: <strong>A*</strong> for raw throughput, <strong>Theta*</strong> for true any-angle routes that cut the corners a grid would force you around, and <strong>Lazy Theta*</strong> for near-Theta* path quality at close to A* cost. Then choose smoothing — Raw, Linear Shortcut or Curved Spline — each validated against level geometry, so a smoothed path never slices through a wall.</p>
-
-      <h3>Macro / micro routing and infinite worlds</h3>
-      <p>Long-distance routes solve coarsely across chunks first, then finely within them, which keeps a cross-map flight from paying full-resolution search cost end to end. Finite worlds build their octree once at <code>BeginPlay</code>; infinite worlds stream chunks in around agents and discard them behind, so open-world 3D navigation in UE5 stays inside a fixed memory budget.</p>
-
-      <h3>Dynamic obstacles that restamp</h3>
-      <p>Moving geometry writes its own footprint back into the octree as it travels, so lifts, blast doors, destructible cover and patrolling capital ships all change routing live — and in multiplayer that change is multicast to every peer.</p>
-    </section>
-
-
-    <section id="infinite">
-      <span class="kicker">The hard part</span>
-      <h2>Infinite worlds, not a bounded volume</h2>
-      <p>Almost every volumetric navigation implementation for Unreal — including the open-source ones — starts by asking you to place a <strong>bounds volume</strong> and builds its octree inside it. For an arena or a level-sized map that is perfectly fine, and LCM 3D Navigation AI supports exactly that model: a finite world builds once at <code>BeginPlay</code> and stays put.</p>
-      <p>It stops being fine in an open world. A bounds volume has to be big enough to contain everywhere an agent may ever fly, memory scales with that box whether or not anything is happening inside it, and the moment your player crosses the edge, navigation simply ends.</p>
-      <p><strong>Infinite mode removes the box.</strong> Navigation chunks stream in around agents and are discarded behind them, so memory stays flat no matter how far the map extends — the same reason you stream level geometry rather than loading a continent. Long routes use <strong>macro/micro routing</strong>: the path solves coarsely across chunks first and finely within the chunk the agent is actually in, so a cross-map flight never pays full-resolution search cost end to end.</p>
-      <p>That combination — unbounded streaming navigation with hierarchical routing on top — is what makes 3D pathfinding usable in an open-world or World Partition project rather than only inside a hand-placed box.</p>
-      <div class="ucase" style="margin-top:22px">
-        <div><b>Finite mode</b><span>Defined bounds, octree built once at <code>BeginPlay</code>. Lowest overhead when your playable space genuinely is a box.</span></div>
-        <div><b>Infinite mode</b><span>Chunks stream around agents and unload behind. Fixed memory budget across an unbounded map.</span></div>
-        <div><b>Macro / micro routing</b><span>Coarse across chunks, fine within them — long routes stay cheap instead of scaling with distance.</span></div>
-      </div>
-    </section>
-
-    <section id="beyond">
-      <h2>Pathfinding is the easy half</h2>
-      <p>A pathfinding plugin hands you a list of points. Turning that into an agent that flies convincingly, is authored by your AI designers, scales to a crowd and survives a multiplayer session is the rest of the work — and in practice it is where the integration time actually goes. That gap is what LCM 3D Navigation AI is built to close.</p>
-      <div class="tblwrap">
-      <table class="tbl">
-        <caption>Capability comparison against pathfinding-only volumetric navigation plugins. Solver quality is deliberately listed as equivalent — the difference is everything built around it.</caption>
-        <thead><tr><th scope="col">Capability</th><th scope="col">Pathfinding-only plugins</th><th scope="col">LCM 3D Navigation AI</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Route solving</th><td>A*, Theta*, Lazy Theta*</td><td>The same three solvers</td></tr>
-          <tr><th scope="row">World model</th><td>Bounds volume required</td><td>Finite <em>or</em> infinite streaming chunks</td></tr>
-          <tr><th scope="row">Agent locomotion</th><td>Bring your own movement</td><td>6-DOF flight &amp; swim component — Multirotor, Bird, Fish, Generic</td></tr>
-          <tr><th scope="row">Behaviour Tree</th><td>Stock <code>MoveTo</code> nodes</td><td>Dedicated tasks, decorators and services</td></tr>
-          <tr><th scope="row">StateTree</th><td>—</td><td>Native StateTree tasks</td></tr>
-          <tr><th scope="row">Mass Entity crowds</th><td>—</td><td>Two traits, three processors, 10,000+ agents</td></tr>
-          <tr><th scope="row">Multiplayer</th><td>—</td><td>Server-authoritative replication, deterministic CPU compute</td></tr>
-          <tr><th scope="row">Tactical queries</th><td>Varies</td><td>3D EQS generators and tests scoring real volume</td></tr>
-          <tr><th scope="row">Consoles</th><td>Varies</td><td>PlayStation 5, Xbox Series X|S</td></tr>
-          <tr><th scope="row">Documentation</th><td>README</td><td>128-page manual, 517 documented symbols</td></tr>
-          <tr><th scope="row">Support</th><td>Community issue tracker</td><td>Direct from the developer who wrote it</td></tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-
-    <section id="use-cases">
-      <span class="kicker">What you can build</span>
-      <h2>Flying AI, drones, submarines and space combat</h2>
-      <p>Anything that moves through a volume rather than across a surface is a candidate for 3D pathfinding in Unreal Engine 5:</p>
-      <div class="ucase">
-        <div><b>Flying AI and dragons</b><span>Aerial predators that dive between towers, circle for an approach and land — with 6-DOF flight locomotion driving the body, not just the route.</span></div>
-        <div><b>Drone and helicopter AI</b><span>Multirotor archetypes with thrust, lift, drag and attitude PID, so a drone banks into its turns instead of sliding along a spline.</span></div>
-        <div><b>Space and dogfight combat</b><span>No up, no floor, no gravity — the octree treats a debris field or asteroid belt as ordinary navigable volume.</span></div>
-        <div><b>Underwater and swim navigation</b><span>Fish archetypes with buoyancy for shoals, submarines and sea creatures routing around reefs and wrecks.</span></div>
-        <div><b>Insect and creature swarms</b><span>10,000+ Mass Entity agents sampling a shared flow field for bats, drone swarms and locusts at frame budget.</span></div>
-        <div><b>Vertical and interior levels</b><span>Shafts, atriums, scaffolding and multi-storey interiors where stacked 2D navmeshes fall apart.</span></div>
-      </div>
-    </section>
-
-    <section id="ai-systems">
-      <h2>Works with every Unreal Engine AI system</h2>
-      <p>Whichever way your team authors behaviour, the same navigation data is available through three surfaces:</p>
-      <ul class="tick">
-        <li><strong>Behaviour Tree</strong> — drop-in tasks, decorators and services including <code>FlyTo</code>, line-of-sight and chunk-loaded checks, with seven documented stock-node patterns showing where an LCM node earns its place over an engine one.</li>
-        <li><strong>StateTree</strong> — the identical flight behaviour authored as StateTree tasks, so state-driven agents get the same routing with no Behaviour Tree in the stack.</li>
-        <li><strong>Mass Entity (ECS)</strong> — two traits, per-agent asynchronous pathfinding or a shared CPU flow field sampled in O(1) by an entire swarm, driven by three auto-registered processors for request, solve and steer. You never call the solver yourself.</li>
-        <li><strong>Tactical 3D EQS</strong> — generators and tests that score real volume: volumetric line-of-sight, cover, threat exposure, height advantage and true path distance, so a sniper perch is chosen in 3D rather than on a floor plane.</li>
-        <li><strong>AI Perception and the Gameplay Debugger</strong> — threat tracking, nav links, area modifiers and a live in-editor debugger for inspecting the octree and solved routes.</li>
+      <ul class="xh__proof">
+        <li><a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews" target="_blank" rel="noopener"><span class="xstars" aria-hidden="true">★★★★★</span> <b><span data-fact="reviews.ratingDisplay">5.0</span> on Fab</b> · <span data-fact="reviews.ratingCount">3</span> ratings</a></li>
+        <li>Unreal Engine <span data-fact="compatibility.engineRange">5.2–5.8</span></li>
+        <li>Windows · macOS · Linux · Android · iOS · PS5 · Xbox</li>
+        <li>Complete C++ source</li>
       </ul>
-      <p>Everything is exposed to Blueprint: <strong>517 reflected symbols</strong>, every one carrying a tooltip, so a complete flying AI can be built without opening Visual Studio. The C++ API is there when you want it.</p>
-    </section>
+    </div>
+    <button class="xplay" type="button" data-target="heroLoop" aria-pressed="false" aria-label="Pause background video">
+      <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+      <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+    </button>
+  </header>
 
-    <section id="multiplayer">
-      <h2>Server-authoritative multiplayer 3D navigation</h2>
-      <p>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles replay their navigation footprint to every peer over a multicast. CPU compute is bit-deterministic, which keeps replays and lockstep viable, and a headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths so regressions surface in CI rather than in a playtest.</p>
-      <p>Shipping-ready on <strong>Windows PC, PlayStation 5 and Xbox Series X|S</strong>, with the C++ core held to the same standard on every target. Nintendo Switch support is in progress.</p>
-    </section>
-
-    <section id="quick-start">
-      <span class="kicker">Getting started</span>
-      <h2>Adding 3D pathfinding to a UE5 project</h2>
-      <ol class="steps">
-        <li><b>Install the plugin</b><span>Add LCM 3D Navigation AI from Fab to your Unreal Engine 5.2–5.8 project and enable it in the plugin browser. Installation is chapter 1 of the manual.</span></li>
-        <li><b>Place the navigation manager</b><span>Drop one <code>LcmNavigationManagerSVO</code> into the level and set the world bounds and minimum voxel size. It builds the Sparse Voxel Octree and owns every navigation query from then on.</span></li>
-        <li><b>Give the agent a body</b><span>Add <code>LcmFlightMovementComponent</code> to the pawn and pick an archetype — Multirotor, Bird, Fish or Generic 6-DOF — then tune thrust, lift, drag, buoyancy and the attitude PID. An animation-drive struct feeds your blendspaces.</span></li>
-        <li><b>Author the behaviour</b><span>Use the <code>FlyTo</code> Behaviour Tree task, the equivalent StateTree task, or a Mass trait for crowds. Chapter 3 of the manual walks through a first flying agent end to end.</span></li>
-        <li><b>Scale up</b><span>Add dynamic obstacles, tactical 3D EQS queries, hybrid Recast levels for ground units, and switch to infinite chunked worlds when the map outgrows a single volume.</span></li>
-      </ol>
-      <p style="margin-top:24px">Documentation is a <strong>128-page manual across 17 chapters</strong>, not a plugin dump: every setting is listed with its verified default and limits, and every reflected symbol is documented. <a class="ln" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Read the full documentation online →</a></p>
-    </section>
-
-    <section id="specs">
-      <h2>Specifications</h2>
-      <div class="tblwrap">
-      <table class="tbl">
-        <tbody>
-          <tr><th scope="row">Plugin</th><td>LCM 3D Navigation AI, version 2.05 — previously published as <strong>LCM Nav3D</strong>, still the name on the logo mark</td></tr>
-          <tr><th scope="row">Engine</th><td>Unreal Engine 5.2 – 5.8</td></tr>
-          <tr><th scope="row">Navigation</th><td>Sparse Voxel Octree volumetric navigation, hybrid with Recast</td></tr>
-          <tr><th scope="row">Pathfinding</th><td>A* · Theta* · Lazy Theta*</td></tr>
-          <tr><th scope="row">Smoothing</th><td>Raw · Linear Shortcut · Curved Spline, geometry-validated</td></tr>
-          <tr><th scope="row">Voxelization</th><td>GPU with automatic CPU fallback</td></tr>
-          <tr><th scope="row">World mode</th><td>Finite, or infinite streaming chunks</td></tr>
-          <tr><th scope="row">Crowds</th><td>10,000+ agents via Mass Entity (per-agent or shared flow field)</td></tr>
-          <tr><th scope="row">Locomotion</th><td>6-DOF flight and swim — Multirotor, Bird, Fish, Generic</td></tr>
-          <tr><th scope="row">Networking</th><td>Server-authoritative replication, bit-deterministic CPU compute</td></tr>
-          <tr><th scope="row">Scripting</th><td>Blueprint and C++ — 517 reflected symbols, 100% documented</td></tr>
-          <tr><th scope="row">Platforms</th><td>Windows PC · PlayStation 5 · Xbox Series X|S (Switch in progress)</td></tr>
-          <tr><th scope="row">Documentation</th><td><a class="ln" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">lcmnav3d.github.io</a> — 27 pages, free to read online</td></tr>
-          <tr><th scope="row">Defaults</th><td>100&nbsp;cm minimum voxel · 200&nbsp;m world cube</td></tr>
-          <tr><th scope="row">Where to get it</th><td><a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab marketplace</a> · <a class="ln" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">free demo on itch.io</a></td></tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-
-    <section id="faq" class="faq">
-      <span class="kicker">FAQ</span>
-      <h2>3D pathfinding in Unreal Engine 5 — common questions</h2>
-
-      <details open><summary>Does Unreal Engine 5 support 3D pathfinding out of the box?</summary><div><p>No. UE5 ships with Recast, which builds a navmesh of walkable surfaces — a 2.5D representation designed for characters that stand on the ground. A flying, swimming or space-borne agent has nothing to path along. LCM 3D Navigation AI adds a true volumetric representation that treats open air and water as navigable space, giving Unreal Engine 5 real 3D pathfinding.</p></div></details>
-
-      <details><summary>What is the difference between a Recast navmesh and volumetric 3D navigation?</summary><div><p>A Recast navmesh describes surfaces you can stand on; it flattens a level into walkable polygons. Volumetric navigation describes the empty space you can move through. LCM 3D Navigation AI carves the playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky is stored cheaply as a few large nodes while detail appears only where geometry actually is.</p></div></details>
-
-      <details><summary>How do I make flying AI in Unreal Engine 5?</summary><div><p>Add an <code>LcmNavigationManagerSVO</code> actor so the level can build its navigation octree, give the AI pawn an <code>LcmFlightMovementComponent</code> for 6-DOF flight, then drive it from a Behaviour Tree <code>FlyTo</code> task, a StateTree task or a Mass Entity trait. The plugin handles the request, the solve and the steering; you author the behaviour.</p></div></details>
-
-      <details><summary>Does LCM 3D Navigation AI work with Behaviour Trees, StateTree and Mass Entity?</summary><div><p>Yes — all three, reading the same navigation data. It ships drop-in Behaviour Tree tasks, decorators and services, the same flight behaviour authored as StateTree tasks, and two Mass Entity traits with three auto-registered processors for large crowds.</p></div></details>
-
-      <details><summary>How many AI agents can it handle?</summary><div><p>10,000 or more through Mass Entity. Two crowd modes are available: per-agent asynchronous pathfinding via the Nav3D Agent trait, or a single shared CPU flow field that an entire swarm samples in constant time. A per-agent GPU solver is in experimental validation and ships as a free update.</p></div></details>
-
-      <details><summary>Does 3D pathfinding work in multiplayer?</summary><div><p>Yes, server-authoritatively. Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles multicast their navigation footprint. CPU compute stays bit-deterministic for replays and lockstep, and a headless validation suite exercises the replicated paths.</p></div></details>
-
-      <details><summary>Does it work in open worlds or with World Partition?</summary><div><p>Yes. LCM 3D Navigation AI runs in two modes. A <strong>finite</strong> world builds its octree once at <code>BeginPlay</code> inside defined bounds. An <strong>infinite</strong> world has no fixed extent — navigation chunks stream in around agents and unload behind them, so memory stays flat however far the map runs. Long routes use macro/micro routing, solving coarsely across chunks and finely within the current one. Most volumetric navigation plugins require a bounds volume and cannot navigate outside it. <a class="ln" href="#infinite">More on infinite worlds →</a></p></div></details>
-
-      <details><summary>How is this different from the free open-source SVO navigation plugins?</summary><div><p>The solvers are comparable — A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built <em>around</em> the solver: infinite streaming worlds rather than a required bounds volume, a 6-DOF flight and swim locomotion component, dedicated Behaviour Tree and StateTree tasks, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, a 128-page manual, and direct support from the developer. <a class="ln" href="#beyond">See the full comparison →</a></p></div></details>
-
-      <details><summary>Which Unreal Engine versions and platforms are supported?</summary><div><p>LCM 3D Navigation AI 2.05 supports Unreal Engine 5.2 through 5.8 and is shipping-ready on Windows PC, PlayStation 5 and Xbox Series X|S. Nintendo Switch support is in progress. Check the <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab listing</a> for the current engine compatibility list.</p></div></details>
-
-      <details><summary>Do I need C++, or does it work with Blueprints?</summary><div><p>It works from Blueprints. The plugin is C++ for performance but exposes 517 reflected symbols to Blueprint, every one documented with a tooltip, so a full flying AI can be built without writing code. The C++ API is available when you want it.</p></div></details>
-
-      <details><summary>Can it handle moving or dynamic obstacles?</summary><div><p>Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors — and the change replicates to clients in multiplayer.</p></div></details>
-
-      <details><summary>Is there a free demo?</summary><div><p>Yes — a free playable demo is on <a class="ln" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">itch.io</a>, and the full plugin is sold on <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab</a>.</p></div></details>
-    </section>
-
+  <div class="wrap">
+    <dl class="xs xr" aria-label="LCM 3D Navigation AI at a glance">
+      <div><dt>BT, StateTree &amp; Mass nodes</dt><dd data-fact="ai.aiNodesTotal">85</dd></div>
+      <div><dt>True-3D EQS items</dt><dd><span data-fact="ai.eqsTotal">17</span></dd></div>
+      <div><dt>Mass Entity agents</dt><dd>10,000+</dd></div>
+      <div><dt>Smallest voxel</dt><dd>0.5<small>cm</small></dd></div>
+      <div><dt>Free demo levels</dt><dd data-fact="content.demoLevels">57</dd></div>
+      <div><dt>Engine versions</dt><dd data-fact="compatibility.engineCount">7</dd></div>
+    </dl>
   </div>
+
+  <!-- WHAT'S NEW -->
+  <section id="whats-new" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Release notes · October 2026</span>
+        <h2>What's new in <em>3.6</em></h2>
+        <p class="lede">Version 3.6.0 is a free update for existing licences: agents that see moving obstacles coming, and GPU voxelization that checks itself.</p>
+      </div>
+      <div class="xn__grid">
+        <article class="xcard xcard--feature xr">
+          <div class="xcard__media">
+            <svg class="xpredict" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagram: a drone predicts when a moving gate will open, waits at the gate, then flies through the gap.">
+              <g class="grid"><line x1="0" y1="60" x2="640" y2="60"/><line x1="0" y1="120" x2="640" y2="120"/><line x1="0" y1="180" x2="640" y2="180"/><line x1="0" y1="240" x2="640" y2="240"/><line x1="0" y1="300" x2="640" y2="300"/><line x1="80" y1="0" x2="80" y2="360"/><line x1="160" y1="0" x2="160" y2="360"/><line x1="240" y1="0" x2="240" y2="360"/><line x1="320" y1="0" x2="320" y2="360"/><line x1="400" y1="0" x2="400" y2="360"/><line x1="480" y1="0" x2="480" y2="360"/><line x1="560" y1="0" x2="560" y2="360"/></g>
+              <line class="path" x1="60" y1="180" x2="600" y2="180"/>
+              <circle class="tick" cx="140" cy="180" r="2.5"/><circle class="tick" cx="220" cy="180" r="2.5"/><circle class="tick" cx="440" cy="180" r="2.5"/><circle class="tick" cx="520" cy="180" r="2.5"/>
+              <rect class="ghost" x="330" y="38" width="30" height="100" rx="3"/>
+              <rect class="door" x="330" y="130" width="30" height="100" rx="3"/>
+              <rect class="wall" x="326" y="0" width="38" height="130" rx="3"/>
+              <rect class="wall" x="326" y="230" width="38" height="130" rx="3"/>
+              <g class="drone">
+                <circle class="halo" cx="60" cy="180" r="18"/>
+                <circle class="core" cx="60" cy="180" r="6"/>
+              </g>
+              <text class="label label--hot" x="374" y="92">predicted gap</text>
+              <text class="label" x="374" y="296">gate cycle · learned</text>
+              <text class="label" x="40" y="330">fly to · avoid moving obstacles</text>
+            </svg>
+          </div>
+          <div class="xcard__body">
+            <span class="xtag">New in 3.6</span>
+            <h3>Fly To sees moving obstacles coming</h3>
+            <p>Fly To predicts where every moving obstacle will be and times its pass: it learns a gate's or a piston's cycle and replays it, turns a spinning blade with it, eases off, waits for a gap or takes a detour — and dodges what it cannot outrun. It is on by default in the Behaviour Tree and StateTree Fly To. The new <strong>Obstacle Gauntlet</strong> demo throws 42 movers in six zones at twelve drones — or a crowd of 200 in the Mass edition — down a 370&nbsp;m hall. <a class="ln" href="../unreal-engine-moving-obstacle-avoidance/">Moving obstacle avoidance →</a></p>
+          </div>
+        </article>
+        <article class="xcard xr">
+          <div class="xcard__media">
+            <!-- @picture slug="octree-routes-city-debug" sizes="(min-width:860px) 42vw, 100vw" -->
+            <picture>
+              <source type="image/avif" srcset="../assets/media/stills/octree-routes-city-debug-640.avif 640w, ../assets/media/stills/octree-routes-city-debug-1280.avif 1280w, ../assets/media/stills/octree-routes-city-debug-1920.avif 1920w" sizes="(min-width:860px) 42vw, 100vw">
+              <source type="image/webp" srcset="../assets/media/stills/octree-routes-city-debug-640.webp 640w, ../assets/media/stills/octree-routes-city-debug-1280.webp 1280w, ../assets/media/stills/octree-routes-city-debug-1920.webp 1920w" sizes="(min-width:860px) 42vw, 100vw">
+              <img src="../assets/media/stills/octree-routes-city-debug-1280.jpg" alt="The streamed octree and agent routes over the city, with chunk boundaries visible" width="1920" height="1080" loading="lazy" decoding="async">
+            </picture>
+            <!-- /@picture -->
+          </div>
+          <div class="xcard__body">
+            <span class="xtag">New in 3.6</span>
+            <h3>GPU voxelization that checks itself</h3>
+            <p>Each machine's GPU proves its voxels before it builds navigation — a capability check, a self-test through the real pipeline (remembered per GPU, driver and build) and sampled checks while it runs. A GPU that fails voxelizes on the CPU for the rest of the session, and the log says which check failed.</p>
+          </div>
+        </article>
+        <article class="xcard xr">
+          <div class="xcard__media">
+            <!-- @loop slug="loop-reef-school" -->
+            <video class="" muted loop playsinline preload="none" data-autoplay poster="../assets/media/loops/loop-reef-school-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: a school of fish streams over the coral reef">
+              <source src="../assets/media/loops/loop-reef-school.webm" type='video/webm; codecs="av01.0.05M.08"'>
+              <source src="../assets/media/loops/loop-reef-school.mp4" type="video/mp4">
+            </video>
+            <!-- /@loop -->
+          </div>
+          <div class="xcard__body">
+            <span class="xtag xtag--ghost">Improved in 3.6</span>
+            <h3>Fish that swim like fish</h3>
+            <p>They keep their depth by pointing the nose, swim upright, school side by side and in layers, and turn away from walls at once; the tail beats with the swimming speed.</p>
+          </div>
+        </article>
+      </div>
+      <div class="xn__notes xr">
+        <div>
+          <h3>Also in 3.6</h3>
+          <ul class="tick">
+            <li><strong>GPU navigation on more graphics cards.</strong> The GPU build checks its own output word by word, rewrites what did not land and rebuilds what it cannot repair — on D3D12, D3D11 and Vulkan.</li>
+            <li><strong>Steadier drones, smarter hunters.</strong> No bobbing over a perch; Engage holds its firing position, flies to it in formation and leads a crossing target; hunters remember what they lose sight of and search for it.</li>
+            <li><strong>Fixes.</strong> Water volumes and triggers no longer read as walls, a mover that jumps back to the start of its track is treated as a jump, dedicated servers and <code>-nullrhi</code> runs no longer crash on streamed levels, and thirty defects were fixed in a plugin-wide code audit.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Earlier in 3.x</h3>
+          <ul class="tick">
+            <li><strong>3.5</strong> — Engage, Investigate, Flee, Scan Area and Perch for Behaviour Tree, StateTree and Mass; Land and Take Off, including on moving decks; six scenario demos and eight Feature Examples levels; the demo levels became a free download from inside the editor.</li>
+            <li><strong>3.4</strong> — cost areas with per-agent query filters; Unreal's stock Move To and EQS plan through the octree; the Fly To Location node; fish schooling for pawns and Mass crowds.</li>
+            <li><strong>3.3</strong> — the agent task library for Behaviour Tree, StateTree and Mass; centimetre-scale voxels; automatic rebuilds when levels stream in.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAILERS -->
+  <section id="trailer" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">See it running</span>
+        <h2>See 3D pathfinding running in UE5</h2>
+        <p class="lede">Volumetric navigation, flying AI pathfinding, Mass Entity crowds and tactical 3D EQS inside Unreal Engine 5 — every shot captured in the engine.</p>
+      </div>
+      <div class="xt__grid">
+        <div class="xt__item xr">
+          <a class="xyt" href="https://www.youtube.com/watch?v=7_F3AvgQIQU" data-yt="7_F3AvgQIQU" data-title="LCM 3D Navigation AI — showcase trailer" target="_blank" rel="noopener">
+            <!-- @picture slug="space-dogfight-lasers" sizes="(min-width:860px) 60vw, 100vw" alt="" -->
+            <picture>
+              <source type="image/avif" srcset="../assets/media/stills/space-dogfight-lasers-640.avif 640w, ../assets/media/stills/space-dogfight-lasers-1280.avif 1280w, ../assets/media/stills/space-dogfight-lasers-1920.avif 1920w" sizes="(min-width:860px) 60vw, 100vw">
+              <source type="image/webp" srcset="../assets/media/stills/space-dogfight-lasers-640.webp 640w, ../assets/media/stills/space-dogfight-lasers-1280.webp 1280w, ../assets/media/stills/space-dogfight-lasers-1920.webp 1920w" sizes="(min-width:860px) 60vw, 100vw">
+              <img src="../assets/media/stills/space-dogfight-lasers-1280.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+            </picture>
+            <!-- /@picture -->
+            <span class="xyt__btn" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9.5-5.5z"/></svg></span>
+            <span class="xyt__meta"><b>Showcase trailer</b><span>Play on YouTube · LCM 3D Navigation AI</span></span>
+          </a>
+        </div>
+        <div class="xt__item xr">
+          <a class="xyt" href="https://www.youtube.com/watch?v=-02ah0bLMb4" data-yt="-02ah0bLMb4" data-title="LCM 3D Navigation AI — technical trailer" target="_blank" rel="noopener">
+            <!-- @picture slug="octree-debug-sea-stack" sizes="(min-width:860px) 38vw, 100vw" alt="" -->
+            <picture>
+              <source type="image/avif" srcset="../assets/media/stills/octree-debug-sea-stack-640.avif 640w, ../assets/media/stills/octree-debug-sea-stack-1280.avif 1280w, ../assets/media/stills/octree-debug-sea-stack-1920.avif 1920w" sizes="(min-width:860px) 38vw, 100vw">
+              <source type="image/webp" srcset="../assets/media/stills/octree-debug-sea-stack-640.webp 640w, ../assets/media/stills/octree-debug-sea-stack-1280.webp 1280w, ../assets/media/stills/octree-debug-sea-stack-1920.webp 1920w" sizes="(min-width:860px) 38vw, 100vw">
+              <img src="../assets/media/stills/octree-debug-sea-stack-1280.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+            </picture>
+            <!-- /@picture -->
+            <span class="xyt__btn" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9.5-5.5z"/></svg></span>
+            <span class="xyt__meta"><b>Technical trailer</b><span>The octree, the solvers and the debug views</span></span>
+          </a>
+          <p>The live octree, chunk streaming and solver views behind every route — the same views ship in the editor and the Gameplay Debugger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORLDS -->
+  <section id="worlds" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">57 free demo levels</span>
+        <h2>Seventeen worlds. <em>One navigation system.</em></h2>
+        <p class="lede">Every demo world ships in Behaviour Tree and StateTree editions, most of them in a Mass Entity crowd edition too, so you can open the same behaviour in the system your team uses. They are a free download from inside the editor.</p>
+      </div>
+      <div class="xw">
+        <article class="xw__card xw__card--lg xr">
+          <!-- @picture slug="harbour-drone-lands-moving-ship" sizes="(min-width:860px) 50vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/harbour-drone-lands-moving-ship-640.avif 640w, ../assets/media/stills/harbour-drone-lands-moving-ship-1280.avif 1280w, ../assets/media/stills/harbour-drone-lands-moving-ship-1920.avif 1920w" sizes="(min-width:860px) 50vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/harbour-drone-lands-moving-ship-640.webp 640w, ../assets/media/stills/harbour-drone-lands-moving-ship-1280.webp 1280w, ../assets/media/stills/harbour-drone-lands-moving-ship-1920.webp 1920w" sizes="(min-width:860px) 50vw, 100vw">
+            <img src="../assets/media/stills/harbour-drone-lands-moving-ship-1280.jpg" alt="A courier drone descends and lands on the deck of a moving, rolling ship in the Harbour demo" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <!-- @loop slug="loop-harbour-ship-landing" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay poster="../assets/media/loops/loop-harbour-ship-landing-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: a drone descends and lands on a moving ship's deck">
+            <source src="../assets/media/loops/loop-harbour-ship-landing.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-harbour-ship-landing.mp4" type="video/mp4">
+          </video>
+          <!-- /@loop -->
+          <div class="xw__body"><h3>Harbour</h3><p>A courier drone lands on a moving, rolling ship and a moving lorry, flying each approach relative to the deck, then takes off with the deck's velocity.</p><ul class="xchips"><li>Land on moving decks</li><li>Take Off</li><li>EQS landing sites</li></ul></div>
+        </article>
+        <article class="xw__card xw__card--lg xr">
+          <!-- @picture slug="gulls-perch-sea-stack" sizes="(min-width:860px) 50vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/gulls-perch-sea-stack-640.avif 640w, ../assets/media/stills/gulls-perch-sea-stack-1280.avif 1280w, ../assets/media/stills/gulls-perch-sea-stack-1920.avif 1920w" sizes="(min-width:860px) 50vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/gulls-perch-sea-stack-640.webp 640w, ../assets/media/stills/gulls-perch-sea-stack-1280.webp 1280w, ../assets/media/stills/gulls-perch-sea-stack-1920.webp 1920w" sizes="(min-width:860px) 50vw, 100vw">
+            <img src="../assets/media/stills/gulls-perch-sea-stack-1280.jpg" alt="Seagulls sweep in and one lands to perch on a sea stack ledge" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <!-- @loop slug="loop-gulls-perch" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay poster="../assets/media/loops/loop-gulls-perch-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: gulls sweep in and one lands on a sea stack">
+            <source src="../assets/media/loops/loop-gulls-perch.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-gulls-perch.mp4" type="video/mp4">
+          </video>
+          <!-- /@loop -->
+          <div class="xw__body"><h3>Sea Cliffs</h3><p>A colony of 6-DOF seagulls that cannot hover: they glide in to perch on free ledges, ride an updraft and scatter when a survey drone flies the face.</p><ul class="xchips"><li>Perch</li><li>Orbit</li><li>Flee</li><li>BT · StateTree</li></ul></div>
+        </article>
+        <article class="xw__card xr">
+          <!-- @picture slug="hunter-drone-closeup" sizes="(min-width:860px) 33vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/hunter-drone-closeup-640.avif 640w, ../assets/media/stills/hunter-drone-closeup-1280.avif 1280w, ../assets/media/stills/hunter-drone-closeup-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/hunter-drone-closeup-640.webp 640w, ../assets/media/stills/hunter-drone-closeup-1280.webp 1280w, ../assets/media/stills/hunter-drone-closeup-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <img src="../assets/media/stills/hunter-drone-closeup-1280.jpg" alt="Close-up of the Hunter Drone with its glowing sensor eye in the LCM 3D Navigation AI demo" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <div class="xw__body"><h3>Hunter Drone</h3><p>A gunner drone hunts a runner through the streets: prediction, a chosen firing position, fire only on a clean shot.</p><ul class="xchips"><li>Engage Target</li><li>BT · ST · Mass</li></ul></div>
+        </article>
+        <article class="xw__card xr">
+          <!-- @picture slug="coral-reef-fish" sizes="(min-width:860px) 33vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/coral-reef-fish-640.avif 640w, ../assets/media/stills/coral-reef-fish-1280.avif 1280w, ../assets/media/stills/coral-reef-fish-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/coral-reef-fish-640.webp 640w, ../assets/media/stills/coral-reef-fish-1280.webp 1280w, ../assets/media/stills/coral-reef-fish-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <img src="../assets/media/stills/coral-reef-fish-1280.jpg" alt="Tropical fish swim over a coral reef using volumetric navigation in Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <div class="xw__body"><h3>Coral Reef</h3><p>An ROV surveys the reef; the school darts into the coral out of its sight and turtles settle on the seabed.</p><ul class="xchips"><li>Scan Area</li><li>Schooling</li><li>BT · ST · Mass</li></ul></div>
+        </article>
+        <article class="xw__card xr">
+          <!-- @picture slug="dogfight-pursuit-asteroids" sizes="(min-width:860px) 33vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/dogfight-pursuit-asteroids-640.avif 640w, ../assets/media/stills/dogfight-pursuit-asteroids-1280.avif 1280w, ../assets/media/stills/dogfight-pursuit-asteroids-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/dogfight-pursuit-asteroids-640.webp 640w, ../assets/media/stills/dogfight-pursuit-asteroids-1280.webp 1280w, ../assets/media/stills/dogfight-pursuit-asteroids-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <img src="../assets/media/stills/dogfight-pursuit-asteroids-1280.jpg" alt="A pursuit past bright asteroids in a streamed space level" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <!-- @loop slug="loop-space-dogfight" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay poster="../assets/media/loops/loop-space-dogfight-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: starfighters trade laser fire through an asteroid belt">
+            <source src="../assets/media/loops/loop-space-dogfight.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-space-dogfight.mp4" type="video/mp4">
+          </video>
+          <!-- /@loop -->
+          <div class="xw__body"><h3>Space Dogfight</h3><p>Fighters hunt raiders through a streamed asteroid belt, re-planning through the octree as the target breaks.</p><ul class="xchips"><li>Fly To chase</li><li>6-DOF</li><li>BT · ST · Mass</li></ul></div>
+        </article>
+        <article class="xw__card xr">
+          <!-- @picture slug="sentry-drones-depot-octree" sizes="(min-width:860px) 33vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/sentry-drones-depot-octree-640.avif 640w, ../assets/media/stills/sentry-drones-depot-octree-1280.avif 1280w, ../assets/media/stills/sentry-drones-depot-octree-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/sentry-drones-depot-octree-640.webp 640w, ../assets/media/stills/sentry-drones-depot-octree-1280.webp 1280w, ../assets/media/stills/sentry-drones-depot-octree-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <img src="../assets/media/stills/sentry-drones-depot-octree-1280.jpg" alt="Sentry drones patrol a depot with the navigation octree and AI Perception sight cones drawn" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <!-- @loop slug="loop-sentry-perception" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay poster="../assets/media/loops/loop-sentry-perception-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: sentry drones patrol a depot with perception sight cones drawn">
+            <source src="../assets/media/loops/loop-sentry-perception.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-sentry-perception.mp4" type="video/mp4">
+          </video>
+          <!-- /@loop -->
+          <div class="xw__body"><h3>Sentry Drones</h3><p>Sentries see an intruder only through AI Perception sight cones, take EQS firing positions, engage and land under cover.</p><ul class="xchips"><li>AI Perception</li><li>EQS</li><li>BT · ST · Mass</li></ul></div>
+        </article>
+        <article class="xw__card xr">
+          <!-- @picture slug="warehouse-drone-aisle" sizes="(min-width:860px) 33vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/warehouse-drone-aisle-640.avif 640w, ../assets/media/stills/warehouse-drone-aisle-1280.avif 1280w, ../assets/media/stills/warehouse-drone-aisle-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/warehouse-drone-aisle-640.webp 640w, ../assets/media/stills/warehouse-drone-aisle-1280.webp 1280w, ../assets/media/stills/warehouse-drone-aisle-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <img src="../assets/media/stills/warehouse-drone-aisle-1280.jpg" alt="A security drone flies the length of a warehouse aisle between tall racking" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <div class="xw__body"><h3>Warehouse</h3><p>A security drone perches on the racking, sweeps the hall, engages a thief and searches where it lost it.</p><ul class="xchips"><li>Perch</li><li>Investigate</li><li>BT · ST · Mass</li></ul></div>
+        </article>
+        <article class="xw__card xr">
+          <!-- @picture slug="fish-tank-120cm" sizes="(min-width:860px) 33vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/fish-tank-120cm-640.avif 640w, ../assets/media/stills/fish-tank-120cm-1280.avif 1280w, ../assets/media/stills/fish-tank-120cm-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/fish-tank-120cm-640.webp 640w, ../assets/media/stills/fish-tank-120cm-1280.webp 1280w, ../assets/media/stills/fish-tank-120cm-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+            <img src="../assets/media/stills/fish-tank-120cm-1280.jpg" alt="A 120 cm aquarium navigated at 1 cm voxels, with small fish swimming through a rock arch" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <div class="xw__body"><h3>Fish Tank</h3><p>A 120&nbsp;cm aquarium navigated at 1&nbsp;cm: 8&nbsp;cm fish through a rock arch, round a predator's lair.</p><ul class="xchips"><li>1 cm voxels</li><li>BT · ST · Mass</li></ul></div>
+        </article>
+        <article class="xw__card xw__card--sm xr">
+          <!-- @picture slug="city-open-world-drone-routes" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/city-open-world-drone-routes-640.avif 640w, ../assets/media/stills/city-open-world-drone-routes-1280.avif 1280w, ../assets/media/stills/city-open-world-drone-routes-1920.avif 1920w" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/city-open-world-drone-routes-640.webp 640w, ../assets/media/stills/city-open-world-drone-routes-1280.webp 1280w, ../assets/media/stills/city-open-world-drone-routes-1920.webp 1920w" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw">
+            <img src="../assets/media/stills/city-open-world-drone-routes-1280.jpg" alt="Drones and their planned routes drawn over a city open world in Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <!-- @loop slug="loop-city-routes" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay poster="../assets/media/loops/loop-city-routes-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: drones fly their planned routes over a streamed city">
+            <source src="../assets/media/loops/loop-city-routes.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-city-routes.mp4" type="video/mp4">
+          </video>
+          <!-- /@loop -->
+          <div class="xw__body"><h3>City</h3><p>Rooftop gaps and street canyons, streamed around the agents.</p><ul class="xchips"><li>Open world</li></ul></div>
+        </article>
+        <article class="xw__card xw__card--sm xr">
+          <!-- @picture slug="forest-open-world-routes" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/forest-open-world-routes-640.avif 640w, ../assets/media/stills/forest-open-world-routes-1280.avif 1280w, ../assets/media/stills/forest-open-world-routes-1920.avif 1920w" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/forest-open-world-routes-640.webp 640w, ../assets/media/stills/forest-open-world-routes-1280.webp 1280w, ../assets/media/stills/forest-open-world-routes-1920.webp 1920w" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw">
+            <img src="../assets/media/stills/forest-open-world-routes-1280.jpg" alt="Flight routes over a forest canopy towards a rocky massif in the Forest open world" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <div class="xw__body"><h3>Forest</h3><p>Canopy, clearings and tunnels bored through rock.</p><ul class="xchips"><li>Open world</li></ul></div>
+        </article>
+        <article class="xw__card xw__card--sm xr">
+          <!-- @picture slug="space-fleet-asteroid-field" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/space-fleet-asteroid-field-640.avif 640w, ../assets/media/stills/space-fleet-asteroid-field-1280.avif 1280w, ../assets/media/stills/space-fleet-asteroid-field-1920.avif 1920w" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/space-fleet-asteroid-field-640.webp 640w, ../assets/media/stills/space-fleet-asteroid-field-1280.webp 1280w, ../assets/media/stills/space-fleet-asteroid-field-1920.webp 1920w" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw">
+            <img src="../assets/media/stills/space-fleet-asteroid-field-1280.jpg" alt="A fleet of ships flies through a drifting asteroid field in the Deep Space open world" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <div class="xw__body"><h3>Deep Space</h3><p>A drifting asteroid field: no floor, no up, no walls.</p><ul class="xchips"><li>Open world</li></ul></div>
+        </article>
+        <article class="xw__card xw__card--sm xr">
+          <!-- @picture slug="mass-swarm-rising-skyscraper" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/mass-swarm-rising-skyscraper-640.avif 640w, ../assets/media/stills/mass-swarm-rising-skyscraper-1280.avif 1280w, ../assets/media/stills/mass-swarm-rising-skyscraper-1920.avif 1920w" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/mass-swarm-rising-skyscraper-640.webp 640w, ../assets/media/stills/mass-swarm-rising-skyscraper-1280.webp 1280w, ../assets/media/stills/mass-swarm-rising-skyscraper-1920.webp 1920w" sizes="(min-width:1100px) 25vw, (min-width:860px) 50vw, 100vw">
+            <img src="../assets/media/stills/mass-swarm-rising-skyscraper-1280.jpg" alt="A crowd of drones rising floor by floor through a skyscraper in Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <div class="xw__body"><h3>Vertical Skyscraper</h3><p>The classic true-3D climb, floor by floor.</p><ul class="xchips"><li>Interiors</li></ul></div>
+        </article>
+      </div>
+      <p class="xw__more xr">Plus <strong>Cost Areas</strong>, <strong>Cost Areas, Streamed</strong>, <strong>Dynamic Obstacles</strong>, <strong>Obstacle Tunnel</strong> and the new <strong>Obstacle Gauntlet</strong> — and eight Feature Examples levels with 69 single-feature displays that check themselves as they run. All <span data-fact="content.demoLevels">57</span> levels download free from the LCM Nav3D menu › Get the Demo Levels.</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="xsec">
+    <div class="wrap">
+      <div class="xsplit">
+        <div class="xr">
+          <span class="kicker">The problem</span>
+          <h2>Why Unreal Engine's navmesh can't do 3D pathfinding</h2>
+          <p>Recast, the navigation system that ships with Unreal Engine 5, voxelizes your level and then extracts the <strong>walkable surfaces</strong> from it — the result is a set of polygons draped over the floor. That is exactly the right representation for a soldier, and completely the wrong one for a dragon. A flying AI has no floor to walk on, so a Recast navmesh gives it nothing to query.</p>
+          <p>The usual workarounds all leak. Raycast-and-steer looks fine in an open field and gets stuck the moment there is a concave building. Hand-placed waypoint graphs are expensive to author and go stale the instant a level artist moves a wall. Stacking navmeshes at several altitudes turns 3D navigation into a set of disconnected 2D floors, and still can't route diagonally through a shaft.</p>
+          <p>Volumetric navigation solves it properly by inverting the question. Instead of storing where geometry <em>is</em>, it stores where it <em>isn't</em>, in a Sparse Voxel Octree — and pathfinds through that empty volume in full 3D.</p>
+        </div>
+        <figure class="xm xm--16x9 xr">
+          <!-- @picture slug="bird-flock-forest-rings" sizes="(min-width:860px) 46vw, 100vw" -->
+          <picture>
+            <source type="image/avif" srcset="../assets/media/stills/bird-flock-forest-rings-640.avif 640w, ../assets/media/stills/bird-flock-forest-rings-1280.avif 1280w, ../assets/media/stills/bird-flock-forest-rings-1920.avif 1920w" sizes="(min-width:860px) 46vw, 100vw">
+            <source type="image/webp" srcset="../assets/media/stills/bird-flock-forest-rings-640.webp 640w, ../assets/media/stills/bird-flock-forest-rings-1280.webp 1280w, ../assets/media/stills/bird-flock-forest-rings-1920.webp 1920w" sizes="(min-width:860px) 46vw, 100vw">
+            <img src="../assets/media/stills/bird-flock-forest-rings-1280.jpg" alt="A flock of birds threads a series of rings above a forest using true 3D pathfinding" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+          <figcaption><span>A bird flock threading rings in mid-air — there is no floor to walk on</span></figcaption>
+        </figure>
+      </div>
+      <div class="tblwrap xr" style="margin-top:48px">
+        <table class="tbl">
+          <caption>Recast navmesh vs. LCM 3D Navigation AI volumetric navigation in Unreal Engine 5.</caption>
+          <thead><tr><th scope="col">&nbsp;</th><th scope="col">UE5 Recast navmesh</th><th scope="col">LCM 3D Navigation AI (SVO)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">What it stores</th><td>Walkable surfaces — polygons on the floor</td><td>Navigable volume — the empty air and water</td></tr>
+            <tr><th scope="row">Dimensionality</th><td>2.5D: a surface with height offsets</td><td>True 3D: any point in the playable volume</td></tr>
+            <tr><th scope="row">Suits</th><td>Humanoids, vehicles, ground crowds</td><td>Flying AI, drones, spaceships, submarines, insects</td></tr>
+            <tr><th scope="row">Vertical movement</th><td>Nav links, jumps, stacked meshes</td><td>Native — up, down and diagonal are the same query</td></tr>
+            <tr><th scope="row">Cost profile</th><td>Scales with floor area</td><td>Scales with clutter, not level size — open sky is a few large nodes</td></tr>
+            <tr><th scope="row">Solvers</th><td>A* over polygons</td><td>A*, Theta* and Lazy Theta* over octree nodes</td></tr>
+            <tr><th scope="row">Crowd scale</th><td>Detour crowd manager</td><td>10,000+ agents via Mass Entity, per-agent or shared flow field</td></tr>
+            <tr><th scope="row">Can they coexist?</th><td colspan="2">Yes — run hybrid levels where ground troops use Recast and air units use the SVO.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Under the hood</span>
+        <h2>How volumetric 3D pathfinding works</h2>
+      </div>
+      <div class="xrows">
+        <div class="xrow">
+          <figure class="xm xm--16x9 xrow__media xr">
+            <!-- @loop slug="loop-octree-sea-stack" -->
+            <video class="" muted loop playsinline preload="none" data-autoplay poster="../assets/media/loops/loop-octree-sea-stack-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: the live navigation octree around a sea stack">
+              <source src="../assets/media/loops/loop-octree-sea-stack.webm" type='video/webm; codecs="av01.0.05M.08"'>
+              <source src="../assets/media/loops/loop-octree-sea-stack.mp4" type="video/mp4">
+            </video>
+            <!-- /@loop -->
+            <figcaption><span>The live octree around a sea stack, captured in real time</span></figcaption>
+          </figure>
+          <div class="xrow__text xr">
+            <span class="xn">01 · The octree</span>
+            <h3>A Sparse Voxel Octree of the empty space</h3>
+            <p>Drop a single <code>LcmNavigationManagerSVO</code> actor into the level and it owns the octree, the pathfinder and every query. The manager subdivides the playable volume only where geometry actually exists: a wide-open sky becomes a handful of large nodes, while a cluttered hangar interior subdivides down to the minimum voxel size. Cost therefore tracks how busy your level is rather than how big it is.</p>
+            <p>Voxelization, the octree and its links are built on the GPU (D3D12, D3D11 and Vulkan), and each machine's GPU proves its voxels before it builds; one that fails voxelizes on the CPU for that session. The defaults — a 100&nbsp;cm minimum voxel inside a 200&nbsp;m world cube — are tuned to be sane on a first build, and voxels go down to 0.5&nbsp;cm for centimetre-scale worlds.</p>
+          </div>
+        </div>
+        <div class="xrow">
+          <figure class="xm xm--16x9 xrow__media xr">
+            <!-- @picture slug="hunter-engagement-path" sizes="(min-width:860px) 52vw, 100vw" -->
+            <picture>
+              <source type="image/avif" srcset="../assets/media/stills/hunter-engagement-path-640.avif 640w, ../assets/media/stills/hunter-engagement-path-1280.avif 1280w, ../assets/media/stills/hunter-engagement-path-1920.avif 1920w" sizes="(min-width:860px) 52vw, 100vw">
+              <source type="image/webp" srcset="../assets/media/stills/hunter-engagement-path-640.webp 640w, ../assets/media/stills/hunter-engagement-path-1280.webp 1280w, ../assets/media/stills/hunter-engagement-path-1920.webp 1920w" sizes="(min-width:860px) 52vw, 100vw">
+              <img src="../assets/media/stills/hunter-engagement-path-1280.jpg" alt="A hunter drone flies its engagement path around a container stack in Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
+            </picture>
+            <!-- /@picture -->
+            <figcaption><span>A hunter's planned route around a container stack</span></figcaption>
+          </figure>
+          <div class="xrow__text xr">
+            <span class="xn">02 · The solvers</span>
+            <h3>Three pathfinding solvers, three smoothing modes</h3>
+            <p>Pick the trade-off that fits the agent: <strong>A*</strong> for raw throughput, <strong>Theta*</strong> for true any-angle routes that cut the corners a grid would force you around, and <strong>Lazy Theta*</strong> for near-Theta* path quality at close to A* cost. Solving is multi-threaded and deterministic, so the same input gives the same path every run.</p>
+            <p>Then choose smoothing — Raw, Linear Shortcut or Curved Spline — each validated against level geometry, so a smoothed path never slices through a wall.</p>
+          </div>
+        </div>
+        <div class="xrow">
+          <figure class="xm xm--16x9 xrow__media xr">
+            <!-- @picture slug="harbour-drone-lands-moving-lorry" sizes="(min-width:860px) 52vw, 100vw" -->
+            <picture>
+              <source type="image/avif" srcset="../assets/media/stills/harbour-drone-lands-moving-lorry-640.avif 640w, ../assets/media/stills/harbour-drone-lands-moving-lorry-1280.avif 1280w, ../assets/media/stills/harbour-drone-lands-moving-lorry-1920.avif 1920w" sizes="(min-width:860px) 52vw, 100vw">
+              <source type="image/webp" srcset="../assets/media/stills/harbour-drone-lands-moving-lorry-640.webp 640w, ../assets/media/stills/harbour-drone-lands-moving-lorry-1280.webp 1280w, ../assets/media/stills/harbour-drone-lands-moving-lorry-1920.webp 1920w" sizes="(min-width:860px) 52vw, 100vw">
+              <img src="../assets/media/stills/harbour-drone-lands-moving-lorry-1280.jpg" alt="A drone lands on the flatbed of a moving lorry on the harbour quay" width="1920" height="1080" loading="lazy" decoding="async">
+            </picture>
+            <!-- /@picture -->
+            <figcaption><span>The world can move underneath them: a drone lands on a moving lorry</span></figcaption>
+          </figure>
+          <div class="xrow__text xr">
+            <span class="xn">03 · A world that moves</span>
+            <h3>Dynamic obstacles that restamp — and agents that predict them</h3>
+            <p>Moving geometry writes its own footprint back into the octree as it travels, so lifts, blast doors, destructible cover and patrolling capital ships all change routing live — and in multiplayer that change is multicast to every peer.</p>
+            <p>Since 3.6, Fly To also predicts each mover's motion and times its pass, so a drone waits for a gate's cycle or slips behind a sweeper instead of re-planning into it.</p>
+          </div>
+        </div>
+        <div class="xrow">
+          <figure class="xm xm--16x9 xrow__media xr">
+            <!-- @picture slug="cost-area-storm" sizes="(min-width:860px) 52vw, 100vw" -->
+            <picture>
+              <source type="image/avif" srcset="../assets/media/stills/cost-area-storm-640.avif 640w, ../assets/media/stills/cost-area-storm-1280.avif 1280w, ../assets/media/stills/cost-area-storm-1600.avif 1600w" sizes="(min-width:860px) 52vw, 100vw">
+              <source type="image/webp" srcset="../assets/media/stills/cost-area-storm-640.webp 640w, ../assets/media/stills/cost-area-storm-1280.webp 1280w, ../assets/media/stills/cost-area-storm-1600.webp 1600w" sizes="(min-width:860px) 52vw, 100vw">
+              <img src="../assets/media/stills/cost-area-storm-1280.jpg" alt="A drone route bends around a storm cost area in the Cost Areas Feature Examples level" width="1600" height="900" loading="lazy" decoding="async">
+            </picture>
+            <!-- /@picture -->
+            <figcaption><span>A storm cost area: the route bends round it</span></figcaption>
+          </figure>
+          <div class="xrow__text xr">
+            <span class="xn">04 · Cost areas</span>
+            <h3>Cost areas priced per agent</h3>
+            <p>Mark volumes as storms, preferred lanes, toll gates or no-fly zones with Unreal's stock NavArea classes. A stock Navigation Query Filter on each agent decides what an area costs that agent — or forbids it — so a cargo drone and a fighter read the same storm differently.</p>
+            <p>Fly To, Fly To Location, Mass crowds, Find Path and the stock Move To all route by them, across streamed chunk seams too.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFINITE -->
+  <section id="infinite" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">The hard part</span>
+        <h2>Infinite worlds, <em>not a bounded volume</em></h2>
+        <p class="lede">Almost every volumetric navigation implementation for Unreal — including the open-source ones — starts by asking you to place a <strong>bounds volume</strong> and builds its octree inside it.</p>
+      </div>
+    </div>
+    <div class="xband xr">
+      <figure class="xm">
+        <!-- @loop slug="loop-city-routes" -->
+        <video class="" muted loop playsinline preload="none" data-autoplay poster="../assets/media/loops/loop-city-routes-poster-1280.jpg" width="1280" height="720" aria-label="Looping clip: drones fly their planned routes over a streamed city">
+          <source src="../assets/media/loops/loop-city-routes.webm" type='video/webm; codecs="av01.0.05M.08"'>
+          <source src="../assets/media/loops/loop-city-routes.mp4" type="video/mp4">
+        </video>
+        <!-- /@loop -->
+      </figure>
+      <div class="xband__fade"></div>
+    </div>
+    <div class="wrap">
+      <div class="xsplit" style="margin-top:40px">
+        <div class="xr">
+          <p>For an arena or a level-sized map a bounds volume is perfectly fine, and LCM 3D Navigation AI supports exactly that model: a finite world builds once at <code>BeginPlay</code> and stays put.</p>
+          <p>It stops being fine in an open world. A bounds volume has to be big enough to contain everywhere an agent may ever fly, memory scales with that box whether or not anything is happening inside it, and the moment your player crosses the edge, navigation simply ends.</p>
+        </div>
+        <div class="xr">
+          <p><strong>Infinite mode removes the box.</strong> Navigation chunks stream in around agents and are discarded behind them, so memory stays flat no matter how far the map extends — the same reason you stream level geometry rather than loading a continent. Long routes use <strong>macro/micro routing</strong>: the path solves coarsely across chunks first and finely within the chunk the agent is actually in, so a cross-map flight never pays full-resolution search cost end to end.</p>
+          <p>That combination — unbounded streaming navigation with hierarchical routing on top — is what makes 3D pathfinding usable in an open-world or World Partition project rather than only inside a hand-placed box.</p>
+        </div>
+      </div>
+      <div class="xcards3">
+        <div class="xvc xr"><b>Finite mode</b><span>Defined bounds, octree built once at <code>BeginPlay</code> or baked to an asset. Lowest overhead when your playable space genuinely is a box.</span></div>
+        <div class="xvc xr"><b>Infinite mode</b><span>Chunks stream around agents and unload behind, with pre-baked chunks where you want them. Fixed memory budget across an unbounded map.</span></div>
+        <div class="xvc xr"><b>Macro / micro routing</b><span>Coarse across chunks, fine within them — long routes stay cheap instead of scaling with distance.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI SYSTEMS -->
+  <section id="ai-systems" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">A behaviour for every job</span>
+        <h2>Works with every Unreal Engine AI system</h2>
+        <p class="lede">Whichever way your team authors behaviour, the same navigation data is available through every surface — with ready-made behaviours at full parity.</p>
+      </div>
+      <div class="xcount">
+        <div class="xr"><b>31</b><span>Behaviour Tree nodes</span><p>21 tasks, 5 decorators, 5 services</p></div>
+        <div class="xr"><b>41</b><span>StateTree nodes</span><p>25 tasks, 8 conditions, 8 evaluators</p></div>
+        <div class="xr"><b>13</b><span>Mass StateTree nodes</span><p>10 tasks, 3 evaluators, on 8 traits</p></div>
+        <div class="xr"><b data-fact="ai.eqsTotal">17</b><span>True-3D EQS items</span><p>5 generators, 8 tests, 4 contexts</p></div>
+      </div>
+      <ul class="xnodes">
+        <li class="xr"><div class="xm"><!-- @picture slug="node-fly-to-location" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/node-fly-to-location-640.avif 640w, ../assets/media/stills/node-fly-to-location-1280.avif 1280w, ../assets/media/stills/node-fly-to-location-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/node-fly-to-location-640.webp 640w, ../assets/media/stills/node-fly-to-location-1280.webp 1280w, ../assets/media/stills/node-fly-to-location-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/node-fly-to-location-1280.jpg" alt="The Fly To Location Blueprint node demonstrated in the Movement Nodes Feature Examples level" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Fly To Location</b><span>One Blueprint node, no AI Controller</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="node-patrol" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/node-patrol-640.avif 640w, ../assets/media/stills/node-patrol-1280.avif 1280w, ../assets/media/stills/node-patrol-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/node-patrol-640.webp 640w, ../assets/media/stills/node-patrol-1280.webp 1280w, ../assets/media/stills/node-patrol-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/node-patrol-1280.jpg" alt="A drone runs the Patrol task between waypoints in the Feature Examples hall" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Patrol</b><span>Routes between waypoints</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="node-orbit-target" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/node-orbit-target-640.avif 640w, ../assets/media/stills/node-orbit-target-1280.avif 1280w, ../assets/media/stills/node-orbit-target-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/node-orbit-target-640.webp 640w, ../assets/media/stills/node-orbit-target-1280.webp 1280w, ../assets/media/stills/node-orbit-target-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/node-orbit-target-1280.jpg" alt="A drone circles a pillar with the Orbit Target task" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Orbit Target</b><span>At a set radius and speed</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="node-follow-target" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/node-follow-target-640.avif 640w, ../assets/media/stills/node-follow-target-1280.avif 1280w, ../assets/media/stills/node-follow-target-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/node-follow-target-640.webp 640w, ../assets/media/stills/node-follow-target-1280.webp 1280w, ../assets/media/stills/node-follow-target-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/node-follow-target-1280.jpg" alt="Three follower drones hold formation slots behind a leader with the Follow Target task" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Follow Target</b><span>Formation slots in the leader's frame</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="node-engage-target" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/node-engage-target-640.avif 640w, ../assets/media/stills/node-engage-target-1280.avif 1280w, ../assets/media/stills/node-engage-target-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/node-engage-target-640.webp 640w, ../assets/media/stills/node-engage-target-1280.webp 1280w, ../assets/media/stills/node-engage-target-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/node-engage-target-1280.jpg" alt="The Engage Target behaviour node choosing a firing position with line of sight" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Engage Target</b><span>A firing position with line of sight</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="node-scan-area" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/node-scan-area-640.avif 640w, ../assets/media/stills/node-scan-area-1280.avif 1280w, ../assets/media/stills/node-scan-area-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/node-scan-area-640.webp 640w, ../assets/media/stills/node-scan-area-1280.webp 1280w, ../assets/media/stills/node-scan-area-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/node-scan-area-1280.jpg" alt="Drones sweep a volume with the Scan Area behaviour node" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Scan Area</b><span>A volume swept from shared viewpoints</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="node-perch" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/node-perch-640.avif 640w, ../assets/media/stills/node-perch-1280.avif 1280w, ../assets/media/stills/node-perch-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/node-perch-640.webp 640w, ../assets/media/stills/node-perch-1280.webp 1280w, ../assets/media/stills/node-perch-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/node-perch-1280.jpg" alt="Three drones land on three posts with the Perch node, never on the same one" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Perch</b><span>No two agents on one post</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="node-land-moving-platform" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/node-land-moving-platform-640.avif 640w, ../assets/media/stills/node-land-moving-platform-1280.avif 1280w, ../assets/media/stills/node-land-moving-platform-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/node-land-moving-platform-640.webp 640w, ../assets/media/stills/node-land-moving-platform-1280.webp 1280w, ../assets/media/stills/node-land-moving-platform-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/node-land-moving-platform-1280.jpg" alt="A drone lands on a moving platform with the Land task" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Land</b><span>Onto a moving platform or deck</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="eqs-points-in-volume" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/eqs-points-in-volume-640.avif 640w, ../assets/media/stills/eqs-points-in-volume-1280.avif 1280w, ../assets/media/stills/eqs-points-in-volume-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/eqs-points-in-volume-640.webp 640w, ../assets/media/stills/eqs-points-in-volume-1280.webp 1280w, ../assets/media/stills/eqs-points-in-volume-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/eqs-points-in-volume-1280.jpg" alt="A true 3D EQS generator drawing scored candidate points throughout a navigation volume" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Points in SVO Volume</b><span>EQS candidates anywhere in 3D</span></li>
+        <li class="xr"><div class="xm"><!-- @picture slug="eqs-reachability-3d" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/eqs-reachability-3d-640.avif 640w, ../assets/media/stills/eqs-reachability-3d-1280.avif 1280w, ../assets/media/stills/eqs-reachability-3d-1600.avif 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <source type="image/webp" srcset="../assets/media/stills/eqs-reachability-3d-640.webp 640w, ../assets/media/stills/eqs-reachability-3d-1280.webp 1280w, ../assets/media/stills/eqs-reachability-3d-1600.webp 1600w" sizes="(min-width:1100px) 20vw, (min-width:560px) 33vw, 50vw">
+  <img src="../assets/media/stills/eqs-reachability-3d-1280.jpg" alt="The Reachability 3D EQS test colouring points an agent can and cannot reach" width="1600" height="900" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><b>Reachability 3D</b><span>Answered before any search</span></li>
+      </ul>
+      <ul class="tick xr">
+        <li><strong>Behaviour Tree</strong> — 21 tasks, 5 decorators and 5 services, including <code>FlyTo</code>, Patrol, Orbit Target, Follow Target, Hover, Take Off, Land, Perch, Scan Area, Engage Target, Find Cover, Flee, Investigate, line-of-sight and chunk-loaded checks, with seven documented stock-node patterns showing where an LCM node earns its place over an engine one.</li>
+        <li><strong>StateTree</strong> — 25 tasks, 8 conditions and 8 evaluators at full parity with the Behaviour Tree nodes, so state-driven agents get the same routing and behaviours with no Behaviour Tree in the stack.</li>
+        <li><strong>Mass Entity (ECS)</strong> — eight traits: per-agent asynchronous pathfinding or a shared CPU flow field sampled in O(1) by an entire swarm, driven by auto-registered processors for request, solve and steer. Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee. You never call the solver yourself.</li>
+        <li><strong>Blueprint and stock Unreal navigation</strong> — the <code>Fly To Location</code> latent node flies any pawn with no Behaviour Tree, StateTree or AI Controller, and Unreal's own Move To, AI Move To and EQS queries plan through the octree.</li>
+        <li><strong>Tactical 3D EQS</strong> — 5 generators, 8 tests and 4 contexts that score real volume: volumetric line-of-sight, cover, threat exposure, height advantage, landing sites and true path distance, so a sniper perch is chosen in 3D rather than on a floor plane.</li>
+        <li><strong>AI Perception and the Gameplay Debugger</strong> — threat tracking, nav links, area modifiers and a live in-editor debugger for inspecting the octree and solved routes, plus a setup wizard and a one-click health check.</li>
+      </ul>
+      <p class="xr">Everything is exposed to Blueprint: <strong><span data-fact="ai.blueprintSymbols">726</span> Blueprint-exposed symbols</strong>, documented in a full API reference, so a complete flying AI can be built without opening Visual Studio. Complete C++ source ships with it when you want it.</p>
+    </div>
+  </section>
+
+  <!-- BEYOND -->
+  <section id="beyond" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Beyond the solver</span>
+        <h2>Pathfinding is the easy half</h2>
+        <p class="lede">A pathfinding plugin hands you a list of points. Turning that into an agent that flies convincingly, is authored by your AI designers, scales to a crowd and survives a multiplayer session is the rest of the work — and in practice it is where the integration time actually goes. That gap is what LCM 3D Navigation AI is built to close.</p>
+      </div>
+      <div class="tblwrap xr">
+        <table class="tbl">
+          <caption>Capability comparison against pathfinding-only volumetric navigation plugins. Solver quality is deliberately listed as equivalent — the difference is everything built around it.</caption>
+          <thead><tr><th scope="col">Capability</th><th scope="col">Pathfinding-only plugins</th><th scope="col">LCM 3D Navigation AI</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Route solving</th><td>A*, Theta*, Lazy Theta*</td><td>The same three solvers</td></tr>
+            <tr><th scope="row">World model</th><td>Bounds volume required</td><td>Finite <em>or</em> infinite streaming chunks</td></tr>
+            <tr><th scope="row">Agent locomotion</th><td>Bring your own movement</td><td>6-DOF flight &amp; swim component — Multirotor, Jet / Fixed-Wing, Bird, Fish</td></tr>
+            <tr><th scope="row">Behaviour Tree</th><td>Stock <code>MoveTo</code> nodes</td><td>21 tasks, 5 decorators, 5 services</td></tr>
+            <tr><th scope="row">StateTree</th><td>—</td><td>25 tasks, 8 conditions, 8 evaluators</td></tr>
+            <tr><th scope="row">Ready-made behaviours</th><td>—</td><td>Patrol, Orbit, Follow, Hover, Land on moving decks, Perch, Scan Area, Engage, Find Cover, Flee, Investigate</td></tr>
+            <tr><th scope="row">Mass Entity crowds</th><td>—</td><td>8 traits, Mass StateTree behaviours, 10,000+ agents</td></tr>
+            <tr><th scope="row">Moving obstacles</th><td>Varies</td><td>Octree restamping plus Fly To prediction that times its pass</td></tr>
+            <tr><th scope="row">Multiplayer</th><td>—</td><td>Server-authoritative replication, deterministic CPU compute</td></tr>
+            <tr><th scope="row">Tactical queries</th><td>Varies</td><td>3D EQS — 5 generators, 8 tests, 4 contexts scoring real volume</td></tr>
+            <tr><th scope="row">Consoles</th><td>Varies</td><td>PlayStation 5, Xbox Series X|S</td></tr>
+            <tr><th scope="row">Demo content</th><td>Varies</td><td>57 demo levels, free from inside the editor</td></tr>
+            <tr><th scope="row">Documentation</th><td>README</td><td>165-page manual, 15 tutorials, full API reference</td></tr>
+            <tr><th scope="row">Support</th><td>Community issue tracker</td><td>Direct from the developer who wrote it</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section id="use-cases" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">What you can build</span>
+        <h2>Flying AI, drones, submarines and space combat</h2>
+        <p class="lede">Anything that moves through a volume rather than across a surface is a candidate for 3D pathfinding in Unreal Engine 5.</p>
+      </div>
+      <div class="xuse">
+        <article class="xr"><div class="xm"><!-- @picture slug="gull-sea-cliffs" sizes="(min-width:860px) 33vw, 100vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/gull-sea-cliffs-640.avif 640w, ../assets/media/stills/gull-sea-cliffs-1280.avif 1280w, ../assets/media/stills/gull-sea-cliffs-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <source type="image/webp" srcset="../assets/media/stills/gull-sea-cliffs-640.webp 640w, ../assets/media/stills/gull-sea-cliffs-1280.webp 1280w, ../assets/media/stills/gull-sea-cliffs-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <img src="../assets/media/stills/gull-sea-cliffs-1280.jpg" alt="A seagull glides along sea cliffs in the Sea Cliffs demo of LCM 3D Navigation AI" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><div class="xuse__b"><h3>Flying AI, birds and dragons</h3><p>Aerial predators that dive between towers, circle for an approach, glide in and perch on a free ledge — with 6-DOF flight locomotion driving the body, not just the route. See the Sea Cliffs gull colony. <a class="ln" href="../unreal-engine-flying-ai/">Flying AI and drones →</a></p></div></article>
+        <article class="xr"><div class="xm"><!-- @picture slug="harbour-drone-quay-closeup" sizes="(min-width:860px) 33vw, 100vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/harbour-drone-quay-closeup-640.avif 640w, ../assets/media/stills/harbour-drone-quay-closeup-1280.avif 1280w, ../assets/media/stills/harbour-drone-quay-closeup-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <source type="image/webp" srcset="../assets/media/stills/harbour-drone-quay-closeup-640.webp 640w, ../assets/media/stills/harbour-drone-quay-closeup-1280.webp 1280w, ../assets/media/stills/harbour-drone-quay-closeup-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <img src="../assets/media/stills/harbour-drone-quay-closeup-1280.jpg" alt="Close-up of a quadcopter drone hovering over the harbour quay in Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><div class="xuse__b"><h3>Drone and helicopter AI</h3><p>Multirotor archetypes with thrust, lift, drag and attitude PID, so a drone banks into its turns instead of sliding along a spline — and lands on a rolling ship's deck. See the Hunter Drone, Harbour and Sentry Drones demos. <a class="ln" href="../unreal-engine-flying-ai/">Flying AI and drones →</a></p></div></article>
+        <article class="xr"><div class="xm"><!-- @picture slug="dogfight-lead-intercept" sizes="(min-width:860px) 33vw, 100vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/dogfight-lead-intercept-640.avif 640w, ../assets/media/stills/dogfight-lead-intercept-1280.avif 1280w, ../assets/media/stills/dogfight-lead-intercept-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <source type="image/webp" srcset="../assets/media/stills/dogfight-lead-intercept-640.webp 640w, ../assets/media/stills/dogfight-lead-intercept-1280.webp 1280w, ../assets/media/stills/dogfight-lead-intercept-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <img src="../assets/media/stills/dogfight-lead-intercept-1280.jpg" alt="A fighter leads its target with laser fire between asteroids" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><div class="xuse__b"><h3>Space and dogfight combat</h3><p>No up, no floor, no gravity — the octree treats a debris field or asteroid belt as ordinary navigable volume. See Space Dogfight and the Raider Swarm. <a class="ln" href="../unreal-engine-space-combat-ai/">Space combat AI →</a></p></div></article>
+        <article class="xr"><div class="xm"><!-- @picture slug="reef-school-mass" sizes="(min-width:860px) 33vw, 100vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/reef-school-mass-640.avif 640w, ../assets/media/stills/reef-school-mass-1280.avif 1280w, ../assets/media/stills/reef-school-mass-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <source type="image/webp" srcset="../assets/media/stills/reef-school-mass-640.webp 640w, ../assets/media/stills/reef-school-mass-1280.webp 1280w, ../assets/media/stills/reef-school-mass-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <img src="../assets/media/stills/reef-school-mass-1280.jpg" alt="A Mass Entity school of fish streams over the coral, parting round the pinnacles" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><div class="xuse__b"><h3>Underwater and swim navigation</h3><p>Fish archetypes that hold depth, school in layers and part round predators, plus ROVs and turtles routing around reefs and wrecks. See Coral Reef and the 1&nbsp;cm Fish Tank. <a class="ln" href="../unreal-engine-underwater-ai/">Underwater and fish AI →</a></p></div></article>
+        <article class="xr"><div class="xm"><!-- @picture slug="mass-swarm-over-skyline" sizes="(min-width:860px) 33vw, 100vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/mass-swarm-over-skyline-640.avif 640w, ../assets/media/stills/mass-swarm-over-skyline-1280.avif 1280w, ../assets/media/stills/mass-swarm-over-skyline-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <source type="image/webp" srcset="../assets/media/stills/mass-swarm-over-skyline-640.webp 640w, ../assets/media/stills/mass-swarm-over-skyline-1280.webp 1280w, ../assets/media/stills/mass-swarm-over-skyline-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <img src="../assets/media/stills/mass-swarm-over-skyline-1280.jpg" alt="A drone swarm sweeping over a city skyline, driven by a shared 3D flow field" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><div class="xuse__b"><h3>Insect and creature swarms</h3><p>10,000+ Mass Entity agents sampling a shared flow field for bats, drone swarms and locusts at frame budget — and crowds that perch, scan, engage and flee. <a class="ln" href="../unreal-engine-mass-entity-crowds/">Mass Entity crowds →</a></p></div></article>
+        <article class="xr"><div class="xm"><!-- @picture slug="warehouse-archive-hall" sizes="(min-width:860px) 33vw, 100vw" -->
+<picture>
+  <source type="image/avif" srcset="../assets/media/stills/warehouse-archive-hall-640.avif 640w, ../assets/media/stills/warehouse-archive-hall-1280.avif 1280w, ../assets/media/stills/warehouse-archive-hall-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <source type="image/webp" srcset="../assets/media/stills/warehouse-archive-hall-640.webp 640w, ../assets/media/stills/warehouse-archive-hall-1280.webp 1280w, ../assets/media/stills/warehouse-archive-hall-1920.webp 1920w" sizes="(min-width:860px) 33vw, 100vw">
+  <img src="../assets/media/stills/warehouse-archive-hall-1280.jpg" alt="A drone crosses the archive hall of the warehouse demo level" width="1920" height="1080" loading="lazy" decoding="async">
+</picture>
+<!-- /@picture --></div><div class="xuse__b"><h3>Vertical and interior levels</h3><p>Shafts, atriums, scaffolding, warehouses and multi-storey interiors where stacked 2D navmeshes fall apart. See Vertical Skyscraper and Warehouse. <a class="ln" href="../unreal-engine-open-world-navigation/">Open-world navigation →</a></p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="xsec">
+    <div class="wrap">
+      <div class="xreview xr">
+        <div class="xreview__score">
+          <b data-fact="reviews.ratingDisplay">5.0</b>
+          <span class="xstars" aria-hidden="true">★★★★★</span>
+          <span><span data-fact="reviews.ratingCount">3</span> ratings on Fab</span>
+        </div>
+        <figure>
+          <blockquote>Best 3D Navigation Plugin on the Marketplace</blockquote>
+          <figcaption>VecFourDigital · five-star review on Fab · <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews" target="_blank" rel="noopener">Read the reviews ↗</a></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTIPLAYER -->
+  <section id="multiplayer" class="xsec">
+    <div class="wrap xsplit">
+      <div class="xr">
+        <span class="kicker">Networking</span>
+        <h2>Server-authoritative multiplayer 3D navigation</h2>
+      </div>
+      <div class="xr">
+        <p>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles replay their navigation footprint to every peer over a multicast. CPU compute is bit-deterministic, which keeps replays and lockstep viable, and a headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths so regressions surface in CI rather than in a playtest.</p>
+        <p>Supported on <strong>Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S</strong>, with the C++ core held to the same standard on every target; consoles compile from source with your own platform SDK. Dedicated servers and <code>-nullrhi</code> runs are supported. Nintendo Switch support is in progress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK START -->
+  <section id="quick-start" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Getting started</span>
+        <h2>Adding 3D pathfinding to a UE5 project</h2>
+      </div>
+      <ol class="steps xr">
+        <li><b>Install the plugin</b><span>Add LCM 3D Navigation AI from Fab to your Unreal Engine 5.2–5.8 project and enable it in the plugin browser. Open the built-in QuickStart level, or fetch the 57 demo levels from the LCM Nav3D menu › Get the Demo Levels. Installation is chapter 1 of the manual.</span></li>
+        <li><b>Place the navigation manager</b><span>Drop one <code>LcmNavigationManagerSVO</code> into the level and set the world bounds and minimum voxel size. It builds the Sparse Voxel Octree and owns every navigation query from then on.</span></li>
+        <li><b>Give the agent a body</b><span>Add <code>LcmFlightMovementComponent</code> to the pawn and pick an archetype — Multirotor drone, Jet / Fixed-Wing, Bird or Fish — then tune thrust, lift, drag, buoyancy and the attitude PID. An animation-drive struct feeds your blendspaces.</span></li>
+        <li><b>Author the behaviour</b><span>Use the <code>FlyTo</code> Behaviour Tree task, the equivalent StateTree task, a Mass trait for crowds — or the <code>Fly To Location</code> Blueprint node for no AI setup at all. Chapter 3 of the manual walks through a first flying agent end to end.</span></li>
+        <li><b>Scale up</b><span>Add behaviours like Land, Perch, Engage and Flee, dynamic obstacles, cost areas, tactical 3D EQS queries, hybrid Recast levels for ground units, and switch to infinite chunked worlds when the map outgrows a single volume.</span></li>
+      </ol>
+      <p class="xr" style="margin-top:28px">Documentation is a <strong><span data-fact="content.manualPages">165</span>-page manual with <span data-fact="content.tutorials">15</span> step-by-step tutorials</strong> and a 13-page Quick Start, not a plugin dump: every setting is listed with its verified default and limits, and the full API is documented in a reference. <a class="ln" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Read the full documentation online →</a></p>
+    </div>
+  </section>
+
+  <!-- SPECS -->
+  <section id="specs" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">Reference</span>
+        <h2>Specifications</h2>
+      </div>
+      <div class="tblwrap xr">
+        <table class="tbl tbl--spec">
+          <tbody>
+            <tr><th scope="row">Plugin</th><td>LCM 3D Navigation AI, version <span data-fact="product.version">3.6.0</span> (October 2026) — previously published as <strong>LCM Nav3D</strong>, still the name on the logo mark</td></tr>
+            <tr><th scope="row">Engine</th><td>Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8</td></tr>
+            <tr><th scope="row">Navigation</th><td>Sparse Voxel Octree volumetric navigation, hybrid with Recast</td></tr>
+            <tr><th scope="row">Pathfinding</th><td>A* · Theta* · Lazy Theta* — multi-threaded, deterministic CPU solving</td></tr>
+            <tr><th scope="row">Smoothing</th><td>Raw · Linear Shortcut · Curved Spline, geometry-validated</td></tr>
+            <tr><th scope="row">GPU</th><td>Voxelization, octree and links built on the GPU (D3D12, D3D11, Vulkan); each GPU proves its voxels first, and one that fails voxelizes on the CPU for the session · GPU path solver in experimental validation</td></tr>
+            <tr><th scope="row">World mode</th><td>Finite (built or baked), or infinite streaming chunks with pre-baked chunks</td></tr>
+            <tr><th scope="row">Voxel size</th><td>Down to 0.5&nbsp;cm — the Fish Tank demo navigates a 120&nbsp;cm aquarium at 1&nbsp;cm</td></tr>
+            <tr><th scope="row">AI nodes</th><td>85 — Behaviour Tree 21 tasks, 5 decorators, 5 services · StateTree 25 tasks, 8 conditions, 8 evaluators · Mass StateTree 10 tasks, 3 evaluators</td></tr>
+            <tr><th scope="row">Tactical EQS</th><td>5 generators · 8 tests · 4 contexts</td></tr>
+            <tr><th scope="row">Crowds</th><td>10,000+ agents via Mass Entity — 8 traits, per-agent paths or a shared flow field, schooling</td></tr>
+            <tr><th scope="row">Avoidance</th><td>Reactive (boids) · Predictive (ORCA) · Context-Based Steering · moving-obstacle prediction in Fly To</td></tr>
+            <tr><th scope="row">Locomotion</th><td>6-DOF flight and swim — Multirotor drone, Jet / Fixed-Wing, Bird, Fish</td></tr>
+            <tr><th scope="row">Networking</th><td>Server-authoritative replication, bit-deterministic CPU compute</td></tr>
+            <tr><th scope="row">Scripting</th><td>Blueprint and C++ — 726 Blueprint-exposed symbols, complete C++ source</td></tr>
+            <tr><th scope="row">Platforms</th><td>Windows · macOS · Linux · Android · iOS · PlayStation 5 · Xbox Series X|S; consoles compile from source with your platform SDK (Switch in progress)</td></tr>
+            <tr><th scope="row">Demo levels</th><td>57, free from inside the editor — 17 worlds in Behaviour Tree and StateTree editions, 15 Mass editions, and 8 Feature Examples levels with 69 single-feature displays</td></tr>
+            <tr><th scope="row">Documentation</th><td><a class="ln" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">lcmnav3d.github.io</a> — free to read online · 165-page manual · 15 tutorials · 13-page Quick Start</td></tr>
+            <tr><th scope="row">Defaults</th><td>100&nbsp;cm minimum voxel · 200&nbsp;m world cube</td></tr>
+            <tr><th scope="row">Rating</th><td><a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews" target="_blank" rel="noopener"><span data-fact="reviews.ratingDisplay">5.0</span> out of 5 on Fab</a> (<span data-fact="reviews.ratingCount">3</span> ratings)</td></tr>
+            <tr><th scope="row">Where to get it</th><td><a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab marketplace</a> · <a class="ln" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">free demo on itch.io</a> · <a class="ln" href="https://discord.gg/nXkpD6uaBG" target="_blank" rel="noopener">Discord support</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">FAQ</span>
+        <h2>3D pathfinding in Unreal Engine 5 — common questions</h2>
+      </div>
+      <div class="faq">
+        <details open><summary>Does Unreal Engine 5 support 3D pathfinding out of the box?</summary><div><p>No. UE5 ships with Recast, which builds a navmesh of walkable surfaces — a 2.5D representation designed for characters that stand on the ground. A flying, swimming or space-borne agent has nothing to path along. LCM 3D Navigation AI adds a true volumetric representation that treats open air and water as navigable space, giving Unreal Engine 5 real 3D pathfinding.</p></div></details>
+        <details><summary>What is the difference between a Recast navmesh and volumetric 3D navigation?</summary><div><p>A Recast navmesh describes surfaces you can stand on; it flattens a level into walkable polygons. Volumetric navigation describes the empty space you can move through. LCM 3D Navigation AI carves the playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky is stored cheaply as a few large nodes while detail appears only where geometry actually is.</p></div></details>
+        <details><summary>How do I make flying AI in Unreal Engine 5?</summary><div><p>Add an <code>LcmNavigationManagerSVO</code> actor so the level can build its navigation octree, give the AI pawn an <code>LcmFlightMovementComponent</code> for 6-DOF flight, then drive it from a Behaviour Tree <code>FlyTo</code> task, a StateTree task or a Mass Entity trait. For the simplest case, the <code>Fly To Location</code> Blueprint node flies a pawn with no AI Controller at all. The plugin handles the request, the solve and the steering; you author the behaviour.</p></div></details>
+        <details><summary>Does LCM 3D Navigation AI work with Behaviour Trees, StateTree and Mass Entity?</summary><div><p>Yes — all three, at full parity and reading the same navigation data. It ships 21 Behaviour Tree tasks, 5 decorators and 5 services; 25 StateTree tasks, 8 conditions and 8 evaluators; and 8 Mass Entity traits with 10 Mass StateTree tasks and 3 evaluators for large crowds. The behaviours include Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land, Perch, Scan Area, Engage Target, Find Cover, Flee and Investigate.</p></div></details>
+        <details><summary>How many AI agents can it handle?</summary><div><p>10,000 or more through Mass Entity. Two crowd modes are available: per-agent asynchronous pathfinding via the Nav3D Agent trait, or a single shared CPU flow field that an entire swarm samples in constant time. Mass StateTree tasks let crowds perch, scan, engage, investigate and flee, and schooling, Hold Avoidance and Contact Push keep dense crowds apart. A per-agent GPU solver is in experimental validation and ships as a free update.</p></div></details>
+        <details><summary>Does 3D pathfinding work in multiplayer?</summary><div><p>Yes, server-authoritatively. Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>, and moving obstacles multicast their navigation footprint. CPU compute stays bit-deterministic for replays and lockstep, and a headless validation suite exercises the replicated paths.</p></div></details>
+        <details><summary>Does it work in open worlds or with World Partition?</summary><div><p>Yes. LCM 3D Navigation AI runs in two modes. A <strong>finite</strong> world builds its octree once at <code>BeginPlay</code> inside defined bounds. An <strong>infinite</strong> world has no fixed extent — navigation chunks stream in around agents and unload behind them, so memory stays flat however far the map runs. Long routes use macro/micro routing, solving coarsely across chunks and finely within the current one. Most volumetric navigation plugins require a bounds volume and cannot navigate outside it. <a class="ln" href="#infinite">More on infinite worlds →</a></p></div></details>
+        <details><summary>How is this different from the free open-source SVO navigation plugins?</summary><div><p>The solvers are comparable — A*, Theta* and Lazy Theta* are well established, and the open-source implementations use them too. The difference is everything built <em>around</em> the solver: infinite streaming worlds rather than a required bounds volume, GPU-built navigation, a 6-DOF flight and swim locomotion component, an 85-node Behaviour Tree, StateTree and Mass agent library, moving-obstacle prediction, Mass Entity traits for 10,000+ agent crowds, tactical 3D EQS, server-authoritative multiplayer replication, console support, 57 demo levels, a 165-page manual with 15 tutorials, and direct support from the developer. <a class="ln" href="#beyond">See the full comparison →</a></p></div></details>
+        <details><summary>Which Unreal Engine versions and platforms are supported?</summary><div><p>LCM 3D Navigation AI 3.6.0 supports Unreal Engine 5.2, 5.3, 5.4, 5.5, 5.6, 5.7 and 5.8, and is supported on Windows, macOS, Linux, Android, iOS, PlayStation 5 and Xbox Series X|S. Consoles compile from source with your own platform SDK. Nintendo Switch support is in progress. Check the <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab listing</a> for the current engine compatibility list.</p></div></details>
+        <details><summary>Do I need C++, or does it work with Blueprints?</summary><div><p>It works from Blueprints. The plugin is C++ for performance and ships complete source, but exposes 726 symbols to Blueprint, documented in a full API reference, so a full flying AI can be built without writing code. The <code>Fly To Location</code> node flies a pawn from plain Blueprint with no AI Controller. The C++ API is available when you want it.</p></div></details>
+        <details><summary>Can it handle moving or dynamic obstacles?</summary><div><p>Yes. Dynamic obstacles restamp their footprint into the octree as they move, so routes account for doors, lifts, destructible geometry and other moving actors — and the change replicates to clients in multiplayer. Since 3.6, Fly To also predicts every moving obstacle and times its pass: it learns a gate's or a piston's cycle, waits for a gap, takes a detour, and dodges what it cannot outrun.</p></div></details>
+        <details><summary>Can flying AI land on moving platforms?</summary><div><p>Yes. The Land task finds its own landing point and flies the approach relative to the deck, so a drone can land on a rolling ship or a moving lorry and take off again with the deck's velocity. Birds and fish glide in with a braking flare, and EQS generators and tests find landing sites for flying agents.</p></div></details>
+        <details><summary>Does it work for small worlds such as an aquarium?</summary><div><p>Yes. Voxels go down to 0.5&nbsp;cm, and a World Scale profile handles centimetre-scale worlds. The Fish Tank demo navigates a 120&nbsp;cm aquarium at 1&nbsp;cm, with 8&nbsp;cm fish schooling through a rock arch.</p></div></details>
+        <details><summary>What is new in LCM 3D Navigation AI 3.6?</summary><div><p>Version 3.6.0 (October 2026) adds moving-obstacle prediction to Fly To, the Obstacle Gauntlet demo (a 370&nbsp;m hall with 42 movers), GPU voxelization that proves itself on each machine before it builds navigation, a self-repairing GPU build on D3D12, D3D11 and Vulkan, more natural fish swimming and schooling, steadier drones and smarter hunters, and more than thirty fixes from a plugin-wide code audit. <a class="ln" href="#whats-new">Full release notes →</a></p></div></details>
+        <details><summary>Is there a free demo?</summary><div><p>Yes — a free playable demo is on <a class="ln" href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">itch.io</a>, and buyers get 57 demo levels free from inside the editor (LCM Nav3D menu › Get the Demo Levels). The full plugin is sold on <a class="ln" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Fab</a>.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE FROM UEDEV -->
+  <section id="more" class="xsec">
+    <div class="wrap">
+      <div class="xhead xr">
+        <span class="kicker">More from UEDEV</span>
+        <h2>Niagara VFX from the same developer</h2>
+        <p class="lede">Weapon beams, explosions, shields and environmental effects — <span data-fact="store.vfx">19</span> Niagara VFX packs on Fab, <span data-fact="store.average">4.5</span>★ across <span data-fact="store.ratings">47</span> ratings. <a class="ln" href="../unreal-engine-niagara-vfx/">See every pack →</a></p>
+      </div>
+      <div class="prod-grid">
+        <!-- @catalog ids="energy-beam-v2,explosion,laser-beam-v3,scan-screen" -->
+        <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/33f2e177-cd9a-4b4b-b1b2-be231db95296" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><img src="https://media.fab.com/image_previews/gallery_images/a63dd0e4-7db8-44eb-9ddb-55e4914ff39d/46de4277-a8f1-4ebf-95ad-b79ca6364644.jpg" alt="Niagara Energy Beam Pack V2 — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Energy Beam Pack V2</h3><div class="card__meta"><span class="price">From $15.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(6)</span></span></div></div></a>
+        <a class="card" data-cat="Combat" href="https://www.fab.com/listings/2a0dc7ae-23d6-4839-82fd-b9948f486770" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/065fb827-0f4e-49ae-8a48-71f80ca6c629/94284eb4-d059-4db3-a3e2-e0ef0734be17.jpg" alt="Ultimate Explosion VFX — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Explosion VFX</h3><div class="card__meta"><span class="price">From $14.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(4)</span></span></div></div></a>
+        <a class="card" data-cat="Weapons" href="https://www.fab.com/listings/b776d3d2-5d87-4f8b-8466-d7bbb17ab2a4" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#2fe06a,#10c9b0)"><img src="https://media.fab.com/image_previews/gallery_images/bca7e537-40a8-4591-8bff-fd976bed2039/1d50e793-32ed-4727-9af9-c88675714f0b.jpg" alt="Niagara Laser Beam Weapon V3 — Weapon VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Weapon VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Niagara Laser Beam Weapon V3</h3><div class="card__meta"><span class="price">From $18.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>5.0 <span class="rating__n">(2)</span></span></div></div></a>
+        <a class="card" data-cat="Combat" href="https://www.fab.com/listings/446dea06-546a-4ffc-8252-b709a623c1f5" target="_blank" rel="noopener"><div class="card__media" style="background:linear-gradient(135deg,#7fe05a,#c8ff5e)"><img src="https://media.fab.com/image_previews/gallery_images/dc1a29a9-58bd-44e2-a42f-b368b8d6cad9/877787de-287a-4b54-a0de-02e9f1720c99.jpg" alt="Ultimate Scan &amp; Screen Effects — Combat VFX for Unreal Engine by UEDEV" width="639" height="349" loading="lazy" decoding="async"><span class="card__cat">Combat VFX</span><div class="card__view"><span>View on Fab ↗</span></div></div><div class="card__body"><h3 class="card__title">Ultimate Scan &amp; Screen Effects</h3><div class="card__meta"><span class="price">From $12.99</span><span class="rating"><span class="stars" aria-hidden="true">★★★★★</span>4.8 <span class="rating__n">(4)</span></span></div></div></a>
+        <!-- /@catalog -->
+      </div>
+    </div>
+  </section>
+
 </article>
 </main>
 
@@ -540,6 +1175,8 @@
       </div>
       <div class="footer__col">
         <h4>3D Navigation AI</h4>
+        <a href="#whats-new">What's new in 3.6</a>
+        <a href="#worlds">Demo worlds</a>
         <a href="#how">How it works</a>
         <a href="#infinite">Infinite worlds</a>
         <a href="#beyond">Vs. free plugins</a>
@@ -548,10 +1185,21 @@
         <a href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Documentation</a>
       </div>
       <div class="footer__col">
+        <h4>Use cases</h4>
+        <a href="../unreal-engine-flying-ai/">Flying AI &amp; drones</a>
+        <a href="../unreal-engine-underwater-ai/">Underwater &amp; fish AI</a>
+        <a href="../unreal-engine-space-combat-ai/">Space combat AI</a>
+        <a href="../unreal-engine-open-world-navigation/">Open-world navigation</a>
+        <a href="../unreal-engine-mass-entity-crowds/">Mass Entity crowds</a>
+        <a href="../unreal-engine-moving-obstacle-avoidance/">Moving obstacles</a>
+      </div>
+      <div class="footer__col">
         <h4>Store</h4>
+        <a href="../unreal-engine-niagara-vfx/">Niagara VFX packs</a>
         <a href="https://www.fab.com/sellers/UEDEV" target="_blank" rel="noopener">Browse on Fab</a>
         <a href="https://uedevlabs.itch.io/lcm-3d-navigation" target="_blank" rel="noopener">Free demo</a>
         <a href="https://www.youtube.com/@experimentdev3935" target="_blank" rel="noopener">Video tutorials</a>
+        <a href="https://discord.gg/nXkpD6uaBG" target="_blank" rel="noopener">Discord support</a>
       </div>
       <div class="footer__col">
         <h4>Developer</h4>
@@ -562,17 +1210,11 @@
     </div>
     <div class="footer__bottom">
       <span>© 2018–2026 UEDEV · L. Charitha Madhushanka</span>
-      <span class="mono">Unreal Engine · 3D Navigation · Niagara</span>
+      <span class="mono">For AI agents: <a href="../llms.txt">llms.txt</a> · <a href="../facts.json">facts.json</a> · <a href="../sitemap.xml">sitemap</a></span>
     </div>
   </div>
 </footer>
 
-<script>
-(function(){
-  var nav=document.getElementById('nav'), b=nav&&nav.querySelector('.burger');
-  if(b){b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});}
-  addEventListener('scroll',function(){if(nav)nav.classList.toggle('scrolled',scrollY>10);},{passive:true});
-})();
-</script>
+<script src="../assets/nav3d.js?v=20261024" defer></script>
 </body>
 </html>
