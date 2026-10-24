@@ -22,7 +22,31 @@
     "video": "https://www.youtube.com/watch?v=7_F3AvgQIQU",
     "technicalVideo": "https://www.youtube.com/watch?v=-02ah0bLMb4",
     "fabTitle": "LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation for UE5",
-    "fabPublished": "2026-08-15"
+    "fabPublished": "2026-08-15",
+    "videos": [
+      {
+        "id": "7_F3AvgQIQU",
+        "kind": "Showcase trailer",
+        "title": "LCM 3D Navigation AI - Infinite 3D Pathfinding & Volumetric Navigation Showcase Trailer-UE5",
+        "uploadDate": "2026-08-16T10:20:11-07:00",
+        "duration": "PT2M33S",
+        "checked": "2026-10-24"
+      },
+      {
+        "id": "-02ah0bLMb4",
+        "kind": "Technical trailer",
+        "title": "NextGen Infinite 3D Pathfinding in Unreal Engine 5  - 10,000 Flying AI Agents Thinks in 3D",
+        "uploadDate": "2026-08-19T14:02:56-07:00",
+        "duration": "PT2M13S",
+        "checked": "2026-10-24"
+      }
+    ],
+    "price": {
+      "value": "199.99",
+      "currency": "USD",
+      "checked": "2026-10-24",
+      "source": "Fab seller page"
+    }
   },
   "reviews": {
     "source": "https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews",

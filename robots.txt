@@ -4,3 +4,6 @@ Disallow: /archive/
 Disallow: /uploads/
 
 Sitemap: https://uedevlabs.github.io/sitemap.xml
+
+# For AI agents: an index of the site is at https://uedevlabs.github.io/llms.txt
+# and the full text at https://uedevlabs.github.io/llms-full.txt

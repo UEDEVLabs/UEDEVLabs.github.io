@@ -27,6 +27,7 @@ const fail = (page, msg) => fails.push(`${page}: ${msg}`);
 // Older pages outside the redesign get image-size problems as warnings, not failures.
 const LOOSE = new Set(['portfolio.html', 'Style Directions.html']);
 const titles = new Map();
+const SITEMAP = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 let checkedRefs = 0;
 
 for (const file of pages()) {
@@ -86,6 +87,7 @@ for (const file of pages()) {
     if (desc.length < 70 || desc.length > 160) fail(page, `meta description is ${desc.length} characters (70-160)`);
     if (canon !== want) fail(page, `canonical ${canon || '(none)'} should be ${want}`);
     if (titles.has(title)) fail(page, `same title as ${titles.get(title)}`); else titles.set(title, page);
+    if (!SITEMAP.includes(`<loc>${want}</loc>`)) fail(page, 'not in sitemap.xml (add it to PAGES in tools/site/seo.mjs)');
   }
 
   for (const re of STALE) if (re.test(visible) || ld.some(([, b]) => re.test(b))) fail(page, `stale text ${re}`);
