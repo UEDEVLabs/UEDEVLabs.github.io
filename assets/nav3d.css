@@ -81,7 +81,12 @@ figure.xm,.xm{margin:0}
   border:1px solid var(--nv-line);background:rgba(8,14,10,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:7px 14px 7px 7px;border-radius:100px;margin:0 0 26px}
 .xh__chip b{font-weight:700;color:#041208;background:linear-gradient(135deg,var(--nv),var(--nv-3));padding:5px 10px;border-radius:100px;letter-spacing:.08em}
 .xh__brand{display:block;font-family:var(--mono);font-size:clamp(12px,1.1vw,15px);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--nv);margin:0 0 18px;line-height:1.2}
-.xh h1{font-size:clamp(42px,6.8vw,96px);font-weight:700;letter-spacing:-.045em;line-height:.96;margin:0 0 24px;max-width:15ch}
+.xh h1{font-size:clamp(40px,5.6vw,80px);font-weight:700;letter-spacing:-.045em;line-height:.98;margin:0 0 24px;max-width:17ch}
+/* "NextGen": a lit word above the headline, part of it for search and screen readers */
+.xh__gen{display:block;width:max-content;font-size:.5em;letter-spacing:-.02em;line-height:1;margin:0 0 .22em;padding-bottom:.08em;
+  background:linear-gradient(100deg,#fff 0%,var(--nv-2) 35%,var(--nv) 60%,var(--nv-3) 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:xgen 6s var(--ease) infinite alternate}
+.xh__gen::after{content:"";display:inline-block;width:.32em;height:.32em;margin-left:.22em;vertical-align:.32em;border-radius:50%;background:var(--nv);box-shadow:0 0 14px var(--nv)}
+@keyframes xgen{to{background-position:100% 0}}
 .xh .lede{max-width:640px}
 .xh__cta{display:flex;flex-wrap:wrap;gap:12px;margin:34px 0 0}
 .xh__proof{display:flex;flex-wrap:wrap;gap:10px 26px;list-style:none;padding:0;margin:34px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9fb2a5}
@@ -378,6 +383,35 @@ html.js .xr.in{opacity:1;transform:none}
 .xw__play[aria-pressed="true"] .i-pause{display:block}
 
 /* ---------- Responsive ---------- */
+/* ---------- Comparison page ---------- */
+.xwhy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:52px 0 0}
+.xwhy > div{border:1px solid var(--line);border-radius:var(--r-sm);padding:24px 24px 22px;background:linear-gradient(180deg,rgba(14,21,17,.92),rgba(9,13,11,.92))}
+.xwhy .xn{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nv)}
+.xwhy h2,.xwhy h3{font-size:clamp(19px,1.6vw,23px);letter-spacing:-.02em;line-height:1.2;margin:10px 0 10px}
+.xwhy p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+.xcmp{min-width:1080px}
+.xcmp thead th{vertical-align:bottom}
+.xcmp thead th a{color:var(--ink)}
+.xcmp thead th small{display:block;margin-top:4px;font-size:10px;letter-spacing:.12em;color:var(--faint)}
+.xcmp thead th:last-child{color:var(--ink)}
+.xcmp td:last-child{color:var(--muted)}
+.xcmp th:first-child{position:sticky;left:0;z-index:1;background:#0b100d}
+.xcmp .xcmp__us{background:rgba(47,224,106,.07);color:#dff7e6}
+.xcmp thead .xcmp__us,.xcmp thead .xcmp__us a{color:var(--nv)}
+.xcmp td{font-size:14px;min-width:150px}
+.xcmp__nd{color:var(--faint);font-style:italic}
+.xcmp__gap{color:#e9b38a}
+.xcmp__list{max-width:900px}
+.xcmp__list li{margin-bottom:14px}
+.xcmp__fit{list-style:none;padding:0;margin:0;display:grid;gap:12px;max-width:980px}
+.xcmp__fit li{display:grid;grid-template-columns:260px 1fr;gap:20px;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r-sm);background:rgba(10,14,12,.6)}
+.xcmp__fit b{color:var(--ink)}
+.xcmp__fit span{color:var(--muted);font-size:15px;line-height:1.6}
+.xcmp__src{columns:2;gap:40px;padding-left:18px;margin:0;font-size:14px;line-height:1.9}
+.xcmp__src a{color:var(--muted);word-break:break-all}
+.xcmp__src a:hover{color:var(--nv)}
+@media(max-width:960px){.xwhy{grid-template-columns:1fr}.xcmp__fit li{grid-template-columns:1fr;gap:6px}.xcmp__src{columns:1}}
+
 /* ---------- A full-width row (the live moving-obstacle demo), text beneath in two columns ---------- */
 .xrow--wide,.xrow--wide:nth-child(even){grid-template-columns:1fr;gap:36px}
 .xrow--wide:nth-child(even) .xrow__media{order:0}
@@ -415,7 +449,7 @@ html.js .xr.in{opacity:1;transform:none}
 .xreel__seg:hover::before{background:rgba(255,255,255,.5)}
 .xreel__seg:focus-visible{outline:2px solid var(--nv);outline-offset:2px;border-radius:4px}
 @media(max-width:860px){.xreel__ui{right:72px;bottom:31px}.xreel__cap{display:none}.xreel__segs{gap:5px}.xreel__seg{width:24px}}
-@media(prefers-reduced-motion:reduce){.xreel__v,.xreel__v.is-on,.xreel__v.is-on.is-drift{transform:none;transition:opacity .4s}.xreel::after{display:none}.xreel__cap.in > *{animation:none}}
+@media(prefers-reduced-motion:reduce){.xh__gen{animation:none}.xreel__v,.xreel__v.is-on,.xreel__v.is-on.is-drift{transform:none;transition:opacity .4s}.xreel::after{display:none}.xreel__cap.in > *{animation:none}}
 
 /* ---------- Rating badge: sits between the lede and the buttons, links to the reviews on Fab ---------- */
 .xrating{display:inline-flex;align-items:center;gap:10px;margin:26px 0 0;padding:8px 14px 8px 12px;border-radius:100px;

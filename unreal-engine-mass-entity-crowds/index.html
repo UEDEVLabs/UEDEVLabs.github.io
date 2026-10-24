@@ -104,6 +104,14 @@
             "@type": "Answer",
             "text": "Yes. Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee, and agents share viewpoints, perches and cover so no two take the same one."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it support 3D flow fields for crowds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A Mass crowd can share one CPU flow field toward a goal, which every agent samples in constant time, or plan per-agent asynchronous paths; both work in full 3D, through the air or water."
+          }
         }
       ]
     }
@@ -112,9 +120,9 @@
 </script>
 <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="../assets/company.css?v=20261024n" />
-<link rel="stylesheet" href="../assets/upgrade.css?v=20261024n" />
-<link rel="stylesheet" href="../assets/nav3d.css?v=20261024n" />
+<link rel="stylesheet" href="../assets/company.css?v=20261024p" />
+<link rel="stylesheet" href="../assets/upgrade.css?v=20261024p" />
+<link rel="stylesheet" href="../assets/nav3d.css?v=20261024p" />
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -415,6 +423,7 @@
         <details open><summary>How many agents can navigate in 3D through Mass Entity?</summary><div><p>10,000 or more. Crowds can use per-agent asynchronous paths or one shared flow field that the whole swarm samples in constant time, and they render through instanced meshes with LOD.</p></div></details>
         <details><summary>Do I need C++ to use Mass crowds?</summary><div><p>No. Add the traits to a Mass Entity Config; an editor validator flags illegal trait combinations, and Mass StateTree tasks drive the behaviour.</p></div></details>
         <details><summary>Can crowds use behaviours like perch and engage?</summary><div><p>Yes. Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee, and agents share viewpoints, perches and cover so no two take the same one.</p></div></details>
+        <details><summary>Does it support 3D flow fields for crowds?</summary><div><p>Yes. A Mass crowd can share one CPU flow field toward a goal, which every agent samples in constant time, or plan per-agent asynchronous paths; both work in full 3D, through the air or water.</p></div></details>
       </div>
       <p class="xr" style="margin-top:28px">Read more in the free documentation:</p>
       <ul class="xdocs">
@@ -478,6 +487,7 @@
       <div class="footer__col">
         <h3>3D Navigation AI</h3>
         <a href="../unreal-engine-3d-pathfinding/">3D pathfinding for UE5</a>
+        <a href="../unreal-engine-3d-pathfinding-plugins-compared/">Compare 3D pathfinding plugins</a>
         <a href="https://lcmnav3d.github.io/whats-new.html" target="_blank" rel="noopener">What's new in <span data-fact="product.version">3.6.0</span></a>
         <a href="../unreal-engine-flying-ai/">Flying AI</a>
         <a href="../unreal-engine-underwater-ai/">Underwater</a>
@@ -509,6 +519,6 @@
   </div>
 </footer>
 
-<script src="../assets/nav3d.js?v=20261024n" defer></script>
+<script src="../assets/nav3d.js?v=20261024p" defer></script>
 </body>
 </html>
