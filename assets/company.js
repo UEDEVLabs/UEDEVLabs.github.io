@@ -138,8 +138,10 @@
   let ticks=0; (function warm(){ check(); if(ticks++<120) requestAnimationFrame(warm); })();
   setTimeout(()=>{ reveals.forEach(el=>el.classList.add('in')); counters.forEach(animateCount); },2600);
 
-  /* mobile menu */
+  /* mobile menu - only on pages whose nav nav3d.js does not run (#nav); two toggles cancel out */
   const burger=$('.burger');
-  burger && burger.addEventListener('click',()=>nav.classList.toggle('open'));
-  $$('.nav__links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  if(burger && !burger.closest('#nav')){
+    burger.addEventListener('click',()=>nav.classList.toggle('open'));
+    $$('.nav__links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  }
 })();

@@ -119,30 +119,43 @@
 </script>
 <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="../assets/company.css?v=20261024b" />
-<link rel="stylesheet" href="../assets/upgrade.css?v=20261024b" />
-<link rel="stylesheet" href="../assets/nav3d.css?v=20261024b" />
+<link rel="stylesheet" href="../assets/company.css?v=20261024c" />
+<link rel="stylesheet" href="../assets/upgrade.css?v=20261024c" />
+<link rel="stylesheet" href="../assets/nav3d.css?v=20261024c" />
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <div class="aurora"></div>
 <div class="grid-overlay"></div>
 
+<!-- @nav active="uses" current="unreal-engine-underwater-ai/" -->
 <header class="nav" id="nav">
   <div class="nav__in">
-    <a href="../" class="brand"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
-    <nav class="nav__links" aria-label="Site">
-      <a href="../unreal-engine-3d-pathfinding/">3D Pathfinding</a>
-      <a href="../unreal-engine-flying-ai/">Flying AI</a>
-      <a href="../unreal-engine-underwater-ai/" class="nav__opt active" aria-current="page">Underwater</a>
-      <a href="../unreal-engine-space-combat-ai/" class="nav__opt">Space</a>
-      <a href="../unreal-engine-moving-obstacle-avoidance/">Moving obstacles</a>
-      <a href="../unreal-engine-niagara-vfx/">Niagara VFX</a>
+    <a href="../" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Main">
+      <a href="../">3D Navigation AI</a>
+      <a href="../unreal-engine-3d-pathfinding/">How it works</a>
+      <div class="nav__dd active">
+        <button class="nav__ddbtn" type="button" aria-expanded="false" aria-controls="nav-uses">Use cases<svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="nav__menu" id="nav-uses">
+        <a href="../unreal-engine-flying-ai/"><b>Flying AI &amp; drones</b><span>6-DOF flight, landing on moving decks, perching</span></a>
+        <a href="./" aria-current="page"><b>Underwater &amp; fish AI</b><span>Schooling through the whole water column</span></a>
+        <a href="../unreal-engine-space-combat-ai/"><b>Space combat</b><span>Chase, intercept and raider swarms</span></a>
+        <a href="../unreal-engine-open-world-navigation/"><b>Open worlds</b><span>No bounds volume, no edge</span></a>
+        <a href="../unreal-engine-mass-entity-crowds/"><b>Mass Entity crowds</b><span>10,000+ agents navigating in 3D</span></a>
+        <a href="../unreal-engine-moving-obstacle-avoidance/"><b>Moving obstacles</b><span>New in 3.6: predict and time the pass</span></a>
+        </div>
+      </div>
+      <a href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Docs<span class="nav__ext" aria-hidden="true">↗</span></a>
+      <a href="../unreal-engine-niagara-vfx/">More Products</a>
+      <a href="../portfolio.html" class="nav__opt">Developer</a>
+      <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__mcta">Get it on Fab ↗</a>
     </nav>
     <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener" class="nav__cta">Get it on Fab ↗</a>
-    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
   </div>
 </header>
+<!-- /@nav -->
 
 <main class="lp">
 <article>
@@ -301,6 +314,16 @@
             <img src="../assets/media/stills/coral-reef-fish-1280.jpg" alt="Tropical fish swim over a coral reef using volumetric navigation in Unreal Engine 5" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-coral-reef" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: tropical fish swim over the coral reef">
+            <source src="../assets/media/loops/loop-coral-reef.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-coral-reef.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: tropical fish swim over the coral reef">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Coral Reef</h3><p>An ROV surveys a reef; the school hides in the coral; turtles settle on the seabed.</p><ul class="xchips"><li>Scan Area</li><li>Flee</li><li>BT · StateTree</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -311,6 +334,16 @@
             <img src="../assets/media/stills/reef-school-mass-1280.jpg" alt="A Mass Entity school of fish streams over the coral, parting round the pinnacles" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-reef-school" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: a school of fish streams over the coral reef">
+            <source src="../assets/media/loops/loop-reef-school.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-reef-school.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: a school of fish streams over the coral reef">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Reef School</h3><p>A Mass school of forty follows its lead fish round the reef on the flow field.</p><ul class="xchips"><li>Mass</li><li>Schooling</li></ul></div>
         </article>
         <article class="xw__card xr">
@@ -321,6 +354,16 @@
             <img src="../assets/media/stills/fish-tank-120cm-1280.jpg" alt="A 120 cm aquarium navigated at 1 cm voxels, with small fish swimming through a rock arch" width="1920" height="1080" loading="lazy" decoding="async">
           </picture>
           <!-- /@picture -->
+          <!-- @loop slug="loop-fish-tank" hover -->
+          <video class="" muted loop playsinline preload="none" data-hoverplay width="1280" height="720" aria-label="Looping clip: small fish swim through a 120 cm aquarium navigated at 1 cm">
+            <source src="../assets/media/loops/loop-fish-tank.webm" type='video/webm; codecs="av01.0.05M.08"'>
+            <source src="../assets/media/loops/loop-fish-tank.mp4" type="video/mp4">
+          </video>
+          <button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: small fish swim through a 120 cm aquarium navigated at 1 cm">
+            <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
+            <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+          </button>
+          <!-- /@loop -->
           <div class="xw__body"><h3>Fish Tank</h3><p>A 120 cm aquarium navigated at 1 cm, round a hunting predator.</p><ul class="xchips"><li>1 cm voxels</li><li>BT · ST · Mass</li></ul></div>
         </article>
       </div>
@@ -432,6 +475,6 @@
   </div>
 </footer>
 
-<script src="../assets/nav3d.js?v=20261024b" defer></script>
+<script src="../assets/nav3d.js?v=20261024c" defer></script>
 </body>
 </html>

@@ -41,6 +41,14 @@ for (const file of pages()) {
   const graphs = [];
   for (const [, body] of ld) { try { graphs.push(JSON.parse(body)); } catch (e) { fail(page, `JSON-LD does not parse: ${e.message}`); } }
 
+  // Consistency: one top bar everywhere, and every demo-world card has a clip behind it.
+  if (!LOOSE.has(page)) {
+    if (!html.includes('<!-- @nav ')) fail(page, 'top bar is not the shared @nav (tools/site/build.mjs)');
+    for (const card of html.match(/<article class="xw__card[\s\S]*?<\/article>/g) || []) {
+      if (!/@loop slug="[^"]+" hover/.test(card)) fail(page, `world card without a hover clip: ${(card.match(/<h3>([^<]+)/) || [])[1]}`);
+    }
+  }
+
   // Structured data: the fields Google needs for each rich result, and our own URLs must exist.
   const nodes = graphs.flatMap((g) => g['@graph'] || [g]);
   const need = (n, keys) => keys.filter((k) => k.split('|').every((alt) => n[alt] === undefined || n[alt] === '')).map((k) => `${n['@type']} is missing ${k}`);

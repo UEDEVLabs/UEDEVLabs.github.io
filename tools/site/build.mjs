@@ -61,7 +61,11 @@ function fact(dotted) {
 }
 
 // Paths in media.json are from the site root; a page in a folder needs them relative to itself.
-const relTo = (page) => (p) => path.posix.relative(path.posix.dirname(page), p) || p;
+// A folder (trailing slash) keeps its slash, and a page's own folder is "./".
+const relTo = (page) => (p) => {
+  const r = path.posix.relative(path.posix.dirname(page), p);
+  return p.endsWith('/') ? (r ? r + '/' : './') : r || p;
+};
 const srcset = (list, fix) => list.split(', ').map((part) => { const [p, w] = part.split(' '); return `${fix(p)} ${w}`; }).join(', ');
 
 function picture(a, page, indent) {
@@ -98,11 +102,19 @@ function loop(a, page, indent) {
   const still = a.hero
     ? picture({ slug: 'poster-' + a.slug.replace(/^loop-/, ''), sizes: '100vw', loading: 'eager', class: 'xh__still', alt: '' }, page, indent) + '\n'
     : '';
+  // A hover loop also gets a play button: phones cannot hover, and keyboards need something to press.
+  const button = a.hover
+    ? [`<button class="xw__play" type="button" aria-pressed="false" aria-label="Play clip: ${esc((a.alt || s.alt).replace(/^Looping clip: /, ''))}">`,
+       `  <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>`,
+       `  <svg class="i-pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>`,
+       `</button>`]
+    : [];
   return still + [
     `<video ${tag}>`,
     `  <source src="${fix(s.webm)}" type='video/webm; codecs="av01.0.05M.08"'>`,
     `  <source src="${fix(s.mp4)}" type="video/mp4">`,
     `</video>`,
+    ...button,
   ].map((l) => indent + l).join('\n');
 }
 
@@ -145,7 +157,47 @@ function catalog(a, page, indent) {
   }).join('\n');
 }
 
-const KINDS = { picture, loop, catalog };
+// The top bar, the same on every page. active = home | how | uses | store | dev; on a use-case page
+// current="<slug>/" marks its entry in the Use cases menu.
+const USE_CASES = [
+  ['unreal-engine-flying-ai/', 'Flying AI &amp; drones', '6-DOF flight, landing on moving decks, perching'],
+  ['unreal-engine-underwater-ai/', 'Underwater &amp; fish AI', 'Schooling through the whole water column'],
+  ['unreal-engine-space-combat-ai/', 'Space combat', 'Chase, intercept and raider swarms'],
+  ['unreal-engine-open-world-navigation/', 'Open worlds', 'No bounds volume, no edge'],
+  ['unreal-engine-mass-entity-crowds/', 'Mass Entity crowds', '10,000+ agents navigating in 3D'],
+  ['unreal-engine-moving-obstacle-avoidance/', 'Moving obstacles', 'New in 3.6: predict and time the pass'],
+];
+function nav(a, page, indent) {
+  const fix = relTo(page);
+  const home = fix('index.html').replace(/index\.html$/, '') || './';
+  const cur = (key) => (a.active === key ? ' class="active" aria-current="page"' : '');
+  const fab = facts.product.fab;
+  const items = USE_CASES.map(([href, label, sub]) =>
+    `        <a href="${fix(href)}"${a.current === href ? ' aria-current="page"' : ''}><b>${label}</b><span>${sub}</span></a>`).join('\n');
+  return `<header class="nav" id="nav">
+  <div class="nav__in">
+    <a href="${home}" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><b>U</b></span><span>UE<b>DEV</b></span></a>
+    <nav class="nav__links" id="nav-links" aria-label="Main">
+      <a href="${home}"${cur('home')}>3D Navigation AI</a>
+      <a href="${fix('unreal-engine-3d-pathfinding/')}"${cur('how')}>How it works</a>
+      <div class="nav__dd${a.active === 'uses' ? ' active' : ''}">
+        <button class="nav__ddbtn" type="button" aria-expanded="false" aria-controls="nav-uses">Use cases<svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+        <div class="nav__menu" id="nav-uses">
+${items}
+        </div>
+      </div>
+      <a href="${facts.product.docs}" target="_blank" rel="noopener">Docs<span class="nav__ext" aria-hidden="true">↗</span></a>
+      <a href="${fix('unreal-engine-niagara-vfx/')}"${cur('store')}>More Products</a>
+      <a href="${fix('portfolio.html')}" class="nav__opt">Developer</a>
+      <a href="${fab}" target="_blank" rel="noopener" class="nav__mcta">Get it on Fab ↗</a>
+    </nav>
+    <a href="${fab}" target="_blank" rel="noopener" class="nav__cta">Get it on Fab ↗</a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+  </div>
+</header>`.split('\n').map((l) => indent + l).join('\n');
+}
+
+const KINDS = { picture, loop, catalog, nav };
 let changed = 0;
 for (const file of pages()) {
   const page = path.relative(ROOT, file).split(path.sep).join('/');
@@ -158,13 +210,13 @@ for (const file of pages()) {
   // Animated counters keep their target in data-count; data-fact-count sets it.
   html = html.replace(/data-fact-count="([^"]+)" data-count="[^"]*"/g, (_, key) => `data-fact-count="${key}" data-count="${fact(key)}"`);
 
-  html = html.replace(/([ \t]*)<!-- @(picture|loop|catalog)(?: ([^>]*?))? -->\n(?:[\s\S]*?\n)??[ \t]*<!-- \/@\2 -->/g, (_, indent, kind, a = '') => {
+  html = html.replace(/([ \t]*)<!-- @(picture|loop|catalog|nav)(?: ([^>]*?))? -->\n(?:[\s\S]*?\n)??[ \t]*<!-- \/@\2 -->/g, (_, indent, kind, a = '') => {
     const body = KINDS[kind](attrs(a), page, indent);
     return `${indent}<!-- @${kind}${a ? ' ' + a : ''} -->\n${body}\n${indent}<!-- /@${kind} -->`;
   });
 
-  const open = (html.match(/<!-- @(picture|loop|catalog)[ -]/g) || []).length;
-  const shut = (html.match(/<!-- \/@(picture|loop|catalog) -->/g) || []).length;
+  const open = (html.match(/<!-- @(picture|loop|catalog|nav)[ -]/g) || []).length;
+  const shut = (html.match(/<!-- \/@(picture|loop|catalog|nav) -->/g) || []).length;
   if (open !== shut) throw new Error(`${page}: ${open} markers opened, ${shut} closed`);
 
   html = html.replace(/\n/g, eol);

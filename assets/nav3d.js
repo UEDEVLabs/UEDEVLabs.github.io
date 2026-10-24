@@ -58,13 +58,21 @@
     sync();
   });
 
-  /* ---- World cards: play on hover or focus ---- */
+  /* ---- World cards: a mouse plays the clip on hover; the card's button plays it on touch or
+     keyboard (and under reduced motion, since pressing it is an explicit request) ---- */
   [].forEach.call(document.querySelectorAll('video[data-hoverplay]'), function (v) {
     var card = v.closest('.xw__card') || v.parentNode;
-    var on = function () { if (calm) return; v.preload = 'auto'; play(v); card.classList.add('is-playing'); };
-    var off = function () { v.pause(); card.classList.remove('is-playing'); };
-    card.addEventListener('pointerenter', on); card.addEventListener('pointerleave', off);
-    card.addEventListener('focusin', on); card.addEventListener('focusout', off);
+    var btn = card.querySelector('.xw__play');
+    var what = btn ? btn.getAttribute('aria-label').replace(/^(Play|Pause) clip: /, '') : '';
+    var mark = function (on) {
+      card.classList.toggle('is-playing', on);
+      if (btn) { btn.setAttribute('aria-pressed', on ? 'true' : 'false'); btn.setAttribute('aria-label', (on ? 'Pause' : 'Play') + ' clip: ' + what); }
+    };
+    var start = function () { v.preload = 'auto'; play(v); mark(true); };
+    var stop = function () { v.pause(); mark(false); };
+    card.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && !calm) start(); });
+    card.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') stop(); });
+    if (btn) btn.addEventListener('click', function (e) { e.preventDefault(); if (v.paused) start(); else stop(); });
   });
 
   /* ---- YouTube: a poster until clicked ---- */
@@ -94,10 +102,24 @@
     setTimeout(function () { rev.forEach(show); }, 3000);
   }
 
-  /* ---- Nav ---- */
+  /* ---- Nav: the mobile menu, and the Use cases menu (hover opens it with a mouse; the button
+     opens it for touch and keyboard; Escape or a click elsewhere closes it) ---- */
   var nav = document.getElementById('nav'), burger = nav && nav.querySelector('.burger');
-  if (burger) burger.addEventListener('click', function () {
-    var o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o ? 'true' : 'false');
+  var setMenu = function (open) {
+    nav.classList.toggle('open', open); burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+  };
+  if (burger) {
+    burger.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+    nav.addEventListener('click', function (e) { if (e.target.closest('.nav__links a')) setMenu(false); });
+  }
+  [].forEach.call(document.querySelectorAll('.nav__dd'), function (dd) {
+    var b = dd.querySelector('.nav__ddbtn');
+    var set = function (open) { dd.classList.toggle('open', open); b.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+    b.addEventListener('click', function () { set(!dd.classList.contains('open')); });
+    dd.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); b.focus(); } });
+    document.addEventListener('click', function (e) { if (!dd.contains(e.target)) set(false); });
+    dd.addEventListener('focusout', function (e) { if (!dd.contains(e.relatedTarget)) set(false); });
   });
   if (nav) addEventListener('scroll', function () { nav.classList.toggle('scrolled', scrollY > 10); }, { passive: true });
 })();
