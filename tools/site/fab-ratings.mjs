@@ -5,11 +5,14 @@
 // the store totals follow from those at build time. Files are written only when a number changed,
 // so the daily job (.github/workflows/fab-ratings.yml) commits nothing on a quiet day. A listing
 // Fab will not serve is skipped with a warning and keeps its last known rating.
+// It also keeps the developer avatar (assets/img/charitha-madhushanka.*) as the Fab seller profile
+// picture: when Fab serves a new picture (its URL changes), it is downloaded and resized.
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import os from 'node:os';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const FACTS = path.join(ROOT, 'facts.json');
@@ -31,18 +34,18 @@ function rating(id) {
   const r = listing.ratings ?? {};
   const total = r.total ?? 0, avg = r.averageRating ?? (total ? undefined : 0); // unrated: no average
   if (!Number.isInteger(total) || total < 0 || typeof avg !== 'number' || avg < 0 || avg > 5) throw new Error('no ratings block');
-  return { total, avg };
+  return { total, avg, listing };
 }
 
 const facts = JSON.parse(fs.readFileSync(FACTS, 'utf8'));
 const store = JSON.parse(fs.readFileSync(STORE, 'utf8'));
 const changes = [];
-let read = 0;
+let read = 0, avatarUrl = null;
 
 for (const p of store.products) {
   if (!p.fab) continue;
   let r;
-  try { r = rating(p.fab); read++; } catch (e) { warn(`${p.id}: Fab did not return a rating (${e.message}); kept ${p.rating ?? 'none'} (${p.ratings})`); continue; }
+  try { r = rating(p.fab); read++; if (p.flagship) avatarUrl = r.listing.user?.profileImageUrl; } catch (e) { warn(`${p.id}: Fab did not return a rating (${e.message}); kept ${p.rating ?? 'none'} (${p.ratings})`); continue; }
   // A listing never loses every rating at once; an empty answer is Fab having a bad moment.
   if (r.total === 0 && p.ratings > 0) { warn(`${p.id}: Fab reported 0 ratings, had ${p.ratings}; kept`); continue; }
   const value = r.total ? r.avg.toFixed(1) : null;
@@ -60,10 +63,25 @@ for (const p of store.products) {
 }
 
 if (!read) { warn('Fab returned no ratings at all (blocked or down); nothing changed'); process.exit(0); }
+
+// The developer avatar follows the Fab seller profile picture.
+if (avatarUrl && /^https:\/\/[^/]*epicgames\.com\//.test(avatarUrl) && avatarUrl !== store.sellerAvatar) {
+  try {
+    const base = path.join(ROOT, 'assets', 'img', 'charitha-madhushanka'), raw = path.join(os.tmpdir(), 'fab-avatar.png');
+    execFileSync('curl', ['-s', '--fail', '--max-time', '30', '-A', UA, '-o', raw, avatarUrl]);
+    const im = (args) => { try { execFileSync('magick', args); } catch { execFileSync('convert', args); } };   // ImageMagick 7, or 6 on CI
+    const square = ['-resize', '168x168^', '-gravity', 'center', '-extent', '168x168', '-strip'];
+    im([raw, ...square, '-quality', '80', `${base}.webp`]);
+    im([raw, ...square, '-quality', '82', '-sampling-factor', '4:2:0', '-interlace', 'JPEG', `${base}.jpg`]);
+    changes.push(`developer avatar: ${avatarUrl}`);
+    store.sellerAvatar = avatarUrl;
+  } catch (e) { warn(`developer avatar not updated (${e.message.split('\n')[0]})`); }
+}
 if (!changes.length) { console.log(`fab-ratings: ${read} listing(s) read, no rating changed`); process.exit(0); }
 
 // products.json keeps one product per line, so the new numbers go into its text in place.
-let text = fs.readFileSync(STORE, 'utf8').replace(/("checked": )"[^"]*"/, `$1"${today}"`);
+let text = fs.readFileSync(STORE, 'utf8').replace(/("checked": )"[^"]*"/, `$1"${today}"`)
+  .replace(/("sellerAvatar": )"[^"]*"/, `$1"${store.sellerAvatar}"`);
 for (const p of store.products) {
   text = text.replace(new RegExp(`(\\{ "id": "${p.id}",[^\\n]*?"rating": )(?:"[^"]*"|null)(, "ratings": )\\d+`),
     (_, a, b) => a + (p.rating === null ? 'null' : `"${p.rating}"`) + b + p.ratings);

@@ -2,6 +2,7 @@
   "$comment": "The UEDEV store as listed on Fab. Prices, ratings and names were read from https://www.fab.com/sellers/UEDEV on the date below; re-check before a release. The pages render this list as static HTML (node tools/site/build.mjs).",
   "checked": "2026-10-24",
   "seller": "https://www.fab.com/sellers/UEDEV",
+  "sellerAvatar": "https://cdn1.epicgames.com/fab/seller/o-9f8urqc2ufdfkftuxkaxvn5pa8vq9t/profile/375ceb80.png",
   "listingBase": "https://www.fab.com/listings/",
   "imageBase": "https://media.fab.com/image_previews/gallery_images/",
   "categories": {

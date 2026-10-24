@@ -112,9 +112,9 @@
 </script>
 <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="../assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="../assets/company.css?v=20261024g" />
-<link rel="stylesheet" href="../assets/upgrade.css?v=20261024g" />
-<link rel="stylesheet" href="../assets/nav3d.css?v=20261024g" />
+<link rel="stylesheet" href="../assets/company.css?v=20261024n" />
+<link rel="stylesheet" href="../assets/upgrade.css?v=20261024n" />
+<link rel="stylesheet" href="../assets/nav3d.css?v=20261024n" />
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -124,7 +124,7 @@
 <!-- @nav active="uses" current="unreal-engine-moving-obstacle-avoidance/" -->
 <header class="nav" id="nav">
   <div class="nav__in">
-    <a href="../" class="brand" aria-label="UEDEV home"><img class="brand__mark" src="../assets/brand/uedev-mark.svg" width="34" height="34" alt=""><img class="brand__word" src="../assets/brand/uedev-wordmark.svg" width="109" height="17" alt=""></a>
+    <a href="../" class="brand" aria-label="UEDEV home"><span class="brand__mark"><i></i><img src="../assets/brand/uedev-mark.svg" width="34" height="34" alt=""></span><img class="brand__word" src="../assets/brand/uedev-wordmark.svg" width="109" height="17" alt=""></a>
     <nav class="nav__links" id="nav-links" aria-label="Main">
       <a href="../">3D Navigation AI</a>
       <a href="../unreal-engine-3d-pathfinding/">How it works</a>
@@ -193,9 +193,11 @@
   <section id="features" class="xsec">
     <div class="wrap">
       <div class="xrows">
-        <div class="xrow">
+        <div class="xrow xrow--wide">
           <figure class="xm xm--16x9 xrow__media xr">
-<svg class="xpredict" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagram: a drone predicts when a moving gate will open, waits at the gate, then flies through the gap.">
+            <div class="xgaunt" data-gauntlet role="img" aria-label="Live animation: three drones leave the same start at different moments and meet the same sliding gate. Each predicts when the gate will be open and picks its own route: one flies straight through while it is open, one waits at the gate for it to open, one goes under the wall because the gate will stay shut too long.">
+              <canvas aria-hidden="true"></canvas>
+              <noscript><svg class="xpredict" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagram: a drone predicts when a moving gate will open, waits at the gate, then flies through the gap.">
   <g class="grid"><line x1="0" y1="60" x2="640" y2="60"/><line x1="0" y1="120" x2="640" y2="120"/><line x1="0" y1="180" x2="640" y2="180"/><line x1="0" y1="240" x2="640" y2="240"/><line x1="0" y1="300" x2="640" y2="300"/><line x1="80" y1="0" x2="80" y2="360"/><line x1="160" y1="0" x2="160" y2="360"/><line x1="240" y1="0" x2="240" y2="360"/><line x1="320" y1="0" x2="320" y2="360"/><line x1="400" y1="0" x2="400" y2="360"/><line x1="480" y1="0" x2="480" y2="360"/><line x1="560" y1="0" x2="560" y2="360"/></g>
   <line class="path" x1="60" y1="180" x2="600" y2="180"/>
   <circle class="tick" cx="140" cy="180" r="2.5"/><circle class="tick" cx="220" cy="180" r="2.5"/><circle class="tick" cx="440" cy="180" r="2.5"/><circle class="tick" cx="520" cy="180" r="2.5"/>
@@ -207,14 +209,19 @@
   <text class="label label--hot" x="374" y="92">predicted gap</text>
   <text class="label" x="374" y="296">gate cycle · learned</text>
   <text class="label" x="40" y="330">fly to · avoid moving obstacles</text>
-</svg>
-            <figcaption><span>A drone waits for the gate it predicted, then takes the gap</span></figcaption>
+</svg></noscript>
+            </div>
+            <figcaption><span>Same start, three departure times: each drone predicts the gate and takes the route that is fastest for its moment</span></figcaption>
           </figure>
           <div class="xrow__text xr">
+            <div>
             <span class="xn">01 · Prediction</span>
             <h2>Predict, don't just react</h2>
+            </div>
+            <div>
             <p>Fly To predicts where every moving obstacle (any actor with an LCM Dynamic Obstacle component) will be, and times its pass. It learns a gate's or a piston's cycle and replays it, turns a spinning blade with it, eases off, waits for a gap or takes a detour, and dodges what it cannot outrun.</p>
             <p>It is on by default in the Behaviour Tree and StateTree Fly To, controlled by three settings: <strong>Avoid Moving Obstacles</strong>, <strong>Moving Obstacle Look-Ahead</strong> and <strong>Moving Obstacle Margin</strong>.</p>
+            </div>
           </div>
         </div>
         <div class="xrow">
@@ -412,7 +419,7 @@
   <div class="wrap">
     <div class="footer__in">
       <div class="footer__col" style="max-width:280px">
-        <a href="../" class="brand" style="margin-bottom:14px"><img class="brand__mark" src="../assets/brand/uedev-mark.svg" width="34" height="34" alt=""><img class="brand__word" src="../assets/brand/uedev-wordmark.svg" width="109" height="17" alt="UEDEV"></a>
+        <a href="../" class="brand" style="margin-bottom:14px"><span class="brand__mark"><i></i><img src="../assets/brand/uedev-mark.svg" width="34" height="34" alt=""></span><img class="brand__word" src="../assets/brand/uedev-wordmark.svg" width="109" height="17" alt="UEDEV"></a>
         <p style="color:var(--faint);font-size:14px;line-height:1.6;margin:0">High-performance plugins, gameplay systems &amp; advanced VFX for Unreal Engine. Built and supported by a working game developer.</p>
       </div>
       <div class="footer__col">
@@ -449,6 +456,7 @@
   </div>
 </footer>
 
-<script src="../assets/nav3d.js?v=20261024g" defer></script>
+<script src="../assets/gauntlet.js?v=20261024n" defer></script>
+<script src="../assets/nav3d.js?v=20261024n" defer></script>
 </body>
 </html>

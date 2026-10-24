@@ -19,7 +19,7 @@ const PRODUCT = 'unreal-engine-3d-pathfinding/';
 const FAB = facts.product.fab;
 const DOCS = facts.product.docs;
 const UPDATED = facts.updated;
-const V = '?v=20261024g';
+const V = '?v=20261024n';
 // Best sellers, the VFX marquee, capabilities and support, moved here from the home page.
 const STORE_SECTIONS = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'partials', 'store-sections.html'), 'utf8')
   .replace(/^<!--[\s\S]*?-->\r?\n/, '');
@@ -44,6 +44,12 @@ const PREDICT_SVG = `<svg class="xpredict" viewBox="0 0 640 360" preserveAspectR
   <text class="label" x="374" y="296">gate cycle · learned</text>
   <text class="label" x="40" y="330">fly to · avoid moving obstacles</text>
 </svg>`;
+
+// The live moving-obstacle demo (assets/gauntlet.js draws it); the diagram stays for readers without JS.
+const GAUNTLET = `            <div class="xgaunt" data-gauntlet role="img" aria-label="Live animation: three drones leave the same start at different moments and meet the same sliding gate. Each predicts when the gate will be open and picks its own route: one flies straight through while it is open, one waits at the gate for it to open, one goes under the wall because the gate will stay shut too long.">
+              <canvas aria-hidden="true"></canvas>
+              <noscript>${PREDICT_SVG}</noscript>
+            </div>`;
 
 /* ------------------------------------------------------------------ */
 /* Use-case pages                                                      */
@@ -272,7 +278,7 @@ const USE_CASES = [
     hero: { still: 'harbour-drone-lands-moving-lorry' },
     glance: [['42', 'Movers in the Gauntlet'], ['370<small>m</small>', 'Gauntlet hall'], ['200', 'Agent Mass edition'], ['3', 'Prediction settings']],
     sections: [
-      { media: PREDICT_SVG, raw: true, cap: 'A drone waits for the gate it predicted, then takes the gap',
+      { media: GAUNTLET, raw: true, wide: true, cap: 'Same start, three departure times: each drone predicts the gate and takes the route that is fastest for its moment',
         kicker: 'Prediction', h2: 'Predict, don\'t just react',
         body: `<p>Fly To predicts where every moving obstacle (any actor with an LCM Dynamic Obstacle component) will be, and times its pass. It learns a gate's or a piston's cycle and replays it, turns a spinning blade with it, eases off, waits for a gap or takes a detour, and dodges what it cannot outrun.</p>
 <p>It is on by default in the Behaviour Tree and StateTree Fly To, controlled by three settings: <strong>Avoid Moving Obstacles</strong>, <strong>Moving Obstacle Look-Ahead</strong> and <strong>Moving Obstacle Margin</strong>.</p>` },
@@ -374,7 +380,7 @@ function footer(scripts = '') {
   <div class="wrap">
     <div class="footer__in">
       <div class="footer__col" style="max-width:280px">
-        <a href="../" class="brand" style="margin-bottom:14px"><img class="brand__mark" src="../assets/brand/uedev-mark.svg" width="34" height="34" alt=""><img class="brand__word" src="../assets/brand/uedev-wordmark.svg" width="109" height="17" alt="UEDEV"></a>
+        <a href="../" class="brand" style="margin-bottom:14px"><span class="brand__mark"><i></i><img src="../assets/brand/uedev-mark.svg" width="34" height="34" alt=""></span><img class="brand__word" src="../assets/brand/uedev-wordmark.svg" width="109" height="17" alt="UEDEV"></a>
         <p style="color:var(--faint);font-size:14px;line-height:1.6;margin:0">High-performance plugins, gameplay systems &amp; advanced VFX for Unreal Engine. Built and supported by a working game developer.</p>
       </div>
       <div class="footer__col">
@@ -449,15 +455,15 @@ function useCasePage(u) {
       <svg class="i-play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z"/></svg>
     </button>` : '';
 
-  const rows = u.sections.map((s, i) => `        <div class="xrow">
+  const rows = u.sections.map((s, i) => `        <div class="xrow${s.wide ? ' xrow--wide' : ''}">
           <figure class="xm xm--16x9 xrow__media xr">
 ${s.raw ? s.media : s.media.split('\n').map((l) => '            ' + l).join('\n')}
             <figcaption><span>${s.cap}</span></figcaption>
           </figure>
-          <div class="xrow__text xr">
+          <div class="xrow__text xr">${s.wide ? '\n            <div>' : ''}
             <span class="xn">${String(i + 1).padStart(2, '0')} · ${s.kicker}</span>
-            <h2>${s.h2}</h2>
-            ${s.body.replace(/\n/g, '\n            ')}
+            <h2>${s.h2}</h2>${s.wide ? '\n            </div>\n            <div>' : ''}
+            ${s.body.replace(/\n/g, '\n            ')}${s.wide ? '\n            </div>' : ''}
           </div>
         </div>`).join('\n');
 
@@ -576,7 +582,8 @@ ${related}
 
 ${cta('Give your AI the <span class="grad">whole sky.</span>', 'LCM 3D Navigation AI: true 3D pathfinding and volumetric navigation for Unreal Engine 5, built and supported by a working game developer.')}
 
-${footer()}`;
+${footer(u.sections.some((s) => s.media === GAUNTLET) ? `<script src="../assets/gauntlet.js${V}" defer></script>
+` : '')}`;
   return head({ slug: u.slug, title: u.title, description: u.description, image, imageAlt: heroStill.alt, ld }) + body;
 }
 
