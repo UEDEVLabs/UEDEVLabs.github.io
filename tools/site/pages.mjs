@@ -366,7 +366,7 @@ ${JSON.stringify({ '@context': 'https://schema.org', '@graph': ld }, null, 2)}
 <link rel="stylesheet" href="../assets/company.css${V}" />
 <link rel="stylesheet" href="../assets/upgrade.css${V}" />
 <link rel="stylesheet" href="../assets/nav3d.css${V}" />
-<link rel="stylesheet" href="../assets/human.css${V}" />
+<link rel="stylesheet" href="../assets/human.css?v=20261122a" />
 <script>document.documentElement.classList.add('js')</script>
 </head>`;
 }
