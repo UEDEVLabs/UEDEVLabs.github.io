@@ -68,7 +68,7 @@ const USE_CASES = [
     glance: [['4', 'Flight archetypes'], ['<span data-fact="ai.aiNodesTotal">85</span>', 'BT, StateTree &amp; Mass nodes'], ['10,000+', 'Mass Entity agents'], ['<span data-fact="compatibility.engineRange">5.2–5.8</span>', 'Unreal Engine']],
     sections: [
       { media: pic('city-open-world-drone-routes'), cap: 'Drones and their planned routes over a streamed city',
-        kicker: 'Routes', h2: 'A route through the air, not along a floor',
+        kicker: 'Routes', h2: 'Routes through the air',
         body: `<p>Unreal's Recast navmesh describes where a character can stand. A drone needs to know where there is empty air, so LCM 3D Navigation AI carves the level into a Sparse Voxel Octree of navigable volume and plans through it in full 3D: up, down and diagonally through shafts, under bridges and between towers.</p>
 <p>Theta* and Lazy Theta* give any-angle routes that cut the corners a grid would force, and every smoothed path is checked against the level's geometry, so a drone never cuts through a wall to reach its goal.</p>` },
       { media: pic('harbour-drone-quay-closeup'), cap: 'A multirotor drone over the harbour quay',
@@ -162,13 +162,13 @@ const USE_CASES = [
     glance: [['6-DOF', 'Full pitch and roll'], ['18', 'Raiders in the Mass swarm'], ['∞', 'Streamed asteroid belt'], ['<span data-fact="ai.aiNodesTotal">85</span>', 'AI nodes']],
     sections: [
       { media: pic('space-fleet-asteroid-field'), cap: 'A fleet through the Deep Space asteroid field',
-        kicker: 'Free-floating', h2: 'Navigation with nothing to stand on',
+        kicker: 'Free-floating', h2: 'Navigation in open space',
         body: `<p>A surface navmesh has nothing to project onto in space. The octree treats a debris field, an asteroid belt or a station interior as ordinary navigable volume, so routes go over, under and between rocks in any direction. Flight takes its gravity from the level (World Settings or a Physics Volume) instead of a fixed value.</p>` },
       { media: pic('dogfight-lead-intercept'), cap: 'A fighter leads its target between asteroids',
         kicker: 'Chase', h2: 'Chase, intercept, re-plan',
         body: `<p>In the Space Dogfight demo, Fly To in chase mode follows a target that breaks, jinks behind rocks and turns back for head-on passes, re-planning through the octree as it moves while both squads trade fire. Engage Target leads a crossing target and holds a firing position until the target leaves it.</p>` },
       { media: pic('dogfight-pursuit-asteroids'), cap: 'Pursuit past bright asteroids in a streamed level',
-        kicker: 'Streaming', h2: 'A belt with no edge',
+        kicker: 'Streaming', h2: 'Asteroid belts with no edge',
         body: `<p>The asteroid belt is an infinite world: navigation chunks stream in around the fighters and are discarded behind them, so memory stays flat however far the fight drifts. Long routes solve coarsely across chunks and finely within the current one.</p>` },
       { media: pic('space-dogfight-lasers'), cap: 'Starfighters trading laser fire',
         kicker: 'Swarms', h2: 'Raider swarms on Mass Entity',
@@ -200,7 +200,7 @@ const USE_CASES = [
     glance: [['0', 'Bounds volumes needed'], ['GPU', 'Built chunk octrees'], ['3', 'Streamed demo worlds'], ['<span data-fact="compatibility.engineRange">5.2–5.8</span>', 'Unreal Engine']],
     sections: [
       { media: pic('octree-routes-city-debug'), cap: 'The streamed octree and routes over the city, chunk by chunk',
-        kicker: 'Streaming', h2: 'No bounds volume, no edge',
+        kicker: 'Streaming', h2: 'No bounds volume',
         body: `<p>A bounds volume has to contain everywhere an agent may ever fly, and memory scales with that box whether or not anything is happening inside it. In infinite mode, navigation chunks are generated around the agents as they travel and discarded behind them, for the same reason you stream level geometry rather than loading a continent.</p>
 <p>For an arena or a level-sized map, finite mode builds once at <code>BeginPlay</code> or bakes to an asset, with the lowest overhead.</p>` },
       { media: pic('city-open-world-drone-routes'), cap: 'Drones on long routes across the city',
@@ -243,7 +243,7 @@ const USE_CASES = [
         kicker: 'Two modes', h2: 'Per-agent paths or one shared flow field',
         body: `<p>Crowds heading the same way sample one shared CPU flow field in constant time, while the agents that matter get their own asynchronous paths. Auto-registered processors handle request, solve and steer, so you never call the solver yourself. A crowd's first flow field is built off the game thread, so a crowd spawning into a streamed world does not cost one long frame.</p>` },
       { media: pic('drone-swarm-close-fly-through'), cap: 'Close fly-through of the swarm',
-        kicker: 'Behaviours', h2: 'Crowds that behave, not just move',
+        kicker: 'Behaviours', h2: 'Crowd behaviours',
         body: `<p>Ten Mass StateTree tasks and three evaluators let crowds perch, scan, engage, investigate and flee. Agents in a crowd share the work: they sweep an area sharing the viewpoints, close round an intruder the moment any of them sees it, and no two take the same perch, cover or vantage point.</p>` },
       { media: pic('reef-school-crowd'), cap: 'A school turning together without overlapping',
         kicker: 'Density', h2: 'Dense crowds that do not overlap',
@@ -282,7 +282,7 @@ const USE_CASES = [
     glance: [['42', 'Movers in the Gauntlet'], ['370<small>m</small>', 'Gauntlet hall'], ['200', 'Agent Mass edition'], ['3', 'Prediction settings']],
     sections: [
       { media: GAUNTLET, raw: true, wide: true, cap: 'Same start, three departure times: each drone predicts the gate and takes the route that is fastest for its moment',
-        kicker: 'Prediction', h2: 'Predict, don\'t just react',
+        kicker: 'Prediction', h2: 'It predicts where each obstacle will be',
         body: `<p>Fly To predicts where every moving obstacle (any actor with an LCM Dynamic Obstacle component) will be, and times its pass. It learns a gate's or a piston's cycle and replays it, turns a spinning blade with it, eases off, waits for a gap or takes a detour, and dodges what it cannot outrun.</p>
 <p>It is on by default in the Behaviour Tree and StateTree Fly To, controlled by three settings: <strong>Avoid Moving Obstacles</strong>, <strong>Moving Obstacle Look-Ahead</strong> and <strong>Moving Obstacle Margin</strong>.</p>` },
       { media: pic('node-land-moving-platform'), cap: 'Land on a moving platform in the Feature Examples hall',
@@ -575,7 +575,7 @@ ${u.docs.map(([l, p]) => `        <li><a href="${DOCS}${p}" target="_blank" rel=
     <div class="wrap">
       <div class="xhead xr">
         <span class="kicker">More use cases</span>
-        <h2>What else it can fly</h2>
+        <h2>Other use cases</h2>
       </div>
       <div class="xrel">
 ${related}
@@ -585,7 +585,7 @@ ${related}
 </article>
 </main>
 
-${cta('Give your AI the <span class="grad">whole sky.</span>', 'LCM 3D Navigation AI: true 3D pathfinding and volumetric navigation for Unreal Engine 5, built and supported by a working game developer.')}
+${cta('Get LCM 3D Navigation AI on Fab', '$' + facts.product.price.value + ' for a personal licence, paid once, with the full C++ source. Updates are free for existing licences.')}
 
 ${footer(u.sections.some((s) => s.media === GAUNTLET) ? `<script src="../assets/gauntlet.js${V}" defer></script>
 ` : '')}`;
@@ -769,9 +769,9 @@ function comparePage() {
     </div>
     <div class="wrap">
       <div class="xwhy">
-        <div><span class="xn">Price</span><h2>Middleware scope, plugin price</h2><p>$${PRICE.value} Personal or $${Number(PRICE.professional).toLocaleString('en-US')} Professional, once, with full C++ source. Mercuna's cheapest 3D licence is £2,500 per title (Windows only, no source); Havok Navigation is $50,000 per product.</p></div>
+        <div><span class="xn">Price</span><h2>A one-time price, with source</h2><p>$${PRICE.value} Personal or $${Number(PRICE.professional).toLocaleString('en-US')} Professional, once, with full C++ source. Mercuna's cheapest 3D licence is £2,500 per title (Windows only, no source); Havok Navigation is $50,000 per product.</p></div>
         <div><span class="xn">Worlds</span><h2>No bounds volume in open worlds</h2><p>Each of the other options in the table needs a bounds volume. In infinite mode, navigation streams in chunks around the agents, with no volume to place or outgrow.</p></div>
-        <div><span class="xn">AI systems</span><h2>Every Unreal AI system, ready to use</h2><p>31 Behaviour Tree, 41 StateTree and 13 Mass nodes, 3D EQS and a 6-DOF flight and swim component. None of the alternatives we checked document Mass Entity support or a GPU build.</p></div>
+        <div><span class="xn">AI systems</span><h2>Behaviour Tree, StateTree and Mass, ready to use</h2><p>31 Behaviour Tree, 41 StateTree and 13 Mass nodes, 3D EQS and a 6-DOF flight and swim component. None of the alternatives we checked document Mass Entity support or a GPU build.</p></div>
       </div>
     </div>
   </header>
@@ -799,7 +799,7 @@ ${rows}
     <div class="wrap">
       <div class="xhead xr">
         <span class="kicker">Where it differs</span>
-        <h2>What makes it <em>NextGen</em></h2>
+        <h2>What is different about it</h2>
       </div>
       <ul class="tick xr xcmp__list">
         <li><strong>Unbounded worlds.</strong> Infinite mode streams navigation chunks around agents and unloads them behind, with pre-baked chunks and a persistent long-range graph, so World Partition and streamed open worlds need no bounds volume.</li>
@@ -858,7 +858,7 @@ ${sources.map((s) => `        <li><a href="${s}" target="_blank" rel="noopener">
 </article>
 </main>
 
-${cta('Give your AI the <span class="grad">whole sky.</span>', 'LCM 3D Navigation AI: NextGen true 3D navigation for AI agents in Unreal Engine 5, built and supported by a working game developer.')}
+${cta('Get LCM 3D Navigation AI on Fab', '$' + facts.product.price.value + ' for a personal licence, paid once, with the full C++ source. Updates are free for existing licences.')}
 
 ${footer()}`;
   return head({ slug: COMPARE, title, description, image: SITE + heroStill.jpg, imageAlt: heroStill.alt, ld }) + body;

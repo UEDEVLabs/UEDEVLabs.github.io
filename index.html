@@ -330,8 +330,8 @@
   <section id="whats-new" class="xsec">
     <div class="wrap">
       <div class="xhead xr">
-        <span class="kicker">New in 3.6 · October 2026</span>
-        <h2>Agents that see <em>moving obstacles</em> coming</h2>
+        <span class="kicker">October 2026</span>
+        <h2>New in 3.6: agents that time their way past moving obstacles</h2>
         <p class="lede">A free update for every licence. <a class="ln" href="https://lcmnav3d.github.io/whats-new.html" target="_blank" rel="noopener">Read the full release notes →</a></p>
       </div>
       <div class="xn__grid">
@@ -399,8 +399,7 @@
   <section id="trailer" class="xsec">
     <div class="wrap">
       <div class="xhead xr">
-        <span class="kicker">See it running</span>
-        <h2>Captured in the engine</h2>
+        <h2>Two trailers, recorded in the engine</h2>
       </div>
       <div class="xt__grid">
         <div class="xt__item xr">
@@ -434,13 +433,37 @@
     </div>
   </section>
 
+  <!-- HOW IT WORKS: one long feature -->
+  <section id="how" class="xsec">
+    <div class="wrap">
+      <figure class="xfeat xr">
+        <div class="xfeat__img">
+          <!-- @picture slug="city-open-world-drone-routes" sizes="(min-width:1200px) 1200px, 100vw" alt="Drones and their planned routes over a city, with the streamed navigation chunks drawn as yellow lines" -->
+          <picture>
+            <source type="image/avif" srcset="assets/media/stills/city-open-world-drone-routes-640.avif 640w, assets/media/stills/city-open-world-drone-routes-1280.avif 1280w, assets/media/stills/city-open-world-drone-routes-1920.avif 1920w" sizes="(min-width:1200px) 1200px, 100vw">
+            <source type="image/webp" srcset="assets/media/stills/city-open-world-drone-routes-640.webp 640w, assets/media/stills/city-open-world-drone-routes-1280.webp 1280w, assets/media/stills/city-open-world-drone-routes-1920.webp 1920w" sizes="(min-width:1200px) 1200px, 100vw">
+            <img src="assets/media/stills/city-open-world-drone-routes-1280.jpg" alt="Drones and their planned routes over a city, with the streamed navigation chunks drawn as yellow lines" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <!-- /@picture -->
+        </div>
+        <figcaption class="xfeat__text">
+          <h2>How it works</h2>
+          <div class="xfeat__cols">
+            <p>Unreal's navmesh describes the floor a character can stand on. A drone needs the opposite: a map of the empty air. LCM 3D Navigation AI builds that map as a sparse voxel octree. Open sky is one big cell and detail appears only near geometry, so a huge level costs little more than a small one.</p>
+            <p>Routes are planned through that volume with A*, Theta* or Lazy Theta*, smoothed, and checked against the level so a path never cuts through a wall. In an open world the octree is built in chunks around your agents as they fly, which is what the yellow lines in this picture show.</p>
+          </div>
+          <a class="ln" href="unreal-engine-3d-pathfinding/">Read how 3D pathfinding works →</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- WORLDS -->
   <section id="worlds" class="xsec">
     <div class="wrap">
       <div class="xhead xr">
-        <span class="kicker"><span data-fact="content.demoLevels">57</span> free demo levels</span>
-        <h2>Seventeen worlds. <em>One navigation system.</em></h2>
-        <p class="lede">Every world in Behaviour Tree and StateTree editions, most in a Mass Entity crowd edition too. All are a free download from inside the editor.</p>
+        <h2>17 demo worlds you can download for free</h2>
+        <p class="lede">Each world comes in a Behaviour Tree and a StateTree edition, and most have a Mass Entity crowd edition too: <span data-fact="content.demoLevels">57</span> levels in all. You download them from inside the editor.</p>
       </div>
       <div class="xw">
         <article class="xw__card xw__card--lg xr">
@@ -691,11 +714,10 @@
   <section id="use-cases" class="xsec">
     <div class="wrap">
       <div class="xhead xr">
-        <span class="kicker">What you can build</span>
-        <h2>Anything that moves through a volume</h2>
+        <h2>What you can build with it</h2>
         <p class="lede">Flying, swimming and free-floating AI, from one hero drone to a 10,000-agent swarm.</p>
       </div>
-      <div class="xrel">
+      <div class="xrel xrel--list">
         <a href="unreal-engine-flying-ai/" class="xr"><div class="xm"><!-- @picture slug="harbour-drone-lands-moving-ship" sizes="(min-width:860px) 33vw, 100vw" alt="" -->
 <picture>
   <source type="image/avif" srcset="assets/media/stills/harbour-drone-lands-moving-ship-640.avif 640w, assets/media/stills/harbour-drone-lands-moving-ship-1280.avif 1280w, assets/media/stills/harbour-drone-lands-moving-ship-1920.avif 1920w" sizes="(min-width:860px) 33vw, 100vw">
@@ -751,7 +773,7 @@
       <picture><source type="image/webp" srcset="assets/nav3d/logo-208.webp"><img class="n3d__logo reveal" src="assets/nav3d/logo-208.png" alt="LCM 3D Navigation AI (Nav3D) logo" width="104" height="104" /></picture>
       <div>
         <span class="kicker reveal">Flagship UE5 plugin · v3.6.0 · Unreal Engine 5.2–5.8</span>
-        <h2 class="mega mega--sec reveal" data-d="1">Everything <em>in the box</em></h2>
+        <h2 class="n3d__h2 reveal" data-d="1">What's in the plugin</h2>
         <p class="n3d__tag reveal" data-d="2">The 3D pathfinding &amp; volumetric navigation plugin for Unreal Engine 5</p>
         <div class="n3d__badges reveal" data-d="2">
           <span class="xrate">★ <span data-fact="reviews.ratingDisplay">5.0</span> on Fab</span><span>Sparse Voxel Octree</span><span>GPU-built navigation</span><span>85 AI nodes</span><span>10,000+ agents</span><span>Moving-obstacle prediction</span><span>Multiplayer replication</span><span>Blueprint &amp; C++</span>
@@ -759,7 +781,7 @@
       </div>
     </div>
 
-    <p class="sec-intro reveal" data-d="2" data-chars style="max-width:760px;margin-top:26px"><strong>LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5</strong>: flying AI pathfinding for drones, dragons, spaceships, helicopters and underwater agents that Recast navmesh simply cannot express. Unreal's Recast navmesh answers one question: where can I stand? It flattens your level into walkable polygons: exactly right for a soldier, completely wrong for a dragon. LCM 3D Navigation AI answers a different one: where is there empty air? It carves the whole playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky costs almost nothing and detail appears only where geometry actually is.</p>
+    <p class="sec-intro reveal" data-d="2" style="max-width:760px;margin-top:26px"><strong>LCM 3D Navigation AI brings true 3D pathfinding to Unreal Engine 5</strong>: flying AI pathfinding for drones, dragons, spaceships, helicopters and underwater agents that Recast navmesh simply cannot express. Unreal's Recast navmesh answers one question: where can I stand? It flattens your level into walkable polygons: exactly right for a soldier, completely wrong for a dragon. LCM 3D Navigation AI answers a different one: where is there empty air? It carves the whole playable volume into a Sparse Voxel Octree and paths through the empty nodes, so open sky costs almost nothing and detail appears only where geometry actually is.</p>
 
 
 
@@ -776,15 +798,15 @@
           <li class="reveal"><span class="n">01</span><span><b>Sparse Voxel Octree</b><span>The level's empty air is subdivided only where geometry exists. One node covers open sky, so cost tracks clutter, not level size. Voxels go down to 0.5&nbsp;cm, so the same plugin navigates a 120&nbsp;cm aquarium at 1&nbsp;cm and a streamed open world. Drop a single <code>LcmNavigationManagerSVO</code> per level and it owns the octree, the pathfinder and every query.</span></span></li>
           <li class="reveal" data-d="1"><span class="n">02</span><span><b>Three solvers, three smoothing modes</b><span>A* for raw throughput, Theta* for true any-angle routes, Lazy Theta* for near-Theta* quality at near-A* cost. All three are multi-threaded and deterministic. Then Raw, Linear Shortcut or Curved Spline smoothing, validated against geometry, so a smoothed path never cuts a wall.</span></span></li>
           <li class="reveal" data-d="2"><span class="n">03</span><span><b>GPU-built navigation that checks itself</b><span>Voxelization, the octree and its links are built on the GPU on D3D12, D3D11 and Vulkan. New in 3.6: each machine's GPU proves its voxels before it builds navigation: a capability check, a self-test remembered per GPU and driver, and sampled audits while it runs. A GPU that fails voxelizes on the CPU for that session, and the log says why.</span></span></li>
-          <li class="reveal" data-d="3"><span class="n">04</span><span><b>Macro / micro routing &amp; infinite worlds</b><span>Long routes solve coarsely across chunks, then finely within them. Finite worlds build once or bake to an asset; infinite worlds stream chunks around agents and throw them away behind, with pre-baked chunks and a long-range graph that plans beyond loaded geometry.</span></span></li>
-          <li class="reveal" data-d="4"><span class="n">05</span><span><b>Agents that see moving obstacles coming</b><span>New in 3.6: Fly To predicts every moving obstacle and times its pass. It learns a gate's or a piston's cycle, turns a spinning blade with it, eases off, waits for a gap or takes a detour, and dodges what it cannot outrun. Moving geometry still restamps the octree, so routes re-plan live.</span></span></li>
-          <li class="reveal" data-d="4"><span class="n">06</span><span><b>A behaviour for every job: 85 AI nodes</b><span>Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land (even on a rolling ship's deck), Perch, Scan Area, Engage Target, Find Cover, Flee and Investigate: 31 Behaviour Tree nodes, 41 StateTree nodes and 13 Mass StateTree nodes at full parity. One <code>Fly To Location</code> Blueprint node flies any pawn with no AI Controller, and Unreal's own Move To and EQS plan through the octree.</span></span></li>
+          <li class="reveal" data-d="3"><span class="n">04</span><span><b>Long routes and infinite worlds</b><span>Long routes solve coarsely across chunks, then finely within them. Finite worlds build once or bake to an asset; infinite worlds stream chunks around agents and throw them away behind, with pre-baked chunks and a long-range graph that plans beyond loaded geometry.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">05</span><span><b>Moving obstacles (new in 3.6)</b><span>New in 3.6: Fly To predicts every moving obstacle and times its pass. It learns a gate's or a piston's cycle, turns a spinning blade with it, eases off, waits for a gap or takes a detour, and dodges what it cannot outrun. Moving geometry still restamps the octree, so routes re-plan live.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">06</span><span><b>85 ready-made AI nodes</b><span>Fly To, Patrol, Orbit, Follow, Hover, Take Off, Land (even on a rolling ship's deck), Perch, Scan Area, Engage Target, Find Cover, Flee and Investigate: 31 Behaviour Tree nodes, 41 StateTree nodes and 13 Mass StateTree nodes at full parity. One <code>Fly To Location</code> Blueprint node flies any pawn with no AI Controller, and Unreal's own Move To and EQS plan through the octree.</span></span></li>
           <li class="reveal" data-d="4"><span class="n">07</span><span><b>10,000+ agents through Mass ECS</b><span>Eight Mass traits: per-agent asynchronous pathfinding, or one shared CPU flow field sampled O(1) by an entire swarm. Mass StateTree lets crowds perch, scan, engage, investigate and flee; schooling, Hold Avoidance and Contact Push keep dense crowds apart. A per-agent GPU solver is in experimental validation, coming as a free update.</span></span></li>
           <li class="reveal" data-d="4"><span class="n">08</span><span><b>Tactical EQS in true 3D</b><span>5 generators, 8 tests and 4 contexts that score real volume (volumetric line-of-sight, cover, threat exposure, height advantage, landing sites and true path distance), so a sniper perch is chosen in 3D, not on a floor plane.</span></span></li>
           <li class="reveal" data-d="4"><span class="n">09</span><span><b>6-DOF flight &amp; swim locomotion</b><span>Navigation gives guidance; <code>LcmFlightMovementComponent</code> turns it into a body. Multirotor drone, Jet / Fixed-Wing, Bird (flap-glide) and Fish (undulatory) archetypes with thrust, lift, drag, buoyancy and attitude PID. Fish hold depth, school in layers and beat their tails with their speed; flight follows the level's gravity.</span></span></li>
           <li class="reveal" data-d="4"><span class="n">10</span><span><b>Cost areas, priced per agent</b><span>Mark volumes as storms, preferred lanes, toll gates or no-fly zones with stock NavArea classes. A stock Navigation Query Filter decides what each area costs each agent, or forbids it, and every planner routes by them, across streamed chunk seams too.</span></span></li>
           <li class="reveal" data-d="4"><span class="n">11</span><span><b>Server-authoritative multiplayer replication</b><span>Clients request a route, the server solves it and delivers it back through <code>Client_DeliverPath</code>; moving obstacles replay their nav footprint to every peer over a multicast. A headless validation suite (<code>-LcmMpTest</code>) exercises the sanity, replicated-request, multicast-transport and digest-chain paths, and CPU compute stays bit-deterministic for replays and lockstep.</span></span></li>
-          <li class="reveal" data-d="4"><span class="n">12</span><span><b>Built for real projects</b><span>Dynamic obstacle restamping, AI Perception threat tracking, hybrid Recast + SVO levels, nav links, area modifiers, a setup wizard, a one-click health check and a live Gameplay Debugger, plus 57 free demo levels you download from inside the editor.</span></span></li>
+          <li class="reveal" data-d="4"><span class="n">12</span><span><b>Tools for production levels</b><span>Dynamic obstacle restamping, AI Perception threat tracking, hybrid Recast + SVO levels, nav links, area modifiers, a setup wizard, a one-click health check and a live Gameplay Debugger, plus 57 free demo levels you download from inside the editor.</span></span></li>
         </ol>
         <div class="hero__row" style="justify-content:flex-start;margin-top:32px">
           <a class="btn btn--glow" data-magnet href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Get it on Fab</a>
@@ -805,8 +827,8 @@
     </div>
 
     <div class="blk__head reveal">
-      <h3>Works with every Unreal AI system</h3>
-      <p>Whichever way your team authors behaviour, LCM 3D Navigation AI plugs into it: the same navigation data, three authoring surfaces.</p>
+      <h3>Works with Behaviour Tree, StateTree and Mass</h3>
+      <p>Use whichever your team already uses. All three read the same navigation data.</p>
     </div>
     <div class="ai3d">
       <div class="ai3d__c reveal">
@@ -891,7 +913,7 @@
     <div class="docs3d reveal">
       <div class="docs3d__top">
         <div>
-          <h3>Documented like a product, not a plugin dump</h3>
+          <h3>A full manual and 15 tutorials</h3>
           <p>A 165-page manual, 15 step-by-step tutorials and a 13-page Quick Start, free to read online. Every setting is listed with its verified default and limits, and all 726 Blueprint-exposed symbols are in a full API reference.</p>
         </div>
         <a class="ghostbtn" href="https://lcmnav3d.github.io/" target="_blank" rel="noopener">Read the documentation ↗</a>
@@ -911,14 +933,25 @@
   <section id="compare" class="xsec">
     <div class="wrap">
       <div class="xhead xr">
-        <span class="kicker">How it compares</span>
-        <h2>NextGen scope, <em>plugin price</em></h2>
-        <p class="lede">Checked against Mercuna, Havok, Flying Navigation System, AeonixNavigation and Nav3D on 24 October 2026, from each product's own pages.</p>
+        <h2>How it compares with other 3D navigation options</h2>
+        <p class="lede">The full comparison page also covers Havok Navigation, Kythera AI and the smaller Fab plugins.</p>
       </div>
-      <div class="xwhy xr" style="margin-top:0">
-        <div><span class="xn">Price</span><h3>Middleware scope, plugin price</h3><p>$<span data-fact="product.price.value">199.99</span> Personal or $1,499.99 Professional, once, with full C++ source. Mercuna's cheapest 3D licence is £2,500 per title (Windows only, no source); Havok Navigation is $50,000 per product.</p></div>
-        <div><span class="xn">Worlds</span><h3>No bounds volume in open worlds</h3><p>Mercuna, Flying Navigation System, AeonixNavigation and Nav3D each need a bounds volume. In infinite mode, navigation streams in chunks around the agents, with no volume to place or outgrow.</p></div>
-        <div><span class="xn">AI systems</span><h3>Every Unreal AI system, ready to use</h3><p>31 Behaviour Tree, 41 StateTree and 13 Mass nodes, 3D EQS and a 6-DOF flight and swim component. None of the alternatives we checked document Mass Entity support or a GPU build.</p></div>
+      <div class="tblwrap xr">
+        <table class="tbl xcmp-home">
+          <caption>From each product's own pages, checked 24 October 2026. "Not documented" means the vendor doesn't say; it doesn't mean the feature is missing.</caption>
+          <thead>
+            <tr><th scope="col"></th><th scope="col">LCM 3D Navigation AI</th><th scope="col">Mercuna</th><th scope="col">Flying Navigation System</th><th scope="col">AeonixNavigation</th><th scope="col">Nav3D</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Price</th><td>$<span data-fact="product.price.value">199.99</span> Personal, $1,499.99 Professional, one time, with C++ source</td><td>£2,500 Indie (under $500k budget, Windows only, no source), £15,000 Standard, per title</td><td>$49.99 or $79.99</td><td>Free (MIT)</td><td>Free (MIT)</td></tr>
+            <tr><th scope="row">Bounds volume</th><td>Not needed in infinite mode</td><td>Required</td><td>Required</td><td>Required</td><td>Required</td></tr>
+            <tr><th scope="row">Open worlds</th><td>Infinite streamed chunks, pre-baked chunks, World Partition</td><td>World Partition and level streaming</td><td>One octree per level, no level streaming</td><td>Not documented</td><td>Chunking and World Partition</td></tr>
+            <tr><th scope="row">StateTree</th><td>41 nodes</td><td>Not documented</td><td>No</td><td>Move To task</td><td>No</td></tr>
+            <tr><th scope="row">Mass Entity crowds</th><td>13 nodes, 8 traits, 10,000+ agents</td><td>Not documented</td><td>Not documented</td><td>Not documented</td><td>No</td></tr>
+            <tr><th scope="row">Moving obstacles</th><td>Restamps the octree; Fly To predicts movers and times its pass</td><td>Obstacle component; volumes rebuild at runtime</td><td>Constantly moving obstacles not supported</td><td>Experimental dynamic regions</td><td>Granular rebuild</td></tr>
+            <tr><th scope="row">Flight and swim movement</th><td>6-DOF component: multirotor, jet, bird, fish</td><td>Not documented</td><td>No movement component</td><td>Flying movement component</td><td>No</td></tr>
+          </tbody>
+        </table>
       </div>
       <p class="xr" style="margin-top:26px"><a class="ln" href="unreal-engine-3d-pathfinding-plugins-compared/">See the full side-by-side comparison →</a></p>
     </div>
@@ -934,8 +967,8 @@
           <span><span data-fact="reviews.ratingCount">3</span> ratings on Fab</span>
         </div>
         <figure>
-          <blockquote>Best 3D Navigation Plugin on the Marketplace</blockquote>
-          <figcaption>VecFourDigital · five-star review on Fab · <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews" target="_blank" rel="noopener">Read the reviews ↗</a></figcaption>
+          <blockquote>Nothing compares to this. Got drones working for my prototype in a few hours.</blockquote>
+          <figcaption>VecFourDigital, in a five-star review on Fab titled "Best 3D Navigation Plugin on the Marketplace" · <a href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73?tab=reviews" target="_blank" rel="noopener">Read the reviews ↗</a></figcaption>
         </figure>
       </div>
     </div>
@@ -961,31 +994,29 @@
   </section>
 </div>
 
-<!-- DEVELOPER BRIDGE -->
-<section class="sec dev" id="developer">
+<!-- DEVELOPER NOTE -->
+<section class="sec note" id="developer">
   <div class="wrap">
-    <div class="dev__card reveal">
-      <div class="dev__glow"></div>
-      <div class="dev__inner">
-        <div>
-          <span class="kicker">The Developer</span>
-          <h2>Need something <em>custom built?</em></h2>
-          <div class="dev__face">
-            <picture><source type="image/webp" srcset="assets/img/charitha-madhushanka.webp"><img src="assets/img/charitha-madhushanka.jpg" alt="UEDEV logo" width="84" height="84" loading="lazy" decoding="async"></picture>
-            <div><b>L. Charitha Madhushanka</b><span>Senior Game Developer · Unreal &amp; Unity</span></div>
-          </div>
-          <p>UEDEV is the Unreal engineering label of L. Charitha Madhushanka, a senior gameplay engineer shipping commercial games, VR/AR, high-performance C++ plugins and engine tools. For studio work, contract jobs, or a bespoke plugin or system, head to the full developer portfolio.</p>
-          <div class="hero__row" style="justify-content:flex-start;margin-top:4px">
-            <a class="btn btn--primary" href="portfolio.html">View Developer Portfolio →</a>
-            <a class="btn btn--ghost" href="portfolio.html#contact">Contact / Hire</a>
-          </div>
-        </div>
-        <ul class="dev__list">
-          <li><span class="n">01</span><span><b>22 projects launched</b> across Unreal &amp; Unity: 4 Steam titles, 10 VR and 6 AR builds.</span></li>
-          <li><span class="n">02</span><span><b>MSc in Computer Games</b> (Distinction, University of Essex): Game AI, physics &amp; VFX.</span></li>
-          <li><span class="n">03</span><span><b>Senior Gameplay Engineer</b>, currently at Ripstone Games on an unannounced PlayStation title.</span></li>
-          <li><span class="n">04</span><span><b>Marketplace publisher since 2021</b>. The systems behind these packs come from real shipped games.</span></li>
+    <div class="note__in reveal">
+      <figure class="note__face">
+        <!-- TODO(Charitha): replace this logo with a real photo of you (square, 400x400 or larger) -->
+        <picture><source type="image/webp" srcset="assets/img/charitha-madhushanka.webp"><img src="assets/img/charitha-madhushanka.jpg" alt="UEDEV logo" width="168" height="168" loading="lazy" decoding="async"></picture>
+        <figcaption><b>L. Charitha Madhushanka</b><span>Developer of LCM 3D Navigation AI</span></figcaption>
+      </figure>
+      <div class="note__body">
+        <h2>Why I built this</h2>
+        <p>Unreal's navmesh is made for characters that walk. It turns a level into floor polygons, so a drone, a bird or a fish has nothing to follow. When I needed flying AI, my choices were middleware licensed per title or a plugin that stops at the edge of a bounds box.</p>
+        <p>So I built the navigation I wanted: a map of the empty air, routes that go over, under and between things, and open worlds with no edge. It works with Behaviour Tree, StateTree and Mass, so it fits however your team already builds AI.</p>
+        <p>I'm the only developer, so your questions and bug reports come straight to me.</p>
+        <p class="note__sign">Charitha</p>
+        <ul class="note__facts">
+          <li>Unreal Engine Authorized Instructor</li>
+          <li>Senior Gameplay Engineer, currently at Ripstone Games on an unannounced PlayStation title</li>
+          <li>MSc in Computer Games (Distinction), University of Essex</li>
+          <li>22 projects launched in Unreal and Unity: 4 Steam titles, 10 VR and 6 AR builds</li>
+          <li>Publishing Unreal plugins and effects since 2021</li>
         </ul>
+        <p class="note__hire">I also take contract work: custom plugins, gameplay systems and AI. <a class="ln" href="portfolio.html">See my portfolio</a> or <a class="ln" href="portfolio.html#contact">get in touch</a>.</p>
       </div>
     </div>
   </div>
@@ -993,8 +1024,8 @@
 
 <!-- CTA -->
 <section class="cta wrap" id="cta">
-  <h2>Give your AI the<br/><span class="grad">whole sky.</span></h2>
-  <p>LCM 3D Navigation AI: true 3D navigation and pathfinding for Unreal Engine 5, built and supported by a working game developer.</p>
+  <h2>Get LCM 3D Navigation AI on Fab</h2>
+  <p>$<span data-fact="product.price.value">199.99</span> for a personal licence, paid once, with the full C++ source. Updates are free for existing licences.</p>
   <div class="hero__row">
     <a class="btn btn--primary" href="https://www.fab.com/listings/92f05e42-d7be-4de3-abe8-7b0a3e70ba73" target="_blank" rel="noopener">Get it on Fab ↗</a>
     <a class="btn btn--ghost" href="unreal-engine-3d-pathfinding/">How it works →</a>
