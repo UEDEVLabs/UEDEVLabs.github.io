@@ -1,0 +1,124 @@
+/* human.css - loaded last. Takes off the stock "AI landing page" decoration:
+   gradient text, glows, frosted glass, monospace eyebrow labels, two-tone
+   headings and pill badges. Delete this file's <link> to get the old look back. */
+
+/* 1. Gradient text -> solid colour */
+.lp h1 em, .lp h2 em, .sec-title em, .dev__inner h2 em, .heroX__sub em,
+.hero h1 .grad, .cta h2 .grad, .mega em, .n3d .mega em,
+.xh__gen, .xs dd, .hstat b, .n3d__spec b, .vfxband__meta b,
+.cap:hover .cap__n, .stackcard__n, .mega {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: inherit !important;
+  animation: none !important;
+}
+.mega, .stackcard__n { color: var(--ink) !important; }
+.xs dd, .hstat b, .n3d__spec b, .vfxband__meta b { color: var(--ink) !important; }
+
+/* 2. Two-tone headings -> one colour (the <em> stays for meaning, just not green) */
+.lp h1 em, .lp h2 em, .sec-title em, .dev__inner h2 em, .mega em, .n3d .mega em,
+.hero h1 .grad, .cta h2 .grad, .heroX__sub em { color: inherit !important; }
+
+/* 3. Glows -> none */
+#progress { box-shadow: none !important; background: var(--nv, #2fe06a) !important; }
+.brand__mark img, .brand:hover .brand__mark img, .n3d__logo { filter: none !important; }
+.brand__mark i { display: none !important; }
+.xstars, .rating .stars { text-shadow: none !important; }
+.xh__gen::after, .xm figcaption::before { display: none !important; }
+.xreel__seg i { box-shadow: none !important; background: var(--ink) !important; }
+.card:hover, .ai3d__c:hover { box-shadow: 0 14px 34px rgba(0,0,0,.45) !important; }
+.btn--ghost:hover, .n3d .btn--ghost:hover, .announce:hover,
+.vfxband .mrq__tile:hover, .nav__cta:hover { box-shadow: none !important; }
+.pill .dot { animation: none !important; box-shadow: none !important; }
+
+/* Background glow layers */
+.aurora, .grid-overlay, .dev__glow, .n3d::before, .vfxband::before, .xtech::before { display: none !important; }
+.xtech { background: none !important; }
+.xpredict { background: #0b120e !important; }
+.xreview { background: var(--panel, #0c100e) !important; }
+
+/* Buttons: flat, one colour, no gradient or glow */
+.btn--glow, .n3d .btn--glow, .btn--primary, .nav__cta,
+.nav.open .nav__mcta, .badge.best {
+  background: var(--nv, #2fe06a) !important;
+  color: #041208 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+.btn--glow:hover, .n3d .btn--glow:hover, .btn--primary:hover, .nav__cta:hover {
+  background: #5ce88a !important;
+  box-shadow: none !important;
+}
+
+/* 4. Frosted glass -> plain solid panels */
+.nav.scrolled, .nav.open .nav__links, .nav__menu, .xtoc { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+.nav.scrolled, .xtoc { background: rgba(5,7,5,.96) !important; }
+.xs, .hstat { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: var(--panel, #0c100e) !important; }
+.xplay, .xyt__btn, .xw__play, .xm figcaption span, .xchips li, .card__cat, .badge, .stackcard__price {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(5,7,5,.88) !important;
+}
+
+/* 5. Monospace uppercase labels -> quiet sentence-case text */
+.kicker, .xh__brand, .xtag, .card__cat, .badge, .xchips li, .xs dt, .hstat span,
+.xspec dt, .xtoc__label, .xreview__score span, .xreview figcaption, .xh__proof,
+.n3d__tag, .n3d__badges span, .n3d__meta, .n3d__spec span, .stackcard__cat,
+.road__pill, .vfxband__meta span, .crumb, .xcount span, .xyt__meta span,
+.xm figcaption, .xcap, .footer__col h3, .footer__col h4, .xrating {
+  font-family: var(--font) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+.kicker {
+  color: var(--muted, #9fb2a5) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+.kicker::before { display: none !important; }
+.xh__brand {
+  color: var(--muted, #9fb2a5) !important;
+  font-size: clamp(15px, 1.3vw, 18px) !important;
+  font-weight: 500 !important;
+}
+.xtag, .xtag--ghost {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  color: var(--nv, #2fe06a) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+.xs dt, .hstat span, .xspec dt { font-size: 13px !important; }
+/* the number inside a spec value ("165 pp") was picking up the small label style */
+.n3d__spec b span { display: inline !important; font: inherit !important; color: inherit !important; margin: 0 !important; }
+.xh__proof { font-size: 13px !important; }
+
+/* 6. Pill badges */
+.xh__chip { display: none !important; }       /* repeats the "What's new" section right below */
+.announce, .pill {
+  border: 0 !important;
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-family: var(--font) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+.announce .tag, .xh__chip b {
+  background: none !important;
+  color: var(--nv, #2fe06a) !important;
+  padding: 0 !important;
+}
+.xrating {
+  border: 0 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  color: var(--muted, #c9d3cc) !important;
+}
+.xrating:hover { background: none !important; color: var(--ink) !important; }
